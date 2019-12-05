@@ -76,7 +76,8 @@
         showEye: true,
         pwdVisible: true,
         reverse: false,
-        placeholder: 'please type here...'
+        placeholder: 'please type here...',
+        list:[]
       }
     },
     computed: {
