@@ -1,0 +1,172 @@
+{
+  "en-US": {
+    "overview": {
+      "name": "Overview",
+      "angle": "01",
+      "subList": {
+        "introduction": "Introduction",
+        "quick-start": "QuickStart",
+        "post-compile": "PostCompile",
+        "theme": "Theme",
+        "singleton": "Singleton",
+        "internationalization": "Internationalization"
+      }
+    },
+    "components": {
+      "name": "Components",
+      "angle": "02",
+      "subList": {
+        "basic": {
+          "name": "Basic",
+          "subList": {
+            "button": "Button",
+            "loading": "Loading",
+            "tip": "Tip",
+            "toolbar": "Toolbar",
+            "tab-bar": "TabBar"
+          }
+        },
+        "form": {
+          "name": "Form",
+          "subList": {
+            "checkbox": "Checkbox",
+            "checkbox-group": "CheckboxGroup",
+            "radio": "Radio",
+            "checker": "Checker",
+            "input": "Input",
+            "textarea": "Textarea",
+            "select": "Select",
+            "switch": "Switch",
+            "rate": "Rate",
+            "validator": "Validator",
+            "upload": "Upload",
+            "form": "Form"
+          }
+        },
+        "popup": {
+          "name": "Popup",
+          "subList": {
+            "popup": "Popup",
+            "toast": "Toast",
+            "picker": "Picker",
+            "cascade-picker": "CascadePicker",
+            "date-picker": "DatePicker",
+            "time-picker": "TimePicker",
+            "segment-picker": "SegmentPicker",
+            "dialog": "Dialog",
+            "action-sheet": "ActionSheet",
+            "drawer": "Drawer",
+            "image-preview": "ImagePreview"
+          }
+        },
+        "scroll": {
+          "name": "Scroll",
+          "subList": {
+            "scroll": "Scroll",
+            "slide": "Slide",
+            "index-list": "IndexList",
+            "swipe": "Swipe",
+            "sticky": "Sticky",
+            "scroll-nav-bar": "ScrollNavBar",
+            "scroll-nav": "ScrollNav",
+            "recycle-list": "RecycleList"
+          }
+        }
+      }
+    },
+    "modules": {
+      "name": "Modules",
+      "angle": "03",
+      "subList": {
+        "style": "style",
+        "create-api": "create-api",
+        "better-scroll": "better-scroll"
+      }
+    }
+  },
+  "zh-CN": {
+    "overview": {
+      "name": "概览",
+      "angle": "01",
+      "subList": {
+        "introduction": "介绍",
+        "quick-start": "快速上手",
+        "post-compile": "后编译",
+        "theme": "主题",
+        "singleton": "单例模式",
+        "internationalization": "国际化"
+      }
+    },
+    "components": {
+      "name": "组件",
+      "angle": "02",
+      "subList": {
+        "basic": {
+          "name": "基础",
+          "subList": {
+            "button": "Button",
+            "loading": "Loading",
+            "tip": "Tip",
+            "toolbar": "Toolbar",
+            "tab-bar": "TabBar"
+          }
+        },
+        "form": {
+          "name": "表单",
+          "subList": {
+            "checkbox": "Checkbox",
+            "checkbox-group": "CheckboxGroup",
+            "radio": "Radio",
+            "checker": "Checker",
+            "input": "Input",
+            "textarea": "Textarea",
+            "select": "Select",
+            "switch": "Switch",
+            "rate": "Rate",
+            "validator": "Validator",
+            "upload": "Upload",
+            "form": "Form"
+          }
+        },
+        "popup": {
+          "name": "弹出层",
+          "subList": {
+            "popup": "Popup",
+            "toast": "Toast",
+            "picker": "Picker",
+            "cascade-picker": "CascadePicker",
+            "date-picker": "DatePicker",
+            "time-picker": "TimePicker",
+            "segment-picker": "SegmentPicker",
+            "dialog": "Dialog",
+            "action-sheet": "ActionSheet",
+            "drawer": "Drawer",
+            "image-preview": "ImagePreview"
+          }
+        },
+        "scroll": {
+          "name": "滚动",
+          "subList": {
+            "scroll": "Scroll",
+            "slide": "Slide",
+            "index-list": "IndexList",
+            "swipe": "Swipe",
+            "sticky": "Sticky",
+            "scroll-nav-bar": "ScrollNavBar",
+            "scroll-nav": "ScrollNav",
+            "recycle-list": "RecycleList"
+          }
+        }
+      }
+    },
+    "modules": {
+      "name": "模块",
+      "angle": "03",
+      "subList": {
+        "style": "style",
+        "create-api": "create-api",
+        "better-scroll": "better-scroll"
+      }
+    }
+  }
+}
