@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import {
   /* eslint-disable no-unused-vars */
   Style,
@@ -47,9 +48,12 @@ import {
   RecycleList,
   // module
   BetterScroll,
-  createAPI
+  createAPI,
+  // hx
+  hxSex
 } from './module'
 import { processComponentName } from './common/helpers/util'
+import '../lib/rem.js'
 
 const components = [
   // locale
@@ -95,7 +99,9 @@ const components = [
   Sticky,
   ScrollNav,
   ScrollNavBar,
-  RecycleList
+  RecycleList,
+  //  hx
+  hxSex
 ]
 
 function install(Vue) {

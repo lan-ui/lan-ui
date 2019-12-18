@@ -51,6 +51,9 @@ import RecycleList from './modules/recycle-list'
 import BetterScroll from './modules/better-scroll'
 import createAPI from './modules/create-api'
 
+// hx
+import hxSex from './modules/hx-sex'
+
 const FormGroup = Form.Group
 const FormItem = Form.Item
 const SlideItem = Slide.Item
@@ -124,5 +127,7 @@ export {
   RecycleList,
   // module
   BetterScroll,
-  createAPI
+  createAPI,
+  // hx
+  hxSex
 }
