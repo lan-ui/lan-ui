@@ -50,10 +50,13 @@ import {
   BetterScroll,
   createAPI,
   // hx
+  hxBank,
+  hxCertificatetype,
+  hxNationality,
   hxSex
 } from './module'
 import { processComponentName } from './common/helpers/util'
-import '../lib/rem.js'
+import './rem'
 
 const components = [
   // locale
@@ -101,6 +104,9 @@ const components = [
   ScrollNavBar,
   RecycleList,
   //  hx
+  hxBank,
+  hxCertificatetype,
+  hxNationality,
   hxSex
 ]
 

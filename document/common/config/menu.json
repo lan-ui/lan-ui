@@ -117,6 +117,7 @@
             "checkbox": "Checkbox",
             "checkbox-group": "CheckboxGroup",
             "radio": "Radio",
+            "hx-sex": "HxSex",
             "checker": "Checker",
             "input": "Input",
             "textarea": "Textarea",

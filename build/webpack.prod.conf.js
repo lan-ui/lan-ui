@@ -20,7 +20,7 @@ var webpackConfig = merge(baseWebpackConfig, {
   output: {
     path: config.build.assetsRoot,
     filename: utils.assetsPath('index.js'),
-    library: 'cube',
+    library: 'hx',
     libraryTarget: 'umd'
   },
   plugins: [

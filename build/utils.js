@@ -54,7 +54,9 @@ exports.cssLoaders = function (options) {
   }
 
   var stylusOptions = {
-    'resolve url': true
+    'resolve url': true,
+    // 这里 新增 import 配置项，指向自定义主题文件
+    import: [path.resolve(__dirname, '../src/hx')]
   }
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html
   return {

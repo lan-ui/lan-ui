@@ -77,7 +77,7 @@
         pwdVisible: true,
         reverse: false,
         placeholder: 'please type here...',
-        list:[]
+        list: []
       }
     },
     computed: {

@@ -1,8 +1,13 @@
 <template>
-  <div class="hx-sex" :readonly="readonly" :readValue="readValue">
+  <!-- <div class="hx-sex" :readonly="readonly" :readValue="readValue">
     <p class="hx-sex-title">性别</p>
     <cube-radio-group v-model="radioValue" :options="options" :horizontal="true" v-if="!readonly"></cube-radio-group>
     <p v-else>{{readValue.label}}</p>
+  </div> -->
+  <div class="hx-sex" :class="disabled?'hx-sex-disabled':''" :readonly="readonly" :readValue="readValue" :disabled="disabled">
+    <p class="hx-sex-title">性别</p>
+    <cube-checker type="radio" v-model="radioValue" :options="options" :horizontal="true" v-if="!readonly"></cube-checker>
+    <p v-else>{{readValue.text}}</p>
   </div>
 </template>
 
@@ -23,6 +28,10 @@
       },
       value: [String, Number],
       readonly: {
+        type: Boolean,
+        default: false
+      },
+      disabled: {
         type: Boolean,
         default: false
       },
@@ -81,45 +90,32 @@
   @require "../../common/stylus/variable.styl"
   @require "../../common/stylus/mixin.styl"
   .cube-page
-    background :#fff
+    background: #fff
   .hx-sex
-    margin :0 20px
-    height :50px
-    line-height :50px
-    color :#333;
-    font-size :16px
-    text-align:left
-    border-bottom :1px solid #eee
+    margin: 0 20px
+    height: 50px
+    line-height: 50px
+    font-size: 16px
+    border-bottom: 1px solid #eee
+    &.hx-sex-disabled 
+      color: $color-light-grey-s
     .hx-sex-title
-      float :left
-      width :112px
-    // 覆盖cube ui样式
-    .cube-radio-group[data-horz="true"]::after
-      border:none
-    .cube-radio-group[data-horz="true"] .cube-radio
-      display block
-      flex:none
-      margin-right:10px
-      padding:0
-      width 64px
-      height:28px
-    .cube-radio
-      margin-top:10px
-      color:#4c4c4c
-      font-size:14px
-      border:1px solid #efefef
-      border-radius:6px
-      box-sizing:border-box
-    .cube-radio-hollow
-      border:none
-    .cube-radio-ui
-      display none
-    .border-right-1px::after
-      border:none
-    .cube-radio_disabled
-      color:#ccc
-      border:1px solid #efefef
-    .cube-radio_selected
-      color:#1890ff
-      border:1px solid #1890ff
+      float: left
+      width: 112px
+    .cube-checker-item
+      margin-top: 10px
+      margin-right:1 0px
+      padding: 0
+      width: 64px
+      height: 28px
+      line-height: 28px
+      border-radius: 6px
+    .cube-checker-item_active
+      color: $checker-item-active-color
+      background: $checker-item-active-bgc
+      border-1px($checker-item-active-bdc, 6px)
+    .cube-checker-item_disabled
+      color: $checker-item-disabled-color
+      border-1px($checker-item-disabled-bdc, 6px)
+      background: $checker-item-disabled-bgc
 </style>

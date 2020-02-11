@@ -73,11 +73,16 @@ import RecycleList from '../pages/recycle-list/index.vue'
 import RecycleListDefault from '../pages/recycle-list/recycle-list-default.vue'
 import RecycleListTombstone from '../pages/recycle-list/recycle-list-tombstone.vue'
 import hxSex from '../pages/hx-sex.vue'
+import hxBank from '../pages/hx-bank.vue'
 
 const routes = [
   {
     path: '/hx-sex',
     component: hxSex
+  },
+  {
+    path: '/hx-bank',
+    component: hxBank
   },
   {
     path: '/button',

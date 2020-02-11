@@ -52,7 +52,8 @@
     left: 0
     width: 100%
     height: 100%
-    background: #efeff4
+    background: #efeff4;
+    display flexbox
     .header
       position: relative
       height: 44px
@@ -63,6 +64,7 @@
       -webkit-backface-visibility: hidden
       backface-visibility: hidden
       z-index: 5
+      
       h1
         font-size: 16px
         font-weight: 700

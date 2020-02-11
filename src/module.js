@@ -52,6 +52,9 @@ import BetterScroll from './modules/better-scroll'
 import createAPI from './modules/create-api'
 
 // hx
+import hxBank from './modules/hx-bank'
+import hxCertificatetype from './modules/hx-certificatetype'
+import hxNationality from './modules/hx-nationality'
 import hxSex from './modules/hx-sex'
 
 const FormGroup = Form.Group
@@ -129,5 +132,8 @@ export {
   BetterScroll,
   createAPI,
   // hx
+  hxBank,
+  hxCertificatetype,
+  hxNationality,
   hxSex
 }
