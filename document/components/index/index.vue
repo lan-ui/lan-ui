@@ -1,15 +1,15 @@
 <template>
   <div class="home-index">
     <div class="banner">
-      <h2>Cube UI</h2>
+      <!-- <h2>HX-UI</h2>
       <p>
         <slot name="desc"></slot>
-      </p>
-      <div class="ghbtns">
+      </p> -->
+      <!-- <div class="ghbtns">
         <Badge type="star"></Badge>
         <Badge type="fork"></Badge>
         <Badge type="watch"></Badge>
-      </div>
+      </div> -->
       <div class="rec-btns">
         <slot name="rec-btns"></slot>
       </div>
@@ -69,26 +69,25 @@
     text-align: center
     background-size: cover
     > .banner
-      padding: 190px 140px 70px
-      margin-top: -70px
+      padding: 150px 140px 200px
       text-align: left
-      color: #4B4B4C
-      background: url("./cube.png") no-repeat 520px -10px
-      background-size: 1250px
+      color: #0550f2
+      background: url("./cube.png") no-repeat
+      background-size: 100% auto
       @media screen and (max-width: 960px)
-        padding: 254px 32px 20px
-        margin-top: -48px
+        padding: 254px 32px 0
         text-align: left
-        background-position: 6% 0
-        background-size: 186%
         .btn-link
           width: 140px
           margin-right: 15px
           font-size: 14px
           border-width: 1px
+      @media screen and (max-width: 560px)
+        background: url("./cube_small.png") no-repeat
+        background-size: 100% auto
       h2
         font-size: 60px
-        color: #333
+        color: #0550f2
         @media screen and (max-width: 960px)
           font-size: 30px
       > p
@@ -133,8 +132,7 @@
       color: #137dc6
       background-color: #fff
   .features
-    margin: 0 90px
-    box-shadow: 0 4px 30px 0 rgba(66, 81, 148, 0.1)
+    margin: 40px 90px 0
     @media screen and (max-width: 960px)
       margin: 10px auto 0
       box-shadow: none
@@ -150,11 +148,12 @@
       li
         flex: 1
         max-width: 220px
-        padding: 60px 16px 10px
+        padding: 20px 40px 0
         margin: 0 10px
         font-size: 13px
         line-height: 1.4
         text-align: center
+        box-shadow: 0 4px 30px 0 rgba(66, 81, 148, 0.1)
         @media screen and (max-width: 960px)
           display: flex
           align-items: center
@@ -162,6 +161,7 @@
           padding-top: 20px
           padding-bottom: 20px
           text-align: left
+          box-shadow: none
           .text
             flex: 1
             margin-top: -7px

@@ -1,14 +1,13 @@
 <template>
-  <cube-page  title="华夏组件库-性别">
-    <div slot="content">
-      <div>
-        <hx-sex :readonly="false" :options="sexs" v-model="sexSelect"></hx-sex>
-        <hx-sex :readonly="false" :options="sexs2" v-model="sexSelect2"></hx-sex>
-        <hx-sex :readonly="false" :disabled="true" :options="sexs3" v-model="sexSelect3"></hx-sex>
+  <cube-page  title="HxSex">
+    <template slot="content">
+      <div class="hx-sex-wrapper">
+        <hx-sex :options="sexs" v-model="sexSelect"></hx-sex>
+        <hx-sex :options="sexs3" v-model="sexSelect3"></hx-sex>
+        <hx-sex :options="sexs2" v-model="sexSelect2" :disabled="true"></hx-sex>
         <hx-sex :readonly="true" :readValue="readSex"></hx-sex>
-        <cube-button class="hx-submit" @click="fnSubmit">提交</cube-button>
       </div>
-    </div>
+    </template>
   </cube-page>
 </template>
 
@@ -66,8 +65,8 @@
     methods: {
       fnSubmit () {
         console.log(this.sexSelect)
-        console.log(this.sexSelect2)
         console.log(this.sexSelect3)
+        console.log(this.sexSelect2)
         console.log(this.readSex.text)
       }
     },

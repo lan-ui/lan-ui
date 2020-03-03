@@ -1,11 +1,12 @@
 <template>
-  <cube-page  title="华夏组件库-银行">
+  <cube-page  title="HxBank">
     <div slot="content">
       <div>
-        <hx-bank :readonly="false" :options="banks" :placeholder="placeholder"  @selectBank="selectBank"></hx-bank>
-        <hx-bank :readonly="false" :options="banks" :disabled="disabled" :value="value1"></hx-bank>
+        <hx-bank @selected="selected" ref="hxValidate"></hx-bank>
+        <hx-bank :options="banks"  @selected="selected" ref="hxValidate"></hx-bank>
+        <hx-bank :options="banks" :disabled="true" :value="value1"></hx-bank>
         <hx-bank :readonly="true" :readValue="readBank"></hx-bank>
-        <cube-button class="hx-submit" @click="fnsumbit">提交</cube-button>
+        <!-- <cube-button class="hx-submit" @click="fnsumbit">提交</cube-button> -->
       </div>
     </div>
   </cube-page>
@@ -16,7 +17,7 @@
   export default {
     data() {
       return {
-        placeholder: '请选择银行',
+        placeholder: '',
         banks: [
           {
             text: '中国银行',
@@ -45,7 +46,7 @@
         },
         value1: {
           text: '建设银行',
-          value: '00002'
+          value: ''
         },
         value2: {},
         disabled: true
@@ -56,7 +57,7 @@
     watch: {
     },
     methods: {
-      selectBank (data) {
+      selected (data) {
         console.log(data[0])
         console.log(data[1])
         this.value2 = {
@@ -65,9 +66,13 @@
         }
       },
       fnsumbit () {
-        console.log(this.value2.text + ':' + this.value2.value)
-        console.log(this.value1.text + ':' + this.value1.value)
-        console.log(this.readBank.text + ':' + this.readBank.value)
+        this.$refs.hxValidate.validate()
+        if (this.value2.text) {
+          console.log('验证通过，提交！')
+          console.log(this.value2.text + ':' + this.value2.value)
+          console.log(this.value1.text + ':' + this.value1.value)
+          console.log(this.readBank.text + ':' + this.readBank.value)
+        }
       }
     },
     components: {

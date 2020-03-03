@@ -42,11 +42,11 @@
   .nav-ul
     font-size: 100%
   .nav-li
-    // margin-left: .4em
+    margin-left: .4em
     position:relative
     max-height: 75px
     overflow: hidden
-    // transition: all .2s linear
+    transition: all .2s linear
     > .nav-ul
       visibility: hidden
     .angle
@@ -104,32 +104,32 @@
       box-sizing: border-box
       color: $color-grey
       &:hover, &.nav-active
-        color: $color-orange
+        color: $color-blue
       &:hover
         border-right: 1px solid #e3e3e3
         background-color: #fbfbfb
       &.nav-active
-        background-color: rgba(252, 145, 83, .2)
+        background-color: rgba(5, 80, 242, .2)
         &::after
           content: ""
           width: 3px
           height: 100%
-          background-color: #fc9153
+          background-color: $color-blue
           position: absolute
           z-index: 1
           right: 0
           top: 0
   .nav-li_open
-    // height: auto
+    height: auto
     max-height: 2000px
     .nav-ul
       visibility: visible
   .nav-li_active
     .arrow
       &::before
-        border-top-color: #fc9153
+        border-top-color: $color-blue
     > .nav-name
-      color: #fc9153
+      color: $color-blue
   .nav-name
     margin: 10px 0
     font-size: $fontsize-large-xx

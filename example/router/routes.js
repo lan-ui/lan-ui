@@ -74,6 +74,10 @@ import RecycleListDefault from '../pages/recycle-list/recycle-list-default.vue'
 import RecycleListTombstone from '../pages/recycle-list/recycle-list-tombstone.vue'
 import hxSex from '../pages/hx-sex.vue'
 import hxBank from '../pages/hx-bank.vue'
+import hxCertificatetype from '../pages/hx-certificatetype.vue'
+import hxNationality from '../pages/hx-nationality.vue'
+import hxLocation from '../pages/hx-location.vue'
+import hxProvinces from '../pages/hx-provinces.vue'
 
 const routes = [
   {
@@ -83,6 +87,22 @@ const routes = [
   {
     path: '/hx-bank',
     component: hxBank
+  },
+  {
+    path: '/hx-certificatetype',
+    component: hxCertificatetype
+  },
+  {
+    path: '/hx-nationality',
+    component: hxNationality
+  },
+  {
+    path: '/hx-location',
+    component: hxLocation
+  },
+  {
+    path: '/hx-provinces',
+    component: hxProvinces
   },
   {
     path: '/button',

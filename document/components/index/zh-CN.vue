@@ -1,15 +1,15 @@
 <template>
   <home-index>
     <template slot="desc">基于 Vue.js 实现的精致移动端组件库</template>
-    <template slot="rec-btns">
+    <!-- <template slot="rec-btns">
       <router-link to="/zh-CN/docs/quick-start" class="btn-link"><span>快速上手</span></router-link>
       <router-link to="/zh-CN/docs/introduction" class="btn-link btn-active"><span>介绍</span></router-link>
-    </template>
+    </template> -->
     <template slot="feature-1">
       <h1 class="h1">质量可靠</h1>
       <h1 class="h2">Quality</h1>
       <p>
-        由滴滴内部组件库精简提炼而来，历经考验，并且每个组件都有充分单元测试，为后续集成提供保障。
+        由华夏内部组件库精简提炼而来，历经考验，并且每个组件都有充分单元测试，为后续集成提供保障。
       </p>
     </template>
     <template slot="feature-2">

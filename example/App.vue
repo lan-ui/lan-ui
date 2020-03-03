@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header class="cube-bar">
-      <h1>cube-ui</h1>
+      <h1>hx-ui</h1>
     </header>
     <section class="cube-content" ref="mfct">
       <cube-index-list :data="components" class="cube-list">
@@ -28,6 +28,36 @@
     data() {
       return {
         components: [
+          {
+            'name': 'Common 通用组件',
+            'shortcut': 'Common',
+            'items': [
+              {
+                path: '/hx-sex',
+                text: 'HxSex'
+              },
+              {
+                path: '/hx-bank',
+                text: 'HxBank'
+              },
+              {
+                path: '/hx-certificatetype',
+                text: 'HxCertificatetype'
+              },
+              {
+                path: '/hx-nationality',
+                text: 'HxNationlity'
+              },
+              {
+                path: '/hx-location',
+                text: 'HxLocation'
+              },
+              {
+                path: '/hx-provinces',
+                text: 'HxProvinces'
+              }
+            ]
+          },
           {
             'name': 'Basic 基础组件',
             'shortcut': 'Basic',

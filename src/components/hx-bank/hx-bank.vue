@@ -1,24 +1,25 @@
 <template>
-  <div
-    class="hx-bank"
-    :class="disabled?'hx-bank-disabled':''"
-    :readonly="readonly"
-    :readValue="readValue"
-    :disabled="disabled"
-  >
-    <p class="hx-bank-title">银行</p>
-    <div class="hx_bank_main" v-if="!readonly">
-      <p class="bank_main_info" @click="showPicker">
-        <span>{{bank}}</span>
-        <i class="cubeic-credit-card"></i>
-      </p>
-      <p class="main_tips" v-if="tips">{{tips}}</p>
+  <div      
+      class="hx-select"
+      :class="disabled?'hx-select-disabled':''"
+      :data-pos="position">
+    <div>
+      <p class="hx-select-title">银行</p>
+      <div class="hx-select-main" v-if="!readonly">
+        <p class="select-main-info" @click="showPicker">
+          <input v-model="bank" :placeholder="placeholder"  :class="bank==placeholder?'main-info-init':'main-info-selected'" readonly/>
+          <i :class="disabled?'':'icon-hualife-bankcard'"></i>
+        </p>
+      </div>
+      <p class="select-main-info" v-else>{{readValue.text}}</p>
     </div>
-    <p class="bank_main_info" v-else>{{readValue.text}}</p>
+    <cube-validator ref="validator" v-model="valid" :model="bank" :rules="rules" :messages="messages" v-if="!(disabled || readonly)"></cube-validator>
   </div>
 </template>
 
 <script>
+import { banksList } from './../../common/data/bank'
+const list = banksList
 const COMPONENT_NAME = 'hx-bank'
 
 export default {
@@ -29,7 +30,7 @@ export default {
     },
     placeholder: {
       type: String,
-      require: false
+      default: '请选择银行'
     },
     readonly: {
       type: Boolean,
@@ -45,14 +46,24 @@ export default {
     readValue: {
       type: Object
     },
-    tips: {
-      type: String
+    position: {
+      type: String,
+      default: 'left'
     }
   },
   data() {
     return {
       banks: this.options,
-      bank: this.value ? this.value.text : this.placeholder
+      bank: this.value ? this.value.text : this.placeholder,
+      valid: undefined,
+      rules: {
+        custom: (val) => {
+          return val !== this.placeholder
+        }
+      },
+      messages: {
+        custom: '请选择您的银行'
+      }
     }
   },
   watch: {},
@@ -65,8 +76,9 @@ export default {
             title: '银行',
             cancelTxt: '取消',
             confirmTxt: '确定',
-            data: [that.banks],
-            onSelect: this.selectHandle
+            data: that.banks ? [that.banks] : [list],
+            onSelect: this.selectHandle,
+            onCancel: this.cancelHandle
           })
         }
         this.picker.show()
@@ -77,7 +89,10 @@ export default {
       var value = []
       value.push(selectedText[0])
       value.push(selectedVal[0])
-      this.$emit('selectBank', value)
+      this.$emit('selected', value)
+    },
+    cancelHandle() {
+      this.$refs.validator.validate()
     }
   }
 }
@@ -86,50 +101,6 @@ export default {
 <style lang="stylus" rel="stylesheet/stylus">
 @require '../../common/stylus/variable.styl';
 @require '../../common/stylus/mixin.styl';
+@require '../../common/stylus/common.styl';
 
-$color-light-grey-s, .cube-page {
-  background: #fff;
-}
-
-.hx-bank {
-  margin: 0 20px;
-  line-height: 50px;
-  font-size: 16px;
-  color: $color-dark-grey;
-
-  .hx-bank-title {
-    float: left;
-    width: 112px;
-  }
-
-  i {
-    color: #1890FF;
-  }
-
-  input::-webkit-input-placeholder {
-    color: $color-light-grey-s;
-  }
-
-  .bank_main_info {
-    height: 50px;
-    line-height: 50px;
-    border-bottom: 1px solid #eee;
-
-    span {
-      display: inline-block;
-      width: 180px;
-    }
-  }
-
-  .main_tips {
-    height: 36px;
-    line-height: 36px;
-    font-size: 12px;
-    color: $validator-msg-def-color;
-  }
-}
-
-.hx-bank-disabled, .hx-bank-disabled i, .hx-bank-disabled input, .hx-bank-disabled input::-webkit-input-placeholder {
-  color: $color-light-grey-s;
-}
 </style>

@@ -53,7 +53,9 @@ import {
   hxBank,
   hxCertificatetype,
   hxNationality,
-  hxSex
+  hxSex,
+  hxLocation,
+  hxProvinces
 } from './module'
 import { processComponentName } from './common/helpers/util'
 import './rem'
@@ -107,7 +109,9 @@ const components = [
   hxBank,
   hxCertificatetype,
   hxNationality,
-  hxSex
+  hxSex,
+  hxLocation,
+  hxProvinces
 ]
 
 function install(Vue) {

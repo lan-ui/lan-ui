@@ -101,6 +101,17 @@
       "name": "组件",
       "angle": "02",
       "subList": {
+        "common": {
+          "name": "通用",
+          "subList": {
+            "hx-sex": "HxSex",
+            "hx-bank": "HxBank",
+            "hx-certificatetype": "HxCertificatetype",
+            "hx-nationality": "HxNationality",
+            "hx-location": "HxLocation",
+            "hx-provinces": "HxProvinces"
+          }
+        },
         "basic": {
           "name": "基础",
           "subList": {
@@ -117,7 +128,6 @@
             "checkbox": "Checkbox",
             "checkbox-group": "CheckboxGroup",
             "radio": "Radio",
-            "hx-sex": "HxSex",
             "checker": "Checker",
             "input": "Input",
             "textarea": "Textarea",

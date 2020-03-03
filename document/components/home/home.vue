@@ -7,7 +7,7 @@
       <div class="tabs">
         <i></i>
         <slot name="nav"></slot>
-        <site-lang></site-lang>
+        <!-- <site-lang></site-lang> --> <!-- 语言切换 -->
       </div>
       <span class="toggle-nav" @click="toggleNav"><i></i></span>
     </div>
@@ -115,7 +115,7 @@
     right: 0
     height: 70px
     line-height: 70px
-    padding: 0 100px
+    padding: 0 100px 0 10px
     margin-top: 0
     background-color: #fff
     @media screen and (max-width: 960px)
@@ -159,7 +159,6 @@
       a
         display: block
         height: 100%
-        margin: 0 80px
       img
         height: 100%
         transform: scale(.5)
@@ -217,7 +216,7 @@
           line-height: 45px
           color: black
         &:hover
-          color: $color-orange
+          color: $color-blue
       .router-link-active
-        color: $color-orange
+        color: $color-blue
 </style>

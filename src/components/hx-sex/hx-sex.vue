@@ -1,13 +1,8 @@
 <template>
-  <!-- <div class="hx-sex" :readonly="readonly" :readValue="readValue">
-    <p class="hx-sex-title">性别</p>
-    <cube-radio-group v-model="radioValue" :options="options" :horizontal="true" v-if="!readonly"></cube-radio-group>
-    <p v-else>{{readValue.label}}</p>
-  </div> -->
-  <div class="hx-sex" :class="disabled?'hx-sex-disabled':''" :readonly="readonly" :readValue="readValue" :disabled="disabled">
+  <div class="hx-sex" :class="disabled?'hx-sex-disabled':''" :data-pos="position">
     <p class="hx-sex-title">性别</p>
     <cube-checker type="radio" v-model="radioValue" :options="options" :horizontal="true" v-if="!readonly"></cube-checker>
-    <p v-else>{{readValue.text}}</p>
+    <p v-else class="hx-sex-readonly">{{readValue.text}}</p>
   </div>
 </template>
 
@@ -43,6 +38,10 @@
         default: function () {
           return {label: '男', value: 0}
         }
+      },
+      position: {
+        type: String,
+        default: 'left'
       }
     },
     data() {
@@ -50,38 +49,13 @@
         radioValue: this.value
       }
     },
-    created() {
-      const radioGroup = this.radioGroup
-      if (radioGroup) {
-        this.radioValue = radioGroup.radioValue
-        this._cancelWatchGroup = this.$watch(() => {
-          return radioGroup.radioValue
-        }, (newValue) => {
-          this.radioValue = newValue
-        })
-      }
-    },
-    beforeDestroy() {
-      this._cancelWatchGroup && this._cancelWatchGroup()
-      this._cancelWatchGroup = null
-    },
-    computed: {
-    },
     watch: {
       value(newV) {
         this.radioValue = newV
       },
       radioValue(newV) {
-        if (typeof this.value === 'number') {
-          newV = Number(newV)
-        }
         this.$emit(EVENT_INPUT, newV)
-        if (this.radioGroup) {
-          this.radioGroup.radioValue = newV
-        }
       }
-    },
-    methods: {
     }
   }
 </script>
@@ -97,14 +71,23 @@
     line-height: 50px
     font-size: 16px
     border-bottom: 1px solid #eee
+    overflow: hidden
     &.hx-sex-disabled 
       color: $color-light-grey-s
     .hx-sex-title
       float: left
       width: 112px
+    &[data-pos="right"]
+      .hx-sex-readonly
+        text-align: right
+      .cube-checker
+        text-align: right
+      .cube-checker-item
+        margin-right:0px
+        margin-left:10px
     .cube-checker-item
       margin-top: 10px
-      margin-right:1 0px
+      margin-right:10px
       padding: 0
       width: 64px
       height: 28px

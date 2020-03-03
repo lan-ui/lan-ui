@@ -1,0 +1,49 @@
+/**公共样式**/
+/**
+*** 下拉选择的样式（银行，证件类型，国籍/地区，所在地区，开户行所在省市）
+**/
+$color-light-grey-s, .cube-page
+  background: #fff;
+.hx-select
+  margin: 0 20px;
+  line-height: 50px;
+  font-size: 16px;
+  color: $color-dark-grey;
+  .hx-select-title
+    float: left;
+    width: 112px;
+    font-size: 16px;
+  i
+    color: #1890FF;
+    font-size:22px;
+    vertical-align: middle;
+  input
+    outline: none 
+  input::placeholder,
+  .main-info-init
+    color: $color-light-grey-s
+  .main-info-selected
+    color: #333
+  .select-main-info
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #eee;
+    span
+      display: inline-block;
+      width: 180px;
+  &[data-pos="right"]
+    .main-info-selected,
+    .select-main-info
+    .main-info-init
+      text-align: right
+.hx-select-disabled,
+.hx-select-disabled i, 
+.hx-select-disabled input, 
+.hx-select-disabled .main-info-selected, 
+.hx-select-disabled input::-webkit-input-placeholder
+  color: $color-light-grey-s
+.cube-validator-msg
+  line-height: 34px
+  .cube-validator-msg-def
+    color: #D81E06
+    font-size: 12px

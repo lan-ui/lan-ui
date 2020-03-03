@@ -56,6 +56,8 @@ import hxBank from './modules/hx-bank'
 import hxCertificatetype from './modules/hx-certificatetype'
 import hxNationality from './modules/hx-nationality'
 import hxSex from './modules/hx-sex'
+import hxLocation from './modules/hx-location'
+import hxProvinces from './modules/hx-provinces'
 
 const FormGroup = Form.Group
 const FormItem = Form.Item
@@ -135,5 +137,7 @@ export {
   hxBank,
   hxCertificatetype,
   hxNationality,
-  hxSex
+  hxSex,
+  hxLocation,
+  hxProvinces
 }

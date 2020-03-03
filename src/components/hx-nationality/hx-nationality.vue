@@ -1,121 +1,110 @@
 <template>
-  <!-- <div class="hx-sex" :readonly="readonly" :readValue="readValue">
-    <p class="hx-sex-title">性别</p>
-    <cube-radio-group v-model="radioValue" :options="options" :horizontal="true" v-if="!readonly"></cube-radio-group>
-    <p v-else>{{readValue.label}}</p>
-  </div> -->
-  <div class="hx-sex" :class="disabled?'hx-sex-disabled':''" :readonly="readonly" :readValue="readValue" :disabled="disabled">
-    <p class="hx-sex-title">性别</p>
-    <cube-checker type="radio" v-model="radioValue" :options="options" :horizontal="true" v-if="!readonly"></cube-checker>
-    <p v-else>{{readValue.text}}</p>
+  <div      
+      class="hx-select"
+      :class="disabled?'hx-select-disabled':''"
+      :data-pos="position">
+    <div>
+      <p class="hx-select-title">国籍/地区</p>
+      <div class="hx-select-main" v-if="!readonly">
+        <p class="select-main-info" @click="showPicker">
+          <input v-model="nationality" :placeholder="placeholder" :class="nationality==placeholder?'main-info-init':'main-info-selected'" readonly/>
+          <i :class="disabled?'':'icon-hualife-nationality'"></i>
+        </p>
+      </div>
+      <p class="select-main-info" v-else>{{readValue.text}}</p>
+    </div>
+    <cube-validator ref="validator" v-model="valid" :model="nationality" :rules="rules" :messages="messages" v-if="!(disabled || readonly)"></cube-validator>
   </div>
 </template>
 
 <script>
-  const COMPONENT_NAME = 'hx-nationality'
-  const EVENT_INPUT = 'input'
+import { nationalityList } from './../../common/data/nationality'
+const list = nationalityList
 
-  export default {
-    name: COMPONENT_NAME,
-    inject: {
-      radioGroup: {
-        default: null
-      }
+const COMPONENT_NAME = 'hx-nationality'
+
+export default {
+  name: COMPONENT_NAME,
+  props: {
+    options: {
+      type: Array
     },
-    props: {
-      options: {
-        type: Array
-      },
-      value: [String, Number],
-      readonly: {
-        type: Boolean,
-        default: false
-      },
-      disabled: {
-        type: Boolean,
-        default: false
-      },
-      initValue: {
-        type: String
-      },
-      readValue: {
-        type: Object,
-        default: function () {
-          return {label: '男', value: 0}
+    placeholder: {
+      type: String,
+      default: '请选择国籍/地区'
+    },
+    readonly: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    value: {
+      type: Object
+    },
+    readValue: {
+      type: Object
+    },
+    position: {
+      type: String,
+      default: 'left'
+    }
+  },
+  data() {
+    return {
+      nationalitys: this.options,
+      nationality: this.value ? this.value.text : this.placeholder,
+      valid: undefined,
+      rules: {
+        custom: (val) => {
+          return val !== this.placeholder
         }
-      }
-    },
-    data() {
-      return {
-        radioValue: this.value
-      }
-    },
-    created() {
-      const radioGroup = this.radioGroup
-      if (radioGroup) {
-        this.radioValue = radioGroup.radioValue
-        this._cancelWatchGroup = this.$watch(() => {
-          return radioGroup.radioValue
-        }, (newValue) => {
-          this.radioValue = newValue
-        })
-      }
-    },
-    beforeDestroy() {
-      this._cancelWatchGroup && this._cancelWatchGroup()
-      this._cancelWatchGroup = null
-    },
-    computed: {
-    },
-    watch: {
-      value(newV) {
-        this.radioValue = newV
       },
-      radioValue(newV) {
-        if (typeof this.value === 'number') {
-          newV = Number(newV)
+      messages: {
+        custom: '请选择您的国籍/地区'
+      }
+    }
+  },
+  computed: {
+  },
+  watch: {
+  },
+  methods: {
+    showPicker() {
+      var that = this
+      if (!that.disabled) {
+        if (!that.picker) {
+          that.picker = that.$createPicker({
+            title: '国籍/地区',
+            cancelTxt: '取消',
+            confirmTxt: '确定',
+            data: that.nationalitys ? [that.nationalitys] : [list],
+            onSelect: that.selectHandle,
+            onCancel: that.cancelHandle
+          })
         }
-        this.$emit(EVENT_INPUT, newV)
-        if (this.radioGroup) {
-          this.radioGroup.radioValue = newV
-        }
+        this.picker.show()
       }
     },
-    methods: {
+    selectHandle(selectedVal, selectedIndex, selectedText) {
+      this.nationality = selectedText[0]
+      var value = []
+      value.push(selectedText[0])
+      value.push(selectedVal[0])
+      this.$emit('selectNationality', value)
+    },
+    cancelHandle() {
+      this.$refs.validator.validate()
     }
   }
+}
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  @require "../../common/stylus/variable.styl"
-  @require "../../common/stylus/mixin.styl"
-  .cube-page
-    background: #fff
-  .hx-sex
-    margin: 0 20px
-    height: 50px
-    line-height: 50px
-    font-size: 16px
-    border-bottom: 1px solid #eee
-    &.hx-sex-disabled 
-      color: $color-light-grey-s
-    .hx-sex-title
-      float: left
-      width: 112px
-    .cube-checker-item
-      margin-top: 10px
-      margin-right:1 0px
-      padding: 0
-      width: 64px
-      height: 28px
-      line-height: 28px
-      border-radius: 6px
-    .cube-checker-item_active
-      color: $checker-item-active-color
-      background: $checker-item-active-bgc
-      border-1px($checker-item-active-bdc, 6px)
-    .cube-checker-item_disabled
-      color: $checker-item-disabled-color
-      border-1px($checker-item-disabled-bdc, 6px)
-      background: $checker-item-disabled-bgc
+@require '../../common/stylus/variable.styl';
+@require '../../common/stylus/mixin.styl';
+@require '../../common/stylus/common.styl';
+
 </style>
