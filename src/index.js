@@ -127,10 +127,9 @@ function install(Vue) {
     Component.install(Vue)
   })
 }
-
-const Cube = {
+const Hx = {
   /* eslint-disable no-undef */
-  version: __VERSION__,
+  version: (typeof __VERSION__ !== 'undefined') ? __VERSION__ : '',
   install,
   BScroll: BetterScroll,
   createAPI
@@ -140,11 +139,11 @@ components.forEach((Component) => {
   const name = processComponentName(Component, {
     firstUpperCase: true
   })
-  Cube[name] = Component
+  Hx[name] = Component
 })
 
 if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.use(install)
 }
 
-export default Cube
+export default Hx

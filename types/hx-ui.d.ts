@@ -1,12 +1,12 @@
 import Vue from 'vue'
 
-import { CubeUIComponent } from './component'
+import { HxComponent } from './component'
 
 /**
  * CubeUI 组件
  * CubeUI component common definition
  */
-export type Component = CubeUIComponent
+export type Component = HxComponent
 
 /**
  * 版本
@@ -34,7 +34,7 @@ export class BScroll {}
  * You use it to create your own API component
  * more details: https://didi.github.io/cube-ui/#/en-US/docs/create-api
  */
-export function createAPI (vue: typeof Vue, Component: CubeUIComponent, events?: string[], single?: boolean) : object
+export function createAPI (vue: typeof Vue, Component: HxComponent, events?: string[], single?: boolean) : object
 
 /** Local Module */
 export class Locale {
@@ -47,47 +47,47 @@ export class Style {}
 
 // basic
 /** Button Component */
-export class Button extends CubeUIComponent {}
+export class Button extends HxComponent {}
 /** Loading Component */
-export class Loading extends CubeUIComponent {}
+export class Loading extends HxComponent {}
 /** Tip Component */
-export class Tip extends CubeUIComponent {}
+export class Tip extends HxComponent {}
 /** Toolbar Component */
-export class Toolbar extends CubeUIComponent {}
+export class Toolbar extends HxComponent {}
 /** TabBar Component */
-export class TabBar extends CubeUIComponent {}
+export class TabBar extends HxComponent {}
 /** TabPanels Component */
-export class TabPanels extends CubeUIComponent {}
+export class TabPanels extends HxComponent {}
 // form
 /** Checkbox Component */
-export class Checkbox extends CubeUIComponent {}
+export class Checkbox extends HxComponent {}
 /** Checkbox Group Component */
-export class CheckboxGroup extends CubeUIComponent {}
+export class CheckboxGroup extends HxComponent {}
 /** Checker Component */
-export class Checker extends CubeUIComponent {}
+export class Checker extends HxComponent {}
 /** Radio Component */
-export class Radio extends CubeUIComponent {}
+export class Radio extends HxComponent {}
 /** Radio Group Component */
-export class RadioGroup extends CubeUIComponent {}
+export class RadioGroup extends HxComponent {}
 /** Input Component */
-export class Input extends CubeUIComponent {}
+export class Input extends HxComponent {}
 /** Textarea Component */
-export class Textarea extends CubeUIComponent {}
+export class Textarea extends HxComponent {}
 /** Select Component */
-export class Select extends CubeUIComponent {}
+export class Select extends HxComponent {}
 /** Switch Component */
-export class Switch extends CubeUIComponent {}
+export class Switch extends HxComponent {}
 /** Rate Component */
-export class Rate extends CubeUIComponent {}
+export class Rate extends HxComponent {}
 /** Validator Component */
-export class Validator extends CubeUIComponent {}
+export class Validator extends HxComponent {}
 /** Upload Component */
-export class Upload extends CubeUIComponent {}
+export class Upload extends HxComponent {}
 /** Form Component */
-export class Form extends CubeUIComponent {}
+export class Form extends HxComponent {}
 // popup
 /** Popup Component */
-export class Popup extends CubeUIComponent {
+export class Popup extends HxComponent {
   show(): any
   hide(): any
   remove(): any
@@ -111,27 +111,27 @@ export class ActionSheet extends Popup {}
 /** ImagePreview Component */
 export class ImagePreview extends Popup {}
 /** Drawer Component */
-export class Drawer extends CubeUIComponent {
+export class Drawer extends HxComponent {
   show(): void
   hide(): void
 }
 // scroll
 /** Scroll Component */
-export class Scroll extends CubeUIComponent {}
+export class Scroll extends HxComponent {}
 /** Slide Component */
-export class Slide extends CubeUIComponent {}
+export class Slide extends HxComponent {}
 /** Index List Component */
-export class IndexList extends CubeUIComponent {}
+export class IndexList extends HxComponent {}
 /** Swipe Component */
-export class Swipe extends CubeUIComponent {}
+export class Swipe extends HxComponent {}
 /** Sticky Component */
-export class Sticky extends CubeUIComponent {}
+export class Sticky extends HxComponent {}
 /** ScrollNavBar Component */
-export class ScrollNavBar extends CubeUIComponent {}
+export class ScrollNavBar extends HxComponent {}
 /** ScrollNav Component */
-export class ScrollNav extends CubeUIComponent {}
+export class ScrollNav extends HxComponent {}
 /** RecycleList Component */
-export class RecycleList extends CubeUIComponent {}
+export class RecycleList extends HxComponent {}
 
 // Vue prototype $createXx
 declare module 'vue/types/vue' {

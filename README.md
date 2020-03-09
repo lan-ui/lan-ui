@@ -29,29 +29,36 @@ $ npm run cm                # Commitizen规范化git提交（git cz代替git com
 
 ```bash
 .
-├── assets                      # 图片资源（未压缩未打包）
-├── build                       # webpack打包文件
-│   ├── docment                 # 文档打包文件配置
-│   ├── example                 # 示例打包文件配置
-│   ├── release                 # 
-│   ├── build.js                # 
-│   ├── check-versions.js       # 
-│   ├── dev-client.js           # 
-│   ├── dev-server.js           # 
-│   ├── util.js                 # 
-│   ├── vue-loader.conf.js      # 
-│   ├── webpack.base.conf.js    # 
-│   ├── webpack.dev.conf.js     # 
-│   ├── webpack.modules.conf.js # 
-│   ├── webpack.prod.conf.js    # 
-│   ├── webpack.test.conf.js    # 
-│   └── build.js                # 
+├── assets                       # 图片资源（未压缩未打包）
+├── build                        # webpack打包配置文件
+│   ├── docment                  # 文档打包文件配置
+│       ├── build.js             # 文档生产打包入口
+│       ├── dev-server.js        # 文档开发打包入口
+│       ├── webpack.dev.conf.js  # 文档开发打包配置
+│       ├── webpack.prod.conf.js # 文档生产打包配置
+│   ├── example                  # 示例打包文件配置
+│       ├── build.js             # 示例生产打包入口
+│       ├── webpack.prod.conf.js # 示例生产打包配置
+│   ├── release                  # git发版配置（暂不使用）
+│       ├── docs.sh              # git提交文档及示例配置
+│       ├── publish.sh           # git提交源码及发布npm配置
+│   ├── build.js                 # 源码生产打包入口
+│   ├── check-versions.js        # node/npm版本检查
+│   ├── dev-client.js            # 页面热加载配置
+│   ├── dev-server.js            # 源码开发打包入口
+│   ├── util.js                  # 样式loader配置（包括css-loader,postcss-loader,vue-style-loader,也进入的less-loader,sass-loader）
+│   ├── vue-loader.conf.js       # 配置生产css源码map
+│   ├── webpack.base.conf.js     # 打包基础配置（指定打包的入口的文件目录，引用的loader模块（eslint-loader,图片，字体，说明文档））
+│   ├── webpack.dev.conf.js      # 源码开发打包配置
+│   ├── webpack.modules.conf.js  # 源码单独模块打包配置
+│   ├── webpack.prod.conf.js     # 源码生产打包配置
+│   └── webpack.test.conf.js     # 源码测试打包配置
 │
-├── config                      # 
-│   ├── dev.env.js              # 
-│   ├── index.js                # 
-│   ├── prod.env.js             # 
-│   └── test.env.js             # 
+├── config                    
+│   ├── dev.env.js              # 开发模式
+│   ├── index.js                # 打包配置入口（源码开发/生产打包，说明文档开发/生产打包，示例开发/生产打包）
+│   ├── prod.env.js             # 生产模式
+│   └── test.env.js             # 测试模式
 │
 ├── docs                    # 打包后文档说明文件(含示例) --需要放到服务期中（并与组件开发同时更新）
 │   ├── css                  
@@ -159,7 +166,7 @@ $ npm run cm                # Commitizen规范化git提交（git cz代替git com
 │   ├── index.js            # 整个组件库打包后css
 │   └── style.css           # 整个组件库打包后js
 │
-├── node_modules            # 包源文件
+├── node_modules            # 包文件
 │
 ├── src                           # 组件源码目录
 │   ├── common                    # 
@@ -222,7 +229,7 @@ $ npm run cm                # Commitizen规范化git提交（git cz代替git com
 ├── CONTRIBUTING.md         # 
 ├── LINCENSE                # 版权说明
 ├── package-lock.json       # 锁定当前安装包的版本号
-├── package.json            # 包配置文件
+├── package.json            # * 包配置文件（需要修改）
 ├── postcss.config.js       # * css预处理(适配)
 ├── README_zh-CN.md         # * 中文文档说明（需要修改）
 ├── README.md               # * 说明文档

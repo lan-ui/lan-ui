@@ -1,6 +1,6 @@
 {
   "name": "hx-ui",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "A fantastic mobile ui lib implement by Vue",
   "main": "lib/index.js",
   "module": "src/index.js",
@@ -38,7 +38,7 @@
     "types"
   ],
   "publishConfig": {
-    "registry": "http://10.3.21.35:7001"
+    "registry": "http://106.38.93.196:8080/"
   },
   "repository": {
     "type": "git",
@@ -49,8 +49,8 @@
     "url": "https://github.com/didi/cube-ui/issues"
   },
   "keywords": [
-    "cube-ui",
-    "cube",
+    "hx-ui",
+    "hx",
     "vue",
     "components"
   ],
@@ -148,7 +148,7 @@
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.13",
     "webpack": "^3.12.0",
-    "webpack-bundle-analyzer": "^2.2.1",
+    "webpack-bundle-analyzer": "^3.3.2",
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.18.0",
     "webpack-merge": "^4.1.0"

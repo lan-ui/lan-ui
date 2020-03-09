@@ -82,6 +82,8 @@
 </script>
 
 <style lang="stylus">
+  #app .cube-page >.wrapper .content
+    margin: 10px 0
   .hx-submit.cube-btn
     margin-top: 20px
 </style>

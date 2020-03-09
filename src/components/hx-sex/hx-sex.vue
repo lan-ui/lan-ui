@@ -66,7 +66,7 @@
   .cube-page
     background: #fff
   .hx-sex
-    margin: 0 20px
+    margin: 0 30px
     height: 50px
     line-height: 50px
     font-size: 16px
@@ -77,6 +77,7 @@
     .hx-sex-title
       float: left
       width: 112px
+      text-align: left
     &[data-pos="right"]
       .hx-sex-readonly
         text-align: right

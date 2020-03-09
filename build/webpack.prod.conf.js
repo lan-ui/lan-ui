@@ -8,7 +8,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 var webpackConfig = merge(baseWebpackConfig, {
   entry: {
-    cube: './src/index.js'
+    hx: './src/index.js'
   },
   module: {
     rules: utils.styleLoaders({
@@ -19,13 +19,13 @@ var webpackConfig = merge(baseWebpackConfig, {
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
     path: config.build.assetsRoot,
-    filename: utils.assetsPath('index.js'),
+    filename: utils.assetsPath('hx.js'),
     library: 'hx',
     libraryTarget: 'umd'
   },
   plugins: [
     // extract css into its own file
-    new ExtractTextPlugin(utils.assetsPath('style.css'))
+    new ExtractTextPlugin(utils.assetsPath('hx.css'))
   ]
 })
 

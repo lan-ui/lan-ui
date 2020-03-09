@@ -1,5 +1,5 @@
-export * from './cube-ui'
+export * from './hx-ui'
 
-import * as CubeUI from './cube-ui'
+import * as Hx from './hx-ui'
 
-export default CubeUI
+export default Hx
