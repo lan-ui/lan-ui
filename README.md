@@ -22,7 +22,7 @@ $ npm run lint              # 使用eslint来检查并修复代码
 $ npm run unit              # 单元测试
 $ npm run codecov           # 代码覆盖率
 $ npm run test              # 单元测试+代码覆盖率
-$ npm run cm                # Commitizen规范化git提交（git cz代替git commit）
+$ npm run cm                # Commitizen规范化git提交（npm run cz代替git commit）
 ```
 
 ## 目录结构说明
