@@ -231,7 +231,7 @@ $ npm run cm                # Commitizen规范化git提交（npm run cz代替git
 ├── package-lock.json       # 锁定当前安装包的版本号
 ├── package.json            # * 包配置文件（需要修改）
 ├── postcss.config.js       # * css预处理(适配)
-├── README_zh-CN.md         # * 中文文档说明（需要修改）
+├── README_zh-CN.md         # * 中文文档说明（需要修改为hx-ui的说明）
 ├── README.md               # * 说明文档
 └── yarn.lock               # 
 ```
