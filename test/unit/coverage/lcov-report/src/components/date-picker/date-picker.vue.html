@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/date-picker/date-picker.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">src/components/date-picker/</a> date-picker.vue
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>82/82</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98.48% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>65/66</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>79/79</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">44×</span>
+<span class="cline-any cline-yes">140×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">44×</span>
+<span class="cline-any cline-yes">44×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1661×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1647×</span>
+<span class="cline-any cline-yes">1618×</span>
+<span class="cline-any cline-yes">1618×</span>
+<span class="cline-any cline-yes">1618×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1618×</span>
+<span class="cline-any cline-yes">1618×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1661×</span>
+<span class="cline-any cline-yes">159×</span>
+<span class="cline-any cline-yes">1881×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1635×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1635×</span>
+<span class="cline-any cline-yes">1635×</span>
+<span class="cline-any cline-yes">1428×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">207×</span>
+<span class="cline-any cline-yes">207×</span>
+<span class="cline-any cline-yes">207×</span>
+<span class="cline-any cline-yes">3626×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3626×</span>
+<span class="cline-any cline-yes">3626×</span>
+<span class="cline-any cline-yes">3626×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3626×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">207×</span>
+<span class="cline-any cline-yes">207×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+  &lt;cube-cascade-picker
+    v-model="isVisible"
+    :data="data"
+    :selected-index="selectedIndex"
+    :title="title"
+    :subtitle="subtitle"
+    :cancel-txt="_cancelTxt"
+    :confirm-txt="_confirmTxt"
+    :swipe-time="swipeTime"
+    :z-index="zIndex"
+    :mask-closable="maskClosable"
+    @select="_select"
+    @cancel="_cancel"
+    @change="_change"&gt;
+  &lt;/cube-cascade-picker&gt;
+&lt;/template&gt;
+&nbsp;
+&lt;script&gt;
+  import visibilityMixin from '../../common/mixins/visibility'
+  import popupMixin from '../../common/mixins/popup'
+  import pickerMixin from '../../common/mixins/picker'
+  import localeMixin from '../../common/mixins/locale'
+  import { deepAssign, findIndex } from '../../common/helpers/util'
+  import { computeNatureMaxDay, formatType } from '../../common/lang/date'
+&nbsp;
+  const COMPONENT_NAME = 'cube-date-picker'
+  const EVENT_SELECT = 'select'
+  const EVENT_CANCEL = 'cancel'
+  const EVENT_CHANGE = 'change'
+&nbsp;
+  const TYPE_LIST = ['year', 'month', 'date', 'hour', 'minute', 'second']
+  const NATURE_BOUNDARY_MAP = {
+    month: {
+      natureMin: 1,
+      natureMax: 12
+    },
+    date: {
+      natureMin: 1,
+      natureMax: 31
+    },
+    hour: {
+      natureMin: 0,
+      natureMax: 23
+    },
+    minute: {
+      natureMin: 0,
+      natureMax: 59
+    },
+    second: {
+      natureMin: 0,
+      natureMax: 59
+    }
+  }
+&nbsp;
+  const DEFAULT_FORMAT = {
+    year: 'YYYY',
+    month: 'M',
+    date: 'D',
+    hour: 'hh',
+    minute: 'mm',
+    second: 'ss'
+  }
+&nbsp;
+  export default {
+    name: COMPONENT_NAME,
+    mixins: [visibilityMixin, popupMixin, pickerMixin, localeMixin],
+    props: {
+      min: {
+        type: [Date, Array],
+        default() {
+          return new Date(2010, 0, 1)
+        }
+      },
+      max: {
+        type: [Date, Array],
+        default() {
+          return new Date(2020, 11, 31)
+        }
+      },
+      startColumn: {
+        type: String,
+        default() {
+          return 'year'
+        }
+      },
+      columnCount: {
+        type: Number,
+        default: 3
+      },
+      format: {
+        type: Object,
+        default() {
+          return {}
+        }
+      },
+      value: {
+        type: [Date, Array],
+        default() {
+          return this.min
+        }
+      },
+      columnOrder: {
+        type: Array,
+        default() {
+          return ['year', 'month', 'date', 'hour', 'minute', 'second']
+        }
+      }
+    },
+    computed: {
+      formatConfig() {
+        const formatConfig = Object.assign({}, DEFAULT_FORMAT)
+        deepAssign(formatConfig, this.format)
+&nbsp;
+        return formatConfig
+      },
+      natureRangeCache() {
+        const natureRangeCache = {
+          hour: [],
+          minute: [],
+          second: []
+        }
+&nbsp;
+        Object.keys(natureRangeCache).forEach((key) =&gt; {
+          natureRangeCache[key] = this._range(key, NATURE_BOUNDARY_MAP[key].natureMin, NATURE_BOUNDARY_MAP[key].natureMax)
+        })
+&nbsp;
+        return natureRangeCache
+      },
+      startIndex() {
+        const startIndex = TYPE_LIST.indexOf(this.startColumn)
+        return startIndex &lt; 0 <span class="branch-0 cbranch-no" title="branch not covered" >? </span>0 : startIndex
+      },
+      minArray() {
+        return this.min instanceof Date
+                ? dateToArray(this.min).slice(this.startIndex, this.startIndex + this.columnCount)
+                : this.min
+      },
+      maxArray() {
+        return this.max instanceof Date
+                ? dateToArray(this.max).slice(this.startIndex, this.startIndex + this.columnCount)
+                : this.max
+      },
+      valueArray() {
+        return this.value instanceof Date
+                ? dateToArray(this.value).slice(this.startIndex, this.startIndex + this.columnCount)
+                : this.value
+      },
+      data() {
+        const data = []
+        this._generateData(this.startIndex, 0, data)
+        return data
+      },
+      selectedIndex() {
+        const selectedIndex = []
+        let data = this.data
+        let index
+&nbsp;
+        for (let i = 0; i &lt; this.columnCount &amp;&amp; i &lt; 6 - this.startIndex; i++) {
+          index = findIndex(data, (item) =&gt; {
+            return this.valueArray[i] &amp;&amp; item.value === this.valueArray[i]
+          })
+          selectedIndex[i] = index !== -1 ? index : 0
+          data = data[selectedIndex[i]] &amp;&amp; data[selectedIndex[i]].children
+        }
+&nbsp;
+        return selectedIndex
+      }
+    },
+    methods: {
+      _select(selectedVal, selectedIndex, selectedText) {
+        this.$emit(EVENT_SELECT, this._arrayToDate(selectedVal), selectedVal, selectedText)
+      },
+      _cancel() {
+        this.$emit(EVENT_CANCEL)
+      },
+      _change(i, newIndex) {
+        this.$emit(EVENT_CHANGE, i, newIndex)
+      },
+      _generateData(i, count, item) {
+        if (count === 0) {
+          const min = i === 0 ? this.minArray[0] : Math.max(this.minArray[0], NATURE_BOUNDARY_MAP[TYPE_LIST[i]].natureMin)
+          const max = i === 0 ? this.maxArray[0] : Math.min(this.maxArray[0], NATURE_BOUNDARY_MAP[TYPE_LIST[i]].natureMax)
+          item.push.apply(item, this._range(TYPE_LIST[i], min, max, true, true))
+        } else {
+          if (i &lt; 3 || item.isMin || item.isMax) {
+            const natureMax = i === 2 ? computeNatureMaxDay(item.value, item.year) : NATURE_BOUNDARY_MAP[TYPE_LIST[i]].natureMax
+            const min = item.isMin ? Math.max(this.minArray[count], NATURE_BOUNDARY_MAP[TYPE_LIST[i]].natureMin) : NATURE_BOUNDARY_MAP[TYPE_LIST[i]].natureMin
+            const max = item.isMax ? Math.min(this.maxArray[count], natureMax) : natureMax
+&nbsp;
+            const storageYear = i === 1 &amp;&amp; this.startIndex === 0 &amp;&amp; this.columnCount &gt;= 3 &amp;&amp; item.value
+            item.children = this._range(TYPE_LIST[i], min, max, item.isMin, item.isMax, storageYear)
+          } else {
+            item.children = this.natureRangeCache[TYPE_LIST[i]]
+          }
+        }
+        if (count &lt; this.columnCount - 1 &amp;&amp; i &lt; 5) {
+          (item.children || item).forEach(subItem =&gt; {
+            (!subItem.children || subItem.isMin || subItem.isMax) &amp;&amp; this._generateData(i + 1, count + 1, subItem)
+          })
+        }
+      },
+      _arrayToDate(selectedVal) {
+        const args = []
+        const defaultDateArray = dateToArray(new Date(0))
+&nbsp;
+        for (let i = 0; i &lt; 6; i++) {
+          if (i &lt; this.startIndex) {
+            args[i] = defaultDateArray[i]
+          } else if (i &gt;= this.startIndex + this.columnCount) {
+            args[i] = NATURE_BOUNDARY_MAP[TYPE_LIST[i]].natureMin
+          } else {
+            args[i] = selectedVal[i - this.startIndex]
+          }
+        }
+        // Month need to subtract 1.
+        args[1]--
+&nbsp;
+        return new Date(...args)
+      },
+      _range(type, min, max, fatherIsMin, fatherIsMax, year = 0) {
+        if (!this._rangeCache) {
+          this._rangeCache = {}
+        }
+        const k = type + year + min + max + fatherIsMin + fatherIsMax
+        if (this._rangeCache[k]) {
+          return this._rangeCache[k]
+        }
+        const arr = []
+        const format = this.formatConfig[type]
+        for (let i = min; i &lt;= max; i++) {
+          const object = {
+            text: formatType(type, format, i, 'i'),
+            value: i,
+            order: this.columnOrder.indexOf(type)
+          }
+&nbsp;
+          if (fatherIsMin &amp;&amp; i === min) object.isMin = true
+          if (fatherIsMax &amp;&amp; i === max) object.isMax = true
+          if (year) object.year = year
+&nbsp;
+          arr.push(object)
+        }
+        this._rangeCache[k] = arr
+        return arr
+      }
+    }
+  }
+&nbsp;
+  function dateToArray(date) {
+    return [date.getFullYear(), date.getMonth() + 1, date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds()]
+  }
+&lt;/script&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Mar 05 2020 16:13:07 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

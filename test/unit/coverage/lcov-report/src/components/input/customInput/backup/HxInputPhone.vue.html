@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/input/customInput/backup/HxInputPhone.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">src/components/input/customInput/backup/</a> HxInputPhone.vue
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.69% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">8.33% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/12</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+  &lt;binding-status-input
+    ref="bindingStatusInput"
+    :clearable="false"
+    :autocomplete="true"
+    :inputCheck="inputCheckPhone"
+    @statusChange="statusChange"
+  &gt;
+    &lt;template v-slot:append&gt;
+      &lt;!-- 功能按钮 | 清空、输入错误、输入正确 --&gt;
+      &lt;div class="hx-input-clear" @touchend="inputStatus.callback || (() =&gt; {})"&gt;
+        &lt;i :class="inputStatus.btnClass" :style="inputStatus.btnStyle"&gt;&lt;/i&gt;
+      &lt;/div&gt;
+    &lt;/template&gt;
+    &lt;template v-if="label" v-slot:prepend&gt;
+      {{label}}
+      &lt;!-- 投保人姓名 --&gt;
+    &lt;/template&gt;
+    &lt;template v-if="inputStatus.isShowErrorInfo" v-slot:rule-error&gt;
+      {{errorInfo}}
+      &lt;!-- 请输入投保人姓名 --&gt;
+    &lt;/template&gt;
+  &lt;/binding-status-input&gt;
+&lt;/template&gt;
+&nbsp;
+&lt;script&gt;
+import BindingStatusInput from './bindingStatusInput.js'
+&nbsp;
+const REGEXP_PHONE = /^1[3456789]\d{1}\d{4}\d{4}$/
+&nbsp;
+export default {
+  name: 'hx-input-phone',
+  components: {
+    BindingStatusInput
+  },
+  props: {
+    // 透传 props
+    ...BindingStatusInput.props,
+    label: String
+  },
+  data() {
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      phoneErrorInfo: '',
+      inputStatus: {}
+      // status: {
+      //   get() {
+      //     return this.status || 'normal'
+      //   },
+      //   set(status) {
+      //     if (status !== 'normal' &amp;&amp; status !== 'corrent' &amp;&amp; status !== 'wrong') {
+      //       // 错误处理
+      //       throw new Error('[hx-input-foundation] - Input status must be the enum: "normal" | "corrent" | "wrong"')
+      //     }
+      //     this.status = status
+      //   }
+      // }
+    }
+  },
+  created() {},
+  computed: {
+    // inputStatus() {
+    //   const nativeInput = this.$refs.bindingStatusInput
+    //   return nativeInput ? nativeInput.inputStatus : {
+    //     btnClass: 'cubeic-wrong',
+    //     callback: null,
+    //     isShowErrorInfo: false
+    //   }
+    // }
+  },
+  methods: {
+    /**
+     * 手机号码装饰器
+     * @example
+     *
+     * formatPhone('17610242070') -&gt; '176 1024 2070'
+     * formatPhone('1761024207086235') -&gt; '176 1024 2070 8623 5'
+     *
+     */
+    formatPhone(phone) {
+<span class="cstat-no" title="statement not covered" >      return Array.prototype.reduce.call(phone, (temp, num, i) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >temp + num + ((i % 4 === 2) ? ' ' : ''))</span></span></span>
+    },
+    inputCheckPhone() {
+<span class="cstat-no" title="statement not covered" >      if (!this.value /* 值校验不通过 */) {</span>
+<span class="cstat-no" title="statement not covered" >        this.phoneErrorInfo = '请输入手机号码！'</span>
+<span class="cstat-no" title="statement not covered" >        return false</span>
+      } else <span class="cstat-no" title="statement not covered" >if (!REGEXP_PHONE.test(this.value) || (this.value + '').length !== 11 /* 格式校验不通过 */) {</span>
+<span class="cstat-no" title="statement not covered" >        this.phoneErrorInfo = '请输入正确的手机号码！'</span>
+<span class="cstat-no" title="statement not covered" >        return false</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        return true</span>
+      }
+    },
+    statusChange(status) {
+      const nativeInput = <span class="cstat-no" title="statement not covered" >this.$refs.bindingStatusInput</span>
+<span class="cstat-no" title="statement not covered" >      this.inputStatus = nativeInput ? nativeInput.inputStatus : {</span>
+        btnClass: 'cubeic-wrong',
+        callback: null,
+        isShowErrorInfo: false
+      }
+    }
+  }
+}
+&lt;/script&gt;
+&nbsp;
+&lt;style lang="stylus" scoped&gt;
+.hx-input {
+  line-height: 1;
+  border: unset;
+  border-bottom: 1px solid #efefef;
+  font-weight: lighter;
+  font-size: 16px;
+}
+&nbsp;
+.hx-input-prepend {
+  width: 94px;
+  color: #333;
+}
+&nbsp;
+.hx-input-field {
+  padding: 18px 10px;
+  color: #333;
+&nbsp;
+  &amp;::-webkit-input-placeholder {
+    color: #ccc;
+  }
+}
+&nbsp;
+.hx-input_active {
+  &amp;::after {
+    border: unset;
+    border-bottom: 3px solid #1890ff;
+  }
+}
+&lt;/style&gt;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Mar 05 2020 16:13:07 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

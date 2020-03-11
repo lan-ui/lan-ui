@@ -1,0 +1,1010 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/form/form-item.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">src/components/form/</a> form-item.vue
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98.1% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>103/105</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">89.13% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>41/46</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>6/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98.08% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>102/104</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+  &lt;div class="cube-form-item border-bottom-1px" ref="formItem" :class="itemClass"&gt;
+    &lt;template v-if="!isBtnField"&gt;
+      &lt;slot name="label"&gt;
+        &lt;div class="cube-form-label" v-show="fieldValue.label"&gt;&lt;span&gt;{{fieldValue.label}}&lt;/span&gt;&lt;/div&gt;
+      &lt;/slot&gt;
+      &lt;cube-validator
+        class="cube-form-field"
+        v-if="hasRules"
+        ref="validator"
+        v-model="originValid"
+        :disabled="validatorDisabled"
+        :model="validatorModel"
+        :model-key="validatorModelKey"
+        :rules="fieldValue.rules"
+        :messages="fieldValue.messages"
+        @input="validatorChangeHandler"
+        @validating="validatingHandler"
+        @validated="validatedHandler"
+        @msg-click="msgClick"
+      &gt;
+        &lt;slot&gt;
+          &lt;component :is="componentName" v-model="modelValue" v-bind="fieldValue.props" v-on="fieldValue.events"&gt;&lt;/component&gt;
+        &lt;/slot&gt;
+      &lt;/cube-validator&gt;
+      &lt;div class="cube-form-field" v-else&gt;
+        &lt;slot&gt;
+          &lt;component :is="componentName" v-model="modelValue" v-bind="fieldValue.props" v-on="fieldValue.events"&gt;&lt;/component&gt;
+        &lt;/slot&gt;
+      &lt;/div&gt;
+    &lt;/template&gt;
+    &lt;cube-button v-bind="fieldValue.props" v-on="fieldValue.events" v-else&gt;{{fieldValue.label}}&lt;/cube-button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&nbsp;
+&lt;script&gt;
+  import { processField } from './fields/index'
+  import { resetTypeValue, cb2PromiseWithResolve, debounce } from '../../common/helpers/util'
+  import CubeValidator from '../validator/validator.vue'
+  import LAYOUTS from './layouts'
+  import { getResetValueByType } from './fields/reset'
+  import mixin from './mixin'
+  import components from './components'
+  components.CubeValidator = CubeValidator
+&nbsp;
+  const COMPONENT_NAME = 'cube-form-item'
+  const EVENT_FOCUSIN = 'focusin'
+  const EVENT_FOCUSOUT = 'focusout'
+&nbsp;
+  export default {
+    name: COMPONENT_NAME,
+    mixins: [mixin],
+    props: {
+      field: {
+        type: Object,
+        default() {
+          /* istanbul ignore next */
+          return {}
+        }
+      }
+    },
+    data() {
+      const validatorModelKey = 'value'
+      const modelKey = this.field.modelKey
+      const modelValue = modelKey ? this.form.model[modelKey] : null
+      return {
+        validatorDisabled: false,
+        validatorModelKey,
+        modelValue: modelValue,
+        validatorModel: {
+          [validatorModelKey]: modelValue
+        }
+      }
+    },
+    computed: {
+      fieldValue() {
+        return processField(this.field)
+      },
+      hasRules() {
+        return Object.keys(this.fieldValue.rules |<span class="branch-1 cbranch-no" title="branch not covered" >| {</span>}).length &gt; 0
+      },
+      isBtnField() {
+        return this.fieldValue.type === 'button'
+      },
+      itemClass() {
+        const rules = this.fieldValue.rules
+        return {
+          // only handle required rule for now
+          'cube-form-item_required': rules &amp;&amp; rules.required,
+          'cube-form-item_btn': this.isBtnField,
+          'cube-form-item_validating': this.validating,
+          'cube-form-item_pending': this.pending,
+          'cube-form-item_valid': this.valid,
+          'cube-form-item_invalid': this.invalid
+        }
+      },
+      modelVal() {
+        return this.form.model[this.fieldValue.modelKey]
+      },
+      componentName() {
+        const fieldValue = this.fieldValue
+        const component = fieldValue.component
+      <span class="missing-if-branch" title="if path not taken" >I</span>  if (component) {
+<span class="cstat-no" title="statement not covered" >          return componen</span>t
+        }
+        const type = fieldValue.type
+        const cubeType = `cube-${type}`
+        if (components[cubeType]) {
+          return cubeType
+        }
+        return type
+      }
+    },
+    watch: {
+      modelVal(newModel) {
+        if (this.modelValue !== newModel) {
+          this.modelValue = newModel
+        }
+      },
+      modelValue: {
+        handler(newModel) {
+          // update form model
+          this.form.model[this.fieldValue.modelKey] = newModel
+          this.updateValidatorModel()
+        },
+        sync: true
+      },
+      originValid(newVal) {
+        this.lastOriginValid = newVal
+      }
+    },
+    beforeCreate() {
+      this.form = this.$parent.form
+    },
+    created() {
+      this.form.addField(this)
+      this.getValidatorModel = (modelValue) =&gt; {
+        this.pending = false
+        return modelValue
+      }
+    },
+    mounted() {
+      this.initDebounce()
+      this.initFocusEvents()
+    },
+    methods: {
+      initDebounce() {
+        let debounceTime = this.fieldValue.debounce
+        if (debounceTime === true) {
+          debounceTime = 200
+        }
+        if ((!debounceTime &amp;&amp; debounceTime !== 0) || debounceTime &lt; 0 || this.fieldValue.trigger === 'blur') return
+        this.getValidatorModel = debounce((modelValue) =&gt; {
+          this.syncValidatorValue()
+          // this.validate()
+          return modelValue
+        }, debounceTime, false, this.validatorModel[this.validatorModelKey])
+      },
+      focusInHandler() {
+        this.focused = true
+      },
+      focusOutHandler() {
+        this.focused = false
+        this.updateValidatorModel()
+        // this.validate()
+      },
+      initFocusEvents() {
+        if (this.fieldValue.trigger === 'blur') {
+          const formItem = this.$refs.formItem
+          formItem.addEventListener(EVENT_FOCUSIN, this.focusInHandler, false)
+          formItem.addEventListener(EVENT_FOCUSOUT, this.focusOutHandler, false)
+          this.getValidatorModel = (modelValue) =&gt; {
+            if (this.focused) {
+              return this.validatorModel[this.validatorModelKey]
+            } else {
+              this.pending = false
+              this.form.updatePending()
+              return modelValue
+            }
+          }
+        }
+      },
+      removeFocusEvents() {
+        const formItem = this.$refs.formItem
+        formItem.removeEventListener(EVENT_FOCUSIN, this.focusInHandler, false)
+        formItem.removeEventListener(EVENT_FOCUSOUT, this.focusOutHandler, false)
+      },
+      updateValidatorModel() {
+        this.pending = true
+        this.validatorModel[this.validatorModelKey] = this.getValidatorModel(this.modelValue)
+        if (this.pending) {
+          this.form.setPending(this.pending)
+          this.originValid = undefined
+        }
+      },
+      syncValidatorValue() {
+        this.pending = false
+        this.validatorModel[this.validatorModelKey] = this.modelValue
+        this.form.updatePending()
+      },
+      validatorChangeHandler() {
+        // disabled or true to true no update validity
+        if (this.validatorDisabled || (this.originValid &amp;&amp; this.lastOriginValid)) {
+          return
+        }
+        this.updateValidity()
+      },
+      validatingHandler() {
+        this.validating = true
+        this.form.setValidating(true)
+      },
+      validatedHandler() {
+        this.validating = false
+        this.form.updateValidating()
+      },
+      updateValidity() {
+        const validator = this.$refs.validator
+      <span class="missing-if-branch" title="else path not taken" >E</span>  if (validator) {
+          // sync update validaty
+          this.form.updateValidity(this.fieldValue.modelKey, validator.valid, validator.result, validator.dirty)
+        }
+      },
+      validate(cb) {
+        const promise = cb2PromiseWithResolve(cb)
+      <span class="missing-if-branch" title="else path not taken" >E</span>  if (promise) {
+          cb = promise.resolve
+        }
+        const validator = this.$refs.validator
+        if (validator) {
+          validator.validate(() =&gt; {
+            this.validatorDisabled = true
+            this.updateValidity()
+            cb &amp;&amp; cb()
+            this.$nextTick(() =&gt; {
+              this.validatorDisabled = false
+            })
+          })
+        } else {
+          cb &amp;&amp; cb()
+        }
+        return promise
+      },
+      reset() {
+        const fieldValue = this.fieldValue
+        if (fieldValue.modelKey) {
+          const defValue = getResetValueByType(fieldValue.type)
+          this.validatorDisabled = true
+          resetTypeValue(this, 'modelValue', defValue)
+          // need to sync validator value too, because of trigger blur or debounce
+          this.syncValidatorValue()
+          this.$refs.validator &amp;&amp; this.$refs.validator.reset()
+          this.$nextTick(() =&gt; {
+            this.validatorDisabled = false
+          })
+        }
+        this.validating = false
+        this.pending = false
+      },
+      msgClick() {
+        /* istanbul ignore if */
+<span class="cstat-no" title="statement not covered" >        if (this.form.layout !== LAYOUTS.STANDARD) {</span>
+          return
+        }
+        /* istanbul ignore next */
+        this.$createToast &amp;&amp; this.$createToast({
+          type: 'warn',
+          txt: this.$refs.validator.msg,
+          time: 1000
+        }).show()
+      }
+    },
+    beforeDestroy() {
+      this.removeFocusEvents()
+      this.form.destroyField(this)
+      this.form = null
+    },
+    components
+  }
+&lt;/script&gt;
+&nbsp;
+&lt;style lang="stylus" rel="stylesheet/stylus"&gt;
+  @require "../../common/stylus/variable.styl"
+  @require "../../common/stylus/mixin.styl"
+&nbsp;
+  .cube-form-item
+    position: relative
+    display: flex
+    align-items: center
+    padding: 0 15px
+    &amp;:last-child
+      &amp;::after
+        display: none
+    .cube-checkbox-group, .cube-radio-group
+      background-color: transparent
+    .cube-checkbox, .cube-radio
+      padding-left: 0
+      padding-right: 0
+  .cube-form-item_btn
+    margin: 15px 0
+    &amp;::after
+      display: none
+  .cube-form-label
+    display: flex
+    align-items: center
+    word-wrap: break-word
+    word-break: break-word
+  .cube-form-item_required
+    .cube-form-label
+      &amp;::before
+        content: "*"
+        display: block
+        margin-top: 1px
+        margin-right: .3em
+        color: $form-label-required-color
+&lt;/style&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Mar 05 2020 16:13:07 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

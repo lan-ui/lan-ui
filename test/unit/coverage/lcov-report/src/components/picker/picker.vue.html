@@ -1,0 +1,1232 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/picker/picker.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">src/components/picker/</a> picker.vue
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.52% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>105/116</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">79.63% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>43/54</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">72.73% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>8/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.52% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>105/116</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">63×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">63×</span>
+<span class="cline-any cline-yes">63×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">51×</span>
+<span class="cline-any cline-yes">42×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">42×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">51×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">282×</span>
+<span class="cline-any cline-yes">267×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">63×</span>
+<span class="cline-any cline-yes">42×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">63×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+  &lt;transition name="cube-picker-fade"&gt;
+    &lt;!-- Transition animation need use with v-show in the same template. --&gt;
+    &lt;cube-popup
+      type="picker"
+      :mask="true"
+      :center="false"
+      :z-index="zIndex"
+      v-show="isVisible"
+      @touchmove.prevent
+      @mask-click="maskClick"&gt;
+      &lt;transition name="cube-picker-move"&gt;
+        &lt;div class="cube-picker-panel cube-safe-area-pb" v-show="isVisible" @click.stop&gt;
+          &lt;div class="cube-picker-choose border-bottom-1px"&gt;
+            &lt;span class="cube-picker-cancel" @click="cancel"&gt;{{_cancelTxt}}&lt;/span&gt;
+            &lt;span class="cube-picker-confirm" @click="confirm"&gt;{{_confirmTxt}}&lt;/span&gt;
+            &lt;div class="cube-picker-title-group"&gt;
+              &lt;h1 class="cube-picker-title" v-html="title"&gt;&lt;/h1&gt;
+              &lt;h2 v-if="subtitle" class="cube-picker-subtitle" v-html="subtitle"&gt;&lt;/h2&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+&nbsp;
+          &lt;div class="cube-picker-content"&gt;
+            &lt;i class="border-bottom-1px"&gt;&lt;/i&gt;
+            &lt;i class="border-top-1px"&gt;&lt;/i&gt;
+            &lt;div class="cube-picker-wheel-wrapper" ref="wheelWrapper"&gt;
+              &lt;div v-for="(data,index) in finalData" :key="index" :style="{ order: _getFlexOrder(data)}"&gt;
+                &lt;!-- The class name of the ul and li need be configured to BetterScroll. --&gt;
+                &lt;ul class="cube-picker-wheel-scroll"&gt;
+                  &lt;li v-for="(item,index) in data" class="cube-picker-wheel-item" :key="index" v-html="item[textKey]"&gt;
+                  &lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+&nbsp;
+          &lt;div class="cube-picker-footer"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/transition&gt;
+    &lt;/cube-popup&gt;
+  &lt;/transition&gt;
+&lt;/template&gt;
+&nbsp;
+&lt;script type="text/ecmascript-6"&gt;
+  import BScroll from 'better-scroll'
+  import CubePopup from '../popup/popup.vue'
+  import visibilityMixin from '../../common/mixins/visibility'
+  import popupMixin from '../../common/mixins/popup'
+  import basicPickerMixin from '../../common/mixins/basic-picker'
+  import pickerMixin from '../../common/mixins/picker'
+  import localeMixin from '../../common/mixins/locale'
+&nbsp;
+  const COMPONENT_NAME = 'cube-picker'
+&nbsp;
+  const EVENT_SELECT = 'select'
+  const EVENT_VALUE_CHANGE = 'value-change'
+  const EVENT_CANCEL = 'cancel'
+  const EVENT_CHANGE = 'change'
+&nbsp;
+  export default {
+    name: COMPONENT_NAME,
+    mixins: [visibilityMixin, popupMixin, basicPickerMixin, pickerMixin, localeMixin],
+    props: {
+      pending: {
+        type: Boolean,
+        default: false
+      }
+    },
+    data() {
+      return {
+        finalData: this.data.slice()
+      }
+    },
+    created() {
+      this._values = []
+      this._indexes = this.selectedIndex
+    },
+    methods: {
+      confirm() {
+        if (!this._canConfirm()) {
+          return
+        }
+        this.hide()
+&nbsp;
+        let changed = false
+        let pickerSelectedText = []
+&nbsp;
+        const length = this.finalData.length
+        const oldLength = this._values.length
+&nbsp;
+        // when column count has changed.
+        if (oldLength !== length) {
+          changed = true
+          oldLength &gt; length &amp;&amp;<span class="branch-1 cbranch-no" title="branch not covered" > (this._values.length = this._indexes.length = lengt</span>h)
+        }
+&nbsp;
+        for (let i = 0; i &lt; length; i++) {
+          let index = this.wheels[i].getSelectedIndex()
+          this._indexes[i] = index
+&nbsp;
+          let value = null
+          let text = ''
+          if (this.finalData[i].length) {
+            value = this.finalData[i][index][this.valueKey]
+            text = this.finalData[i][index][this.textKey]
+          }
+          if (this._values[i] !== value) {
+            changed = true
+          }
+          this._values[i] = value
+          pickerSelectedText[i] = text
+        }
+&nbsp;
+        this.$emit(EVENT_SELECT, this._values, this._indexes, pickerSelectedText)
+&nbsp;
+        if (changed) {
+          this.$emit(EVENT_VALUE_CHANGE, this._values, this._indexes, pickerSelectedText)
+        }
+      },
+      maskClick() {
+<span class="cstat-no" title="statement not covered" >        this.maskClosable &amp;&amp; this.cancel(</span>)
+      },
+      cancel() {
+        this.hide()
+        this.$emit(EVENT_CANCEL)
+      },
+      show() {
+      <span class="missing-if-branch" title="if path not taken" >I</span>  if (this.isVisible) {
+<span class="cstat-no" title="statement not covered" >          retur</span>n
+        }
+&nbsp;
+        this.isVisible = true
+        if (!this.wheels || this.dirty) {
+          this.$nextTick(() =&gt; {
+            this.wheels = this.wheels || []
+            let wheelWrapper = this.$refs.wheelWrapper
+            for (let i = 0; i &lt; this.finalData.length; i++) {
+              this._createWheel(wheelWrapper, i).enable()
+              this.wheels[i].wheelTo(this._indexes[i])
+            }
+            this.dirty &amp;&amp; this._destroyExtraWheels()
+            this.dirty = false
+          })
+        } else {
+          for (let i = 0; i &lt; this.finalData.length; i++) {
+            this.wheels[i].enable()
+            this.wheels[i].wheelTo(this._indexes[i])
+          }
+        }
+      },
+      hide() {
+        if (!this.isVisible) {
+          return
+        }
+        this.isVisible = false
+&nbsp;
+        for (let i = 0; i &lt; this.finalData.length; i++) {
+          this.wheels[i].disable()
+        }
+      },
+      setData(data, selectedIndex) {
+        this._indexes = selectedIndex ? [...selectedIndex] <span class="branch-1 cbranch-no" title="branch not covered" >: [</span>]
+        this.finalData = data.slice()
+        if (this.isVisible) {
+          this.$nextTick(() =&gt; {
+            const wheelWrapper = this.$refs.wheelWrapper
+            this.finalData.forEach((item, i) =&gt; {
+              this._createWheel(wheelWrapper, i)
+              this.wheels[i].wheelTo(this._indexes[i])
+            })
+            this._destroyExtraWheels()
+          })
+        } else {
+          this.dirty = true
+        }
+      },
+      refill(datas) {
+        let ret = []
+      <span class="missing-if-branch" title="if path not taken" >I</span>  if (!datas.length) {
+<span class="cstat-no" title="statement not covered" >          return re</span>t
+        }
+        datas.forEach((data, index) =&gt; {
+          ret[index] = this.refillColumn(index, data)
+        })
+        return ret
+      },
+      refillColumn(index, data) {
+        const wheelWrapper = this.$refs.wheelWrapper
+        let scroll = wheelWrapper.children[index].querySelector('.cube-picker-wheel-scroll')
+        let wheel = this.wheels ? this.wheels[index] <span class="branch-1 cbranch-no" title="branch not covered" >: fals</span>e
+        let dist = 0
+      <span class="missing-if-branch" title="else path not taken" >E</span>  if (scroll &amp;&amp; wheel) {
+          let oldData = this.finalData[index]
+          this.$set(this.finalData, index, data)
+          let selectedIndex = wheel.getSelectedIndex()
+        <span class="missing-if-branch" title="else path not taken" >E</span>  if (oldData.length) {
+            let oldValue = oldData[selectedIndex][this.valueKey]
+            for (let i = 0; i &lt; data.length; i++) {
+            <span class="missing-if-branch" title="if path not taken" >I</span>  if (data[i][this.valueKey] === oldValue) {
+<span class="cstat-no" title="statement not covered" >                dist = </span>i
+<span class="cstat-no" title="statement not covered" >                brea</span>k
+              }
+            }
+          }
+          this._indexes[index] = dist
+          this.$nextTick(() =&gt; {
+            // recreate wheel so that the wrapperHeight will be correct.
+            wheel = this._createWheel(wheelWrapper, index)
+            wheel.wheelTo(dist)
+          })
+        }
+        return dist
+      },
+      scrollTo(index, dist) {
+        const wheel = this.wheels[index]
+        this._indexes[index] = dist
+        wheel.wheelTo(dist)
+      },
+      refresh() {
+<span class="cstat-no" title="statement not covered" >        this.$nextTick(() =<span class="fstat-no" title="function not covered" >&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >          this.wheels.forEach((wheel) =<span class="fstat-no" title="function not covered" >&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            wheel.refresh(</span>)
+          })
+        })
+      },
+      _createWheel(wheelWrapper, i) {
+        if (!this.wheels[i]) {
+          const wheel = this.wheels[i] = new BScroll(wheelWrapper.children[i], {
+            wheel: {
+              selectedIndex: this._indexes[i] || 0,
+              wheelWrapperClass: 'cube-picker-wheel-scroll',
+              wheelItemClass: 'cube-picker-wheel-item'
+            },
+            swipeTime: this.swipeTime,
+            observeDOM: false
+          })
+          wheel.on('scrollEnd', () =&gt; {
+            this.$emit(EVENT_CHANGE, i, wheel.getSelectedIndex())
+          })
+        } else {
+          this.wheels[i].refresh()
+        }
+        return this.wheels[i]
+      },
+      _destroyExtraWheels() {
+        const dataLength = this.finalData.length
+      <span class="missing-if-branch" title="if path not taken" >I</span>  if (this.wheels.length &gt; dataLength) {
+          const extraWheels <span class="cstat-no" title="statement not covered" >= this.wheels.splice(dataLength</span>)
+<span class="cstat-no" title="statement not covered" >          extraWheels.forEach((wheel) =<span class="fstat-no" title="function not covered" >&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            wheel.destroy(</span>)
+          })
+        }
+      },
+      _canConfirm() {
+        return !this.pending &amp;&amp; this.wheels.every((wheel) =&gt; {
+          return !wheel.isInTransition
+        })
+      },
+      _getFlexOrder(data) {
+        if (data[0]) {
+          return data[0][this.orderKey]
+        }
+        return 0
+      }
+    },
+    beforeDestroy() {
+      this.wheels &amp;&amp; this.wheels.forEach((wheel) =&gt; {
+        wheel.destroy()
+      })
+      this.wheels = null
+    },
+    components: {
+      CubePopup
+    }
+  }
+&lt;/script&gt;
+&nbsp;
+&lt;style lang="stylus" rel="stylesheet/stylus"&gt;
+  @require "../../common/stylus/mixin.styl"
+  @require "../../common/stylus/variable.styl"
+&nbsp;
+  $picker-lr-padding = 16px
+&nbsp;
+  .cube-picker-fade-enter, .cube-picker-fade-leave-active
+    opacity: 0
+&nbsp;
+  .cube-picker-fade-enter-active, .cube-picker-fade-leave-active
+    transition: all .3s ease-in-out
+&nbsp;
+  .cube-picker-panel
+    height: 273px
+    text-align: center
+    font-size: $fontsize-medium
+    background: $picker-bgc
+&nbsp;
+  .cube-picker-move-enter, .cube-picker-move-leave-active
+    transform: translate3d(0, 100%, 0)
+&nbsp;
+  .cube-picker-move-enter-active, .cube-picker-move-leave-active
+    transition: all .3s ease-in-out
+&nbsp;
+  .cube-picker-choose
+    position: relative
+    height: 60px
+&nbsp;
+  .cube-picker-confirm, .cube-picker-cancel
+    font-size: $fontsize-medium
+    line-height: 60px
+    padding: 0 $picker-lr-padding
+    box-sizing: content-box
+    font-size: $fontsize-medium
+&nbsp;
+  .cube-picker-confirm
+    position: absolute
+    right: 0
+    color: $picker-confirm-btn-color
+    &amp;:active
+      color: $picker-confirm-btn-active-color
+&nbsp;
+  .cube-picker-cancel
+    position: absolute
+    left: 0
+    color: $picker-cancel-btn-color
+    &amp;:active
+      color: $picker-cancel-btn-active-color
+&nbsp;
+  .cube-picker-title-group
+    padding: 0 60px
+    display: flex
+    height: 100%
+    flex-flow: column
+    justify-content: center
+    text-align: center
+&nbsp;
+  .cube-picker-title
+    font-size: $fontsize-large-x
+    line-height: 25px
+    font-weight: normal
+    color: $picker-title-color
+&nbsp;
+  .cube-picker-subtitle
+    margin-top: 2px
+    line-height: 16px
+    font-size: $fontsize-small
+    color: $picker-subtitle-color
+&nbsp;
+  .cube-picker-content
+    position: relative
+    top: 20px
+    &gt; i
+      position: absolute
+      z-index: 10
+      left: 0
+      width: 100%
+      height: 68px
+      pointer-events: none
+      transform: translateZ(0)
+    &gt; .border-bottom-1px
+      top: 0
+      background: linear-gradient(to top, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.8))
+    &gt; .border-top-1px
+      bottom: 0
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.8))
+&nbsp;
+  .cube-picker-wheel-wrapper
+    display: flex
+    padding: 0 $picker-lr-padding
+    &gt; div
+      flex-fix()
+      height: 173px
+      overflow: hidden
+      font-size: $fontsize-large-xx
+&nbsp;
+  .cube-picker-wheel-scroll
+    padding: 0
+    margin-top: 68px
+    line-height: 36px
+    list-style: none
+&nbsp;
+  .cube-picker-wheel-item
+    list-style: none
+    height: 36px
+    overflow: hidden
+    white-space: nowrap
+    color: $picker-item-color
+&nbsp;
+  .cube-picker-footer
+    height: 20px
+&lt;/style&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Mar 05 2020 16:13:07 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>
