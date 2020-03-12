@@ -193,7 +193,7 @@
         this.isFocus = false
       },
       handleClear(e) {
-        debugger
+        // debugger
         this.inputValue = ''
         this.$refs.input.focus()
       },
