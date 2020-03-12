@@ -16,6 +16,7 @@ import CheckboxGroup from './modules/checkbox-group'
 import Checker from './modules/checker'
 import RadioGroup from './modules/radio-group'
 import Input from './modules/input'
+
 import Textarea from './modules/textarea'
 import Select from './modules/select'
 import Switch from './modules/switch'

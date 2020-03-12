@@ -60,6 +60,17 @@ import {
 import { processComponentName } from './common/helpers/util'
 import './rem'
 
+import {
+  HxInputFoundation,
+  HxInputPhone,
+  HxInputEmail,
+  HxInputIdcard,
+  HxInputAddress,
+  HxInputAccount,
+  HxInputAccountName,
+  HxInputPhoneverification
+} from './hx/modules'
+
 const components = [
   // locale
   Locale,
@@ -111,7 +122,16 @@ const components = [
   hxNationality,
   hxSex,
   hxLocation,
-  hxProvinces
+  hxProvinces,
+  // input
+  HxInputFoundation,
+  HxInputPhone,
+  HxInputEmail,
+  HxInputIdcard,
+  HxInputAddress,
+  HxInputAccount,
+  HxInputAccountName,
+  HxInputPhoneverification
 ]
 
 function install(Vue) {

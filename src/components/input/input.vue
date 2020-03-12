@@ -1,10 +1,13 @@
 <template>
-  <div class="cube-input" :class="{'cube-input_active': isFocus}">
-    <div class="cube-input-prepend" v-if="$slots.prepend">
+  <div class="hx-input" :class="{'hx-input_active': isFocus}">
+    <div class="hx-input-prepend" v-if="$slots.prepend">
       <slot name="prepend"></slot>
     </div>
+    <p class="hx-phone-section">
+      <slot name="phone"></slot>
+    </p>
     <input
-      class="cube-input-field"
+      class="hx-input-field"
       ref="input"
       v-model="inputValue"
       v-bind="$props"
@@ -17,21 +20,33 @@
       @blur="handleBlur"
       @change="changeHander"
     >
-    <div class="cube-input-append" v-if="$slots.append || _showClear || _showPwdEye">
-      <div class="cube-input-clear" v-if="_showClear" @touchend="handleClear">
+    <div class="hx-input-append" v-if="$slots.append || _showClear || _showPwdEye">
+      <div class="hx-input-clear" v-if="_showClear" @touchend="handleClear">
         <i class="cubeic-wrong"></i>
       </div>
-      <div class="cube-input-eye" v-if="_showPwdEye" @click="handlePwdEye">
+      <div class="hx-input-eye" v-if="_showPwdEye" @click="handlePwdEye">
         <i :class="eyeClass"></i>
       </div>
       <slot name="append"></slot>
     </div>
+    <!-- 增加 slot 错误信息 | start -->
+    <p class="hx-rule-error">
+      <slot name="rule-error"></slot>
+    </p>
+    <!-- 增加 slot 错误信息 | end -->
+    <!-- 邮箱后缀 -->
+    <p class="hx-email-suffix"> 
+      <slot name="emailSuffix"></slot>
+    </p>
+    <p > 
+      <slot name="verification"></slot>
+    </p>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import inputMixin from '../../common/mixins/input'
-  const COMPONENT_NAME = 'cube-input'
+  const COMPONENT_NAME = 'hx-input'
   const EVENT_INPUT = 'input'
   const EVENT_BLUR = 'blur'
   const EVENT_FOCUS = 'focus'
@@ -41,6 +56,7 @@
     mixins: [inputMixin],
     props: {
       value: [String, Number],
+      format: Function,
       type: {
         type: String,
         default: 'text'
@@ -72,7 +88,6 @@
       max: Number,
       step: Number,
       tabindex: String,
-      pattern: String,
       clearable: {
         type: [Boolean, Object],
         default: false
@@ -121,10 +136,19 @@
       eyeClass() {
         return this.formatedEye.open ? 'cubeic-eye-visible' : 'cubeic-eye-invisible'
       }
+      // inputValueFormat: {
+      //   get() {
+      //     return this.inputValue
+      //   },
+      //   set(val) {
+      //     this.inputValue = this.format ? this.format(val) : val
+      //   }
+      // }
     },
     watch: {
       value(newValue) {
         this.inputValue = newValue
+        // this.inputValueFormat = this.format ? this.format(newValue) : newValue
       },
       inputValue(newValue) {
         this.$emit(EVENT_INPUT, newValue)
@@ -160,6 +184,7 @@
         }
       },
       handleFocus(e) {
+        // debugger
         this.$emit(EVENT_FOCUS, e)
         this.isFocus = true
       },
@@ -168,6 +193,7 @@
         this.isFocus = false
       },
       handleClear(e) {
+        debugger
         this.inputValue = ''
         this.$refs.input.focus()
       },
@@ -175,20 +201,23 @@
         this.formatedEye.open = !this.formatedEye.open
       }
     }
+    // filters: {
+    //   inputFormat: this.format
+    // }
   }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
   @require "../../common/stylus/variable.styl"
   @require "../../common/stylus/mixin.styl"
 
-  .cube-input
+  .hx-input
     display: flex
     align-items: center
     font-size: $fontsize-medium
     line-height: 1.429
     background-color: $input-bgc
     border-1px($input-border-color)
-  .cube-input-field
+  .hx-input-field
     display: block
     flex: 1
     width: 100%
@@ -203,17 +232,17 @@
     &::-webkit-input-placeholder
       color: $input-placeholder-color
       text-overflow: ellipsis
-    + .cube-input-append
-      .cube-input-clear, .cube-input-eye
+    + .hx-input-append
+      .hx-input-clear, .hx-input-eye
         &:first-child
           margin-left: -5px
-  .cube-input_active
+  .hx-input_active
     &::after
       border-color: $input-focus-border-color
-  .cube-input-prepend, .cube-input-append
+  .hx-input-prepend, .hx-input-append
     display: flex
     align-items: center
-  .cube-input-clear, .cube-input-eye
+  .hx-input-clear, .hx-input-eye
     width: 1em
     height: 1em
     line-height: 1
@@ -223,8 +252,47 @@
     > i
       display: inline-block
       transform: scale(1.2)
-  .cube-input-eye
+  .hx-input-eye
     >
       .cubeic-eye-invisible, .cubeic-eye-visible
         transform: scale(1.4)
+  // slot 错误信息样式 | start
+  .hx-rule-error
+    position: absolute
+    bottom: -22px
+    font-size: 12px
+    color: #d81e06
+  // slot 错误信息样式 | end
+  // 邮箱后缀
+  .hx-email-suffix
+    position: absolute
+    top: 55px
+    font-size: 12px
+    color: #000
+    overflow:scroll 
+    max-height: 250px
+    width: 100%
+    z-index: 100
+  .hx-email-div
+    // height: 55px
+    border-bottom: 1px solid #ccc
+    background: #ffffff
+    line-height: 40px
+  .hx-phone-send
+    border-radius: 20px
+    background :#f1f6f5
+    font-size: 12px
+    color: #1890ff
+    padding:6px
+  .hx-phone-resend
+    border-radius: 20px
+    background :#f1f6f5
+    font-size: 12px
+    color: #ccc
+    padding:6px
+  .hx-phone-section
+    max-width:60px
+    display :flex
+    justify-content :flex-start
+    align-items :center
 </style>

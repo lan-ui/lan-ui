@@ -64,7 +64,6 @@
       -webkit-backface-visibility: hidden
       backface-visibility: hidden
       z-index: 5
-      
       h1
         font-size: 16px
         font-weight: 700

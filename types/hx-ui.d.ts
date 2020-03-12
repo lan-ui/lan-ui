@@ -3,22 +3,22 @@ import Vue from 'vue'
 import { HxComponent } from './component'
 
 /**
- * CubeUI 组件
- * CubeUI component common definition
+ * HxUI 组件
+ * HxUI component common definition
  */
 export type Component = HxComponent
 
 /**
  * 版本
  *
- * The version of cube-ui
+ * The version of hx-ui
  */
 export const version: string
 
 /**
- * 需通过 `Vue.use(Cube)` 来安装
+ * 需通过 `Vue.use(Hx)` 来安装
  *
- * Call `Vue.use(Cube)` to install
+ * Call `Vue.use(Hx)` to install
  */
 export function install (vue: typeof Vue): void
 
@@ -32,7 +32,7 @@ export class BScroll {}
  * API 形式实例化的组件
  *
  * You use it to create your own API component
- * more details: https://didi.github.io/cube-ui/#/en-US/docs/create-api
+ * more details: https://didi.github.io/hx-ui/#/en-US/docs/create-api
  */
 export function createAPI (vue: typeof Vue, Component: HxComponent, events?: string[], single?: boolean) : object
 

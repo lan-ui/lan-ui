@@ -2,7 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Cube from '../src/index'
+import Hx from '../src/index'
 import App from './App.vue'
 import router from './router'
 // import FastClick from 'fastclick'
@@ -15,7 +15,7 @@ window.Promise = window.Promise || Promise
 
 // FastClick.attach(document.body) //  hack the active pseudo-classes failure caused by -webkit-overflow-scrolling touch
 
-Vue.use(Cube)
+Vue.use(Hx)
 Vue.use(VueRouter)
 Vue.use(VueLazyload)
 

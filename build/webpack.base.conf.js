@@ -6,7 +6,6 @@ var webpack = require('webpack')
 var version = require('../package.json').version
 var anchor = require('markdown-it-anchor-cube')
 
-console.log(version)
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }

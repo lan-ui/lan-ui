@@ -14,7 +14,7 @@ module.exports = function (config) {
     browsers: ['PhantomJS_mobile'],
     browserDisconnectTimeout: 300000,
     browserNoActivityTimeout: 300000,
-    customLaunchers:{
+    customLaunchers: {
       PhantomJS_mobile: {
         base: 'PhantomJS',
         options: {
@@ -31,6 +31,8 @@ module.exports = function (config) {
       './index.js'
     ],
     preprocessors: {
+      '../src/**/*.js': ['webpack'],
+      './specs/**/*.js': ['webpack'],
       './index.js': ['webpack', 'sourcemap']
     },
     webpack: webpackConfig,

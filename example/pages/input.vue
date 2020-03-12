@@ -4,17 +4,79 @@
     title="Input"
     class="option-demo">
     <div slot="content">
-      <hx-input
-        :type="type"
-        :placeholder="placeholder"
-        :disabled="disabled"
-        :readonly="readonly"
-        :clearable="clearable"
-        :phone="phone"
-        :autocomplete="true"
-        :eye="eye"
-        v-model="value"
+      <!-- <hx-input
+        type="phone"
       ></hx-input>
+      <hx-input
+        type="idcard"
+      ></hx-input>
+      <hx-input
+        type="email"
+      ></hx-input> -->
+      <cube-input 
+        :type="'password'" 
+        placeholder="请输入密码" 
+        :clearable="clearable" 
+        :autocomplete="true" 
+        :eye="eye" 
+        v-model="value" 
+      >
+        <template v-slot:prepend>
+          slot-prepend
+        </template>
+      </cube-input>
+      <hx-input-phone 
+        ref="hx-input-phone"
+        :placeholder="'请输入手机号'"
+        :label="'手机号'"
+        :type="'phone'"
+        v-model="phoneValue" 
+      ></hx-input-phone>
+      <!-- xwb -->
+      <hx-input-email 
+        ref="hx-input-email"
+        :placeholder="'请输入邮箱地址'"
+        :label="'邮箱地址'"
+        :type="'email'" 
+        v-model="emailValue" 
+      ></hx-input-email>
+      <hx-input-idcard 
+        ref="hx-input-idcard"
+        :placeholder="'请输入身份证号码'"
+        :label="'身份证号码'"
+        :type="'idcard'"
+        v-model="idcardValue" 
+      ></hx-input-idcard>
+      <hx-input-address 
+        ref="hx-input-address"
+        :placeholder="'请输入街道(小区)门牌号'"
+        :label="'详细地址'"
+        :type="'address'"
+        v-model="addressValue" 
+      ></hx-input-address>
+      <hx-input-accountName
+        ref="hx-input-accountName"
+        :placeholder="'请输入账号名'"
+        :label="'账号名'"
+        :type="'accountName'"
+        v-model="accountNameValue" 
+      ></hx-input-accountName>
+      <hx-input-account
+        ref="hx-input-account"
+        :placeholder="'请输入账号'"
+        :label="'账号'"
+        :type="'account'"
+        @binkList="binkList"
+        v-model="accountValue" 
+      ></hx-input-account>
+      <hx-input-verification 
+        ref="hx-input-verification"
+        :placeholder="'请输入手机验证码'"
+        :label="'手机验证码'"
+        :type="'verification'"
+        v-model="verificationValue" 
+      ></hx-input-verification>
+      <!-- xwb --> 
       <div class="value">value: {{value}}</div>
       <div class="options">
         <div class="option-list">
@@ -57,15 +119,27 @@
 </template>
 
 <script type="text/ecmascript-6">
+  // import WithConsole from '@/components/input/hoc.js'
+  import CubeInput from '@/components/input/input.vue'
+  import { HxInputPhone, HxInputEmail, HxInputIdcard, HxInputAddress, HxInputAccount, HxInputVerification, HxInputAccountName } from '@/components/input/customInput/index.js'
   import CubePage from '../components/cube-page.vue'
   import SwitchOption from '../components/switch-option'
+
+  // const CubeInputWithConsole = WithConsole('cube-input-with-console', CubeInput)
 
   export default {
     data() {
       return {
-        // type: 'idcard',
-        type: 'email',
+        type: '',
+        // type: 'email',
         value: '',
+        phoneValue: '',
+        emailValue: '',
+        idcardValue: '',
+        addressValue: '',
+        accountValue: '',
+        accountNameValue: '',
+        verificationValue: '',
         disabled: false,
         useClear: true,
         maxlength10: false,
@@ -76,11 +150,18 @@
         showEye: true,
         pwdVisible: true,
         reverse: false,
-        placeholder: 'please type here...',
-        list: []
+        placeholder: 'please type here...'
       }
     },
     computed: {
+      // phoneValueFormated: {
+      //   set(val) {
+      //     this.phoneValue = this.$refs['hx-input-phone'].formatPhone(val)
+      //   },
+      //   get() {
+      //     return this.phoneValue
+      //   }
+      // },
       clearable() {
         if (this.type === 'phone') {
           this.placeholder = '请输入手机号码'
@@ -117,16 +198,16 @@
         }
       }
     },
-    watch: {
-      value(newV) {
-        if (this.maxlength10 && newV.length > 10) {
-          newV = newV.slice(0, 10)
-          this.$nextTick(() => {
-            this.value = newV
-          })
-        }
-      }
-    },
+    // watch: {
+    //   value(newV) {
+    //     if (this.maxlength10 && newV.length > 10) {
+    //       newV = newV.slice(0, 10)
+    //       this.$nextTick(() => {
+    //         this.value = newV
+    //       })
+    //     }
+    //   }
+    // },
     methods: {
       updateDisabled(val) {
         this.disabled = val
@@ -161,9 +242,23 @@
       },
       updateReverse(val) {
         this.reverse = val
+      },
+      // 子组件传的开户行名称
+      binkList(e) {
+        var bankList = {}
+        bankList = e
+        console.log(bankList.text)
       }
     },
     components: {
+      CubeInput,
+      HxInputPhone,
+      HxInputEmail,
+      HxInputIdcard,
+      HxInputAddress,
+      HxInputAccount,
+      HxInputAccountName,
+      HxInputVerification,
       CubePage,
       SwitchOption
     }

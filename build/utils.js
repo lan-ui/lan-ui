@@ -11,6 +11,13 @@ exports.assetsPath = function (_path) {
 }
 
 exports.cssLoaders = function (options) {
+
+  // options: {
+  //   sourceMap: isProduction
+  //     ? config.build.productionSourceMap
+  //     : config.dev.cssSourceMap,
+  //   extract: isProduction
+  // }
   options = options || {}
 
   var cssLoader = {
