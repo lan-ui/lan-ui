@@ -1,4 +1,4 @@
-## HxCertificatetype
+## HxCertificatetype 证件类型
 
 > 1.0.0 新增通用组件
 

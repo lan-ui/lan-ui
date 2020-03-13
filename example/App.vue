@@ -55,6 +55,14 @@
               {
                 path: '/hx-provinces',
                 text: 'HxProvinces'
+              },
+              {
+                path: '/hx-birthdate',
+                text: 'HxBirthdate'
+              },
+              {
+                path: '/hx-validity',
+                text: 'HxValidity'
               }
             ]
           },

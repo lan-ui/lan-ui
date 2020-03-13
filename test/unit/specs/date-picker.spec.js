@@ -18,36 +18,37 @@ describe('DatePicker', () => {
     expect(Vue.component(DatePicker.name))
       .to.be.a('function')
   })
-
+// 生成内容结构
   it('should render correct contents', function () {
     vm = createDatePicker({
       min: new Date(2008, 7, 8),
       max: new Date(2020, 9, 20)
     })
-
+// .cube-picker-wheel-wrapper里面的div
     const wheels = vm.$el.querySelectorAll('.cube-picker-wheel-wrapper > div')
     expect(wheels.length)
       .to.equal(3)
-
+// 测试生成的年份
     const firstWheelItems = wheels[0].querySelectorAll('li')
     expect(firstWheelItems.length)
       .to.equal(13)
+      // 第二个是2009
     expect(firstWheelItems[1].textContent.trim())
       .to.equal('2009')
-
+// 月份
     const secondWheelItems = wheels[1].querySelectorAll('li')
     expect(secondWheelItems.length)
       .to.equal(5)
     expect(secondWheelItems[1].textContent.trim())
       .to.equal('9')
-
+// 日
     const thirdWheelItems = wheels[2].querySelectorAll('li')
     expect(thirdWheelItems.length)
       .to.equal(24)
     expect(thirdWheelItems[1].textContent.trim())
       .to.equal('9')
   })
-
+// 测试startColumn和columnCount
   it('should render correct contents when configured startColumn and columnCount', function (done) {
     this.timeout(10000)
 
@@ -82,7 +83,7 @@ describe('DatePicker', () => {
       done()
     }, 50)
   })
-
+// 测试日期格式
   it('should render correct contents when configured format', function () {
     vm = createDatePicker({
       min: new Date(2008, 7, 8),
@@ -116,7 +117,7 @@ describe('DatePicker', () => {
     expect(thirdWheelItems[1].textContent.trim())
       .to.equal('第 9 日')
   })
-
+// 测试columnOrder的配置选项
   it('should render correct contents when configured columnOrder', function () {
     vm = createDatePicker({
       min: new Date(2008, 7, 8),
@@ -129,7 +130,7 @@ describe('DatePicker', () => {
     expect(wheels[1].style.webkitOrder || wheels[1].style.order).to.equal('0')
     expect(wheels[2].style.webkitOrder || wheels[2].style.order).to.equal('1')
   })
-
+// selectHandle、cancelHandle、changeHandle事件
   it('should trigger events', function (done) {
     this.timeout(10000)
 
@@ -185,7 +186,7 @@ describe('DatePicker', () => {
       }, 1000)
     }, 150)
   })
-
+// show()和hide()方法
   it('should call methods', function (done) {
     this.timeout(10000)
 
@@ -201,7 +202,7 @@ describe('DatePicker', () => {
       done()
     }, 100)
   })
-
+// single为真、应该显示警告信息
   it('should add warn log when single is true', () => {
     const app = new Vue()
     const originWarn = console.warn

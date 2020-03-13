@@ -55,7 +55,9 @@ import {
   hxNationality,
   hxSex,
   hxLocation,
-  hxProvinces
+  hxProvinces,
+  HxValidity,
+  HxBirthdate
 } from './module'
 import { processComponentName } from './common/helpers/util'
 import './rem'
@@ -123,6 +125,8 @@ const components = [
   hxSex,
   hxLocation,
   hxProvinces,
+  HxValidity,
+  HxBirthdate,
   // input
   HxInputFoundation,
   HxInputPhone,

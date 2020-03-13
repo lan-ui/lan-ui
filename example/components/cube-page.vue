@@ -52,7 +52,7 @@
     left: 0
     width: 100%
     height: 100%
-    background: #efeff4;
+    background: #fff;
     display flexbox
     .header
       position: relative

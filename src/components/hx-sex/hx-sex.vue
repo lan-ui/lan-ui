@@ -63,8 +63,6 @@
 <style lang="stylus" rel="stylesheet/stylus">
   @require "../../common/stylus/variable.styl"
   @require "../../common/stylus/mixin.styl"
-  .cube-page
-    background: #fff
   .hx-sex
     margin: 0 30px
     height: 50px

@@ -16,7 +16,6 @@ import CheckboxGroup from './modules/checkbox-group'
 import Checker from './modules/checker'
 import RadioGroup from './modules/radio-group'
 import Input from './modules/input'
-
 import Textarea from './modules/textarea'
 import Select from './modules/select'
 import Switch from './modules/switch'
@@ -59,6 +58,8 @@ import hxNationality from './modules/hx-nationality'
 import hxSex from './modules/hx-sex'
 import hxLocation from './modules/hx-location'
 import hxProvinces from './modules/hx-provinces'
+import HxBirthdate from './modules/hx-birthdate'
+import HxValidity from './modules/hx-validity'
 
 const FormGroup = Form.Group
 const FormItem = Form.Item
@@ -140,5 +141,7 @@ export {
   hxNationality,
   hxSex,
   hxLocation,
-  hxProvinces
+  hxProvinces,
+  HxValidity,
+  HxBirthdate
 }

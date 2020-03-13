@@ -78,6 +78,8 @@ import hxCertificatetype from '../pages/hx-certificatetype.vue'
 import hxNationality from '../pages/hx-nationality.vue'
 import hxLocation from '../pages/hx-location.vue'
 import hxProvinces from '../pages/hx-provinces.vue'
+import HxBirthdate from '../pages/hx/hx-birthdate.vue'
+import HxValidity from '../pages/hx/hx-validity.vue'
 
 const routes = [
   {
@@ -103,6 +105,14 @@ const routes = [
   {
     path: '/hx-provinces',
     component: hxProvinces
+  },
+  {
+    path: '/hx-validity',
+    component: HxValidity
+  },
+  {
+    path: '/hx-birthdate',
+    component: HxBirthdate
   },
   {
     path: '/button',

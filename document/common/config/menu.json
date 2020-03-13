@@ -109,7 +109,9 @@
             "hx-certificatetype": "HxCertificatetype",
             "hx-nationality": "HxNationality",
             "hx-location": "HxLocation",
-            "hx-provinces": "HxProvinces"
+            "hx-provinces": "HxProvinces",
+            "hx-birthdate": "HxBirthdate",
+            "hx-validity": "HxValidity"
           }
         },
         "basic": {

@@ -12,6 +12,10 @@ selenium-debug.log
 cube-ui-*.tgz
 package/
 
+# build files
+docs/
+lib/
+
 # Editor directories and files
 .idea
 .vscode
@@ -19,3 +23,4 @@ package/
 *.ntvs*
 *.njsproj
 *.sln
+

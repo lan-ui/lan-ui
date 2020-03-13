@@ -1,4 +1,4 @@
-## HxProvince
+## HxProvince 开户行所在省市
 
 > 1.0.0 新增通用组件
 
