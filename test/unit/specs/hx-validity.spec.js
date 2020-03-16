@@ -2,7 +2,7 @@ import Vue from 'vue2'
 import HxValitity from '@/modules/hx-validity'
 import createVue from '../utils/create-vue'
 
-describe('HxValitity.vue', () => {
+describe('HxValitity', () => {
   let vm
   afterEach(() => {
     if (vm) {
@@ -17,7 +17,6 @@ describe('HxValitity.vue', () => {
   })
   it('HTML', () => {
     vm = createHxvalidity(false, 24, '', [2022, 4, 20], false, false)
-    console.log(vm)
     expect(vm.$el.className)
       .to.be.equal('validity')
     expect(vm.$el.querySelector('.text'))
@@ -81,7 +80,7 @@ let event = {
 function createHxvalidity(warning, age, validity, validityArray, readonly, disabled) {
   const vm = createVue({
     template: `
-    <hx-validity :age="age" :warning="warning" :validity="validity" :validityArray="validityArray" :readonly="readonly" :disabled="disabled" @receive="handleSelect" :isLongTerm="isLongTerm"></hx-validity>
+    <hx-validity :age="age" :warning="warning" :validity="validity" :validityArray="validityArray" :readonly="readonly" :disabled="disabled" @receive="handleSelect"></hx-validity>
     `,
     data() {
       return {

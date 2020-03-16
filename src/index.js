@@ -1,7 +1,6 @@
 import {
   HxValidity,
   HxBirthdate,
-  HxSlide,
   /* eslint-disable no-unused-vars */
   Style,
   // locale
@@ -57,7 +56,6 @@ import { processComponentName } from './common/helpers/util'
 const components = [
   HxValidity,
   HxBirthdate,
-  HxSlide,
   // locale
   Locale,
   // basic
