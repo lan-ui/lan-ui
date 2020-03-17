@@ -1,5 +1,5 @@
 <template>
-  <cube-page  title="HxBank">
+  <cube-page  title="HxBank" class="hx">
     <div slot="content">
       <div>
         <hx-bank @selected="selected" ref="hxValidate"></hx-bank>
@@ -82,7 +82,7 @@
 </script>
 
 <style lang="stylus">
-  #app .cube-page >.wrapper .content
+  .cube-page.hx >.wrapper .content
     margin: 10px 0
   .hx-submit.cube-btn
     margin-top: 20px

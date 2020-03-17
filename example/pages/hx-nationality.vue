@@ -1,5 +1,5 @@
 <template>
-  <cube-page  title="HxNationality">
+  <cube-page  title="HxNationality" class="hx">
     <div slot="content">
       <div>
         <hx-nationality :readonly="false" @selected="selected" ref="hxValidate"></hx-nationality>
@@ -77,7 +77,7 @@
 </script>
 
 <style lang="stylus">
-  #app .cube-page >.wrapper .content
+  .cube-page.hx >.wrapper .content
     margin: 10px 0
   .hx-submit.cube-btn
     margin-top: 20px

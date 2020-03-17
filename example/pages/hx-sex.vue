@@ -1,5 +1,5 @@
 <template>
-  <cube-page  title="HxSex">
+  <cube-page  title="HxSex" class="hx">
     <template slot="content">
       <div class="hx-sex-wrapper">
         <hx-sex :options="sexs" v-model="sexSelect"></hx-sex>
@@ -77,7 +77,7 @@
 </script>
 
 <style lang="stylus">
-  #app .cube-page >.wrapper .content
+  .cube-page.hx >.wrapper .content
     margin: 10px 0
   .hx-submit.cube-btn
     margin-top: 20px

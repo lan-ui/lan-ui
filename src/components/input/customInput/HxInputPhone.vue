@@ -58,7 +58,7 @@ export default {
       // debugger
       var phoneLength = 11
       var REGEXP_PHONE = /^1[3456789]\d{1}\d{4}\d{4}$/
-      debugger
+      // debugger
       if (this.phoneType === '+86') {
         // 大陆号码
         console.log(this.phoneType)

@@ -9,12 +9,15 @@ $color-light-grey-s
   line-height: 50px;
   font-size: 16px;
   color: $color-dark-grey;
+  border-bottom: 1px solid #eee;
+  overflow: hidden
   .hx-select-title
     float: left;
     width: 112px;
     font-size: 16px;
     text-align: left;
   i
+    float: right;
     color: #1890FF;
     font-size:22px;
     vertical-align: middle;
@@ -28,10 +31,12 @@ $color-light-grey-s
   .select-main-info
     height: 50px;
     line-height: 50px;
-    border-bottom: 1px solid #eee;
-    span
-      display: inline-block;
-      width: 180px;
+    overflow: hidden;
+    input
+      float: left;
+      width: 166px;
+      height: 50px;
+      line-height: 50px;
   &[data-pos="right"]
     .main-info-selected,
     .select-main-info

@@ -1,5 +1,5 @@
 <template>
-  <cube-page  title="HxCertificatetype">
+  <cube-page  title="HxCertificatetype" class="hx">
     <div slot="content">
       <div>
         <hx-certificatetype :readonly="false"  @selected="selected" ref="hxValidate"></hx-certificatetype>
@@ -77,7 +77,7 @@
 </script>
 
 <style lang="stylus">
-  #app .cube-page >.wrapper .content
+  .cube-page.hx >.wrapper .content
     margin: 10px 0
   .hx-submit.cube-btn
     margin-top: 20px
