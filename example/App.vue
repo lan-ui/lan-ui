@@ -117,6 +117,34 @@
                 text: 'Input'
               },
               {
+                path: '/phone',
+                text: 'Phone'
+              },
+              {
+                path: '/email',
+                text: 'Email'
+              },
+              {
+                path: '/idnumber',
+                text: 'Idnumber'
+              },
+              {
+                path: '/address',
+                text: 'Address'
+              },
+              {
+                path: '/account-name',
+                text: 'AccountName'
+              },
+              {
+                path: '/account-number',
+                text: 'AccountNumber'
+              },
+              {
+                path: '/phoneverification',
+                text: 'Phoneverification'
+              },
+              {
                 path: '/textarea',
                 text: 'Textarea'
               },

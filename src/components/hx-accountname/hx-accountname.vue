@@ -4,6 +4,8 @@
     :value="value"
     :label="label"
     :type="type"
+    :readonly="readonly"
+    :disabled="disabled"
     :placeholder="placeholder"
     :inputCheck="inputCheckAccuntName"
     :errorInfo="accuntNameErrorInfo"
@@ -13,7 +15,7 @@
 </template>
 
 <script>
-import HxInputFoundation from './HxInputFoundation.vue'
+import HxInputFoundation from '../hx-input-fdn/hx-input-fdn'
 
 const REGEXP_ACCUNTNAME1 = /^[\u4e00-\u9fa5]{2,}$/
 const REGEXP_ACCUNTNAME2 = /^[A-Za-z ]+$/

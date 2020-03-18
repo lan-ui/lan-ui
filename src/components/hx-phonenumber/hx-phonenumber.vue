@@ -4,17 +4,21 @@
     :value="value"
     :label="label"
     :type="type"
+    :readonly="readonly"
+    :disabled="disabled"
+    :eye="eye"
     :placeholder="placeholder"
     :inputCheck="inputCheckPhone"
     :errorInfo="phoneErrorInfo"
     @input="handleInput"
     @defaultPhone="defaultPhone"
+    @clickEye="clickEye"
   >
   </hx-input-foundation>
 </template>
 
 <script>
-import HxInputFoundation from './HxInputFoundation.vue'
+import HxInputFoundation from '../hx-input-fdn/hx-input-fdn'
 
 // const REGEXP_PHONE = /^1[3456789]\d{1}\d{4}\d{4}$/
 
@@ -31,7 +35,8 @@ export default {
   data() {
     return {
       phoneErrorInfo: '',
-      phoneType: '+86'
+      phoneType: '+86',
+      eyeVal: []
       // inputValue: ''
     }
   },
@@ -45,7 +50,6 @@ export default {
      *
      */
     formatPhone(phone) {
-      // debugger
       if (!phone) return ''
       const res = Array.prototype.reduce.call(this.deFormatPhone(phone), (temp, num, i) => temp + num + ((i % 4 === 2) ? ' ' : ''))
       // console.log('res', res)
@@ -55,7 +59,7 @@ export default {
       return phone.replace(/\s/g, '')
     },
     inputCheckPhone(phone) {
-      // debugger
+      console.log(this.eye)
       var phoneLength = 11
       var REGEXP_PHONE = /^1[3456789]\d{1}\d{4}\d{4}$/
       // debugger
@@ -93,13 +97,30 @@ export default {
       }
     },
     defaultPhone(e) {
-      console.log(e)
+      // console.log(e)
       this.phoneType = e
     },
     handleInput(e) {
       // debugger
       // this.inputValue = this.value
       this.$emit('input', this.formatPhone(e))
+    },
+    clickEye(e) {
+      this.eyeVal.push(this.value.replace(/\s/g, ''))
+      console.log(e)
+      console.log(this.eyeVal[0])
+      var val = this.value.replace(/\s/g, '')
+      // val = '1111'
+      // console.log(val)
+      // debugger
+      if (e === true) {
+        this.$emit('input', this.eyeVal[0])
+      } else {
+        var str1 = val.slice(0, 3)
+        var str2 = val.slice(7, 11)
+        var str3 = str1 + '****' + str2
+        this.$emit('input', str3)
+      }
     }
   }
 }

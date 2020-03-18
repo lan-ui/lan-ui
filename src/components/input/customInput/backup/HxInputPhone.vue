@@ -112,8 +112,13 @@ export default {
 }
 
 .hx-input-prepend {
-  width: 94px;
-  color: #333;
+  // width: 94px;
+  // color: #333;
+  font-size:16px;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  width: 114px;
 }
 
 .hx-input-field {

@@ -1,10 +1,14 @@
 <template>
-  <div class="cube-input" :class="{'cube-input_active': isFocus}">
-    <div class="cube-input-prepend" v-if="$slots.prepend">
+  <div class="hx-input hx-input_normal" :class="{'hx-input_active': isFocus&&!readonly}">
+    <div class="hx-input-prepend" v-if="$slots.prepend">
       <slot name="prepend"></slot>
     </div>
+    <p class="hx-phone-section">
+      <slot name="phone"></slot>
+    </p>
     <input
-      class="cube-input-field"
+      class="hx-input-field"
+      :class="{'hx-input_disabled': disabled}"
       ref="input"
       v-model="inputValue"
       v-bind="$props"
@@ -17,29 +21,43 @@
       @blur="handleBlur"
       @change="changeHander"
     >
-    <div class="cube-input-append" v-if="$slots.append || _showClear || _showPwdEye">
-      <div class="cube-input-clear" v-if="_showClear" @touchend="handleClear">
+    <div class="hx-input-append" v-if="$slots.append || _showClear || _showPwdEye">
+      <div class="hx-input-clear" v-if="_showClear&&!readonly" @touchend="handleClear">
         <i class="cubeic-wrong"></i>
       </div>
-      <div class="cube-input-eye" v-if="_showPwdEye" @click="handlePwdEye">
+      <div class="hx-input-eye" v-if="_showPwdEye" @click="handlePwdEye">
         <i :class="eyeClass"></i>
       </div>
-      <slot name="append"></slot>
+      <slot name="append" v-if="!_showPwdEye&&!readonly"></slot>
     </div>
+    <!-- 增加 slot 错误信息 | start -->
+    <p class="hx-rule-error">
+      <slot name="rule-error"></slot>
+    </p>
+    <!-- 增加 slot 错误信息 | end -->
+    <!-- 邮箱后缀 -->
+    <p class="hx-email-suffix"> 
+      <slot name="emailSuffix"></slot>
+    </p>
+    <p > 
+      <slot name="verification"></slot>
+    </p>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import inputMixin from '../../common/mixins/input'
-  const COMPONENT_NAME = 'cube-input'
+  const COMPONENT_NAME = 'hx-input'
   const EVENT_INPUT = 'input'
   const EVENT_BLUR = 'blur'
   const EVENT_FOCUS = 'focus'
+
   export default {
     name: COMPONENT_NAME,
     mixins: [inputMixin],
     props: {
       value: [String, Number],
+      format: Function,
       type: {
         type: String,
         default: 'text'
@@ -71,7 +89,6 @@
       max: Number,
       step: Number,
       tabindex: String,
-      pattern: String,
       clearable: {
         type: [Boolean, Object],
         default: false
@@ -104,7 +121,6 @@
         return type
       },
       _showClear() {
-        // debugger
         let visible = this.formatedClearable.visible && this.inputValue && !this.readonly && !this.disabled
         if (this.formatedClearable.blurHidden && !this.isFocus) {
           visible = false
@@ -112,7 +128,9 @@
         return visible
       },
       _showPwdEye() {
-        return this.type === 'password' && this.eye && !this.disabled
+        // debugger
+        // console.log(this.type, '====', this.eye, '=======', this.disabled)
+        return (this.type === 'password' || this.type === 'phone' || this.type === 'idcard' || this.type === 'account') && this.eye && !this.disabled
       },
       pwdVisible() {
         const eye = this.formatedEye
@@ -121,13 +139,23 @@
       eyeClass() {
         return this.formatedEye.open ? 'cubeic-eye-visible' : 'cubeic-eye-invisible'
       }
+      // inputValueFormat: {
+      //   get() {
+      //     return this.inputValue
+      //   },
+      //   set(val) {
+      //     this.inputValue = this.format ? this.format(val) : val
+      //   }
+      // }
     },
     watch: {
       value(newValue) {
         this.inputValue = newValue
+        // this.inputValueFormat = this.format ? this.format(newValue) : newValue
       },
       inputValue(newValue) {
         this.$emit(EVENT_INPUT, newValue)
+        // console.log(this.type)
       },
       clearable: {
         handler() {
@@ -160,6 +188,7 @@
         }
       },
       handleFocus(e) {
+        // console.log(this.eye, 'input页面')
         this.$emit(EVENT_FOCUS, e)
         this.isFocus = true
       },
@@ -173,21 +202,30 @@
       },
       handlePwdEye() {
         this.formatedEye.open = !this.formatedEye.open
+        // console.log(this.type, this.formatedEye.open)
+        this.$emit('clickEye', this.formatedEye.open)
       }
     }
+    // filters: {
+    //   inputFormat: this.format
+    // }
   }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
   @require "../../common/stylus/variable.styl"
   @require "../../common/stylus/mixin.styl"
-  .cube-input
+
+  .hx-input
+    margin-left:20px
+    margin-right :20px
     display: flex
     align-items: center
     font-size: $fontsize-medium
     line-height: 1.429
     background-color: $input-bgc
     border-1px($input-border-color)
-  .cube-input-field
+    // padding-left: 0.3rem
+  .hx-input-field
     display: block
     flex: 1
     width: 100%
@@ -202,17 +240,20 @@
     &::-webkit-input-placeholder
       color: $input-placeholder-color
       text-overflow: ellipsis
-    + .cube-input-append
-      .cube-input-clear, .cube-input-eye
+    + .hx-input-append
+      .hx-input-clear, .hx-input-eye
         &:first-child
           margin-left: -5px
-  .cube-input_active
+  // .hx-input_normal
+  //     &::after
+      // border-color: $input-focus-border-color
+  .hx-input_active
     &::after
       border-color: $input-focus-border-color
-  .cube-input-prepend, .cube-input-append
+  .hx-input-prepend, .hx-input-append
     display: flex
     align-items: center
-  .cube-input-clear, .cube-input-eye
+  .hx-input-clear, .hx-input-eye
     width: 1em
     height: 1em
     line-height: 1
@@ -222,8 +263,65 @@
     > i
       display: inline-block
       transform: scale(1.2)
-  .cube-input-eye
+  .hx-input-eye
     >
       .cubeic-eye-invisible, .cubeic-eye-visible
         transform: scale(1.4)
+  // slot 错误信息样式 | start
+  .hx-rule-error
+    position: absolute
+    bottom: -22px
+    font-size: 12px
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: rgba(216,30,6,1);
+  // slot 错误信息样式 | end
+  // 邮箱后缀
+  .hx-email-suffix
+    position: absolute
+    top: 55px
+    font-size: 12px
+    color: #000
+    overflow:scroll 
+    max-height: 250px
+    width: 100%
+    z-index: 100
+  .hx-email-div
+    // height: 55px
+    border-bottom: 1px solid #ccc
+    background: #ffffff
+    line-height: 40px
+  .hx-phone-send
+    border-radius: 20px
+    background :#f1f6f5
+    font-size: 12px
+    // color: #1890ff
+    padding:6px
+    // width :80px
+    // font-size:24px;
+    font-family:PingFang SC;
+    font-weight:500;
+    color:rgba(24,144,255,1);
+    text-align: center
+    padding:7px 10px
+  .hx-phone-resend
+    border-radius: 20px
+    background :#f1f6f5
+    font-size: 12px
+    color: #ccc
+    padding:6px
+    // width :80px
+    font-family:PingFang SC;
+    font-weight:500;
+    color:rgba(204,204,204,1);
+    padding:7px 5px
+  .hx-phone-section
+    max-width:60px
+    display :flex
+    justify-content :flex-start
+    align-items :center
+    font-size:16px;
+    font-family:PingFang SC;
+    font-weight:500;
+    color:rgba(51,51,51,1);
 </style>

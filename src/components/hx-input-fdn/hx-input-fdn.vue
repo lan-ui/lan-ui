@@ -2,14 +2,19 @@
   <hx-input
     ref="hx-input"
     class="hx-input-foundation"
+    :class="{'hx-input_disabled': disabled}"
     :value="value"
     :placeholder="placeholder"
     :clearable="false"
     :autocomplete="true"
+    :readonly="readonly"
+    :disabled="disabled"
+    :eye="eye"
+    :type='type'
     @focus="handleFocus"
     @blur="handleBlur"
     @input="handleInput"
-    @click="selectHandle"
+    @clickEye="clickEye"
   >
     <template v-slot:append>
       <!-- 功能按钮 | 清空、输入错误、输入正确 -->
@@ -21,7 +26,7 @@
       {{label}}
       <!-- 投保人姓名 -->
     </template>
-    <template v-if="type=='phone'" v-slot:phone>
+    <template v-if="type=='phone'&&!readonly&&!disabled" v-slot:phone>
       <p @click="showPicker">{{defaultVal}}</p>
       <p class="phone-icon"></p>
     </template>
@@ -33,7 +38,7 @@
       <div class="hx-email-div" v-for="(item, i) in domainList" :key='i' v-on:click='clickTap(item)'>{{item}}</div>
     </template>
     <!-- 验证码 -->
-    <template v-if="type=='verification'" v-slot:verification>
+    <template v-if="type=='verification'&&!readonly&&!disabled" v-slot:verification>
       <p class="hx-phone-send" v-if="resend==false" v-on:click='countdown(send)'>{{send}}</p>
       <p class="hx-phone-send hx-phone-resend" v-else>{{send}}</p>
     </template>
@@ -41,7 +46,7 @@
 </template>
 
 <script>
-import HxInput from '../input'
+import HxInput from '../hx-input/hx-input'
 // import CubePage from 'example/components/cube-page.vue'
 // import CubeButtonGroup from 'example/components/cube-button-group.vue'
 
@@ -81,6 +86,12 @@ export default {
     label: String,
     errorInfo: String,
     type: String,
+    disabled: Boolean,
+    readonly: Boolean,
+    eye: {
+      type: [Boolean, Object],
+      default: false
+    },
     // 透传 props
     ...HxInput.props
   },
@@ -141,8 +152,8 @@ export default {
     },
     handleFocus(e) {
       // debugger
-      // console.log(e)
       this.$emit('focus', e)
+      // this.$emit('focus', e)
       // this.$emit('focus', e)
       // if (this.value !== '') {
       //   this.status = 'normal'
@@ -153,11 +164,14 @@ export default {
     handleBlur(e) {
       this.status = this.calcStatus(this.value)
       this.$emit('focus', e)
-      // console.log(this.status)
     },
     handleInput(e) {
-      // console.log(this.type)
-      this.$emit('input', e)
+      // debugger
+      if (this.type === 'email') {
+        this.$emit('input', e.toLocaleLowerCase())
+      } else {
+        this.$emit('input', e)
+      }
       this.$emit('defaultPhone', this.defaultVal)
       // console.log(e, '子组件传过来的')
       var value2 = this.value
@@ -224,9 +238,14 @@ export default {
     },
     // 选择号码归属地点击确认
     selectHandle(selectedVal, selectedIndex, selectedText) {
-      console.log(selectedVal, '选中区号')
+      // console.log(selectedVal, '选中区号')
       this.defaultVal = selectedVal[0]
       // this.defaultPhone(this.defaultVal)
+    },
+    // 是否全部可见
+    clickEye(e) {
+      // console.log(e)
+      this.$emit('clickEye', e)
     }
     // defaultPhone(e) {
     //   console.log(val)
@@ -239,22 +258,32 @@ export default {
 <style lang="stylus" rel="stylesheet/stylus">
   .hx-input-foundation
     line-height: 1;
-    border: unset;
-    border-bottom: 1px solid #efefef;
+    // border: unset;
+    // border-bottom: 1px solid #efefef;
     font-weight: lighter;
     font-size: 16px;
     border-radius: 0;
     margin-bottom: 30px
+    color: rgba(51,51,51,1)
+    &.hx-input_normal
+      &::after
+        border: unset;
+        border-bottom: 2px solid rgba(239,239,239,1);
     &.hx-input_active
       &::after
         border: unset;
         border-bottom: 2px solid #1890ff;
     .hx-input-prepend
-      width: 94px;
-      color: #333;
+      // width: 94px;
+      // color: #333;
+      font-size:16px;
+      font-family:PingFang SC;
+      font-weight:500;
+      // color:rgba(51,51,51,1);
+      width: 114px;
     .hx-input-field
       padding: 18px 10px;
-      color: #333;
+      // color: #333;
       &::-webkit-input-placeholder
         color: #ccc;
   .phone-icon
@@ -263,6 +292,9 @@ export default {
     // background :#000
     border-width :0.3rem
     margin-top :0.3rem
+    margin-left :0.3rem
     border-style:solid
     border-color: #000 transparent transparent transparent
+  .hx-input_disabled
+    color: rgba(204,204,204,1) !important 
 </style>
