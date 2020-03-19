@@ -4,6 +4,8 @@
     :value="value"
     :label="label"
     :type="type"
+    :readonly="readonly"
+    :disabled="disabled"
     :placeholder="placeholder"
     :inputCheck="inputCheckEmail"
     :errorInfo="emailErrorInfo"
@@ -14,7 +16,7 @@
 </template>
 
 <script>
-import HxInputFoundation from './HxInputFoundation.vue'
+import HxInputFoundation from '../hx-input-fdn/hx-input-fdn'
 
 const REGEXP_EMAIL = /^([a-z0-9\u4E00-\u9FA5\uFF00-\uFFFF/?^{|}~!#$%&'*+-]+[.]?)*[a-z0-9\u4E00-\u9FA5\uFF00-\uFFFF/?^{|}~!#$%&'*+-]+@([a-z0-9\u4E00-\u9FA5]+[-._~]?)*[a-z0-9\u4E00-\u9FA5]+\.[a-z]{2,6}$/
 
@@ -33,6 +35,8 @@ export default {
   },
   methods: {
     inputCheckEmail(val) {
+      // val = val.toLocaleLowerCase()
+      // console.log(val)
       if (val === '') {
         this.emailErrorInfo = '请输入邮箱地址！'
         return false

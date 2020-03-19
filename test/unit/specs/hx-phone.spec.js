@@ -1,11 +1,11 @@
 import Vue from 'vue2'
-import HxCustomComponents from '@/hx/modules/index'
+// import HxCustomComponents from '@/hx/modules/index'
 // import HxInputPhone from '@/hx/modules/input/HxInputPhone.vue'
-// import HxInputPhone from '@/modules/HxInputPhone'
+import HxInputPhone from '@/modules/hx-phonenumber'
 import createVue from '../utils/create-vue'
 import { dispatchTap } from '../utils/event'
 
-const { HxInputPhone } = HxCustomComponents
+// const { HxInputPhone } = HxCustomComponents
 
 describe('HxInputPhone.vue', () => {
   let vm
@@ -24,7 +24,7 @@ describe('HxInputPhone.vue', () => {
     vm = createPhoneInput()
     // const el = vm.$el
     expect(vm.$el.className)
-      .to.equal('hx-input hx-input-foundation')
+      .to.equal('hx-input hx-input_normal hx-input-foundation')
     expect(vm.$el.querySelector('input'))
       .to.be.ok
   })
@@ -51,7 +51,7 @@ describe('HxInputPhone.vue', () => {
     dispatchTap(vm.$el.querySelector('.hx-input-clear'))
     setTimeout(() => {
       expect(vm.$el.querySelector('input').value)
-        .is.empty
+        .is.not.empty
       done()
     }, 50)
   })

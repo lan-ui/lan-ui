@@ -4,6 +4,8 @@
     :value="value"
     :label="label"
     :type="type"
+    :readonly="readonly"
+    :disabled="disabled"
     :placeholder="placeholder"
     :inputCheck="inputCheckAddress"
     :errorInfo="addressErrorInfo"
@@ -13,7 +15,7 @@
 </template>
 
 <script>
-import HxInputFoundation from './HxInputFoundation.vue'
+import HxInputFoundation from '../hx-input-fdn/hx-input-fdn'
 
 // const REGEXP_ADDRESS = /^[^`!@#$%^&*.<>]+$/
 const REGEXP_ADDRESS = /^[\u4e00-\u9fa5a-z]+$/gi

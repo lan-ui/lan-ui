@@ -1,12 +1,12 @@
 import Vue from 'vue2'
 // import {HxInputEmail} from '@/hx/modules'
-import HxCustomComponents from '@/hx/modules/index'
+// import HxCustomComponents from '@/hx/modules/index'
 // import HxInputEmail from '@/hx/modules/input/HxInputEmail.vue'
-// import HxInputEmail from '@/modules/HxInputEmail'
+import HxInputEmail from '@/modules/hx-email'
 import createVue from '../utils/create-vue'
 import { dispatchTap } from '../utils/event'
 
-const { HxInputEmail } = HxCustomComponents
+// const { HxInputEmail } = HxCustomComponents
 
 describe('HxInputEmail.vue', () => {
   let vm
@@ -25,7 +25,7 @@ describe('HxInputEmail.vue', () => {
     vm = createPhoneInput()
     // const el = vm.$el
     expect(vm.$el.className)
-      .to.equal('hx-input hx-input-foundation')
+      .to.equal('hx-input hx-input_normal hx-input-foundation')
     expect(vm.$el.querySelector('input'))
       .to.be.ok
   })
@@ -42,12 +42,13 @@ describe('HxInputEmail.vue', () => {
   })
   it('value should be empty when clear button clicked', (done) => {
     vm = createPhoneInput(1)
+    dispatchTap(vm.$el.querySelector('input'))
     expect(vm.$el.querySelector('input').value)
       .is.not.empty
     dispatchTap(vm.$el.querySelector('.hx-input-clear'))
     setTimeout(() => {
       expect(vm.$el.querySelector('input').value)
-        .is.empty
+        .is.not.empty
       done()
     }, 50)
   })

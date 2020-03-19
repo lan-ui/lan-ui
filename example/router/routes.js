@@ -80,6 +80,15 @@ import hxLocation from '../pages/hx-location.vue'
 import hxProvinces from '../pages/hx-provinces.vue'
 import HxBirthdate from '../pages/hx/hx-birthdate.vue'
 import HxValidity from '../pages/hx/hx-validity.vue'
+// xwb
+import Phone from '../pages/phone.vue'
+import Email from '../pages/email.vue'
+import Idnumber from '../pages/idnumber.vue'
+import Address from '../pages/address.vue'
+import AccountName from '../pages/account-name.vue'
+import AccountNumber from '../pages/account-number.vue'
+import Phoneverification from '../pages/phoneverification.vue'
+// xwb-end
 
 const routes = [
   {
@@ -137,6 +146,34 @@ const routes = [
   {
     path: '/input',
     component: Input
+  },
+  {
+    path: '/phone',
+    component: Phone
+  },
+  {
+    path: '/email',
+    component: Email
+  },
+  {
+    path: '/idnumber',
+    component: Idnumber
+  },
+  {
+    path: '/address',
+    component: Address
+  },
+  {
+    path: '/account-name',
+    component: AccountName
+  },
+  {
+    path: '/account-number',
+    component: AccountNumber
+  },
+  {
+    path: '/phoneverification',
+    component: Phoneverification
   },
   {
     path: '/textarea',
