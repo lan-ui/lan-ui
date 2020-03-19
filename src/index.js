@@ -62,16 +62,16 @@ import {
 import { processComponentName } from './common/helpers/util'
 import './rem'
 
-import {
-  HxInputFoundation,
-  HxInputPhone,
-  HxInputEmail,
-  HxInputIdcard,
-  HxInputAddress,
-  HxInputAccount,
-  HxInputAccountName,
-  HxInputPhoneverification
-} from './hx/modules'
+// import {
+//   HxInputFoundation,
+//   HxInputPhone,
+//   HxInputEmail,
+//   HxInputIdcard,
+//   HxInputAddress,
+//   HxInputAccount,
+//   HxInputAccountName,
+//   HxInputPhoneverification
+// } from './hx/modules'
 
 const components = [
   // locale
@@ -126,16 +126,16 @@ const components = [
   hxLocation,
   hxProvinces,
   HxValidity,
-  HxBirthdate,
-  // input
-  HxInputFoundation,
-  HxInputPhone,
-  HxInputEmail,
-  HxInputIdcard,
-  HxInputAddress,
-  HxInputAccount,
-  HxInputAccountName,
-  HxInputPhoneverification
+  HxBirthdate
+  // // input
+  // HxInputFoundation,
+  // HxInputPhone,
+  // HxInputEmail,
+  // HxInputIdcard,
+  // HxInputAddress,
+  // HxInputAccount,
+  // HxInputAccountName,
+  // HxInputPhoneverification
 ]
 
 function install(Vue) {
