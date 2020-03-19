@@ -6,7 +6,7 @@
       :readValue="readValue"
       :disabled="disabled"
       :data-pos="position">
-    <div>
+    <div class="hx-select-wrap">
       <p class="hx-select-title">所在省市</p>
       <div class="hx-select-main" v-if="!readonly">
         <p class="select-main-info" @click="showAddressPicker">

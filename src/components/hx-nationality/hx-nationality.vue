@@ -3,7 +3,7 @@
       class="hx-select"
       :class="disabled?'hx-select-disabled':''"
       :data-pos="position">
-    <div>
+    <div class="hx-select-wrap">
       <p class="hx-select-title">国籍/地区</p>
       <div class="hx-select-main" v-if="!readonly">
         <p class="select-main-info" @click="showPicker">
