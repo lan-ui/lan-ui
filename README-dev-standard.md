@@ -34,8 +34,6 @@ npm install
 │       ├── docs                 
 │           ├── zh-CN            
 │               └── hx-XXXXX.md   # 添加业务组件对应的中文文档说明
-│       ├── example              
-│           └── example-QR.png    # 示例二维码（需要修改）【统一管理员调整】
 │
 ├── example                       # 示例源文件
 │   ├── pages               
@@ -54,7 +52,7 @@ npm install
 │       ├── hx.XXXXX组件           # 新建模块导出文件夹
 │           └── index.js
 │   ├── index.js                  # 添加组件导入及导出模块（// hx的最后添加）
-│   └──  module.js                # 添加组件模块导出模块（// hx的最后添加）
+│   └── module.js                # 添加组件模块导出模块（// hx的最后添加）
 │
 ├── tests/unit                    # 测试目录
 │   ├── specs                
