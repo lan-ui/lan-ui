@@ -11,6 +11,7 @@
     :disabled="disabled"
     :eye="eye"
     :type='type'
+    :maxlength='maxlength'
     @focus="handleFocus"
     @blur="handleBlur"
     @input="handleInput"
@@ -88,6 +89,7 @@ export default {
     type: String,
     disabled: Boolean,
     readonly: Boolean,
+    maxlength: Number,
     eye: {
       type: [Boolean, Object],
       default: false

@@ -6,14 +6,15 @@
     <div slot="content">
       <hx-input-verification 
         ref="hx-input-verification"
-        :placeholder="'请输入手机验证码'"
+        :placeholder="'请输入验证码'"
         :label="'手机验证码'"
         :type="'verification'"
+        :maxlength='4'
         v-model="verificationValue" 
       ></hx-input-verification>
       <hx-input-verification 
         ref="hx-input-verification"
-        :placeholder="'请输入手机验证码'"
+        :placeholder="'请输入验证码'"
         :label="'手机验证码'"
         :type="'verification'"
         :disabled="true"
@@ -21,7 +22,7 @@
       ></hx-input-verification>
       <hx-input-verification 
         ref="hx-input-verification"
-        :placeholder="'请输入手机验证码'"
+        :placeholder="'请输入验证码'"
         :label="'手机验证码'"
         :type="'verification'"
         :readonly="true"
