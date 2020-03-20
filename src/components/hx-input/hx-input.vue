@@ -226,6 +226,8 @@
     background-color: $input-bgc
     border-1px($input-border-color)
     // padding-left: 0.3rem
+  .hx-input::after
+    border-radius:0
   .hx-input-field
     display: block
     flex: 1
