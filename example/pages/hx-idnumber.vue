@@ -1,7 +1,7 @@
 <template>
   <cube-page
     type="input-view"
-    title="Idnumber"
+    title="HxIdnumber"
     class="option-demo">
     <div slot="content">
       <hx-input-idcard 

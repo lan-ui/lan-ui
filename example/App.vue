@@ -118,31 +118,31 @@
               },
               {
                 path: '/phone',
-                text: 'Phone'
+                text: 'HxPhone'
               },
               {
                 path: '/email',
-                text: 'Email'
+                text: 'HxEmail'
               },
               {
                 path: '/idnumber',
-                text: 'Idnumber'
+                text: 'HxIdnumber'
               },
               {
                 path: '/address',
-                text: 'Address'
+                text: 'HxAddress'
               },
               {
                 path: '/account-name',
-                text: 'AccountName'
+                text: 'HxAccountName'
               },
               {
                 path: '/account-number',
-                text: 'AccountNumber'
+                text: 'HxAccountNumber'
               },
               {
                 path: '/phoneverification',
-                text: 'Phoneverification'
+                text: 'HxPhoneverification'
               },
               {
                 path: '/textarea',

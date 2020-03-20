@@ -1,40 +1,43 @@
 <template>
   <cube-page
     type="input-view"
-    title="Phone"
+    title="HXAccountNumber"
     class="option-demo">
     <div slot="content">
-      <hx-input-phone 
-        ref="hx-input-phone"
-        :placeholder="'请输入手机号'"
-        :label="'手机号'"
-        :type="'phone'"
-        v-model="phoneValue" 
-      ></hx-input-phone>
-      <hx-input-phone 
-        ref="hx-input-phone"
-        :placeholder="'请输入手机号'"
-        :label="'手机号'"
-        :type="'phone'"
+      <hx-input-account
+        ref="hx-input-account"
+        :placeholder="'请输入账号'"
+        :label="'账号'"
+        :type="'account'"
+        @binkList="binkList"
+        v-model="accountValue" 
+      ></hx-input-account>
+      <hx-input-account
+        ref="hx-input-account"
+        :placeholder="'请输入账号'"
+        :label="'账号'"
+        :type="'account'"
         :disabled="true"
-        v-model="phoneValue1" 
-      ></hx-input-phone>
-      <hx-input-phone 
-        ref="hx-input-phone"
-        :placeholder="'请输入手机号'"
-        :label="'手机号'"
-        :type="'phone'"
+        @binkList="binkList"
+        v-model="accountValue1" 
+      ></hx-input-account>
+      <hx-input-account
+        ref="hx-input-account"
+        :placeholder="'请输入账号'"
+        :label="'账号'"
+        :type="'account'"
         :readonly="true"
-        :eye="eye"
-        v-model="phoneValue2" 
-      ></hx-input-phone>
+        :eye='eye'
+        @binkList="binkList"
+        v-model="accountValue2" 
+      ></hx-input-account>
     </div>
   </cube-page>
 </template>
 
 <script type="text/ecmascript-6">
   // import WithConsole from '@/components/input/hoc.js'
-  import HxInputPhone from '@/components/hx-phonenumber/hx-phonenumber.vue'
+  import HxInputAccount from '@/components/hx-account-number/hx-account-number.vue'
   import CubePage from '../components/cube-page.vue'
   import SwitchOption from '../components/switch-option'
 
@@ -46,9 +49,9 @@
         type: '',
         // type: 'email',
         value: '',
-        phoneValue: '',
-        phoneValue1: '13245654433',
-        phoneValue2: '15676273836',
+        accountValue: '',
+        accountValue1: '6225 5526 8798 1625',
+        accountValue2: '6225 5526 8798 1625',
         disabled: false,
         useClear: true,
         maxlength10: false,
@@ -160,7 +163,7 @@
       }
     },
     components: {
-      HxInputPhone,
+      HxInputAccount,
       CubePage,
       SwitchOption
     }

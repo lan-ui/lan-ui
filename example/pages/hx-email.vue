@@ -1,43 +1,39 @@
 <template>
   <cube-page
     type="input-view"
-    title="AccountNumber"
+    title="HxEmail"
     class="option-demo">
     <div slot="content">
-      <hx-input-account
-        ref="hx-input-account"
-        :placeholder="'请输入账号'"
-        :label="'账号'"
-        :type="'account'"
-        @binkList="binkList"
-        v-model="accountValue" 
-      ></hx-input-account>
-      <hx-input-account
-        ref="hx-input-account"
-        :placeholder="'请输入账号'"
-        :label="'账号'"
-        :type="'account'"
+      <hx-input-email 
+        ref="hx-input-email"
+        :placeholder="'请输入邮箱地址'"
+        :label="'邮箱地址'"
+        :type="'email'" 
+        v-model="emailValue" 
+      ></hx-input-email>
+      <hx-input-email 
+        ref="hx-input-email"
+        :placeholder="'请输入邮箱地址'"
+        :label="'邮箱地址'"
+        :type="'email'" 
         :disabled="true"
-        @binkList="binkList"
-        v-model="accountValue1" 
-      ></hx-input-account>
-      <hx-input-account
-        ref="hx-input-account"
-        :placeholder="'请输入账号'"
-        :label="'账号'"
-        :type="'account'"
+        v-model="emailValue1" 
+      ></hx-input-email>
+      <hx-input-email 
+        ref="hx-input-email"
+        :placeholder="'请输入邮箱地址'"
+        :label="'邮箱地址'"
+        :type="'email'" 
         :readonly="true"
-        :eye='eye'
-        @binkList="binkList"
-        v-model="accountValue2" 
-      ></hx-input-account>
+        v-model="emailValue1" 
+      ></hx-input-email>
     </div>
   </cube-page>
 </template>
 
 <script type="text/ecmascript-6">
   // import WithConsole from '@/components/input/hoc.js'
-  import HxInputAccount from '@/components/hx-accountnumber/hx-accountnumber.vue'
+  import HxInputEmail from '@/components/hx-email/hx-email.vue'
   import CubePage from '../components/cube-page.vue'
   import SwitchOption from '../components/switch-option'
 
@@ -49,9 +45,8 @@
         type: '',
         // type: 'email',
         value: '',
-        accountValue: '',
-        accountValue1: '6225 5526 8798 1625',
-        accountValue2: '6225 5526 8798 1625',
+        emailValue: '',
+        emailValue1: '23456666@qq.com',
         disabled: false,
         useClear: true,
         maxlength10: false,
@@ -163,7 +158,7 @@
       }
     },
     components: {
-      HxInputAccount,
+      HxInputEmail,
       CubePage,
       SwitchOption
     }

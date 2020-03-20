@@ -1,39 +1,39 @@
 <template>
   <cube-page
     type="input-view"
-    title="Address"
+    title="HxPhoneverification"
     class="option-demo">
     <div slot="content">
-      <hx-input-address 
-        ref="hx-input-address"
-        :placeholder="'请输入街道(小区)门牌号'"
-        :label="'详细地址'"
-        :type="'address'"
-        v-model="addressValue" 
-      ></hx-input-address>
-      <hx-input-address 
-        ref="hx-input-address"
-        :placeholder="'请输入街道(小区)门牌号'"
-        :label="'详细地址'"
-        :type="'address'"
+      <hx-input-verification 
+        ref="hx-input-verification"
+        :placeholder="'请输入手机验证码'"
+        :label="'手机验证码'"
+        :type="'verification'"
+        v-model="verificationValue" 
+      ></hx-input-verification>
+      <hx-input-verification 
+        ref="hx-input-verification"
+        :placeholder="'请输入手机验证码'"
+        :label="'手机验证码'"
+        :type="'verification'"
         :disabled="true"
-        v-model="addressValue1" 
-      ></hx-input-address>
-      <hx-input-address 
-        ref="hx-input-address"
-        :placeholder="'请输入街道(小区)门牌号'"
-        :label="'详细地址'"
-        :type="'address'"
+        v-model="verificationValue1" 
+      ></hx-input-verification>
+      <hx-input-verification 
+        ref="hx-input-verification"
+        :placeholder="'请输入手机验证码'"
+        :label="'手机验证码'"
+        :type="'verification'"
         :readonly="true"
-        v-model="addressValue1" 
-      ></hx-input-address>
+        v-model="verificationValue1" 
+      ></hx-input-verification>
     </div>
   </cube-page>
 </template>
 
 <script type="text/ecmascript-6">
   // import WithConsole from '@/components/input/hoc.js'
-  import HxInputAddress from '@/components/hx-address/hx-address.vue'
+  import HxInputVerification from '@/components/hx-phoneverification/hx-phoneverification.vue'
   import CubePage from '../components/cube-page.vue'
   import SwitchOption from '../components/switch-option'
 
@@ -45,8 +45,8 @@
         type: '',
         // type: 'email',
         value: '',
-        addressValue: '',
-        addressValue1: '某某小区某某单元',
+        verificationValue: '',
+        verificationValue1: '3321',
         disabled: false,
         useClear: true,
         maxlength10: false,
@@ -158,7 +158,7 @@
       }
     },
     components: {
-      HxInputAddress,
+      HxInputVerification,
       CubePage,
       SwitchOption
     }

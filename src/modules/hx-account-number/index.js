@@ -1,4 +1,4 @@
-import HxInputAccount from '../../components/hx-accountnumber/hx-accountnumber.vue'
+import HxInputAccount from '../../components/hx-account-number/hx-account-number.vue'
 
 HxInputAccount.install = function (Vue) {
   Vue.component(HxInputAccount.name, HxInputAccount)

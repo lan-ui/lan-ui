@@ -1,14 +1,14 @@
 import Vue from 'vue2'
-// import {HxInputAccount} from '@/hx/modules'
+// import {HxInputAccountName} from '@/hx/modules'
 // import HxCustomComponents from '@/hx/modules/index'
-// import HxInputAccount from '@/hx/modules/input/HxInputAccount.vue'
-import HxInputAccount from '@/modules/hx-accountnumber'
+// import HxInputAccountName from '@/hx/modules/input/HxInputAccountName.vue'
+import HxInputAccountName from '@/modules/hx-account-name'
 import createVue from '../utils/create-vue'
 import { dispatchTap } from '../utils/event'
 
-// const { HxInputAccount } = HxCustomComponents
+// const { HxInputAccountName } = HxCustomComponents
 
-describe('HxInputAccount.vue', () => {
+describe('HxInputAccountName.vue', () => {
   let vm
   afterEach(() => {
     if (vm) {
@@ -17,8 +17,8 @@ describe('HxInputAccount.vue', () => {
     }
   })
   it('use', () => {
-    Vue.use(HxInputAccount)
-    expect(Vue.component(HxInputAccount.name))
+    Vue.use(HxInputAccountName)
+    expect(Vue.component(HxInputAccountName.name))
       .to.be.a('function')
   })
   it('should render correct contents', () => {
@@ -56,12 +56,12 @@ describe('HxInputAccount.vue', () => {
 function createPhoneInput (value) {
   const vm = createVue({
     template: `
-      <hx-input-account
-        ref="hx-input-account"
-        :placeholder="'请输入账号'"
-        :label="'账号'"
+      <hx-input-accountName
+        ref="hx-input-accountName"
+        :placeholder="'请输入账号名'"
+        :label="'账号名'"
         v-model="value" 
-      ></hx-input-account>
+      ></hx-input-accountName>
     `,
     data: {
       disabled: false,
