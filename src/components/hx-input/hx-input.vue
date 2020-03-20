@@ -237,6 +237,7 @@
     background-color: inherit
     border-radius: 2px
     outline: none
+    font-weight: 500;
     &::-webkit-input-placeholder
       color: $input-placeholder-color
       text-overflow: ellipsis

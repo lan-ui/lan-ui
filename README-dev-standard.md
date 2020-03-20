@@ -5,7 +5,7 @@
 ### git注册权限申请
 
 - [注册gitlab用户](http://106.38.93.196:8081)
-- 添加组件开发权限（请联系于水生）
+- 添加组件开发权限（请联系管理员）
 
 ### clone项目
 
@@ -26,148 +26,45 @@ npm install
 
 ```bash
 .
-├── document                     # 文档说明源文件
-│   ├── common                   # 通用
-│       ├── config               # 菜单配置 
-│          └── menu.json         # * 文档说明左侧菜单配置（需要修改配置）
-│       ├── js                   # 通用js
-│           ├── ajax             # 封装的数据请求方法（ajax(url),默认get方式）
-│           ├── directive        # 引用lighlight
-│           ├── lighlight        # web语法突出显示
-│           └── utils            # * 通用方法（设置获取本地缓存，获取当前的使用语言，设置文档的链接地址，需要修改）
-│       ├── stylus               # 样式
-│           ├── base             # 基础样式表（引用组件通用的variable）
-│           ├── index            # 样式表引用入口（引用组件通用的reset，base，md）
-│           └── md               # * 文档说明样式（可修改文档样式）
-│   ├── components               # 组件
-│       ├── back                 
-│           ├── back.svg         # 返回图标
-│           └── back.vue         # 返回首页组件
-│       ├── badge                
-│           └── badge.vue        # github数据展示（stars,forks,watchers）
-│       ├── display              
-│           ├── display.vue      # 文档中示例的外层的框架
-│           ├── iphoneX.png      # 示例iphone的底图
-│           └── phone.png        # 
-│       ├── docs                 # 文档模块
-│           ├── en-US            # * 英文文档说明（含所有组件的md文件，如需要英文文档，新增组件需要添加）
-│           ├── zh-CN            # * 中文文档说明（需要添加）
-│           ├── en-US.vue        # 英文入口
-│           └── zh-CN.vue        # 中文入口  
-│       ├── example              # 示例
-│           ├── example-QR.png   # * 示例二维码（需要修改）
-│           └── example.vue      # 示例页面  
-│       ├── footer         
-│           └── footer.vue       # *底部通用版权说明（需要修改）
-│       ├── home                 # 首页入口
-│           ├── didi-logo.svg    # didi logo图标（暂未使用）
-│           ├── en-US.vue        # 英文导航菜单
-│           ├── home.vue         # * 首页入口组件（有修改，屏蔽了语言切换，目前文档只做了中文）
-│           ├── logo.png         # * cube ui logo（需要修改）
-│           ├── nav.svg          # 菜单图标（同menu.svg）
-│           └── zh-CN.vue        # 中文导航菜单
-│       ├── index                # * 文档首页
-│           ├── cube.png         # 首页banner图（已修改）
-│           ├── en-US.vue        # 英文首页内容
-│           ├── experience.png   # 体验极致图片（已修改）
-│           ├── index.vue        # 首页组件（已修改）
-│           ├── quality.png      # 质量可靠图片（已修改）
-│           ├── scalability.png  # 扩展性想图片（已修改）
-│           ├── standard.png     # 标准规范图片（已修改）
-│           ├── zh-CN.vue        # 中文首页内容（需要修改）
-
-│       ├── lang            
-│           └── lang.vue         # 获取当前语言（中英文切换）
-│       ├── nav-loading     
-│           └── nav-loading.vue  # 导航底部页面加载loading效果
-│       ├── side-list       
-│           └── side-list        # 侧导航入口引用路由跳转
-│       ├── side-nav        
-│           └── side-nav         # 侧导航菜单组件
-│       ├── viewport             # 文档主要内容组件
-│           ├── close.svg        # 关闭图标        
-│           ├── menu.svg         # 菜单图标   
-│           └── viewport.vue     # 说明文档主要内容区     
-│   ├── router                   # 路由
-│       ├── index.js             # example中英文，首页路由配置
-│       ├── router.js            # 文档菜单路由引入配置
-│   ├── App.vue                  # 组件入口
-│   ├── Cube-ui_logo.ico         # * 地址栏ico（需要修改）
-│   ├── index.html               # * 文档页面入口（需要修改ico）
-│   └── main.js                  # 文档入口文件配置
+├── document                      # 文档说明源文件
+│   ├── common                  
+│       ├── config               
+│          └── menu.json          # 添加中文文档说明左侧菜单配置【统一管理员调整】
+│   ├── components               
+│       ├── docs                 
+│           ├── zh-CN            
+│               └── hx-XXXXX.md   # 添加业务组件对应的中文文档说明
 │
-├── example                 # 示例源文件
-│   ├── components          # 示例通用组件（包括布局，通用的组件）
-│   ├── data                # * 用于示例使用的数据有js和json文件2种形式（组件有需要可以添加）
-│   ├── modules             # 对图片的处理（检查图片是否被压扁，转base，图片压缩等，直接引用腾讯的js）
-│   ├── pages               # * 组件的示例页面（需要编写）
-│   ├── router              # 
-│       ├── index.js        # 路由配置入口
-│       ├── router.js       # * 示例路由配置（需要编写）
-│   ├── App.vue             # * 组件入口，示例菜单配置（需要修改）
-│   ├── index.html          # 示例入口页面（需要修改ico）
-│   └── main.js             # 示例入口文件配置
-│
-├── lib                     # 组件打包编译文件
-│   ├── XXXX                # 组件文件
-│       ├── XXXXX.min.js    # 组件压缩后js
-│       ├── XXXXX.min.css   # 组件压缩后css
-│       ├── index.js        # 组件打包后js
-│       └── style.css       # 组件打包后css
-│   ├── fonts               # 打包后字体包
-│   ├── cube.min.css        # * 整个组件库压缩后css (需要改配置)
-│   ├── cube.min.js         # * 整个组件库压缩后js (需要改配置)
-│   ├── index.js            # 整个组件库打包后css
-│   └── style.css           # 整个组件库打包后js
-│
-├── node_modules            # 包文件
+├── example                       # 示例源文件
+│   ├── pages               
+│       └── hx-XXXXX.vue          # 添加业务组件对应的示例
+│   ├── router              
+│       └── router.js             # 添加业务组件导入，配置示例路由
+│   └── App.vue                   # 添加示例菜单配置【统一管理员调整】
 │
 ├── src                           # 组件源码目录
-│   ├── common                    # 
-│       ├── data                  # * 组件用到的数据源（银行，证件类型，所在地区，国籍/地区，所在省市）
-│       ├── helpers               # 通用方法（具体需要细看作用）
-│       ├── icon                  # 字体icon
-│           ├── cube-icon.styl    # 自定义cube ui字体icon样式
-│           ├── cubeic.tff        # 自定义cube ui tff格式字体icon
-│           ├── cubeic.woff       # 自定义cube ui woff格式字体icon
-│           ├── hualife-icon.styl # * 自定义华夏字体icon样式 （新增）
-│           ├── hualifeic.tff     # * 自定义华夏tff格式字体icon （新增）
-│           └── hualifeic.woff    # * 自定义华夏woff格式字体icon （新增）
-│       ├── lang    
-│           ├── date.js           # 日期格式化方法
-│           └── string.js         # 字符串大小写转化方法            
-│       ├── locale
-│           └── index.js          # 本地化配置（包括语言、提示语）   
-│       ├── mixins                # * 混合对象配置（basic-picker,deprecated.js,group-col,input,locale,picker,popup,scroll,visibility）
-│       └── stylus                # 组件样式
-│           ├── theme             # 主题样式
-│               ├── default.styl  # 默认的主题样式
-│           ├── var               # 样式变量（含颜色、字体大小、盒子阴影）
-│           ├── base.styl         # 基础样式
-│           ├── common.styl       # 组件公共样式 （新增）
-│           ├── index.styl        # * 样式配置入口（校验，混合，重置，基础，cube ui icon，hualife自定义样式）
-│           ├── mixin.styl        # 混合样式
-│           ├── reset.styl        # 重置样式
-│           └── variable.styl     # * 校验样式配置入口（颜色、大小、盒子阴影、主题默认样式）          
-│   ├── components                # * 组件源码文件（组件vue,相关的js，图片（2倍图，3倍图））
-│   └── locale/lang               # 本地化中英文语言配置
-│       ├── en-US.js              # 英文配置
-│		└── zh-CN.js              # 中文配置
-│   ├── modules                   # * 组件模块导出单文件（模块导出文件，每个组件对应一个文件夹）
-│       ├── XXXXXXX组件
+│   ├── common                    
+│       └── data                  # 存放组件用到的数据源（js格式）     
+│   ├── components               
+│       ├── hx.XXXXX组件           # 新建组件源码文件（组件资源就近原则，放到该文件夹中）
+│           └── hx.XXXXX.vue      
+│   ├── modules                   
+│       ├── hx.XXXXX组件           # 新建模块导出文件夹
 │           └── index.js
-│   ├── index.js                  # * 整体模块导出（cube）
-│   ├── module.js                 # * 组件模块导出总文件（单独模块导出）
-│   └── rem.js                    # 适配，设置根字体大小
+│   ├── index.js                  # 添加组件导入及导出模块（// hx的最后添加）
+│   └── module.js                # 添加组件模块导出模块（// hx的最后添加）
 │
-├── tests/unit              # 测试目录
-│   ├── coverage            # 生成的代码覆盖率浏览网页
-│   ├── fake                # 单元测试
-│   ├── specs               # * 单元测试主要代码目录（每个组件一个单元测试文件）
-│   ├── utils               # 单元测试通用方法（create-vue创建vue对象，event事件封装，file文件封装，xhr请求封装）
-│   ├── .eslintrc           # eslint配置
-│   ├── index.js            # * 单元测试入口配置（可以通过修改后缀名只测试当前开发组件）
-│   └── karma.conf.js       # 单元测试配置
+├── tests/unit                    # 测试目录
+│   ├── specs                
+│       └──  hx-XXXXX.specs.js    #  添加组件单元测试（组件测试通过率90%以上）
 ```
 
+### 开发标准规范
 
+- 统一配置文件，如需修改请联系管理员
+- 开启ESLint代码检测功能，严格执行eslint规则校验
+- 完整组件功能的开发包括（组件本身，单元测试，示例，文档说明）
+- 完整组件开发完成，单元测试通过，开发测试通过，联系管理员安排测试
+- 测试通过后，使用npm run cm 标准化提交git，推送新建的远程分支（以开发人员姓名缩写命名）
+- 管理员review 组件通过后，即合并到组件库中（需开发人员配合）
+- 组件应用到项目中，如有问题，组件开发人员进行修复维护
