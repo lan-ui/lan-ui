@@ -9,6 +9,7 @@
         :placeholder="'请输入身份证号码'"
         :label="'身份证号码'"
         :type="'idcard'"
+        :maxlength='18'
         v-model="idcardValue" 
       ></hx-input-idcard>
       <hx-input-idcard 

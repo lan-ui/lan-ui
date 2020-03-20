@@ -17,6 +17,7 @@
       :readonly="readonly"
       :autocomplete="autocomplete"
       :autofocus="autofocus"
+      :maxlength="maxlength"
       @focus="handleFocus"
       @blur="handleBlur"
       @change="changeHander"
@@ -231,6 +232,7 @@
     width: 100%
     min-width: 0
     padding: 10px
+    font-size:16px
     box-sizing: border-box
     color: $input-color
     line-height: inherit
@@ -254,10 +256,11 @@
     display: flex
     align-items: center
   .hx-input-clear, .hx-input-eye
-    width: 1em
-    height: 1em
+    // width: 1em
+    // height: 1em
     line-height: 1
-    padding: 10px
+    font-size 22px
+    // padding: 10px
     box-sizing: content-box
     color: $input-clear-icon-color
     > i
@@ -279,7 +282,7 @@
   // 邮箱后缀
   .hx-email-suffix
     position: absolute
-    top: 55px
+    top: 60px
     font-size: 12px
     color: #000
     overflow:scroll 
@@ -290,7 +293,10 @@
     // height: 55px
     border-bottom: 1px solid #ccc
     background: #ffffff
-    line-height: 40px
+    line-height: 47px
+    font-family:PingFang SC;
+    font-weight:500;
+    color:rgba(51,51,51,1);
   .hx-phone-send
     border-radius: 20px
     background :#f1f6f5

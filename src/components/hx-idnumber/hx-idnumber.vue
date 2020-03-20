@@ -7,6 +7,7 @@
     :readonly="readonly"
     :disabled="disabled"
     :eye="eye"
+    :maxlength="maxlength"
     :placeholder="placeholder"
     :inputCheck="inputCheckIdcard"
     :errorInfo="idcardErrorInfo"

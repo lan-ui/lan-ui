@@ -6,6 +6,7 @@
     :type="type"
     :readonly="readonly"
     :disabled="disabled"
+    :maxlength="maxlength"
     :placeholder="placeholder"
     :inputCheck="inputCheckVerification"
     :errorInfo="verificationErrorInfo"
