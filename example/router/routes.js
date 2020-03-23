@@ -78,16 +78,16 @@ import hxCertificatetype from '../pages/hx-certificatetype.vue'
 import hxNationality from '../pages/hx-nationality.vue'
 import hxLocation from '../pages/hx-location.vue'
 import hxProvinces from '../pages/hx-provinces.vue'
-import HxBirthdate from '../pages/hx/hx-birthdate.vue'
-import HxValidity from '../pages/hx/hx-validity.vue'
+import HxBirthdate from '../pages/hx-birthdate.vue'
+import HxValidity from '../pages/hx-validity.vue'
 // xwb
-import Phone from '../pages/phone.vue'
-import Email from '../pages/email.vue'
-import Idnumber from '../pages/idnumber.vue'
-import Address from '../pages/address.vue'
-import AccountName from '../pages/account-name.vue'
-import AccountNumber from '../pages/account-number.vue'
-import Phoneverification from '../pages/phoneverification.vue'
+import HxPhone from '../pages/hx-phone.vue'
+import HxEmail from '../pages/hx-email.vue'
+import HxIdnumber from '../pages/hx-idnumber.vue'
+import HxAddress from '../pages/hx-address.vue'
+import HxAccountName from '../pages/hx-account-name.vue'
+import HxAccountNumber from '../pages/hx-account-number.vue'
+import HxPhoneverification from '../pages/hx-phoneverification.vue'
 // xwb-end
 
 const routes = [
@@ -149,31 +149,31 @@ const routes = [
   },
   {
     path: '/phone',
-    component: Phone
+    component: HxPhone
   },
   {
     path: '/email',
-    component: Email
+    component: HxEmail
   },
   {
     path: '/idnumber',
-    component: Idnumber
+    component: HxIdnumber
   },
   {
     path: '/address',
-    component: Address
+    component: HxAddress
   },
   {
     path: '/account-name',
-    component: AccountName
+    component: HxAccountName
   },
   {
     path: '/account-number',
-    component: AccountNumber
+    component: HxAccountNumber
   },
   {
     path: '/phoneverification',
-    component: Phoneverification
+    component: HxPhoneverification
   },
   {
     path: '/textarea',

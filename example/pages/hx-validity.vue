@@ -1,5 +1,5 @@
 <template>
-  <cube-page title="Hx Validity">
+  <cube-page title="HxValidity" class="hx">
     <div slot="content">
         <hx-validity :age="age" :warning="warning" :validity="validity" :validityArray="validityArray" :readonly="readonly" :disabled="disabled" @receive="handleSelect" :isLongTerm="isLongTerm"></hx-validity>
     </div>
@@ -39,3 +39,8 @@
     }
   }
 </script>
+<style lang="stylus">
+.cube-page.hx >.wrapper .content {
+  margin:10px 20px
+}
+</style>

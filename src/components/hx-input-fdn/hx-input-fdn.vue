@@ -11,6 +11,7 @@
     :disabled="disabled"
     :eye="eye"
     :type='type'
+    :maxlength='maxlength'
     @focus="handleFocus"
     @blur="handleBlur"
     @input="handleInput"
@@ -88,6 +89,7 @@ export default {
     type: String,
     disabled: Boolean,
     readonly: Boolean,
+    maxlength: Number,
     eye: {
       type: [Boolean, Object],
       default: false
@@ -284,6 +286,7 @@ export default {
     .hx-input-field
       padding: 18px 10px;
       // color: #333;
+      // font-weight: 500;
       &::-webkit-input-placeholder
         color: #ccc;
   .phone-icon

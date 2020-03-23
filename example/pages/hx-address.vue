@@ -1,39 +1,39 @@
 <template>
   <cube-page
     type="input-view"
-    title="AccountName"
+    title="HxAddress"
     class="option-demo">
     <div slot="content">
-      <hx-input-accountName
-        ref="hx-input-accountName"
-        :placeholder="'请输入账号名'"
-        :label="'账号名'"
-        :type="'accountName'"
-        v-model="accountNameValue" 
-      ></hx-input-accountName>
-      <hx-input-accountName
-        ref="hx-input-accountName"
-        :placeholder="'请输入账号名'"
-        :label="'账号名'"
-        :type="'accountName'"
+      <hx-input-address 
+        ref="hx-input-address"
+        :placeholder="'请输入街道(小区)门牌号'"
+        :label="'详细地址'"
+        :type="'address'"
+        v-model="addressValue" 
+      ></hx-input-address>
+      <hx-input-address 
+        ref="hx-input-address"
+        :placeholder="'请输入街道(小区)门牌号'"
+        :label="'详细地址'"
+        :type="'address'"
         :disabled="true"
-        v-model="accountNameValue1" 
-      ></hx-input-accountName>
-      <hx-input-accountName
-        ref="hx-input-accountName"
-        :placeholder="'请输入账号名'"
-        :label="'账号名'"
-        :type="'accountName'"
+        v-model="addressValue1" 
+      ></hx-input-address>
+      <hx-input-address 
+        ref="hx-input-address"
+        :placeholder="'请输入街道(小区)门牌号'"
+        :label="'详细地址'"
+        :type="'address'"
         :readonly="true"
-        v-model="accountNameValue1" 
-      ></hx-input-accountName>
+        v-model="addressValue1" 
+      ></hx-input-address>
     </div>
   </cube-page>
 </template>
 
 <script type="text/ecmascript-6">
   // import WithConsole from '@/components/input/hoc.js'
-  import HxInputAccountName from '@/components/hx-accountname/hx-accountname.vue'
+  import HxInputAddress from '@/components/hx-address/hx-address.vue'
   import CubePage from '../components/cube-page.vue'
   import SwitchOption from '../components/switch-option'
 
@@ -45,8 +45,8 @@
         type: '',
         // type: 'email',
         value: '',
-        accountNameValue: '',
-        accountNameValue1: '测试账号',
+        addressValue: '',
+        addressValue1: '某某小区某某单元',
         disabled: false,
         useClear: true,
         maxlength10: false,
@@ -158,7 +158,7 @@
       }
     },
     components: {
-      HxInputAccountName,
+      HxInputAddress,
       CubePage,
       SwitchOption
     }

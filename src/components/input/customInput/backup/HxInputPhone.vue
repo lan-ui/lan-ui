@@ -124,6 +124,7 @@ export default {
 .hx-input-field {
   padding: 18px 10px;
   color: #333;
+  // font-weight: 500;
 
   &::-webkit-input-placeholder {
     color: #ccc;

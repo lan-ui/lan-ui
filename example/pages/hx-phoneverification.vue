@@ -1,40 +1,40 @@
 <template>
   <cube-page
     type="input-view"
-    title="Idnumber"
+    title="HxPhoneverification"
     class="option-demo">
     <div slot="content">
-      <hx-input-idcard 
-        ref="hx-input-idcard"
-        :placeholder="'请输入身份证号码'"
-        :label="'身份证号码'"
-        :type="'idcard'"
-        v-model="idcardValue" 
-      ></hx-input-idcard>
-      <hx-input-idcard 
-        ref="hx-input-idcard"
-        :placeholder="'请输入身份证号码'"
-        :label="'身份证号码'"
-        :type="'idcard'"
+      <hx-input-verification 
+        ref="hx-input-verification"
+        :placeholder="'请输入验证码'"
+        :label="'手机验证码'"
+        :type="'verification'"
+        :maxlength='4'
+        v-model="verificationValue" 
+      ></hx-input-verification>
+      <hx-input-verification 
+        ref="hx-input-verification"
+        :placeholder="'请输入验证码'"
+        :label="'手机验证码'"
+        :type="'verification'"
         :disabled="true"
-        v-model="idcardValue1" 
-      ></hx-input-idcard>
-      <hx-input-idcard 
-        ref="hx-input-idcard"
-        :placeholder="'请输入身份证号码'"
-        :label="'身份证号码'"
-        :type="'idcard'"
+        v-model="verificationValue1" 
+      ></hx-input-verification>
+      <hx-input-verification 
+        ref="hx-input-verification"
+        :placeholder="'请输入验证码'"
+        :label="'手机验证码'"
+        :type="'verification'"
         :readonly="true"
-        :eye="eye"
-        v-model="idcardValue2" 
-      ></hx-input-idcard>
+        v-model="verificationValue1" 
+      ></hx-input-verification>
     </div>
   </cube-page>
 </template>
 
 <script type="text/ecmascript-6">
   // import WithConsole from '@/components/input/hoc.js'
-  import HxInputIdcard from '@/components/hx-idnumber/hx-idnumber.vue'
+  import HxInputVerification from '@/components/hx-phoneverification/hx-phoneverification.vue'
   import CubePage from '../components/cube-page.vue'
   import SwitchOption from '../components/switch-option'
 
@@ -46,9 +46,8 @@
         type: '',
         // type: 'email',
         value: '',
-        idcardValue: '',
-        idcardValue1: '230229199608042020',
-        idcardValue2: '230229199608042020',
+        verificationValue: '',
+        verificationValue1: '3321',
         disabled: false,
         useClear: true,
         maxlength10: false,
@@ -160,7 +159,7 @@
       }
     },
     components: {
-      HxInputIdcard,
+      HxInputVerification,
       CubePage,
       SwitchOption
     }

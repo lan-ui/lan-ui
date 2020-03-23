@@ -1,39 +1,40 @@
 <template>
   <cube-page
     type="input-view"
-    title="Phoneverification"
+    title="HxPhone"
     class="option-demo">
     <div slot="content">
-      <hx-input-verification 
-        ref="hx-input-verification"
-        :placeholder="'请输入手机验证码'"
-        :label="'手机验证码'"
-        :type="'verification'"
-        v-model="verificationValue" 
-      ></hx-input-verification>
-      <hx-input-verification 
-        ref="hx-input-verification"
-        :placeholder="'请输入手机验证码'"
-        :label="'手机验证码'"
-        :type="'verification'"
+      <hx-input-phone 
+        ref="hx-input-phone"
+        :placeholder="'请输入手机号'"
+        :label="'手机号'"
+        :type="'phone'"
+        v-model="phoneValue" 
+      ></hx-input-phone>
+      <hx-input-phone 
+        ref="hx-input-phone"
+        :placeholder="'请输入手机号'"
+        :label="'手机号'"
+        :type="'phone'"
         :disabled="true"
-        v-model="verificationValue1" 
-      ></hx-input-verification>
-      <hx-input-verification 
-        ref="hx-input-verification"
-        :placeholder="'请输入手机验证码'"
-        :label="'手机验证码'"
-        :type="'verification'"
+        v-model="phoneValue1" 
+      ></hx-input-phone>
+      <hx-input-phone 
+        ref="hx-input-phone"
+        :placeholder="'请输入手机号'"
+        :label="'手机号'"
+        :type="'phone'"
         :readonly="true"
-        v-model="verificationValue1" 
-      ></hx-input-verification>
+        :eye="eye"
+        v-model="phoneValue2" 
+      ></hx-input-phone>
     </div>
   </cube-page>
 </template>
 
 <script type="text/ecmascript-6">
   // import WithConsole from '@/components/input/hoc.js'
-  import HxInputVerification from '@/components/hx-phoneverification/hx-phoneverification.vue'
+  import HxInputPhone from '@/components/hx-phonenumber/hx-phonenumber.vue'
   import CubePage from '../components/cube-page.vue'
   import SwitchOption from '../components/switch-option'
 
@@ -45,8 +46,9 @@
         type: '',
         // type: 'email',
         value: '',
-        verificationValue: '',
-        verificationValue1: '3321',
+        phoneValue: '',
+        phoneValue1: '13245654433',
+        phoneValue2: '156 7627 3836',
         disabled: false,
         useClear: true,
         maxlength10: false,
@@ -158,7 +160,7 @@
       }
     },
     components: {
-      HxInputVerification,
+      HxInputPhone,
       CubePage,
       SwitchOption
     }

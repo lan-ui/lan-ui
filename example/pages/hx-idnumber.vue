@@ -1,43 +1,41 @@
 <template>
   <cube-page
     type="input-view"
-    title="AccountNumber"
+    title="HxIdnumber"
     class="option-demo">
     <div slot="content">
-      <hx-input-account
-        ref="hx-input-account"
-        :placeholder="'请输入账号'"
-        :label="'账号'"
-        :type="'account'"
-        @binkList="binkList"
-        v-model="accountValue" 
-      ></hx-input-account>
-      <hx-input-account
-        ref="hx-input-account"
-        :placeholder="'请输入账号'"
-        :label="'账号'"
-        :type="'account'"
+      <hx-input-idcard 
+        ref="hx-input-idcard"
+        :placeholder="'请输入身份证号码'"
+        :label="'身份证号码'"
+        :type="'idcard'"
+        :maxlength='18'
+        v-model="idcardValue" 
+      ></hx-input-idcard>
+      <hx-input-idcard 
+        ref="hx-input-idcard"
+        :placeholder="'请输入身份证号码'"
+        :label="'身份证号码'"
+        :type="'idcard'"
         :disabled="true"
-        @binkList="binkList"
-        v-model="accountValue1" 
-      ></hx-input-account>
-      <hx-input-account
-        ref="hx-input-account"
-        :placeholder="'请输入账号'"
-        :label="'账号'"
-        :type="'account'"
+        v-model="idcardValue1" 
+      ></hx-input-idcard>
+      <hx-input-idcard 
+        ref="hx-input-idcard"
+        :placeholder="'请输入身份证号码'"
+        :label="'身份证号码'"
+        :type="'idcard'"
         :readonly="true"
-        :eye='eye'
-        @binkList="binkList"
-        v-model="accountValue2" 
-      ></hx-input-account>
+        :eye="eye"
+        v-model="idcardValue2" 
+      ></hx-input-idcard>
     </div>
   </cube-page>
 </template>
 
 <script type="text/ecmascript-6">
   // import WithConsole from '@/components/input/hoc.js'
-  import HxInputAccount from '@/components/hx-accountnumber/hx-accountnumber.vue'
+  import HxInputIdcard from '@/components/hx-idnumber/hx-idnumber.vue'
   import CubePage from '../components/cube-page.vue'
   import SwitchOption from '../components/switch-option'
 
@@ -49,9 +47,9 @@
         type: '',
         // type: 'email',
         value: '',
-        accountValue: '',
-        accountValue1: '6225 5526 8798 1625',
-        accountValue2: '6225 5526 8798 1625',
+        idcardValue: '',
+        idcardValue1: '230229199608042020',
+        idcardValue2: '230229199608042020',
         disabled: false,
         useClear: true,
         maxlength10: false,
@@ -163,7 +161,7 @@
       }
     },
     components: {
-      HxInputAccount,
+      HxInputIdcard,
       CubePage,
       SwitchOption
     }

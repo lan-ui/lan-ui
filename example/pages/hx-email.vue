@@ -1,39 +1,39 @@
 <template>
   <cube-page
     type="input-view"
-    title="Address"
+    title="HxEmail"
     class="option-demo">
     <div slot="content">
-      <hx-input-address 
-        ref="hx-input-address"
-        :placeholder="'请输入街道(小区)门牌号'"
-        :label="'详细地址'"
-        :type="'address'"
-        v-model="addressValue" 
-      ></hx-input-address>
-      <hx-input-address 
-        ref="hx-input-address"
-        :placeholder="'请输入街道(小区)门牌号'"
-        :label="'详细地址'"
-        :type="'address'"
+      <hx-input-email 
+        ref="hx-input-email"
+        :placeholder="'请输入邮箱地址'"
+        :label="'邮箱地址'"
+        :type="'email'" 
+        v-model="emailValue" 
+      ></hx-input-email>
+      <hx-input-email 
+        ref="hx-input-email"
+        :placeholder="'请输入邮箱地址'"
+        :label="'邮箱地址'"
+        :type="'email'" 
         :disabled="true"
-        v-model="addressValue1" 
-      ></hx-input-address>
-      <hx-input-address 
-        ref="hx-input-address"
-        :placeholder="'请输入街道(小区)门牌号'"
-        :label="'详细地址'"
-        :type="'address'"
+        v-model="emailValue1" 
+      ></hx-input-email>
+      <hx-input-email 
+        ref="hx-input-email"
+        :placeholder="'请输入邮箱地址'"
+        :label="'邮箱地址'"
+        :type="'email'" 
         :readonly="true"
-        v-model="addressValue1" 
-      ></hx-input-address>
+        v-model="emailValue1" 
+      ></hx-input-email>
     </div>
   </cube-page>
 </template>
 
 <script type="text/ecmascript-6">
   // import WithConsole from '@/components/input/hoc.js'
-  import HxInputAddress from '@/components/hx-address/hx-address.vue'
+  import HxInputEmail from '@/components/hx-email/hx-email.vue'
   import CubePage from '../components/cube-page.vue'
   import SwitchOption from '../components/switch-option'
 
@@ -45,8 +45,8 @@
         type: '',
         // type: 'email',
         value: '',
-        addressValue: '',
-        addressValue1: '某某小区某某单元',
+        emailValue: '',
+        emailValue1: '23456666@qq.com',
         disabled: false,
         useClear: true,
         maxlength10: false,
@@ -158,7 +158,7 @@
       }
     },
     components: {
-      HxInputAddress,
+      HxInputEmail,
       CubePage,
       SwitchOption
     }

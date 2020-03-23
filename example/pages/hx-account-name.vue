@@ -1,39 +1,39 @@
 <template>
   <cube-page
     type="input-view"
-    title="Email"
+    title="HxAccountName"
     class="option-demo">
     <div slot="content">
-      <hx-input-email 
-        ref="hx-input-email"
-        :placeholder="'请输入邮箱地址'"
-        :label="'邮箱地址'"
-        :type="'email'" 
-        v-model="emailValue" 
-      ></hx-input-email>
-      <hx-input-email 
-        ref="hx-input-email"
-        :placeholder="'请输入邮箱地址'"
-        :label="'邮箱地址'"
-        :type="'email'" 
+      <hx-input-accountName
+        ref="hx-input-accountName"
+        :placeholder="'请输入账号名'"
+        :label="'账号名'"
+        :type="'accountName'"
+        v-model="accountNameValue" 
+      ></hx-input-accountName>
+      <hx-input-accountName
+        ref="hx-input-accountName"
+        :placeholder="'请输入账号名'"
+        :label="'账号名'"
+        :type="'accountName'"
         :disabled="true"
-        v-model="emailValue1" 
-      ></hx-input-email>
-      <hx-input-email 
-        ref="hx-input-email"
-        :placeholder="'请输入邮箱地址'"
-        :label="'邮箱地址'"
-        :type="'email'" 
+        v-model="accountNameValue1" 
+      ></hx-input-accountName>
+      <hx-input-accountName
+        ref="hx-input-accountName"
+        :placeholder="'请输入账号名'"
+        :label="'账号名'"
+        :type="'accountName'"
         :readonly="true"
-        v-model="emailValue1" 
-      ></hx-input-email>
+        v-model="accountNameValue1" 
+      ></hx-input-accountName>
     </div>
   </cube-page>
 </template>
 
 <script type="text/ecmascript-6">
   // import WithConsole from '@/components/input/hoc.js'
-  import HxInputEmail from '@/components/hx-email/hx-email.vue'
+  import HxInputAccountName from '@/components/hx-account-name/hx-account-name.vue'
   import CubePage from '../components/cube-page.vue'
   import SwitchOption from '../components/switch-option'
 
@@ -45,8 +45,8 @@
         type: '',
         // type: 'email',
         value: '',
-        emailValue: '',
-        emailValue1: '23456666@qq.com',
+        accountNameValue: '',
+        accountNameValue1: '测试账号',
         disabled: false,
         useClear: true,
         maxlength10: false,
@@ -158,7 +158,7 @@
       }
     },
     components: {
-      HxInputEmail,
+      HxInputAccountName,
       CubePage,
       SwitchOption
     }
