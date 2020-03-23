@@ -117,31 +117,31 @@
                 text: 'Input'
               },
               {
-                path: '/phone',
+                path: '/hx-phone',
                 text: 'HxPhone'
               },
               {
-                path: '/email',
+                path: '/hx-email',
                 text: 'HxEmail'
               },
               {
-                path: '/idnumber',
+                path: '/hx-idnumber',
                 text: 'HxIdnumber'
               },
               {
-                path: '/address',
+                path: '/hx-address',
                 text: 'HxAddress'
               },
               {
-                path: '/account-name',
+                path: '/hx-account-name',
                 text: 'HxAccountName'
               },
               {
-                path: '/account-number',
+                path: '/hx-account-number',
                 text: 'HxAccountNumber'
               },
               {
-                path: '/phoneverification',
+                path: '/hx-phoneverification',
                 text: 'HxPhoneverification'
               },
               {
