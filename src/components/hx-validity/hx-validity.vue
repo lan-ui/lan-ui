@@ -74,7 +74,7 @@
         this.warning = false
         if (!this.datePicker) {
           this.datePicker = this.$createDatePicker({
-            title: 'Date Picker',
+            title: '日期选择',
             min: this.min,
             max: this.max,
             value: new Date(),

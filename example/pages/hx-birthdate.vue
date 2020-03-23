@@ -1,5 +1,5 @@
 <template>
-  <cube-page title="HX Birthdate">
+  <cube-page title="HXBirthdate" class="hx">
     <div slot="content">
         <hx-birthdate :warning="warning" :birth="birth" :readonly="readonly" :disabled="disabled" @receive="handleSelect"></hx-birthdate>
     </div>
@@ -30,3 +30,8 @@
     }
   }
 </script>
+<style lang="stylus">
+.cube-page.hx >.wrapper .content {
+  margin:10px 20px
+}
+</style>
