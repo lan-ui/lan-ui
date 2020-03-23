@@ -1,7 +1,7 @@
-import hxProvinces from '../../components/hx-provinces/hx-provinces.vue'
+import HxProvinces from '../../components/hx-provinces/hx-provinces.vue'
 
-hxProvinces.install = function (Vue) {
-  Vue.component(hxProvinces.name, hxProvinces)
+HxProvinces.install = function (Vue) {
+  Vue.component(HxProvinces.name, HxProvinces)
 }
 
-export default hxProvinces
+export default HxProvinces

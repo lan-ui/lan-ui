@@ -1,7 +1,7 @@
-import hxNationality from '../../components/hx-nationality/hx-nationality.vue'
+import HxNationality from '../../components/hx-nationality/hx-nationality.vue'
 
-hxNationality.install = function (Vue) {
-  Vue.component(hxNationality.name, hxNationality)
+HxNationality.install = function (Vue) {
+  Vue.component(HxNationality.name, HxNationality)
 }
 
-export default hxNationality
+export default HxNationality
