@@ -49,7 +49,6 @@ export default {
     },
     handleInput(e) {
       this.$emit('input', e)
-      // this.inputCheckEmail(e)
     }
   }
 }
