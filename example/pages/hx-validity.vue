@@ -1,7 +1,7 @@
 <template>
   <cube-page title="HxValidity" class="hx">
     <div slot="content">
-        <hx-validity :age="age" :warning="warning" :validity="validity" :validityArray="validityArray" :readonly="readonly" :disabled="disabled" @receive="handleSelect" :isLongTerm="isLongTerm"></hx-validity>
+        <hx-validity :age="age" :validity="validity" :validityArray="validityArray" :readonly="readonly" :disabled="disabled" @receive="handleSelect" :isLongTerm="isLongTerm"></hx-validity>
     </div>
   </cube-page>
 </template>
@@ -13,7 +13,6 @@
     data() {
       return {
         age: 65,
-        warning: false,
         validity: '',
         validityArray: [],
         readonly: false,

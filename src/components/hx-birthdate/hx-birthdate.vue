@@ -13,10 +13,10 @@
   const COMPONENT_NAME = 'hx-birthdate'
   export default {
     name: COMPONENT_NAME,
+    data: {
+      warning: false
+    },
     props: {
-      warning: {
-        type: Boolean
-      },
       birth: {
         type: String
       },
@@ -66,7 +66,6 @@
         }
       },
       handleClick(event) {
-        console.log(event)
         if (this.disabled || this.readonly) {
           event.preventDefault()
           event.stopPropagation()

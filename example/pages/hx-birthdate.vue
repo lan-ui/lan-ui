@@ -1,7 +1,7 @@
 <template>
   <cube-page title="HXBirthdate" class="hx">
     <div slot="content">
-        <hx-birthdate :warning="warning" :birth="birth" :readonly="readonly" :disabled="disabled" @receive="handleSelect"></hx-birthdate>
+        <hx-birthdate :birth="birth" :readonly="readonly" :disabled="disabled" @receive="handleSelect"></hx-birthdate>
     </div>
   </cube-page>
 </template>
@@ -12,7 +12,6 @@
   export default {
     data() {
       return {
-        warning: false,
         birth: '2018-04-20',
         birthArray: [],
         readonly: false,

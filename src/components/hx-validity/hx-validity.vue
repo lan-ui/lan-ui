@@ -13,12 +13,12 @@
   const COMPONENT_NAME = 'hx-validity'
   export default {
     name: COMPONENT_NAME,
+    data: {
+      warning: false
+    },
     props: {
       age: {
         type: Number
-      },
-      warning: {
-        type: Boolean
       },
       validity: {
         type: String
