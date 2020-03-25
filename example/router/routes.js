@@ -148,31 +148,31 @@ const routes = [
     component: Input
   },
   {
-    path: '/phone',
+    path: '/hx-phone',
     component: HxPhone
   },
   {
-    path: '/email',
+    path: '/hx-email',
     component: HxEmail
   },
   {
-    path: '/idnumber',
+    path: '/hx-idnumber',
     component: HxIdnumber
   },
   {
-    path: '/address',
+    path: '/hx-address',
     component: HxAddress
   },
   {
-    path: '/account-name',
+    path: '/hx-account-name',
     component: HxAccountName
   },
   {
-    path: '/account-number',
+    path: '/hx-account-number',
     component: HxAccountNumber
   },
   {
-    path: '/phoneverification',
+    path: '/hx-phoneverification',
     component: HxPhoneverification
   },
   {
