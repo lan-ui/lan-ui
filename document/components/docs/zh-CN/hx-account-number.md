@@ -84,3 +84,9 @@
 | disabled | 输入框是否被禁用 | Boolean | false/true | false |
 | accountValue | 输入的账号 | String |  |  |
 | type | 组件类型 | String |  | account |
+
+### 自定义事件
+
+| 事件名 | 说明 | 参数 |
+| - | - | - |
+| binkList | 输入账号返回的对应开户行信息 | e.text|
