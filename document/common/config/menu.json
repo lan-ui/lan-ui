@@ -111,7 +111,14 @@
             "hx-location": "HxLocation",
             "hx-provinces": "HxProvinces",
             "hx-birthdate": "HxBirthdate",
-            "hx-validity": "HxValidity"
+            "hx-validity": "HxValidity",
+            "hx-phone": "HxPhone",
+            "hx-email": "HxEmail",
+            "hx-idnumber": "HxIdnumber",
+            "hx-address": "HxAddress",
+            "hx-account-name": "HxAccountName",
+            "hx-account-number": "HxAccountNumber",
+            "hx-phoneverification": "HxPhoneverification"
           }
         },
         "basic": {
