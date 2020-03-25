@@ -19,13 +19,13 @@ var webpackConfig = merge(baseWebpackConfig, {
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
     path: config.build.assetsRoot,
-    filename: utils.assetsPath('hx.js'),
+    filename: utils.assetsPath('index.js'),
     library: 'hx',
     libraryTarget: 'umd'
   },
   plugins: [
     // extract css into its own file
-    new ExtractTextPlugin(utils.assetsPath('hx.css'))
+    new ExtractTextPlugin(utils.assetsPath('style.css'))
   ]
 })
 
