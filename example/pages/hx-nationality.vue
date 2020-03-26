@@ -1,7 +1,7 @@
 <template>
   <cube-page  title="HxNationality" class="hx">
     <div slot="content">
-      <div>
+      <div class="hx-sex-wrapper">
         <hx-nationality :readonly="false" @selected="selected" ref="hxValidate"></hx-nationality>
         <hx-nationality :readonly="false" :options="types"  @selected="selected" ref="hxValidate"></hx-nationality>
         <hx-nationality :readonly="false" :disabled="true" :value="value1"></hx-nationality>
@@ -77,8 +77,8 @@
 </script>
 
 <style lang="stylus">
-  .cube-page.hx >.wrapper .content
-    margin: 10px 0
+  .hx-sex-wrapper
+    margin: 0 -20px
   .hx-submit.cube-btn
     margin-top: 20px
 </style>
