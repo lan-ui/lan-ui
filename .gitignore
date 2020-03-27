@@ -9,7 +9,7 @@ test/e2e/reports
 selenium-debug.log
 
 # Test publish files
-cube-ui-*.tgz
+hx-ui-*.tgz
 package/
 
 # build files

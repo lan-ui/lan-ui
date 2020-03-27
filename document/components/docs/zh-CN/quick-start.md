@@ -1,36 +1,34 @@
 ### 脚手架
+> 新创建的项目快速使用hx-ui组件库，因目前使用私有npm，私有git，请按照说明文档进行安装
 
 #### vue-cli >= 3
 
-如果你正在使用新版本的 Vue CLI vue-cli@3，那么推荐你直接使用 [vue-cli-plugin-cube-ui](https://github.com/cube-ui/vue-cli-plugin-cube-ui) 插件。在你初始化完项目后直接执行 `vue add cube-ui` 即可。
-
-在执行的时候，会询问一些配置项，这个和老版本的 [模板](https://github.com/cube-ui/cube-template) 配置是一样的，参见 [cube-template WIKI](https://github.com/cube-ui/cube-template/wiki)。
-
+推荐使用vue-cli-plugin-hx-ui插件，创建项目及配置，说明文档详见[vue-cli-plugin-hx-ui](http://106.38.93.196:8081/hualife/vue-cli-plugin-hx-ui)  
 执行完成后，你可以直接进入<a href="#cube-使用-anchor" class="anchor">使用部分</a>。
 
 #### vue-cli < 3
 
-如果你打算用在一个新项目中使用 cube-ui，可以通过我们提供的一套基于 [vue-cli](https://github.com/vuejs/vue-cli) 实现的[脚手架模板](https://github.com/cube-ui/cube-template)去初始化 cube-ui 项目的配置和基础代码，这样你就可以忽略<a href="#cube-安装-anchor" class="anchor">安装</a>步骤，直接看<a href="#cube-使用-anchor" class="anchor">使用部分</a>。
+推荐使用hx-ui模版创建项目，创建项目及配置，说明文档详见[hx-ui-template](http://106.38.93.196:8081/hualife/hx-ui-template)，这样你就可以忽略<a href="#cube-安装-anchor" class="anchor">安装</a>步骤，直接看<a href="#cube-使用-anchor" class="anchor">使用部分</a>。
 
-```shell
-$ vue init cube-ui/cube-template projectname
+### CDN
+> 主要应用在老的项目，及非脚手架搭建项目，强依赖vue，使用前请先引入vuejs
+
+```html
+<link rel="stylesheet" href="http://sales-int.ihxlife.com/hualifeui/lib/hx.min.css" />
+<script src="http://sales-int.ihxlife.com/hualifeui/lib/hx.min.js"></script>
 ```
-
-关于初始化时特殊的配置项，请参考 [cube-template WIKI](https://github.com/cube-ui/cube-template/wiki)。
-
-如果你打算在现有项目中使用 cube-ui，请先参考<a href="#cube-安装-anchor" class="anchor">安装</a>部分。
 
 ### 安装
 
-> 此安装部分只针对于 vue-cli < 3 的情况
+> 此安装部分只针对于 vue-cli < 3 的情况，并且已经存在的项目中使用hx-ui，需要自己手动配置
 
-#### NPM
+#### npm
 
 ```shell
-$ npm install cube-ui --save
+$ npm install hx-ui --save
 ```
 
-cube-ui 搭配 webpack 2+ 支持[后编译](#/zh-CN/docs/post-compile)和普通编译 2 种构建方式（默认使用后编译），使用前都需要修改应用的依赖和配置。
+hx-ui 搭配 webpack 2+ 支持[后编译](#/zh-CN/docs/post-compile)和普通编译 2 种构建方式（默认使用后编译），使用前都需要修改应用的依赖和配置。
 
 - 后编译
 
@@ -40,8 +38,8 @@ cube-ui 搭配 webpack 2+ 支持[后编译](#/zh-CN/docs/post-compile)和普通�
     {
       // webpack-transform-modules-plugin 依赖 transformModules
       "transformModules": {
-        "cube-ui": {
-          "transform": "cube-ui/src/modules/${member}",
+        "hx-ui": {
+          "transform": "hx-ui/src/modules/${member}",
           "kebabCase": true
         }
       },
@@ -104,8 +102,6 @@ cube-ui 搭配 webpack 2+ 支持[后编译](#/zh-CN/docs/post-compile)和普通�
     }
     ```
 
-    具体参见 [https://github.com/vuejs-templates/webpack/pull/970/files](https://github.com/vuejs-templates/webpack/pull/970/files)
-
 - 普通编译
 
   1. 修改 package.json 并安装依赖
@@ -113,8 +109,8 @@ cube-ui 搭配 webpack 2+ 支持[后编译](#/zh-CN/docs/post-compile)和普通�
     {
       // webpack-transform-modules-plugin 依赖 transformModules
       "transformModules": {
-        "cube-ui": {
-          "transform": "cube-ui/lib/${member}",
+        "hx-ui": {
+          "transform": "hx-ui/lib/${member}",
           "kebabCase": true,
           "style": {
             "ignore": ["create-api", "better-scroll", "locale"]
@@ -138,7 +134,7 @@ cube-ui 搭配 webpack 2+ 支持[后编译](#/zh-CN/docs/post-compile)和普通�
         // ...
         alias: {
           // ...
-          'cube-ui': 'cube-ui/lib'
+          'hx-ui': 'hx-ui/lib'
           // ...
         }
         // ...
@@ -152,13 +148,6 @@ cube-ui 搭配 webpack 2+ 支持[后编译](#/zh-CN/docs/post-compile)和普通�
     }
     ```
 
-#### CDN
-
-```html
-<script src="https://unpkg.com/cube-ui/lib/cube.min.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/cube-ui/lib/cube.min.css">
-```
-
 ### 使用
 
 #### 全部引入
@@ -167,9 +156,9 @@ cube-ui 搭配 webpack 2+ 支持[后编译](#/zh-CN/docs/post-compile)和普通�
 
 ```javascript
 import Vue from 'vue'
-import Cube from 'cube-ui'
+import Hx from 'hx-ui'
 
-Vue.use(Cube)
+Vue.use(Hx)
 ```
 
 #### 按需引入
@@ -179,7 +168,7 @@ import {
   /* eslint-disable no-unused-vars */
   Style,
   Button
-} from 'cube-ui'
+} from 'hx-ui'
 ```
 
 **注意：** 按需引入的话，是不会打包[基础样式](#/zh-CN/docs/style)部分的，所以在使用的时候需要引入 style 模块。
@@ -231,14 +220,30 @@ import {
   Scroll,
   Slide,
   IndexList,
-  Swipe
-} from 'cube-ui'
+  Swipe,
+  // common
+  HxBank,
+  HxCertificatetype,
+  HxNationality,
+  HxSex,
+  HxLocation,
+  HxProvinces,
+  HxValidity,
+  HxBirthdate,
+  HxInputPhone,
+  HxInputEmail,
+  HxInputIdcard,
+  HxInputAddress,
+  HxInputAccount,
+  HxInputAccountName,
+  HxInputVerification
+} from 'hx-ui'
 ```
 
 也可以引入[create-api](#/zh-CN/docs/create-api)和[better-scroll](#/zh-CN/docs/better-scroll)模块：
 
 ```js
-import { createAPI, BetterScroll, Locale } from 'cube-ui'
+import { createAPI, BetterScroll, Locale } from 'hx-ui'
 ```
 
 #### 示例
