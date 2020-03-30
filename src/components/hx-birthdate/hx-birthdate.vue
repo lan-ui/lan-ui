@@ -1,20 +1,24 @@
 <template>
-    <div class="birth" :class="{warning:warning}" @click="handleClick">
+    <div :class="{warning:warning}" @click="handleClick">
+      <div class="birth">
         <span class="title" :class="{tips:disabled}">
           <slot>出生日期</slot>
         </span>
         <span class="text" :class="{tips:!birth ||disabled}">{{birth?birth:shownText}}</span>
         <span class="icon" v-if="!readonly && !disabled">
-            <i class="cubeic-calendar"></i>
+            <i class="icon-hualife-date"></i>
         </span>
     </div>
+  </div>
 </template>
 <script>
   const COMPONENT_NAME = 'hx-birthdate'
   export default {
     name: COMPONENT_NAME,
-    data: {
-      warning: false
+    data () {
+      return {
+        warning: false
+      }
     },
     props: {
       birth: {
@@ -81,6 +85,8 @@
     mygrey=#ccc
     myblack=#333
     myred=#db1e06
+    .warning
+      height:74px
     .birth
       background-color:white
       font-size:16px
@@ -104,5 +110,4 @@
       font-size:12px
       display:block
       line-height:24px
-
 </style>
