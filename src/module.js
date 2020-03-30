@@ -52,15 +52,14 @@ import BetterScroll from './modules/better-scroll'
 import createAPI from './modules/create-api'
 
 // hx
-import hxBank from './modules/hx-bank'
-import hxCertificatetype from './modules/hx-certificatetype'
-import hxNationality from './modules/hx-nationality'
-import hxSex from './modules/hx-sex'
-import hxLocation from './modules/hx-location'
-import hxProvinces from './modules/hx-provinces'
+import HxBank from './modules/hx-bank'
+import HxCertificatetype from './modules/hx-certificatetype'
+import HxNationality from './modules/hx-nationality'
+import HxSex from './modules/hx-sex'
+import HxLocation from './modules/hx-location'
+import HxProvinces from './modules/hx-provinces'
 import HxBirthdate from './modules/hx-birthdate'
 import HxValidity from './modules/hx-validity'
-// xwb
 import HxInputPhone from './modules/hx-phonenumber'
 import HxInputVerification from './modules/hx-phoneverification'
 import HxInputAccountName from './modules/hx-account-name'
@@ -68,7 +67,6 @@ import HxInputAccount from './modules/hx-account-number'
 import HxInputAddress from './modules/hx-address'
 import HxInputIdcard from './modules/hx-idnumber'
 import HxInputEmail from './modules/hx-email'
-// xwb-end
 
 const FormGroup = Form.Group
 const FormItem = Form.Item
@@ -145,15 +143,14 @@ export {
   BetterScroll,
   createAPI,
   // hx
-  hxBank,
-  hxCertificatetype,
-  hxNationality,
-  hxSex,
-  hxLocation,
-  hxProvinces,
+  HxBank,
+  HxCertificatetype,
+  HxNationality,
+  HxSex,
+  HxLocation,
+  HxProvinces,
   HxValidity,
   HxBirthdate,
-  // xwb
   HxInputPhone,
   HxInputEmail,
   HxInputIdcard,
@@ -161,5 +158,4 @@ export {
   HxInputAccount,
   HxInputAccountName,
   HxInputVerification
-  // xwb-end
 }

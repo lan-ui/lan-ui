@@ -104,6 +104,13 @@
         "common": {
           "name": "通用",
           "subList": {
+            "hx-phone": "HxPhone",
+            "hx-email": "HxEmail",
+            "hx-idnumber": "HxIdnumber",
+            "hx-address": "HxAddress",
+            "hx-account-name": "HxAccountName",
+            "hx-account-number": "HxAccountNumber",
+            "hx-phoneverification": "HxPhoneverification",
             "hx-sex": "HxSex",
             "hx-bank": "HxBank",
             "hx-certificatetype": "HxCertificatetype",

@@ -1,6 +1,6 @@
 ## 主题
 
-移动端的组件对主题定制的需求会更多，从 `cube-ui^1.0.2` 开始，通过 webpack 工具可以实现自定义主题样式。
+移动端的组件对主题定制的需求会更多，从 `hx-ui^1.0.0` 开始，通过 webpack 工具可以实现自定义主题样式。
 
 **注意：** 自定义主题依赖[后编译](#/zh-CN/docs/post-compile)。
 
@@ -9,12 +9,12 @@
 在你的项目的 `src/` 目录下创建一个 `theme.styl` 的文件，内容如下（展示的全是默认样式，你可以选择这针对不同组件做定制）：
 
 ```stylus
-// 如果你需要使用 cube-ui 自带的颜色值 需要 require 进来
-@require "~cube-ui/src/common/stylus/var/color.styl"
+// 如果你需要使用 hx-ui 自带的颜色值 需要 require 进来
+@require "~hx-ui/src/common/stylus/var/color.styl"
 
 // action-sheet
 $action-sheet-color := $color-grey
-$action-sheet-active-color := $color-orange
+$action-sheet-active-color := $color-blue
 $action-sheet-bgc := $color-white
 $action-sheet-active-bgc := $color-light-grey-opacity
 $action-sheet-title-color := $color-dark-grey
@@ -31,8 +31,8 @@ $btn-bgc := $color-regular-blue
 $btn-active-bgc := $color-blue
 /// primary
 $btn-primary-color := $color-white
-$btn-primary-bgc := $color-orange
-$btn-primary-active-bgc := $color-dark-orange
+$btn-primary-bgc := $color-blue
+$btn-primary-active-bgc := $color-dark-blue
 /// light
 $btn-light-color := $color-grey
 $btn-light-bgc := $color-light-grey-sss
@@ -44,11 +44,11 @@ $btn-outline-bdc := $color-grey
 $btn-outline-active-bgc := $color-grey-opacity
 $btn-outline-active-bdc := $color-grey
 /// outline-primary
-$btn-outline-primary-color := $color-orange
+$btn-outline-primary-color := $color-blue
 $btn-outline-primary-bgc := transparent
-$btn-outline-primary-bdc := $color-orange
-$btn-outline-primary-active-bgc := $color-orange-opacity
-$btn-outline-primary-active-bdc := $color-dark-orange
+$btn-outline-primary-bdc := $color-blue
+$btn-outline-primary-active-bgc := $color-blue-opacity
+$btn-outline-primary-active-bdc := $color-dark-blue
 /// disabled
 $btn-disabled-color := $color-white
 $btn-disabled-bgc := $color-light-grey-s
@@ -62,13 +62,13 @@ $toolbar-active-bgc := $color-active-grey
 $checkbox-color := $color-grey
 $checkbox-icon-color := $color-light-grey-s
 /// checked
-$checkbox-checked-icon-color := $color-orange
+$checkbox-checked-icon-color := $color-blue
 $checkbox-checked-icon-bgc := $color-white
 /// disabled
 $checkbox-disabled-icon-color := $color-light-grey-ss
 $checkbox-disabled-icon-bgc := $color-light-grey-ss
 // checkbox hollow
-$checkbox-hollow-checked-icon-color := $color-orange
+$checkbox-hollow-checked-icon-color := $color-blue
 $checkbox-hollow-disabled-icon-color := $color-light-grey-ss
 // checkbox-group
 $checkbox-group-bgc := $color-white
@@ -81,22 +81,22 @@ $radio-color := $color-grey
 $radio-icon-color := $color-light-grey-s
 /// selected
 $radio-selected-icon-color := $color-white
-$radio-selected-icon-bgc := $color-orange
+$radio-selected-icon-bgc := $color-blue
 /// disabled
 $radio-disabled-icon-bgc := $color-light-grey-ss
 // radio hollow
-$radio-hollow-selected-icon-color := $color-orange
+$radio-hollow-selected-icon-color := $color-blue
 $radio-hollow-disabled-icon-color := $color-light-grey-ss
 
 //checker
 $checker-item-color := $color-grey
 $checker-item-bdc := $color-light-grey-sss
 $checker-item-bgc := $color-white
-$checker-item-active-color := $color-orange
-$checker-item-active-bdc := $color-orange
-$checker-item-active-bgc := $color-light-orange-opacity
+$checker-item-active-color := $color-blue
+$checker-item-active-bdc := $color-blue
+$checker-item-active-bgc := $color-light-blue-opacity
 $checker-item-disabled-color := $color-light-grey-s
-$checker-item-disabled-bdc := $color-light-grey-s
+$checker-item-disabled-bdc := $color-light-grey-sss
 $checker-item-disabled-bgc := $color-light-grey-ss
 
 // dialog
@@ -109,8 +109,8 @@ $dialog-close-color := $color-light-grey
 $dialog-btn-color := $color-light-grey
 $dialog-btn-bgc := $color-white
 $dialog-btn-active-bgc := $color-light-grey-opacity
-$dialog-btn-highlight-color := $color-orange
-$dialog-btn-highlight-active-bgc := $color-light-orange-opacity
+$dialog-btn-highlight-color := $color-blue
+$dialog-btn-highlight-active-bgc := $color-light-blue-opacity
 $dialog-btn-disabled-color := $color-light-grey
 $dialog-btn-disabled-active-bgc := transparent
 $dialog-btns-split-color := $color-row-line
@@ -123,7 +123,7 @@ $index-list-anchor-bgc := #f7f7f7
 $index-list-item-color := $color-dark-grey
 $index-list-item-active-bgc := $color-light-grey-opacity
 $index-list-nav-color := $color-grey
-$index-list-nav-active-color := $color-orange
+$index-list-nav-active-color := $color-blue
 
 // loading
 
@@ -131,8 +131,8 @@ $index-list-nav-active-color := $color-orange
 $picker-bgc := $color-white
 $picker-title-color := $color-dark-grey
 $picker-subtitle-color := $color-light-grey
-$picker-confirm-btn-color := $color-orange
-$picker-confirm-btn-active-color := $color-light-orange
+$picker-confirm-btn-color := $color-blue
+$picker-confirm-btn-active-color := $color-light-blue
 $picker-cancel-btn-color := $color-light-grey
 $picker-cancel-btn-active-color := $color-light-grey-s
 $picker-item-color := $color-dark-grey
@@ -145,7 +145,7 @@ $popup-mask-opacity := .4
 
 // slide
 $slide-dot-bgc := $color-light-grey-s
-$slide-dot-active-bgc := $color-orange
+$slide-dot-active-bgc := $color-blue
 
 // time-picker
 
@@ -167,13 +167,13 @@ $upload-file-bgc := $color-white
 $upload-file-remove-color := rgba(0, 0, 0, .8)
 $upload-file-remove-bgc := $color-white
 $upload-file-state-bgc := $color-mask-bg
-$upload-file-success-color := $color-orange
+$upload-file-success-color := $color-blue
 $upload-file-error-color := #f43530
 $upload-file-status-bgc := $color-white
 $upload-file-progress-color := $color-white
 
 // switch
-$switch-on-bgc := $color-orange
+$switch-on-bgc := $color-blue
 $switch-off-bgc := $color-white
 $switch-off-border-color := #e4e4e4
 
@@ -181,7 +181,7 @@ $switch-off-border-color := #e4e4e4
 $input-color := $color-grey
 $input-bgc := $color-white
 $input-border-color := $color-row-line
-$input-focus-border-color := $color-orange
+$input-focus-border-color := $color-blue
 $input-placeholder-color := $color-light-grey-s
 $input-clear-icon-color := $color-light-grey
 
@@ -189,13 +189,13 @@ $input-clear-icon-color := $color-light-grey
 $textarea-color := $color-grey
 $textarea-bgc := $color-white
 $textarea-border-color := $color-row-line
-$textarea-focus-border-color := $color-orange
-$textarea-outline-color := $color-orange
+$textarea-focus-border-color := $color-blue
+$textarea-outline-color := $color-blue
 $textarea-placeholder-color := $color-light-grey-s
 $textarea-indicator-color := $color-light-grey-s
 
 // validator
-$validator-msg-def-color := #e64340
+$validator-msg-def-color := #D81E06
 
 // select
 $select-color := $color-grey
@@ -203,7 +203,7 @@ $select-bgc := $color-white
 $select-disabled-color := #b8b8b8
 $select-disabled-bgc := $color-light-grey-opacity
 $select-border-color := $color-light-grey-s
-$select-border-active-color := $color-orange
+$select-border-active-color := $color-blue
 $select-icon-color := $color-light-grey
 $select-placeholder-color := $color-light-grey-s
 
@@ -228,15 +228,15 @@ $drawer-item-active-bgc := $color-light-grey-opacity
 // scroll-nav
 $scroll-nav-bgc := $color-white
 $scroll-nav-color := $color-grey
-$scroll-nav-active-color := $color-orange
+$scroll-nav-active-color := $color-blue
 
 // image-preview
 $image-preview-counter-color := $color-white
 
 // tab-bar & tab-panel
 $tab-color := $color-grey
-$tab-active-color := $color-dark-orange
-$tab-slider-bgc := $color-dark-orange
+$tab-active-color := $color-dark-blue
+$tab-slider-bgc := $color-dark-blue
 ```
 
 ### 配置 webpack

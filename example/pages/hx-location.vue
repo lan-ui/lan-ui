@@ -1,7 +1,7 @@
 <template>
   <cube-page  title="HxLocation" class="hx">
     <div slot="content">
-      <div>
+      <div class="hx-sex-wrapper">
         <hx-location :readonly="false"  @selected="selected" ref="hxValidate"></hx-location>
         <hx-location :readonly="false" :options="value"  @selected="selected" ref="hxValidate"></hx-location>
         <hx-location :readonly="false" :disabled="true" :value="value1"></hx-location>
@@ -80,8 +80,8 @@
 </script>
 
 <style lang="stylus">
-  .cube-page.hx >.wrapper .content
-    margin: 10px 0
+   .hx-sex-wrapper
+    margin: 0 -20px
   .hx-submit.cube-btn
     margin-top: 20px
 </style>
