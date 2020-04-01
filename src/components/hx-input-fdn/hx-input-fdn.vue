@@ -12,6 +12,7 @@
     :eye="eye"
     :type='type'
     :maxlength='maxlength'
+    :hxstyle="hxstyle"
     @focus="handleFocus"
     @blur="handleBlur"
     @input="handleInput"
@@ -58,7 +59,8 @@ const BindInputStatusStrategy = ctx => ({
     isShowErrorInfo: false
   },
   'corrent': {
-    btnClass: 'cubeic-right',
+    // btnClass: 'cubeic-right',
+    btnClass: '',
     btnStyle: {
       color: '#08af16'
     },
@@ -67,6 +69,7 @@ const BindInputStatusStrategy = ctx => ({
   },
   'wrong': {
     btnClass: 'cubeic-warn',
+    // btnClass: '',
     btnStyle: {
       color: '#d81e06'
     },
@@ -94,6 +97,7 @@ export default {
       type: [Boolean, Object],
       default: false
     },
+    hxstyle: String,
     // 透传 props
     ...HxInput.props
   },
@@ -166,6 +170,9 @@ export default {
     handleBlur(e) {
       this.status = this.calcStatus(this.value)
       this.$emit('focus', e)
+      setTimeout(() => {
+        this.emailShow = false
+      }, 200)
     },
     handleInput(e) {
       // debugger
@@ -260,39 +267,19 @@ export default {
 <style lang="stylus" rel="stylesheet/stylus">
   .hx-input-foundation
     line-height: 1;
-    // border: unset;
-    // border-bottom: 1px solid #efefef;
     font-weight: lighter;
     font-size: 16px;
     border-radius: 0;
-    margin-bottom: 30px
     color: rgba(51,51,51,1)
-    &.hx-input_normal
-      &::after
-        border: unset;
-        border-bottom: 2px solid rgba(239,239,239,1);
-    &.hx-input_active
-      &::after
-        border: unset;
-        border-bottom: 2px solid #1890ff;
     .hx-input-prepend
-      // width: 94px;
-      // color: #333;
       font-size:16px;
       font-family:PingFang SC;
-      font-weight:500;
-      // color:rgba(51,51,51,1);
-      width: 114px;
+      width: 100px;
     .hx-input-field
       padding: 18px 10px;
-      // color: #333;
-      // font-weight: 500;
       &::-webkit-input-placeholder
         color: #ccc;
   .phone-icon
-    // height :10px
-    // width :10px
-    // background :#000
     border-width :0.3rem
     margin-top :0.3rem
     margin-left :0.3rem

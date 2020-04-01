@@ -10,6 +10,7 @@
         :label="'身份证号码'"
         :type="'idcard'"
         :maxlength='18'
+        :hxstyle="'text-align:left'"
         v-model="idcardValue" 
       ></hx-input-idcard>
       <hx-input-idcard 

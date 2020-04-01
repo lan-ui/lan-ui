@@ -9,6 +9,7 @@
         :placeholder="'请输入邮箱地址'"
         :label="'邮箱地址'"
         :type="'email'" 
+        :hxstyle="'text-align:left'"
         v-model="emailValue" 
       ></hx-input-email>
       <hx-input-email 
@@ -57,6 +58,7 @@
         showEye: true,
         pwdVisible: true,
         reverse: false,
+        style: '',
         placeholder: 'please type here...'
       }
     },

@@ -7,8 +7,10 @@
     :readonly="readonly"
     :disabled="disabled"
     :placeholder="placeholder"
+    :maxlength="maxlength"
     :inputCheck="inputCheckAddress"
     :errorInfo="addressErrorInfo"
+    :hxstyle="hxstyle"
     @input="handleInput"
   >
   </hx-input-foundation>
@@ -18,7 +20,7 @@
 import HxInputFoundation from '../hx-input-fdn/hx-input-fdn'
 
 // const REGEXP_ADDRESS = /^[^`!@#$%^&*.<>]+$/
-const REGEXP_ADDRESS = /^[\u4e00-\u9fa5a-z]+$/gi
+const REGEXP_ADDRESS = /^[A-Za-z0-9\u4e00-\u9fa5]+$/
 
 export default {
   name: 'hx-input-address',

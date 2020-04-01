@@ -9,6 +9,8 @@
         :placeholder="'请输入街道(小区)门牌号'"
         :label="'详细地址'"
         :type="'address'"
+        :maxlength='30'
+        :hxstyle="'text-align:left'"
         v-model="addressValue" 
       ></hx-input-address>
       <hx-input-address 

@@ -6,23 +6,24 @@
     <div slot="content">
       <hx-input-accountName
         ref="hx-input-accountName"
-        :placeholder="'请输入账号名'"
-        :label="'账号名'"
+        :placeholder="'请输入账户名'"
+        :label="'账户名'"
         :type="'accountName'"
+        :hxstyle="'text-align:left'"
         v-model="accountNameValue" 
       ></hx-input-accountName>
       <hx-input-accountName
         ref="hx-input-accountName"
-        :placeholder="'请输入账号名'"
-        :label="'账号名'"
+        :placeholder="'请输入账户名'"
+        :label="'账户名'"
         :type="'accountName'"
         :disabled="true"
         v-model="accountNameValue1" 
       ></hx-input-accountName>
       <hx-input-accountName
         ref="hx-input-accountName"
-        :placeholder="'请输入账号名'"
-        :label="'账号名'"
+        :placeholder="'请输入账户名'"
+        :label="'账户名'"
         :type="'accountName'"
         :readonly="true"
         v-model="accountNameValue1" 

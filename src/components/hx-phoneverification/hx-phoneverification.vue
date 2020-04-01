@@ -10,6 +10,7 @@
     :placeholder="placeholder"
     :inputCheck="inputCheckVerification"
     :errorInfo="verificationErrorInfo"
+    :hxstyle="hxstyle"
     @input="handleInput"
   >
   </hx-input-foundation>

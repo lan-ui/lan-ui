@@ -9,6 +9,7 @@
         :placeholder="'请输入手机号'"
         :label="'手机号'"
         :type="'phone'"
+        :hxstyle="'text-align:left'"
         v-model="phoneValue" 
       ></hx-input-phone>
       <hx-input-phone 
@@ -48,7 +49,7 @@
         value: '',
         phoneValue: '',
         phoneValue1: '13245654433',
-        phoneValue2: '156 7627 3836',
+        phoneValue2: '15676273836',
         disabled: false,
         useClear: true,
         maxlength10: false,

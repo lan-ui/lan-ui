@@ -10,6 +10,7 @@
     :placeholder="placeholder"
     :inputCheck="inputCheckPhone"
     :errorInfo="phoneErrorInfo"
+    :hxstyle="hxstyle"
     @input="handleInput"
     @defaultPhone="defaultPhone"
     @clickEye="clickEye"
@@ -49,17 +50,17 @@ export default {
      * formatPhone('1761024207086235') -> '176 1024 2070 8623 5'
      *
      */
-    formatPhone(phone) {
-      if (!phone) return ''
-      const res = Array.prototype.reduce.call(this.deFormatPhone(phone), (temp, num, i) => temp + num + ((i % 4 === 2) ? ' ' : ''))
-      // console.log('res', res)
-      return res
-    },
-    deFormatPhone(phone) {
-      return phone.replace(/\s/g, '')
-    },
+    // formatPhone(phone) {
+    //   if (!phone) return ''
+    //   const res = Array.prototype.reduce.call(this.deFormatPhone(phone), (temp, num, i) => temp + num + ((i % 4 === 2) ? ' ' : ''))
+    //   // console.log('res', res)
+    //   return res
+    // },
+    // deFormatPhone(phone) {
+    //   return phone.replace(/\s/g, '')
+    // },
     inputCheckPhone(phone) {
-      console.log(this.eye)
+      // console.log(this.eye)
       var phoneLength = 11
       var REGEXP_PHONE = /^1[3456789]\d{1}\d{4}\d{4}$/
       // debugger
@@ -84,8 +85,9 @@ export default {
         phoneLength = 10
         REGEXP_PHONE = /^[0][9]\d{8}$/
       }
-      console.log(this.phoneType)
-      const value = this.deFormatPhone(phone)
+      // console.log(this.phoneType)
+      // const value = this.deFormatPhone(phone)
+      const value = phone
       if (!value /* 值校验不通过 */) {
         this.phoneErrorInfo = '请输入手机号码！'
         return false
@@ -101,9 +103,8 @@ export default {
       this.phoneType = e
     },
     handleInput(e) {
-      // debugger
-      // this.inputValue = this.value
-      this.$emit('input', this.formatPhone(e))
+      // this.$emit('input', this.formatPhone(e))
+      this.$emit('input', e)
     },
     clickEye(e) {
       this.eyeVal.push(this.value.replace(/\s/g, ''))

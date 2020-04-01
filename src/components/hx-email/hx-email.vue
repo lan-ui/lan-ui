@@ -9,6 +9,7 @@
     :placeholder="placeholder"
     :inputCheck="inputCheckEmail"
     :errorInfo="emailErrorInfo"
+    :hxstyle="hxstyle"
     @input="handleInput"
   >
   </hx-input-foundation>

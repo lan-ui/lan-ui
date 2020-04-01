@@ -1,35 +1,60 @@
 <template>
-  <div class="hx-input hx-input_normal" :class="{'hx-input_active': isFocus&&!readonly}">
-    <div class="hx-input-prepend" v-if="$slots.prepend">
-      <slot name="prepend"></slot>
-    </div>
-    <p class="hx-phone-section">
-      <slot name="phone"></slot>
-    </p>
-    <input
-      class="hx-input-field"
-      :class="{'hx-input_disabled': disabled}"
-      ref="input"
-      v-model="inputValue"
-      v-bind="$props"
-      :type="_type"
-      :disabled="disabled"
-      :readonly="readonly"
-      :autocomplete="autocomplete"
-      :autofocus="autofocus"
-      :maxlength="maxlength"
-      @focus="handleFocus"
-      @blur="handleBlur"
-      @change="changeHander"
-    >
-    <div class="hx-input-append" v-if="$slots.append || _showClear || _showPwdEye">
-      <div class="hx-input-clear" v-if="_showClear&&!readonly" @touchend="handleClear">
-        <i class="cubeic-wrong"></i>
+  <div class="hx">
+    <div class="hx-input hx-input_normal" :class="{'hx-input_active': isFocus&&!readonly}">
+      <div class="hx-input-prepend" v-if="$slots.prepend">
+       <slot name="prepend"></slot>
       </div>
-      <div class="hx-input-eye" v-if="_showPwdEye" @click="handlePwdEye">
-        <i :class="eyeClass"></i>
+      <p class="hx-phone-section">
+        <slot name="phone"></slot>
+      </p>
+      <input v-if="type!='address'"
+        class="hx-input-field"
+        :class="{'hx-input_disabled': disabled}"
+        ref="input"
+        v-model="inputValue"
+        v-bind="$props"
+        :type="_type"
+        :disabled="disabled"
+        :readonly="readonly"
+        :autocomplete="autocomplete"
+        :autofocus="autofocus"
+        :maxlength="maxlength"
+        :style="hxstyle"
+        @focus="handleFocus"
+        @blur="handleBlur"
+        @change="changeHander"
+      >
+      <textarea v-if="type=='address'"
+        class="hx-input-textarea"
+        :class="{'hx-input_disabled': disabled}"
+        ref="input"
+        v-model="inputValue"
+        v-bind="$props"
+        :type="_type"
+        :disabled="disabled"
+        :readonly="readonly"
+        :autocomplete="autocomplete"
+        :autofocus="autofocus"
+        :maxlength="maxlength"
+        :style="hxstyle"
+        @focus="handleFocus"
+        @blur="handleBlur"
+        @change="changeHander"
+      />
+      <div class="hx-input-append" v-if="$slots.append || _showClear || _showPwdEye">
+        <div class="hx-input-clear" v-if="_showClear&&!readonly" @touchend="handleClear">
+          <i class="cubeic-wrong"></i>
+          <!-- <i class="icon-hualife-certificates"></i> -->
+        </div>
+        <div class="hx-input-eye" v-if="_showPwdEye" @click="handlePwdEye">
+          <i :class="eyeClass"></i>
+        </div>
+        <slot name="append" v-if="!_showPwdEye&&!readonly"></slot>
       </div>
-      <slot name="append" v-if="!_showPwdEye&&!readonly"></slot>
+      <!-- 获取验证码 -->
+      <p > 
+        <slot name="verification"></slot>
+      </p>
     </div>
     <!-- 增加 slot 错误信息 | start -->
     <p class="hx-rule-error">
@@ -39,9 +64,6 @@
     <!-- 邮箱后缀 -->
     <p class="hx-email-suffix"> 
       <slot name="emailSuffix"></slot>
-    </p>
-    <p > 
-      <slot name="verification"></slot>
     </p>
   </div>
 </template>
@@ -97,6 +119,10 @@
       eye: {
         type: [Boolean, Object],
         default: false
+      },
+      hxstyle: {
+        type: String,
+        default: 'text-align:left'
       }
     },
     data() {
@@ -138,7 +164,7 @@
         return eye.reverse ? !eye.open : eye.open
       },
       eyeClass() {
-        return this.formatedEye.open ? 'cubeic-eye-visible' : 'cubeic-eye-invisible'
+        return this.formatedEye.open ? 'hx-icon-yanjing-keyikan' : 'hx-icon-bukejian1'
       }
       // inputValueFormat: {
       //   get() {
@@ -226,6 +252,14 @@
     background-color: $input-bgc
     border-1px($input-border-color)
     // padding-left: 0.3rem
+    &.hx-input_normal
+      &::after
+        border: unset;
+        border-bottom: 2px solid rgba(239,239,239,1);
+    &.hx-input_active
+      &::after
+        border: unset;
+        border-bottom: 2px solid #1890ff;
   .hx-input::after
     border-radius:0
   .hx-input-field
@@ -252,12 +286,35 @@
   // .hx-input_normal
   //     &::after
       // border-color: $input-focus-border-color
+  .hx-input-textarea{
+    flex: 1
+    width: 100%
+    min-width: 0
+    // padding: 10px
+    font-size:16px
+    box-sizing: border-box
+    color: $input-color
+    line-height: inherit
+    background-color: inherit
+    resize:none
+    // height 30px
+  }
+  textarea:focus {
+    outline:none
+  }
+  textarea{
+    // height:50px
+    line-height: 100%
+    display: table-cell; 
+    vertical-align: middle
+  }
   .hx-input_active
     &::after
       border-color: $input-focus-border-color
   .hx-input-prepend, .hx-input-append
     display: flex
     align-items: center
+    // width: 22px
   .hx-input-clear, .hx-input-eye
     // width: 1em
     // height: 1em
@@ -270,28 +327,33 @@
       display: inline-block
       transform: scale(1.2)
   .hx-input-eye
+    font-size: 17px;
+    color:#ccc;
     >
-      .cubeic-eye-invisible, .cubeic-eye-visible
+      .hx-icon-kejian, .hx-icon-bukejian
         transform: scale(1.4)
   // slot 错误信息样式 | start
   .hx-rule-error
-    position: absolute
+    // position: absolute
     bottom: -22px
     font-size: 12px
     font-family: PingFang SC;
     font-weight: 500;
     color: rgba(216,30,6,1);
+    margin-left: 1.25rem;
+    margin-top:10px
   // slot 错误信息样式 | end
   // 邮箱后缀
   .hx-email-suffix
-    position: absolute
+    // position: absolute
     top: 60px
     font-size: 12px
     color: #000
     overflow:scroll 
     max-height: 250px
-    width: 100%
+    // width: 100%
     z-index: 100
+    margin:0 1.25rem;
   .hx-email-div
     // height: 55px
     border-bottom: 1px solid #ccc
@@ -305,25 +367,25 @@
     background :#f1f6f5
     font-size: 12px
     // color: #1890ff
-    padding:6px
-    // width :80px
+    padding:6px 0
+    width :85px
     // font-size:24px;
     font-family:PingFang SC;
     font-weight:500;
     color:rgba(24,144,255,1);
     text-align: center
-    padding:7px 10px
+    // padding:7px 10px
   .hx-phone-resend
     border-radius: 20px
     background :#f1f6f5
     font-size: 12px
     color: #ccc
-    padding:6px
-    // width :80px
+    padding:6px 0
+    width :85px
     font-family:PingFang SC;
     font-weight:500;
     color:rgba(204,204,204,1);
-    padding:7px 5px
+    // padding:7px 5px
   .hx-phone-section
     max-width:60px
     display :flex

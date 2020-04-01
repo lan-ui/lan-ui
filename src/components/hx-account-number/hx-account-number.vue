@@ -10,6 +10,7 @@
     :placeholder="placeholder"
     :inputCheck="inputCheckAccunt"
     :errorInfo="accuntErrorInfo"
+    :hxstyle="hxstyle"
     @input="handleInput"
     @clickEye="clickEye"
   >
@@ -414,7 +415,7 @@ export default {
       return accunt.replace(/\s/g, '')
     },
     inputCheckAccunt(accunt) {
-      const REGEXP_ACCUNT = /^([1-9]{1})(\d{15}|\d{18})$/
+      const REGEXP_ACCUNT = /^([1-9]{1})(\d{15}|\d{16}|\d{17}|\d{18}|\d{19})$/
       const value = this.deFormatAccunt(accunt)
       if (!value /* 值校验不通过 */) {
         this.accuntErrorInfo = '请输入账号！'

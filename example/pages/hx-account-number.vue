@@ -9,6 +9,7 @@
         :placeholder="'请输入账号'"
         :label="'账号'"
         :type="'account'"
+        :hxstyle="'text-align:left'"
         @binkList="binkList"
         v-model="accountValue" 
       ></hx-input-account>

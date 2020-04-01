@@ -10,6 +10,7 @@
         :label="'手机验证码'"
         :type="'verification'"
         :maxlength='4'
+        :hxstyle="'text-align:left'"
         v-model="verificationValue" 
       ></hx-input-verification>
       <hx-input-verification 

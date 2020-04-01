@@ -9,6 +9,7 @@
     :placeholder="placeholder"
     :inputCheck="inputCheckAccuntName"
     :errorInfo="accuntNameErrorInfo"
+    :hxstyle="hxstyle"
     @input="handleInput"
   >
   </hx-input-foundation>
@@ -18,7 +19,7 @@
 import HxInputFoundation from '../hx-input-fdn/hx-input-fdn'
 
 const REGEXP_ACCUNTNAME1 = /^[\u4e00-\u9fa5]{2,}$/
-const REGEXP_ACCUNTNAME2 = /^[A-Za-z ]+$/
+const REGEXP_ACCUNTNAME2 = /^[A-Za-z ]{3,}$/
 
 export default {
   name: 'hx-input-accountName',
