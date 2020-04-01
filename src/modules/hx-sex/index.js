@@ -1,7 +1,7 @@
-import hxSex from '../../components/hx-sex/hx-sex.vue'
+import HxSex from '../../components/hx-sex/hx-sex.vue'
 
-hxSex.install = function (Vue) {
-  Vue.component(hxSex.name, hxSex)
+HxSex.install = function (Vue) {
+  Vue.component(HxSex.name, HxSex)
 }
 
-export default hxSex
+export default HxSex

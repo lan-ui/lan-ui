@@ -70,6 +70,11 @@
     font-size: 16px
     border-bottom: 1px solid #eee
     overflow: hidden
+    .cube-checker
+    .hx-sex-readonly
+      float: left
+      width: 203px
+      text-align: left
     &.hx-sex-disabled 
       color: $color-light-grey-s
     .hx-sex-title

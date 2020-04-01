@@ -50,15 +50,14 @@ import {
   BetterScroll,
   createAPI,
   // hx
-  hxBank,
-  hxCertificatetype,
-  hxNationality,
-  hxSex,
-  hxLocation,
-  hxProvinces,
+  HxBank,
+  HxCertificatetype,
+  HxNationality,
+  HxSex,
+  HxLocation,
+  HxProvinces,
   HxValidity,
   HxBirthdate,
-  // xwb
   HxInputPhone,
   HxInputEmail,
   HxInputIdcard,
@@ -69,17 +68,6 @@ import {
 } from './module'
 import { processComponentName } from './common/helpers/util'
 import './rem'
-
-// import {
-//   HxInputFoundation,
-//   HxInputPhone,
-//   HxInputEmail,
-//   HxInputIdcard,
-//   HxInputAddress,
-//   HxInputAccount,
-//   HxInputAccountName,
-//   HxInputPhoneverification
-// } from './hx/modules'
 
 const components = [
   // locale
@@ -127,23 +115,14 @@ const components = [
   ScrollNavBar,
   RecycleList,
   //  hx
-  hxBank,
-  hxCertificatetype,
-  hxNationality,
-  hxSex,
-  hxLocation,
-  hxProvinces,
+  HxBank,
+  HxCertificatetype,
+  HxNationality,
+  HxSex,
+  HxLocation,
+  HxProvinces,
   HxValidity,
   HxBirthdate,
-  // // input
-  // HxInputFoundation,
-  // HxInputPhone,
-  // HxInputEmail,
-  // HxInputIdcard,
-  // HxInputAddress,
-  // HxInputAccount,
-  // HxInputAccountName,
-  // HxInputPhoneverification
   HxInputPhone,
   HxInputEmail,
   HxInputIdcard,

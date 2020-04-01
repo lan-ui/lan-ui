@@ -138,7 +138,7 @@ $ npm run cm                # Commitizen规范化git提交（npm run cz代替git
 │       ├── index.js             # example中英文，首页路由配置
 │       ├── router.js            # 文档菜单路由引入配置
 │   ├── App.vue                  # 组件入口
-│   ├── Cube-ui_logo.ico         # * 地址栏ico（需要修改）
+│   ├── logo.ico                 # * 地址栏ico
 │   ├── index.html               # * 文档页面入口（需要修改ico）
 │   └── main.js                  # 文档入口文件配置
 │
@@ -217,7 +217,7 @@ $ npm run cm                # Commitizen规范化git提交（npm run cz代替git
 │
 ├── types                   # 
 │   ├── component.d.ts      # 
-│   ├── cube-ui.d.ts        # 
+│   ├── hx-ui.d.ts          # 
 │   └── index.d.ts          # 
 │
 ├── .babelrc                # 
@@ -226,7 +226,7 @@ $ npm run cm                # Commitizen规范化git提交（npm run cz代替git
 ├── .eslintrc.js            # eslint配置
 ├── .gitignore              # git忽略文件配置
 ├── .travis.yml             # 持续集成构建项目（git push时自动进行编译以及运行单测）
-├── CONTRIBUTING.md         # 
+├── CONTRIBUTING.md         # 贡献代码标准
 ├── LINCENSE                # 版权说明
 ├── package-lock.json       # 锁定当前安装包的版本号
 ├── package.json            # * 包配置文件（需要修改）

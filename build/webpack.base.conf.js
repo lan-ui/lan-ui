@@ -62,7 +62,7 @@ module.exports = {
         loader: 'url-loader',
         include: allSource,
         options: {
-          limit: 10000,
+          limit: 30000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       },

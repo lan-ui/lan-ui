@@ -1,24 +1,28 @@
 <template>
-    <div class="validity" :class="{warning:warning}" @click="handleClick">
+    <div :class="{warning:warning}" @click="handleClick">
+      <div class="validity">
         <span class="title" :class="{tips:disabled}">
           <slot>证件有效期</slot>
         </span>
         <span class="text" :class="{tips:(!validity ||disabled) && !isLongTerm}">{{validity?validity:shownText}}</span>
         <span class="icon" v-if="!readonly && !disabled">
-            <i class="cubeic-calendar"></i>
+            <i class="icon-hualife-date"></i>
         </span>
     </div>
+  </div>
 </template>
 <script>
   const COMPONENT_NAME = 'hx-validity'
   export default {
     name: COMPONENT_NAME,
+    data () {
+      return {
+        warning: false
+      }
+    },
     props: {
       age: {
         type: Number
-      },
-      warning: {
-        type: Boolean
       },
       validity: {
         type: String
@@ -74,7 +78,7 @@
         this.warning = false
         if (!this.datePicker) {
           this.datePicker = this.$createDatePicker({
-            title: 'Date Picker',
+            title: '日期选择',
             min: this.min,
             max: this.max,
             value: new Date(),
@@ -111,6 +115,8 @@
     mygrey=#ccc
     myblack=#333
     myred=#db1e06
+    .warning
+      height:74px
     .validity
       background-color:white
       font-size:16px
@@ -134,5 +140,4 @@
       font-size:12px
       display:block
       line-height:24px
-
 </style>

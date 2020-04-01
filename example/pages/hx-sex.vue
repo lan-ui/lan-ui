@@ -77,8 +77,8 @@
 </script>
 
 <style lang="stylus">
-  .cube-page.hx >.wrapper .content
-    margin: 10px 0
+  .hx-sex-wrapper
+    margin: 0 -20px
   .hx-submit.cube-btn
     margin-top: 20px
 </style>
