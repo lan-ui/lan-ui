@@ -226,7 +226,7 @@ $ npm run cm                # Commitizen规范化git提交（npm run cz代替git
 ├── .eslintrc.js            # eslint配置
 ├── .gitignore              # git忽略文件配置
 ├── .travis.yml             # 持续集成构建项目（git push时自动进行编译以及运行单测）
-├── CONTRIBUTING.md         # 
+├── CONTRIBUTING.md         # 贡献说明
 ├── LINCENSE                # 版权说明
 ├── package-lock.json       # 锁定当前安装包的版本号
 ├── package.json            # * 包配置文件（需要修改）
