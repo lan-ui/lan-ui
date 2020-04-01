@@ -19,16 +19,20 @@
       return {
         value: [
           {
-            value: '140000',
-            text: '山西省',
+            value: 'Fruit',
+            text: 'Fruit',
             children: [
               {
-                value: '140300',
-                text: '阳泉市',
+                value: 'Apple',
+                text: 'Apple',
                 children: [
                   {
-                    value: '140301',
-                    text: '市辖区'
+                    value: 1,
+                    text: 'One'
+                  },
+                  {
+                    value: 2,
+                    text: 'Two'
                   }
                 ]
               }
