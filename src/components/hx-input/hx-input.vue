@@ -25,6 +25,9 @@
         @change="changeHander"
       >
       <textarea v-if="type=='address'"
+        onfocus="window.activeobj=this;this.clock=setInterval(function(){activeobj.style.height=activeobj.scrollHeight+'px';},10);" 
+        onblur="clearInterval(this.clock);"
+        id="textarea"
         class="hx-input-textarea"
         :class="{'hx-input_disabled': disabled}"
         ref="input"
@@ -40,6 +43,7 @@
         @focus="handleFocus"
         @blur="handleBlur"
         @change="changeHander"
+        @input="handleInput"
       />
       <div class="hx-input-append" v-if="$slots.append || _showClear || _showPwdEye">
         <div class="hx-input-clear" v-if="_showClear&&!readonly" @touchend="handleClear">
@@ -175,14 +179,21 @@
       //   }
       // }
     },
+    mounted() {
+      // debugger
+      if (this.type === 'address') {
+        var text = document.getElementsByTagName('textarea')
+        for (var i = 0; i < text.length; i++) {
+          this.autoTextarea(text[i])
+        }
+      }
+    },
     watch: {
       value(newValue) {
         this.inputValue = newValue
-        // this.inputValueFormat = this.format ? this.format(newValue) : newValue
       },
       inputValue(newValue) {
         this.$emit(EVENT_INPUT, newValue)
-        // console.log(this.type)
       },
       clearable: {
         handler() {
@@ -229,13 +240,68 @@
       },
       handlePwdEye() {
         this.formatedEye.open = !this.formatedEye.open
-        // console.log(this.type, this.formatedEye.open)
         this.$emit('clickEye', this.formatedEye.open)
+      },
+      handleInput() {
+        if (this.type === 'address') {
+          var text = document.getElementById('textarea')
+          this.autoTextarea(text)
+          // console.log(text)
+        }
+      },
+      // textarea高度自适应
+      autoTextarea(elem, extra, maxHeight) {
+        extra = extra || 0
+        var isFirefox = !!document.getBoxObjectFor || 'mozInnerScreenX' in window
+        var isOpera = !!window.opera && !!window.opera.toString().indexOf('Opera')
+        var addEvent = function (type, callback) {
+          elem.addEventListener ? elem.addEventListener(type, callback, false) : elem.attachEvent('on' + type, callback)
+        }
+        var getStyle = elem.currentStyle ? function (name) {
+          var val = elem.currentStyle[name]
+          if (name === 'height' && val.search(/px/i) !== 1) {
+            var rect = elem.getBoundingClientRect()
+            return rect.bottom - rect.top - parseFloat(getStyle('paddingTop')) - parseFloat(getStyle('paddingBottom')) + 'px'
+          }
+          return val
+        } : function (name) {
+          return window.getComputedStyle(elem, null)[name]
+        }
+        var minHeight = parseFloat(getStyle('height'))
+        elem.style.resize = 'none'
+        var change = function () {
+          var scrollTop
+          var height
+          var padding = 0
+          var style = elem.style
+          if (elem._length === elem.value.length) return
+          elem._length = elem.value.length
+          if (!isFirefox && !isOpera) {
+            padding = parseInt(getStyle('paddingTop')) + parseInt(getStyle('paddingBottom'))
+          }
+          scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+          elem.style.height = minHeight + 'px'
+          if (elem.scrollHeight > minHeight) {
+            if (maxHeight && elem.scrollHeight > maxHeight) {
+              height = maxHeight - padding
+              style.overflowY = 'auto'
+            } else {
+              height = elem.scrollHeight - padding
+              style.overflowY = 'hidden'
+            }
+            style.height = height + extra + 'px'
+            scrollTop += parseInt(style.height) - elem.currHeight
+            document.body.scrollTop = scrollTop
+            document.documentElement.scrollTop = scrollTop
+            elem.currHeight = parseInt(style.height)
+          }
+        }
+        addEvent('propertychange', change)
+        addEvent('input', change)
+        addEvent('focus', change)
+        change()
       }
     }
-    // filters: {
-    //   inputFormat: this.format
-    // }
   }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
@@ -275,7 +341,6 @@
     background-color: inherit
     border-radius: 2px
     outline: none
-    // font-weight: 500;
     &::-webkit-input-placeholder
       color: $input-placeholder-color
       text-overflow: ellipsis
@@ -283,38 +348,38 @@
       .hx-input-clear, .hx-input-eye
         &:first-child
           margin-left: -5px
-  // .hx-input_normal
-  //     &::after
-      // border-color: $input-focus-border-color
-  .hx-input-textarea{
+  .hx-input-textarea
+    display: block
     flex: 1
     width: 100%
     min-width: 0
-    // padding: 10px
     font-size:16px
     box-sizing: border-box
     color: $input-color
     line-height: inherit
     background-color: inherit
     resize:none
-    // height 30px
-  }
+    height: 26px;
+    margin: 12.5px 0;
+    &::-webkit-input-placeholder
+      color: $input-placeholder-color
+      text-overflow: ellipsis
+    + .hx-input-append
+      .hx-input-clear, .hx-input-eye
+        &:first-child
+          // margin-left: -5px
   textarea:focus {
     outline:none
   }
-  textarea{
-    // height:50px
-    line-height: 100%
-    display: table-cell; 
-    vertical-align: middle
-  }
+  textarea 
+    border-style:0 solid #fff
   .hx-input_active
     &::after
       border-color: $input-focus-border-color
   .hx-input-prepend, .hx-input-append
     display: flex
     align-items: center
-    // width: 22px
+    width: 22px
   .hx-input-clear, .hx-input-eye
     // width: 1em
     // height: 1em

@@ -48,7 +48,7 @@
         // type: 'email',
         value: '',
         addressValue: '',
-        addressValue1: '某某小区某某单元',
+        addressValue1: '某某小区某某单元某某小区某某单元某某小区某某单元小区某某单元',
         disabled: false,
         useClear: true,
         maxlength10: false,

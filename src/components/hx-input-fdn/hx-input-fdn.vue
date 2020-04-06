@@ -276,7 +276,7 @@ export default {
       font-family:PingFang SC;
       width: 100px;
     .hx-input-field
-      padding: 18px 10px;
+      padding: 18px 0px;
       &::-webkit-input-placeholder
         color: #ccc;
   .phone-icon

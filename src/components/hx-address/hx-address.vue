@@ -39,10 +39,10 @@ export default {
     inputCheckAddress(address) {
       const value = address
       if (!value /* 值校验不通过 */) {
-        this.addressErrorInfo = '请输入详细地址！'
+        this.addressErrorInfo = '请输入投保人详细地址到门牌号'
         return false
       } else if (!REGEXP_ADDRESS.test(value)/* 格式校验不通过 */) {
-        this.addressErrorInfo = '投保人详细地址中含有特殊字符,请修改'
+        this.addressErrorInfo = '投保人/被保人详细地址中含有特殊字符，请修改'
         return false
       } else if (value.length < 6) {
         this.addressErrorInfo = '投保人详细地址不能少于6个字符'
