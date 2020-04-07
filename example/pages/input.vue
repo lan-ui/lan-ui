@@ -25,58 +25,6 @@
           slot-prepend
         </template>
       </cube-input>
-      <hx-input-phone 
-        ref="hx-input-phone"
-        :placeholder="'请输入手机号'"
-        :label="'手机号'"
-        :type="'phone'"
-        v-model="phoneValue" 
-      ></hx-input-phone>
-      <!-- xwb -->
-      <hx-input-email 
-        ref="hx-input-email"
-        :placeholder="'请输入邮箱地址'"
-        :label="'邮箱地址'"
-        :type="'email'" 
-        v-model="emailValue" 
-      ></hx-input-email>
-      <hx-input-idcard 
-        ref="hx-input-idcard"
-        :placeholder="'请输入身份证号码'"
-        :label="'身份证号码'"
-        :type="'idcard'"
-        v-model="idcardValue" 
-      ></hx-input-idcard>
-      <hx-input-address 
-        ref="hx-input-address"
-        :placeholder="'请输入街道(小区)门牌号'"
-        :label="'详细地址'"
-        :type="'address'"
-        v-model="addressValue" 
-      ></hx-input-address>
-      <hx-input-accountName
-        ref="hx-input-accountName"
-        :placeholder="'请输入账号名'"
-        :label="'账号名'"
-        :type="'accountName'"
-        v-model="accountNameValue" 
-      ></hx-input-accountName>
-      <hx-input-account
-        ref="hx-input-account"
-        :placeholder="'请输入账号'"
-        :label="'账号'"
-        :type="'account'"
-        @binkList="binkList"
-        v-model="accountValue" 
-      ></hx-input-account>
-      <hx-input-verification 
-        ref="hx-input-verification"
-        :placeholder="'请输入手机验证码'"
-        :label="'手机验证码'"
-        :type="'verification'"
-        v-model="verificationValue" 
-      ></hx-input-verification>
-      <!-- xwb --> 
       <div class="value">value: {{value}}</div>
       <div class="options">
         <div class="option-list">
