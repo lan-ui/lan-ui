@@ -2,7 +2,7 @@
 
 > 1.0.0 新增通用组件
 
-账号组件。支持使用v-model对数据双向绑定，支持一键清空内容，支持账号格式校验，支持输入前四到五位进行开户行判断，支持4-4-4-4格式。
+账号组件。支持使用v-model对数据双向绑定，支持一键清空内容，支持账号格式校验，支持输入前四到五位进行开户行判断，支持4-4-4-4格式，支持根据项目需要配置字体左/右对齐。
 
 ### 示例
 
@@ -74,7 +74,23 @@
 
   可通过eye设置icon眼睛。
   点击icon可切换账号全部可见`6225 5526 8798 1625`和账号部分可见`6225 ******** 1625`两种状态。
-  
+
+- 设置 字体右对齐格式 默认左对齐
+
+  ```html
+  <hx-input-account ref="hx-input-account" :placeholder="'请输入账号'" :label="'账号'" :type="'account'" @binkList="binkList" 
+  :hxstyle="'text-align:right'"  v-model="accountValue"></hx-input-account>
+  ```
+  ```js
+  export default {
+    data() {
+      return {
+        accountValue: ''  
+      }
+    }
+  }
+  ```
+    `hxstyle`默认为左对齐格式 为 `text-align:right`时，字体右对齐 
 ### Props 配置
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |

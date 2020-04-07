@@ -2,7 +2,7 @@
 
 > 1.0.0 新增通用组件
 
-详细地址组件。支持使用v-model对数据双向绑定，支持一键清空内容，支持详细地址格式校验。
+详细地址组件。支持使用v-model对数据双向绑定，支持一键清空内容，支持详细地址格式校验,支持高度自适应，支持根据项目需要配置字体左/右对齐。
 
 ### 示例
 
@@ -66,6 +66,22 @@
 
   `readonly` 为 `true` 的值，回显详细地址，只需要设置`addressValue`回显数据。
 
+- 设置 字体右对齐格式 默认左对齐
+
+  ```html
+  <hx-input-address ref="hx-input-address" :placeholder="'请输入街道(小区)门牌号'" :label="'详细地址'" :type="'address'" :hxstyle="'text-align:right'" v-model="addressValue"></hx-input-address>
+  ```
+  ```js
+  export default {
+    data() {
+      return {
+        addressValue: ''  
+      }
+    }
+  }
+  ```
+    `hxstyle`默认为左对齐格式 为 `text-align:right`时，字体右对齐
+    
 - 清空按钮
 
   可通过clearable配置清空按钮
