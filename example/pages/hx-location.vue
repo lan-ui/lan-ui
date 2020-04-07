@@ -77,7 +77,7 @@
 
 <style lang="stylus">
    .hx-sex-wrapper
-    margin: 0 -20px
+    margin: 0 10px
   .hx-submit.cube-btn
     margin-top: 20px
 </style>

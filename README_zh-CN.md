@@ -13,10 +13,10 @@
 ### 新项目？
 
 - vue cli > 3
-  推荐使用vue-cli-plugin-hx-ui插件，创建项目及配置，说明文档详见[vue-cli-plugin-hx-ui](http://106.38.93.196:8081/hualife/vue-cli-plugin-hx-ui)
+  推荐使用vue-cli-plugin-hx-ui插件，创建项目及配置，说明文档详见[vue-cli-plugin-hx-ui](http://106.38.93.196:8081/hx-ui/vue-cli-plugin-hx-ui)
 
 - vue cli < 3
-  推荐使用hx-ui模版创建项目，创建项目及配置，说明文档详见[hx-ui-template](http://106.38.93.196:8081/hualife/hx-ui-template)
+  推荐使用hx-ui模版创建项目，创建项目及配置，说明文档详见[hx-ui-template](http://106.38.93.196:8081/hx-ui/hx-ui-template)
 
 ### 安装
 

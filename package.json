@@ -19,7 +19,8 @@
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "codecov": "codecov",
     "test": "npm run unit && npm run codecov",
-    "cm": "git-cz"
+    "cm": "git-cz",
+    "log": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "husky": {
     "hooks": {

@@ -64,10 +64,10 @@
   @require "../../common/stylus/variable.styl"
   @require "../../common/stylus/mixin.styl"
   .hx-sex
-    margin: 0 30px
     height: 50px
     line-height: 50px
     font-size: 16px
+    color: #333
     border-bottom: 1px solid #eee
     overflow: hidden
     .cube-checker

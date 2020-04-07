@@ -132,6 +132,22 @@ export class ScrollNavBar extends HxComponent {}
 export class ScrollNav extends HxComponent {}
 /** RecycleList Component */
 export class RecycleList extends HxComponent {}
+/** HxBank Component */
+export class HxBank extends HxComponent {}
+/** HxCertificatetype Component */
+export class HxCertificatetype extends HxComponent {}
+/** HxNationality Component */
+export class HxNationality extends HxComponent {}
+/** HxSex Component */
+export class HxSex extends HxComponent {}
+/** HxLocation Component */
+export class HxLocation extends HxComponent {}
+/** HxProvinces Component */
+export class HxProvinces extends HxComponent {}
+/** HxValidity Component */
+export class HxValidity extends HxComponent {}
+/** HxBirthdate Component */
+export class HxBirthdate extends HxComponent {}
 
 // Vue prototype $createXx
 declare module 'vue/types/vue' {
