@@ -2,7 +2,7 @@
 
 > 1.0.0 新增通用组件
 
-账号名组件。支持使用v-model对数据双向绑定，支持一键清空内容，支持账号名格式校验。
+账号名组件。支持使用v-model对数据双向绑定，支持一键清空内容，支持账号名格式校验，支持根据项目需要配置字体左/右对齐。
 
 ### 示例
 
@@ -70,7 +70,22 @@
 
   可通过clearable配置清空按钮
 
-  
+- 设置 字体右对齐格式 默认左对齐
+
+  ```html
+  <hx-input-accountName ref="hx-input-accountName" :placeholder="'请输入账号名'" :label="'账号名'" :type="'accountName'" :readonly="true" :hxstyle="'text-align:right'" v-model="accountNameValue"></hx-input-accountName>
+  ```
+  ```js
+  export default {
+    data() {
+      return {
+        accountNameValue: ''  
+      }
+    }
+  }
+  ```
+    `hxstyle`默认为左对齐格式 为 `text-align:right`时，字体右对齐
+      
 ### Props 配置
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |

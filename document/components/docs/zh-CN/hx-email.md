@@ -2,7 +2,7 @@
 
 > 1.0.0 新增通用组件
 
-邮箱地址组件。支持使用v-model对数据双向绑定，支持一键清空内容，支持邮箱后缀选择。
+邮箱地址组件。支持使用v-model对数据双向绑定，支持一键清空内容，支持邮箱后缀选择，支持根据项目需要配置字体左/右对齐。
 
 ### 示例
 
@@ -70,7 +70,21 @@
 
   可通过clearable配置清空按钮
 
-  
+- 设置 字体右对齐格式 默认左对齐
+
+  ```html
+  <hx-input-email ref="hx-input-email" :placeholder="'请输入邮箱地址'" :label="'邮箱地址'" :type="'email'" :hxstyle="'text-align:right'" v-model="emailValue"></hx-input-email>
+  ```
+  ```js
+  export default {
+    data() {
+      return {
+        emailValue: ''  
+      }
+    }
+  }
+  ```
+    `hxstyle`默认为左对齐格式 为 `text-align:right`时，字体右对齐  
 ### Props 配置
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
