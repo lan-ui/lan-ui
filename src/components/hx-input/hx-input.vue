@@ -245,8 +245,8 @@
       handleInput() {
         if (this.type === 'address') {
           var text = document.getElementById('textarea')
-          this.autoTextarea(text)
-          // console.log(text)
+          // this.autoTextarea(text)
+          console.log(text)
         }
       },
       // textarea高度自适应
@@ -372,7 +372,7 @@
     outline:none
   }
   textarea 
-    border-style:0 solid #fff
+    border:none
   .hx-input_active
     &::after
       border-color: $input-focus-border-color
