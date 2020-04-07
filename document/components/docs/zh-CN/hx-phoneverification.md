@@ -2,7 +2,7 @@
 
 > 1.0.0 新增通用组件
 
-手机验证码组件。支持使用v-model对数据双向绑定，支持一键清空内容，支持验证码格式校验，点击发送按钮后60s方可再次点击。
+手机验证码组件。支持使用v-model对数据双向绑定，支持一键清空内容，支持验证码格式校验，点击发送按钮后60s方可再次点击，支持根据项目需要配置字体左/右对齐。
 
 ### 示例
 
@@ -74,6 +74,23 @@
 - 输入框输入位数限制
 
   可通过maxlength配置输入位数
+
+- 设置 字体右对齐格式 默认左对齐
+
+  ```html
+  <hx-input-verification ref="hx-input-verification" :placeholder="'请输入验证码'" :label="'手机验证码'" :type="'verification'" :maxlength='4' :hxstyle="'text-align:right'" 
+  v-model="verificationValue"></hx-input-verification>
+  ```
+  ```js
+  export default {
+    data() {
+      return {
+        verificationValue: ''  
+      }
+    }
+  }
+  ```
+    `hxstyle`默认为左对齐格式 为 `text-align:right`时，字体右对齐
   
 ### Props 配置
 

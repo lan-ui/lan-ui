@@ -24,7 +24,7 @@ describe('HxInputPhone.vue', () => {
     vm = createPhoneInput()
     // const el = vm.$el
     expect(vm.$el.className)
-      .to.equal('hx-input hx-input_normal hx-input-foundation')
+      .to.equal('hx hx-input-foundation')
     expect(vm.$el.querySelector('input'))
       .to.be.ok
   })

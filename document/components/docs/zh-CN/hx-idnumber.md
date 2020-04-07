@@ -2,7 +2,7 @@
 
 > 1.0.0 新增通用组件
 
-身份证号码组件。支持使用v-model对数据双向绑定，支持一键清空内容，支持身份证号码校验。
+身份证号码组件。支持使用v-model对数据双向绑定，支持一键清空内容，支持身份证号码校验，支持根据项目需要配置字体左/右对齐。
 
 ### 示例
 
@@ -78,6 +78,22 @@
 - 输入框输入位数限制
 
   可通过maxlength配置输入位数
+
+- 设置 字体右对齐格式 默认左对齐
+
+  ```html
+  <hx-input-idcard ref="hx-input-idcard" :placeholder="'请输入身份证号码'" :label="'身份证号码'" :type="'idcard'" :hxstyle="'text-align:right'" :maxlength='18' v-model="idcardValue"></hx-input-idcard>
+  ```
+  ```js
+  export default {
+    data() {
+      return {
+        idcardValue: ''  
+      }
+    }
+  }
+  ```
+    `hxstyle`默认为左对齐格式 为 `text-align:right`时，字体右对齐
 ### Props 配置
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |

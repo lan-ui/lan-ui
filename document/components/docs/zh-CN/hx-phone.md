@@ -2,7 +2,7 @@
 
 > 1.0.0 新增通用组件
 
-手机号码组件。支持使用v-model对数据双向绑定，支持一键清空内容，支持手机号码号段选择,支持手机号码3-4-4格式，支持根据不同区间进行手机号码校验。
+手机号码组件。支持使用v-model对数据双向绑定，支持一键清空内容，支持手机号码号段选择，支持根据不同区间进行手机号码校验，支持根据项目需要配置字体左/右对齐。
 
 ### 示例
 
@@ -73,7 +73,23 @@
 - 可见配置
 
   可通过eye设置icon眼睛。
-  点击icon可切换手机号码全部可见`132 4565 7686`和手机号码部分可见`132 ****  7686`两种状态。
+  点击icon可切换手机号码全部可见`13245657686`和手机号码部分可见`132****7686`两种状态。
+
+- 设置 字体右对齐格式 默认左对齐
+
+  ```html
+  <hx-input-phone ref="hx-input-phone" :placeholder="'请输入手机号'" :label="'手机号'" :type="'phone'" :hxstyle="'text-align:right'" v-model="phoneValue"></hx-input-phone>
+  ```
+  ```js
+  export default {
+    data() {
+      return {
+        phoneValue: ''  
+      }
+    }
+  }
+  ```
+    `hxstyle`默认为左对齐格式 为 `text-align:right`时，字体右对齐
   
 ### Props 配置
 
