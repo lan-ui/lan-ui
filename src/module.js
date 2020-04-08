@@ -61,13 +61,13 @@ import hxProvinces from './modules/hx-provinces'
 import HxBirthdate from './modules/hx-birthdate'
 import HxValidity from './modules/hx-validity'
 // xwb
-import HxInputPhone from './modules/hx-phonenumber'
-import HxInputVerification from './modules/hx-phoneverification'
-import HxInputAccountName from './modules/hx-account-name'
-import HxInputAccount from './modules/hx-account-number'
-import HxInputAddress from './modules/hx-address'
-import HxInputIdcard from './modules/hx-idnumber'
-import HxInputEmail from './modules/hx-email'
+import HxPhoneNumber from './modules/HxPhoneNumber'
+import HxPhoneVerification from './modules/HxPhoneVerification'
+import HxAccountName from './modules/HxAccountName'
+import HxAccountNumber from './modules/HxAccountNumber'
+import HxAddress from './modules/HxAddress'
+import HxIdNumber from './modules/HxIdNumber'
+import HxEmail from './modules/HxEmail'
 // xwb-end
 
 const FormGroup = Form.Group
@@ -154,12 +154,12 @@ export {
   HxValidity,
   HxBirthdate,
   // xwb
-  HxInputPhone,
-  HxInputEmail,
-  HxInputIdcard,
-  HxInputAddress,
-  HxInputAccount,
-  HxInputAccountName,
-  HxInputVerification
+  HxPhoneNumber,
+  HxPhoneVerification,
+  HxAccountName,
+  HxAccountNumber,
+  HxAddress,
+  HxIdNumber,
+  HxEmail
   // xwb-end
 }
