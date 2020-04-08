@@ -1,4 +1,4 @@
-## HxPhone 手机号码
+## HxPhoneNumber 手机号码
 
 > 1.0.0 新增通用组件
 
@@ -9,14 +9,14 @@
 - 基本用法
 
   ```html
-   <hx-input-phone ref="hx-input-phone" :placeholder="'请输入手机号'" :label="'手机号'" :type="'phone'" v-model="phoneValue"></hx-input-phone>
+   <hx-phone-number ref="hx-phone-number" :placeholder="'请输入手机号'" :label="'手机号'" :type="'phone'" v-model="phoneValue"></hx-phone-number>
   ```
 
 
 - 设置 type，自定义组件类型
 
   ```html
-   <hx-input-phone ref="hx-input-phone" :placeholder="'请输入手机号'" :label="'手机号'" :type="'phone'" v-model="phoneValue"></hx-input-phone>
+   <hx-phone-number ref="hx-phone-number" :placeholder="'请输入手机号'" :label="'手机号'" :type="'phone'" v-model="phoneValue"></hx-phone-number>
   ```
   ```js
   export default {
@@ -33,7 +33,7 @@
 - 设置 disabled，禁用状态
 
   ```html
-  <hx-input-phone ref="hx-input-phone" :placeholder="'请输入手机号'" :label="'手机号'" :type="'phone'" :disabled="true" v-model="phoneValue"></hx-input-phone>
+  <hx-phone-number ref="hx-phone-number" :placeholder="'请输入手机号'" :label="'手机号'" :type="'phone'" :disabled="true" v-model="phoneValue"></hx-phone-number>
   ```
   ```js
   export default {
@@ -51,7 +51,7 @@
 - 设置 readonly，回显数据
 
   ```html
-  <hx-input-phone ref="hx-input-phone" :placeholder="'请输入手机号'" :label="'手机号'" :type="'phone'" :readonly="true" :eye="eye" v-model="phoneValue"></hx-input-phone>
+  <hx-phone-number ref="hx-phone-number" :placeholder="'请输入手机号'" :label="'手机号'" :type="'phone'" :readonly="true" :eye="eye" v-model="phoneValue"></hx-phone-number>
   ```
   ```js
   export default {
@@ -78,7 +78,7 @@
 - 设置 字体右对齐格式 默认左对齐
 
   ```html
-  <hx-input-phone ref="hx-input-phone" :placeholder="'请输入手机号'" :label="'手机号'" :type="'phone'" :hxstyle="'text-align:right'" v-model="phoneValue"></hx-input-phone>
+  <hx-phone-number ref="hx-phone-number" :placeholder="'请输入手机号'" :label="'手机号'" :type="'phone'" :hxstyle="'text-align:right'" v-model="phoneValue"></hx-phone-number>
   ```
   ```js
   export default {

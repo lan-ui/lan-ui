@@ -23,7 +23,7 @@ import HxInputFoundation from '../hx-input-fdn/hx-input-fdn'
 // const REGEXP_PHONE = /^1[3456789]\d{1}\d{4}\d{4}$/
 
 export default {
-  name: 'hx-input-account',
+  name: 'hx-account-number',
   components: {
     HxInputFoundation
   },

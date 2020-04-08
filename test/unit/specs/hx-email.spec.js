@@ -2,13 +2,13 @@ import Vue from 'vue2'
 // import {HxInputEmail} from '@/hx/modules'
 // import HxCustomComponents from '@/hx/modules/index'
 // import HxInputEmail from '@/hx/modules/input/HxInputEmail.vue'
-import HxInputEmail from '@/modules/hx-email'
+import HxEmail from '@/modules/hx-email'
 import createVue from '../utils/create-vue'
 import { dispatchTap } from '../utils/event'
 
 // const { HxInputEmail } = HxCustomComponents
 
-describe('HxInputEmail.vue', () => {
+describe('HxEmail.vue', () => {
   let vm
   afterEach(() => {
     if (vm) {
@@ -17,8 +17,8 @@ describe('HxInputEmail.vue', () => {
     }
   })
   it('use', () => {
-    Vue.use(HxInputEmail)
-    expect(Vue.component(HxInputEmail.name))
+    Vue.use(HxEmail)
+    expect(Vue.component(HxEmail.name))
       .to.be.a('function')
   })
   it('should render correct contents', () => {
@@ -57,13 +57,13 @@ describe('HxInputEmail.vue', () => {
 function createPhoneInput (value) {
   const vm = createVue({
     template: `
-      <hx-input-email 
-        ref="hx-input-email"
+      <hx-email 
+        ref="hx-email"
         :placeholder="'请输入邮箱地址'"
         :label="'邮箱地址'"
         :type="'email'" 
         v-model="value" 
-      ></hx-input-email>
+      ></hx-email>
     `,
     data: {
       disabled: false,

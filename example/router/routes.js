@@ -81,44 +81,16 @@ import hxProvinces from '../pages/hx-provinces.vue'
 import HxBirthdate from '../pages/hx-birthdate.vue'
 import HxValidity from '../pages/hx-validity.vue'
 // xwb
-import HxPhone from '../pages/hx-phone.vue'
+import HxPhoneNumber from '../pages/hx-phone-number.vue'
 import HxEmail from '../pages/hx-email.vue'
-import HxIdnumber from '../pages/hx-idnumber.vue'
+import HxIdNumber from '../pages/hx-id-number.vue'
 import HxAddress from '../pages/hx-address.vue'
 import HxAccountName from '../pages/hx-account-name.vue'
 import HxAccountNumber from '../pages/hx-account-number.vue'
-import HxPhoneverification from '../pages/hx-phoneverification.vue'
+import HxPhoneVerification from '../pages/hx-phone-verification.vue'
 // xwb-end
 
 const routes = [
-  {
-    path: '/hx-phone',
-    component: HxPhone
-  },
-  {
-    path: '/hx-email',
-    component: HxEmail
-  },
-  {
-    path: '/hx-idnumber',
-    component: HxIdnumber
-  },
-  {
-    path: '/hx-address',
-    component: HxAddress
-  },
-  {
-    path: '/hx-account-name',
-    component: HxAccountName
-  },
-  {
-    path: '/hx-account-number',
-    component: HxAccountNumber
-  },
-  {
-    path: '/hx-phoneverification',
-    component: HxPhoneverification
-  },
   {
     path: '/hx-sex',
     component: hxSex
@@ -174,6 +146,34 @@ const routes = [
   {
     path: '/input',
     component: Input
+  },
+  {
+    path: '/hx-phone-number',
+    component: HxPhoneNumber
+  },
+  {
+    path: '/hx-email',
+    component: HxEmail
+  },
+  {
+    path: '/hx-id-number',
+    component: HxIdNumber
+  },
+  {
+    path: '/hx-address',
+    component: HxAddress
+  },
+  {
+    path: '/hx-account-name',
+    component: HxAccountName
+  },
+  {
+    path: '/hx-account-number',
+    component: HxAccountNumber
+  },
+  {
+    path: '/hx-phone-verification',
+    component: HxPhoneVerification
   },
   {
     path: '/textarea',

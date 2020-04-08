@@ -1,7 +1,7 @@
-import HxInputAccount from '../../components/hx-account-number/hx-account-number.vue'
+import HxAccountNumber from '../../components/hx-account-number/hx-account-number.vue'
 
-HxInputAccount.install = function (Vue) {
-  Vue.component(HxInputAccount.name, HxInputAccount)
+HxAccountNumber.install = function (Vue) {
+  Vue.component(HxAccountNumber.name, HxAccountNumber)
 }
 
-export default HxInputAccount
+export default HxAccountNumber

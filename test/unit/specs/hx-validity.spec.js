@@ -17,8 +17,6 @@ describe('HxValitity', () => {
   })
   it('HTML', () => {
     vm = createHxvalidity(24, '', [2022, 4, 20], false, false)
-    expect(vm.$el.className)
-      .to.be.equal('validity')
     expect(vm.$el.querySelector('.text'))
       .to.be.ok
   })

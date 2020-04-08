@@ -1,4 +1,4 @@
-## HxPhoneverification 验证码
+## HxPhoneVerification 验证码
 
 > 1.0.0 新增通用组件
 
@@ -9,14 +9,14 @@
 - 基本用法
 
   ```html
-   <hx-input-verification ref="hx-input-verification" :placeholder="'请输入验证码'" :label="'手机验证码'" :type="'verification'" :maxlength='4' v-model="verificationValue"></hx-input-verification>
+   <hx-phone-verification ref="hx-phone-verification" :placeholder="'请输入验证码'" :label="'手机验证码'" :type="'verification'" :maxlength='4' v-model="verificationValue"></hx-phone-verification>
   ```
 
 
 - 设置 type，自定义组件类型
 
   ```html
-   <hx-input-verification ref="hx-input-verification" :placeholder="'请输入验证码'" :label="'手机验证码'" :type="'verification'" :maxlength='4' v-model="verificationValue"></hx-input-verification>
+   <hx-phone-verification ref="hx-phone-verification" :placeholder="'请输入验证码'" :label="'手机验证码'" :type="'verification'" :maxlength='4' v-model="verificationValue"></hx-phone-verification>
   ```
   ```js
   export default {
@@ -33,7 +33,7 @@
 - 设置 disabled，禁用状态
 
   ```html
-  <hx-input-verification ref="hx-input-verification" :placeholder="'请输入验证码'" :label="'手机验证码'" :type="'verification'" :disabled="true" :maxlength='4' v-model="verificationValue"></hx-input-verification>
+  <hx-phone-verification ref="hx-phone-verification" :placeholder="'请输入验证码'" :label="'手机验证码'" :type="'verification'" :disabled="true" :maxlength='4' v-model="verificationValue"></hx-phone-verification>
   ```
   ```js
   export default {
@@ -51,7 +51,7 @@
 - 设置 readonly，回显数据
 
   ```html
-  <hx-input-verification ref="hx-input-verification" :placeholder="'请输入验证码'" :label="'手机验证码'" :type="'verification'" :readonly="true" :eye="eye" :maxlength='4' v-model="verificationValue"></hx-input-verification>
+  <hx-phone-verification ref="hx-phone-verification" :placeholder="'请输入验证码'" :label="'手机验证码'" :type="'verification'" :readonly="true" :eye="eye" :maxlength='4' v-model="verificationValue"></hx-phone-verification>
 
   ```
   ```js
@@ -78,8 +78,8 @@
 - 设置 字体右对齐格式 默认左对齐
 
   ```html
-  <hx-input-verification ref="hx-input-verification" :placeholder="'请输入验证码'" :label="'手机验证码'" :type="'verification'" :maxlength='4' :hxstyle="'text-align:right'" 
-  v-model="verificationValue"></hx-input-verification>
+  <hx-phone-verification ref="hx-phone-verification" :placeholder="'请输入验证码'" :label="'手机验证码'" :type="'verification'" :maxlength='4' :hxstyle="'text-align:right'" 
+  v-model="verificationValue"></hx-phone-verification>
   ```
   ```js
   export default {

@@ -9,14 +9,14 @@
 - 基本用法
 
   ```html
-   <hx-input-account ref="hx-input-account" :placeholder="'请输入账号'" :label="'账号'" :type="'account'" @binkList="binkList" v-model="accountValue"></hx-input-account>
+   <hx-account-number ref="hx-account-number" :placeholder="'请输入账号'" :label="'账号'" :type="'account'" @binkList="binkList" v-model="accountValue"></hx-account-number>
   ```
 
 
 - 设置 type，自定义组件类型
 
   ```html
-   <hx-input-account ref="hx-input-account" :placeholder="'请输入账号'" :label="'账号'" :type="'account'" @binkList="binkList" v-model="accountValue"></hx-input-account>
+   <hx-account-number ref="hx-account-number" :placeholder="'请输入账号'" :label="'账号'" :type="'account'" @binkList="binkList" v-model="accountValue"></hx-account-number>
   ```
   ```js
   export default {

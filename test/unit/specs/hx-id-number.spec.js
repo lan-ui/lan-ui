@@ -1,14 +1,14 @@
 import Vue from 'vue2'
-// import {HxInputVerification} from '@/hx/modules'
+// import {HxInputIdcard} from '@/hx/modules'
 // import HxCustomComponents from '@/hx/modules/index'
-// import HxInputVerification from '@/hx/modules/input/HxInputVerification.vue'
-import HxInputVerification from '@/modules/hx-phoneverification'
+// import HxInputIdcard from '@/hx/modules/input/HxInputIdcard.vue'
+import HxIdNumber from '@/modules/hx-id-number'
 import createVue from '../utils/create-vue'
 import { dispatchTap } from '../utils/event'
 
-// const { HxInputPhoneverification } = HxCustomComponents
+// const { HxInputIdcard } = HxCustomComponents
 
-describe('HxInputVerification.vue', () => {
+describe('HxIdNumber.vue', () => {
   let vm
   afterEach(() => {
     if (vm) {
@@ -17,8 +17,8 @@ describe('HxInputVerification.vue', () => {
     }
   })
   it('use', () => {
-    Vue.use(HxInputVerification)
-    expect(Vue.component(HxInputVerification.name))
+    Vue.use(HxIdNumber)
+    expect(Vue.component(HxIdNumber.name))
       .to.be.a('function')
   })
   it('should render correct contents', () => {
@@ -56,12 +56,12 @@ describe('HxInputVerification.vue', () => {
 function createPhoneInput (value) {
   const vm = createVue({
     template: `
-      <hx-input-verification 
-        ref="hx-input-verification"
-        :placeholder="'请输入手机验证码'"
-        :label="'手机验证码'"
+      <hx-id-number 
+        ref="hx-id-number"
+        :placeholder="'请输入身份证号码'"
+        :label="'身份证号码'"
         v-model="value" 
-      ></hx-input-verification>
+      ></hx-id-number>
     `,
     data: {
       disabled: false,

@@ -4,38 +4,38 @@
     title="HxAddress"
     class="option-demo">
     <div slot="content">
-      <hx-input-address 
-        ref="hx-input-address"
+      <hx-address 
+        ref="hx-address"
         :placeholder="'请输入街道(小区)门牌号'"
         :label="'详细地址'"
         :type="'address'"
         :maxlength='30'
         :hxstyle="'text-align:left'"
         v-model="addressValue" 
-      ></hx-input-address>
-      <hx-input-address 
-        ref="hx-input-address"
+      ></hx-address>
+      <hx-address
+        ref="hx-address"
         :placeholder="'请输入街道(小区)门牌号'"
         :label="'详细地址'"
         :type="'address'"
         :disabled="true"
         v-model="addressValue1" 
-      ></hx-input-address>
-      <hx-input-address 
-        ref="hx-input-address"
+      ></hx-address>
+      <hx-address 
+        ref="hx-address"
         :placeholder="'请输入街道(小区)门牌号'"
         :label="'详细地址'"
         :type="'address'"
         :readonly="true"
         v-model="addressValue1" 
-      ></hx-input-address>
+      ></hx-address>
     </div>
   </cube-page>
 </template>
 
 <script type="text/ecmascript-6">
   // import WithConsole from '@/components/input/hoc.js'
-  import HxInputAddress from '@/components/hx-address/hx-address.vue'
+  import HxAddress from '@/components/hx-address/hx-address.vue'
   import CubePage from '../components/cube-page.vue'
   import SwitchOption from '../components/switch-option'
 
@@ -160,7 +160,7 @@
       }
     },
     components: {
-      HxInputAddress,
+      HxAddress,
       CubePage,
       SwitchOption
     }

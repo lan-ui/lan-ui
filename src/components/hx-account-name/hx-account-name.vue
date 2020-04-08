@@ -19,10 +19,10 @@
 import HxInputFoundation from '../hx-input-fdn/hx-input-fdn'
 
 const REGEXP_ACCUNTNAME1 = /^[\u4e00-\u9fa5]{2,}$/
-const REGEXP_ACCUNTNAME2 = /^[A-Za-z ]{3,}$/
+const REGEXP_ACCUNTNAME2 = /^[A-Za-z]{1}[A-Za-z ]{2,}$/
 
 export default {
-  name: 'hx-input-accountName',
+  name: 'hx-account-name',
   components: {
     HxInputFoundation
   },
@@ -37,11 +37,11 @@ export default {
   methods: {
     inputCheckAccuntName(accuntName) {
       const value = accuntName
-      if (!value /* 值校验不通过 */) {
-        this.accuntNameErrorInfo = '请输入账号名！'
+      if (!value || value === ' ' /* 值校验不通过 */) {
+        this.accuntNameErrorInfo = '请输入账户名！'
         return false
       } else if (!REGEXP_ACCUNTNAME1.test(value) && !REGEXP_ACCUNTNAME2.test(value)) {
-        this.accuntNameErrorInfo = '账号名格式不正确'
+        this.accuntNameErrorInfo = '账户名格式不正确'
         return false
       } else {
         return true

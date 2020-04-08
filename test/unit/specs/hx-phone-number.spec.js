@@ -1,14 +1,13 @@
 import Vue from 'vue2'
-// import {HxInputIdcard} from '@/hx/modules'
 // import HxCustomComponents from '@/hx/modules/index'
-// import HxInputIdcard from '@/hx/modules/input/HxInputIdcard.vue'
-import HxInputIdcard from '@/modules/hx-idnumber'
+// import HxInputPhone from '@/hx/modules/input/HxInputPhone.vue'
+import HxPhoneNumber from '@/modules/hx-phone-number'
 import createVue from '../utils/create-vue'
 import { dispatchTap } from '../utils/event'
 
-// const { HxInputIdcard } = HxCustomComponents
+// const { HxInputPhone } = HxCustomComponents
 
-describe('HxInputIdcard.vue', () => {
+describe('HxPhoneNumber.vue', () => {
   let vm
   afterEach(() => {
     if (vm) {
@@ -17,8 +16,8 @@ describe('HxInputIdcard.vue', () => {
     }
   })
   it('use', () => {
-    Vue.use(HxInputIdcard)
-    expect(Vue.component(HxInputIdcard.name))
+    Vue.use(HxPhoneNumber)
+    expect(Vue.component(HxPhoneNumber.name))
       .to.be.a('function')
   })
   it('should render correct contents', () => {
@@ -33,6 +32,11 @@ describe('HxInputIdcard.vue', () => {
     vm = createPhoneInput()
     expect(vm.$el.querySelector('.cubeic-warn'))
       .to.be.null
+  })
+  it('should show clear button when has text 111', () => {
+    vm = createPhoneInput(1)
+    expect(vm.$el.querySelector('.hx-input-clear').style.display)
+      .to.equal('')
   })
   it('should show clear button when select input', () => {
     vm = createPhoneInput()
@@ -56,12 +60,12 @@ describe('HxInputIdcard.vue', () => {
 function createPhoneInput (value) {
   const vm = createVue({
     template: `
-      <hx-input-idcard 
-        ref="hx-input-idcard"
-        :placeholder="'请输入身份证号码'"
-        :label="'身份证号码'"
+      <hx-phone-number
+        ref="hx-phone-number"
+        :placeholder="'请输入手机号'"
+        :label="'手机号'"
         v-model="value" 
-      ></hx-input-idcard>
+      ></hx-phone-number>
     `,
     data: {
       disabled: false,

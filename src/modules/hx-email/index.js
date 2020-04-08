@@ -1,7 +1,7 @@
-import HxInputEmail from '../../components/hx-email/hx-email.vue'
+import HxEmail from '../../components/hx-email/hx-email.vue'
 
-HxInputEmail.install = function (Vue) {
-  Vue.component(HxInputEmail.name, HxInputEmail)
+HxEmail.install = function (Vue) {
+  Vue.component(HxEmail.name, HxEmail)
 }
 
-export default HxInputEmail
+export default HxEmail
