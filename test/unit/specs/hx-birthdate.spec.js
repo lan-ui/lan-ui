@@ -17,8 +17,6 @@ describe('HxBirthdate.vue', () => {
   })
   it('HTML', () => {
     vm = createHxbirth('2018-04-20', [], false, false)
-    expect(vm.$el.className)
-      .to.be.equal('birth')
     expect(vm.$el.querySelector('.text'))
       .to.be.ok
   })
