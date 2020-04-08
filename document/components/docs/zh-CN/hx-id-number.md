@@ -1,4 +1,4 @@
-## HxIdnumber 身份证号码
+## HxIdNumber 身份证号码
 
 > 1.0.0 新增通用组件
 

@@ -1,4 +1,4 @@
-## HxPhoneverification 验证码
+## HxPhoneVerification 验证码
 
 > 1.0.0 新增通用组件
 

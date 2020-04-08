@@ -1,4 +1,4 @@
-## HxPhone 手机号码
+## HxPhoneNumber 手机号码
 
 > 1.0.0 新增通用组件
 
