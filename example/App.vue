@@ -33,34 +33,6 @@
             'shortcut': 'Common',
             'items': [
               {
-                path: '/hx-phone',
-                text: 'HxPhone'
-              },
-              {
-                path: '/hx-email',
-                text: 'HxEmail'
-              },
-              {
-                path: '/hx-idnumber',
-                text: 'HxIdnumber'
-              },
-              {
-                path: '/hx-address',
-                text: 'HxAddress'
-              },
-              {
-                path: '/hx-account-name',
-                text: 'HxAccountName'
-              },
-              {
-                path: '/hx-account-number',
-                text: 'HxAccountNumber'
-              },
-              {
-                path: '/hx-phoneverification',
-                text: 'HxPhoneverification'
-              },
-              {
                 path: '/hx-sex',
                 text: 'HxSex'
               },

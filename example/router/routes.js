@@ -92,34 +92,6 @@ import HxPhoneVerification from '../pages/hx-phone-verification.vue'
 
 const routes = [
   {
-    path: '/hx-phone',
-    component: HxPhone
-  },
-  {
-    path: '/hx-email',
-    component: HxEmail
-  },
-  {
-    path: '/hx-idnumber',
-    component: HxIdnumber
-  },
-  {
-    path: '/hx-address',
-    component: HxAddress
-  },
-  {
-    path: '/hx-account-name',
-    component: HxAccountName
-  },
-  {
-    path: '/hx-account-number',
-    component: HxAccountNumber
-  },
-  {
-    path: '/hx-phoneverification',
-    component: HxPhoneverification
-  },
-  {
     path: '/hx-sex',
     component: hxSex
   },
