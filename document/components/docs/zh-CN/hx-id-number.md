@@ -1,4 +1,4 @@
-## HxIdnumber 身份证号码
+## HxIdNumber 身份证号码
 
 > 1.0.0 新增通用组件
 
@@ -9,14 +9,14 @@
 - 基本用法
 
   ```html
-   <hx-input-idcard ref="hx-input-idcard" :placeholder="'请输入身份证号码'" :label="'身份证号码'" :type="'idcard'" :maxlength='18' v-model="idcardValue"></hx-input-idcard>
+   <hx-id-number ref="hx-id-number" :placeholder="'请输入身份证号码'" :label="'身份证号码'" :type="'idcard'" :maxlength='18' v-model="idcardValue"></hx-id-number>
   ```
 
 
 - 设置 type，自定义组件类型
 
   ```html
-   <hx-input-idcard ref="hx-input-idcard" :placeholder="'请输入身份证号码'" :label="'身份证号码'" :type="'idcard'" :maxlength='18' v-model="idcardValue"></hx-input-idcard>
+   <hx-id-number ref="hx-id-number" :placeholder="'请输入身份证号码'" :label="'身份证号码'" :type="'idcard'" :maxlength='18' v-model="idcardValue"></hx-id-number>
   ```
   ```js
   export default {
@@ -33,7 +33,7 @@
 - 设置 disabled，禁用状态
 
   ```html
-  <hx-input-idcard ref="hx-input-idcard" :placeholder="'请输入身份证号码'" :label="'身份证号码'" :type="'idcard'" :disabled="true" :maxlength='18' v-model="idcardValue"></hx-input-idcard>
+  <hx-id-number ref="hx-id-number" :placeholder="'请输入身份证号码'" :label="'身份证号码'" :type="'idcard'" :disabled="true" :maxlength='18' v-model="idcardValue"></hx-id-number>
   ```
   ```js
   export default {
@@ -51,7 +51,7 @@
 - 设置 readonly，回显数据
 
   ```html
-  <hx-input-idcard ref="hx-input-idcard" :placeholder="'请输入身份证号码'" :label="'身份证号码'" :type="'idcard'" :readonly="true" :eye="eye" :maxlength='18' v-model="idcardValue"></hx-input-idcard>
+  <hx-id-number ref="hx-id-number" :placeholder="'请输入身份证号码'" :label="'身份证号码'" :type="'idcard'" :readonly="true" :eye="eye" :maxlength='18' v-model="idcardValue"></hx-id-number>
   ```
   ```js
   export default {
@@ -82,7 +82,7 @@
 - 设置 字体右对齐格式 默认左对齐
 
   ```html
-  <hx-input-idcard ref="hx-input-idcard" :placeholder="'请输入身份证号码'" :label="'身份证号码'" :type="'idcard'" :hxstyle="'text-align:right'" :maxlength='18' v-model="idcardValue"></hx-input-idcard>
+  <hx-id-number ref="hx-id-number" :placeholder="'请输入身份证号码'" :label="'身份证号码'" :type="'idcard'" :hxstyle="'text-align:right'" :maxlength='18' v-model="idcardValue"></hx-id-number>
   ```
   ```js
   export default {

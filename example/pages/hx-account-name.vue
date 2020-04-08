@@ -4,37 +4,37 @@
     title="HxAccountName"
     class="option-demo">
     <div slot="content">
-      <hx-input-accountName
-        ref="hx-input-accountName"
+      <hx-account-name
+        ref="hx-account-name"
         :placeholder="'请输入账户名'"
         :label="'账户名'"
         :type="'accountName'"
         :hxstyle="'text-align:left'"
         v-model="accountNameValue" 
-      ></hx-input-accountName>
-      <hx-input-accountName
-        ref="hx-input-accountName"
+      ></hx-account-name>
+      <hx-account-name
+        ref="hx-account-name"
         :placeholder="'请输入账户名'"
         :label="'账户名'"
         :type="'accountName'"
         :disabled="true"
         v-model="accountNameValue1" 
-      ></hx-input-accountName>
-      <hx-input-accountName
-        ref="hx-input-accountName"
+      ></hx-account-name>
+      <hx-account-name
+        ref="hx-account-name"
         :placeholder="'请输入账户名'"
         :label="'账户名'"
         :type="'accountName'"
         :readonly="true"
         v-model="accountNameValue1" 
-      ></hx-input-accountName>
+      ></hx-account-name>
     </div>
   </cube-page>
 </template>
 
 <script type="text/ecmascript-6">
   // import WithConsole from '@/components/input/hoc.js'
-  import HxInputAccountName from '@/components/hx-account-name/hx-account-name.vue'
+  import HxAccountName from '@/components/hx-account-name/hx-account-name.vue'
   import CubePage from '../components/cube-page.vue'
   import SwitchOption from '../components/switch-option'
 
@@ -159,7 +159,7 @@
       }
     },
     components: {
-      HxInputAccountName,
+      HxAccountName,
       CubePage,
       SwitchOption
     }

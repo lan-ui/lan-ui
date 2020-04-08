@@ -9,14 +9,14 @@
 - 基本用法
 
   ```html
-   <hx-input-email ref="hx-input-email" :placeholder="'请输入邮箱地址'" :label="'邮箱地址'" :type="'email'" v-model="emailValue"></hx-input-email>
+   <hx-email ref="hx-email" :placeholder="'请输入邮箱地址'" :label="'邮箱地址'" :type="'email'" v-model="emailValue"></hx-email>
   ```
 
 
 - 设置 type，自定义组件类型
 
   ```html
-   <hx-input-email ref="hx-input-email" :placeholder="'请输入邮箱地址'" :label="'邮箱地址'" :type="'email'" v-model="emailValue"></hx-input-email>
+   <hx-email ref="hx-email" :placeholder="'请输入邮箱地址'" :label="'邮箱地址'" :type="'email'" v-model="emailValue"></hx-email>
   ```
   ```js
   export default {
@@ -33,7 +33,7 @@
 - 设置 disabled，禁用状态
 
   ```html
-  <hx-input-email ref="hx-input-email" :placeholder="'请输入邮箱地址'" :label="'邮箱地址'" :type="'email'" :disabled="true" v-model="emailValue"></hx-input-email>
+  <hx-email ref="hx-email" :placeholder="'请输入邮箱地址'" :label="'邮箱地址'" :type="'email'" :disabled="true" v-model="emailValue"></hx-email>
   ```
   ```js
   export default {
@@ -51,7 +51,7 @@
 - 设置 readonly，回显数据
 
   ```html
-  <hx-input-email ref="hx-input-email" :placeholder="'请输入邮箱地址'" :label="'邮箱地址'" :type="'email'" :readonly="true" v-model="emailValue"></hx-input-email>
+  <hx-email ref="hx-email" :placeholder="'请输入邮箱地址'" :label="'邮箱地址'" :type="'email'" :readonly="true" v-model="emailValue"></hx-email>
   ```
   ```js
   export default {
@@ -73,7 +73,7 @@
 - 设置 字体右对齐格式 默认左对齐
 
   ```html
-  <hx-input-email ref="hx-input-email" :placeholder="'请输入邮箱地址'" :label="'邮箱地址'" :type="'email'" :hxstyle="'text-align:right'" v-model="emailValue"></hx-input-email>
+  <hx-email ref="hx-email" :placeholder="'请输入邮箱地址'" :label="'邮箱地址'" :type="'email'" :hxstyle="'text-align:right'" v-model="emailValue"></hx-email>
   ```
   ```js
   export default {

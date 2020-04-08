@@ -4,37 +4,37 @@
     title="HxEmail"
     class="option-demo">
     <div slot="content">
-      <hx-input-email 
-        ref="hx-input-email"
+      <hx-email 
+        ref="hx-email"
         :placeholder="'请输入邮箱地址'"
         :label="'邮箱地址'"
         :type="'email'" 
         :hxstyle="'text-align:left'"
         v-model="emailValue" 
-      ></hx-input-email>
-      <hx-input-email 
-        ref="hx-input-email"
+      ></hx-email>
+      <hx-email
+        ref="hx-email"
         :placeholder="'请输入邮箱地址'"
         :label="'邮箱地址'"
         :type="'email'" 
         :disabled="true"
         v-model="emailValue1" 
-      ></hx-input-email>
-      <hx-input-email 
-        ref="hx-input-email"
+      ></hx-email>
+      <hx-email
+        ref="hx-email"
         :placeholder="'请输入邮箱地址'"
         :label="'邮箱地址'"
         :type="'email'" 
         :readonly="true"
         v-model="emailValue1" 
-      ></hx-input-email>
+      ></hx-email>
     </div>
   </cube-page>
 </template>
 
 <script type="text/ecmascript-6">
   // import WithConsole from '@/components/input/hoc.js'
-  import HxInputEmail from '@/components/hx-email/hx-email.vue'
+  import HxEmail from '@/components/hx-email/hx-email.vue'
   import CubePage from '../components/cube-page.vue'
   import SwitchOption from '../components/switch-option'
 
@@ -160,7 +160,7 @@
       }
     },
     components: {
-      HxInputEmail,
+      HxEmail,
       CubePage,
       SwitchOption
     }

@@ -22,7 +22,7 @@ import HxInputFoundation from '../hx-input-fdn/hx-input-fdn'
 const REGEXP_EMAIL = /^([a-z0-9\u4E00-\u9FA5\uFF00-\uFFFF/?^{|}~!#$%&'*+-]+[.]?)*[a-z0-9\u4E00-\u9FA5\uFF00-\uFFFF/?^{|}~!#$%&'*+-]+@([a-z0-9\u4E00-\u9FA5]+[-._~]?)*[a-z0-9\u4E00-\u9FA5]+\.[a-z]{2,6}$/
 
 export default {
-  name: 'hx-input-email',
+  name: 'hx-email',
   components: {
     HxInputFoundation
   },

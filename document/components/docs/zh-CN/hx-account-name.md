@@ -9,14 +9,14 @@
 - 基本用法
 
   ```html
-   <hx-input-accountName ref="hx-input-accountName" :placeholder="'请输入账号名'" :label="'账号名'" :type="'accountName'" v-model="accountNameValue"></hx-input-accountName>
+   <hx-account-name ref="hx-account-name" :placeholder="'请输入账号名'" :label="'账号名'" :type="'accountName'" v-model="accountNameValue"></hx-account-name>
   ```
 
 
 - 设置 type，自定义组件类型
 
   ```html
-   <hx-input-accountName ref="hx-input-accountName" :placeholder="'请输入账号名'" :label="'账号名'" :type="'accountName'" v-model="accountNameValue"></hx-input-accountName>
+   <hx-account-name ref="hx-account-name" :placeholder="'请输入账号名'" :label="'账号名'" :type="'accountName'" v-model="accountNameValue"></hx-account-name>
   ```
   ```js
   export default {
@@ -33,7 +33,7 @@
 - 设置 disabled，禁用状态
 
   ```html
-  <hx-input-accountName ref="hx-input-accountName" :placeholder="'请输入账号名'" :label="'账号名'" :type="'accountName'" :disabled="true" v-model="accountNameValue"></hx-input-accountName>
+  <hx-account-name ref="hx-account-name" :placeholder="'请输入账号名'" :label="'账号名'" :type="'accountName'" :disabled="true" v-model="accountNameValue"></hx-account-name>
   ```
   ```js
   export default {
@@ -51,7 +51,7 @@
 - 设置 readonly，回显数据
 
   ```html
-  <hx-input-accountName ref="hx-input-accountName" :placeholder="'请输入账号名'" :label="'账号名'" :type="'accountName'" :readonly="true"  v-model="accountNameValue"></hx-input-accountName>
+  <hx-account-name ref="hx-account-name" :placeholder="'请输入账号名'" :label="'账号名'" :type="'accountName'" :readonly="true"  v-model="accountNameValue"></hx-account-name>
   ```
   ```js
   export default {
@@ -73,7 +73,7 @@
 - 设置 字体右对齐格式 默认左对齐
 
   ```html
-  <hx-input-accountName ref="hx-input-accountName" :placeholder="'请输入账号名'" :label="'账号名'" :type="'accountName'" :readonly="true" :hxstyle="'text-align:right'" v-model="accountNameValue"></hx-input-accountName>
+  <hx-account-name ref="hx-account-name" :placeholder="'请输入账号名'" :label="'账号名'" :type="'accountName'" :readonly="true" :hxstyle="'text-align:right'" v-model="accountNameValue"></hx-account-name>
   ```
   ```js
   export default {

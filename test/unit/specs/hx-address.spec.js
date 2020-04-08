@@ -2,13 +2,13 @@ import Vue from 'vue2'
 // import {HxInputAddress} from '@/hx/modules'
 // import HxCustomComponents from '@/hx/modules/index'
 // import HxInputAddress from '@/hx/modules/input/HxInputAddress.vue'
-import HxInputAddress from '@/modules/hx-address'
+import HxAddress from '@/modules/hx-address'
 import createVue from '../utils/create-vue'
 import { dispatchTap } from '../utils/event'
 
 // const { HxInputAddress } = HxCustomComponents
 
-describe('HxInputAddress.vue', () => {
+describe('HxAddress.vue', () => {
   let vm
   afterEach(() => {
     if (vm) {
@@ -17,8 +17,8 @@ describe('HxInputAddress.vue', () => {
     }
   })
   it('use', () => {
-    Vue.use(HxInputAddress)
-    expect(Vue.component(HxInputAddress.name))
+    Vue.use(HxAddress)
+    expect(Vue.component(HxAddress.name))
       .to.be.a('function')
   })
   it('should render correct contents', () => {
@@ -56,12 +56,12 @@ describe('HxInputAddress.vue', () => {
 function createPhoneInput (value) {
   const vm = createVue({
     template: `
-      <hx-input-address 
-        ref="hx-input-address"
+      <hx-address 
+        ref="hx-address"
         :placeholder="'请输入街道(小区)门牌号'"
         :label="'详细地址'"
         v-model="value" 
-      ></hx-input-address>
+      ></hx-address>
     `,
     data: {
       disabled: false,

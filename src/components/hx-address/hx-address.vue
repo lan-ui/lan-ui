@@ -23,7 +23,7 @@ import HxInputFoundation from '../hx-input-fdn/hx-input-fdn'
 const REGEXP_ADDRESS = /^[A-Za-z0-9\u4e00-\u9fa5]+$/
 
 export default {
-  name: 'hx-input-address',
+  name: 'hx-address',
   components: {
     HxInputFoundation
   },

@@ -22,7 +22,7 @@ import HxInputFoundation from '../hx-input-fdn/hx-input-fdn'
 const REGEXP_VERIFICATION = /^[0-9]{4}$/
 
 export default {
-  name: 'hx-input-verification',
+  name: 'hx-phone-verification',
   components: {
     HxInputFoundation
   },

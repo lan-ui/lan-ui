@@ -9,14 +9,14 @@
 - 基本用法
 
   ```html
-   <hx-input-address ref="hx-input-address" :placeholder="'请输入街道(小区)门牌号'" :label="'详细地址'" :type="'address'" v-model="addressValue"></hx-input-address>
+   <hx-address ref="hx-address" :placeholder="'请输入街道(小区)门牌号'" :label="'详细地址'" :type="'address'" v-model="addressValue"></hx-address>
   ```
 
 
 - 设置 type，自定义组件类型
 
   ```html
-   <hx-input-address ref="hx-input-address" :placeholder="'请输入街道(小区)门牌号'" :label="'详细地址'" :type="'address'" v-model="addressValue"></hx-input-address>
+   <hx-address ref="hx-address" :placeholder="'请输入街道(小区)门牌号'" :label="'详细地址'" :type="'address'" v-model="addressValue"></hx-address>
   ```
   ```js
   export default {
@@ -33,7 +33,7 @@
 - 设置 disabled，禁用状态
 
   ```html
-  <hx-input-address ref="hx-input-address" :placeholder="'请输入街道(小区)门牌号'" :label="'详细地址'" :type="'address'" :disabled="true" v-model="addressValue"></hx-input-address>
+  <hx-address ref="hx-address" :placeholder="'请输入街道(小区)门牌号'" :label="'详细地址'" :type="'address'" :disabled="true" v-model="addressValue"></hx-address>
   ```
   ```js
   export default {
@@ -51,7 +51,7 @@
 - 设置 readonly，回显数据
 
   ```html
-  <hx-input-address ref="hx-input-address" :placeholder="'请输入街道(小区)门牌号'" :label="'详细地址'" :type="'address'" :readonly="true" v-model="addressValue"></hx-input-address>
+  <hx-address ref="hx-address" :placeholder="'请输入街道(小区)门牌号'" :label="'详细地址'" :type="'address'" :readonly="true" v-model="addressValue"></hx-address>
   ```
   ```js
   export default {
@@ -69,7 +69,7 @@
 - 设置 字体右对齐格式 默认左对齐
 
   ```html
-  <hx-input-address ref="hx-input-address" :placeholder="'请输入街道(小区)门牌号'" :label="'详细地址'" :type="'address'" :hxstyle="'text-align:right'" v-model="addressValue"></hx-input-address>
+  <hx-address ref="hx-address" :placeholder="'请输入街道(小区)门牌号'" :label="'详细地址'" :type="'address'" :hxstyle="'text-align:right'" v-model="addressValue"></hx-address>
   ```
   ```js
   export default {

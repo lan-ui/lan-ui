@@ -1,7 +1,7 @@
-import HxInputAddress from '../../components/hx-address/hx-address.vue'
+import HxAddress from '../../components/hx-address/hx-address.vue'
 
-HxInputAddress.install = function (Vue) {
-  Vue.component(HxInputAddress.name, HxInputAddress)
+HxAddress.install = function (Vue) {
+  Vue.component(HxAddress.name, HxAddress)
 }
 
-export default HxInputAddress
+export default HxAddress
