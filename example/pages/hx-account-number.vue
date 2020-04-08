@@ -4,26 +4,26 @@
     title="HXAccountNumber"
     class="option-demo">
     <div slot="content">
-      <hx-input-account
-        ref="hx-input-account"
+      <hx-account-number
+        ref="hx-account-number"
         :placeholder="'请输入账号'"
         :label="'账号'"
         :type="'account'"
         :hxstyle="'text-align:left'"
         @binkList="binkList"
         v-model="accountValue" 
-      ></hx-input-account>
-      <hx-input-account
-        ref="hx-input-account"
+      ></hx-account-number>
+      <hx-account-number
+        ref="hx-account-number"
         :placeholder="'请输入账号'"
         :label="'账号'"
         :type="'account'"
         :disabled="true"
         @binkList="binkList"
         v-model="accountValue1" 
-      ></hx-input-account>
-      <hx-input-account
-        ref="hx-input-account"
+      ></hx-account-number>
+      <hx-account-number
+        ref="hx-account-number"
         :placeholder="'请输入账号'"
         :label="'账号'"
         :type="'account'"
@@ -31,14 +31,14 @@
         :eye='eye'
         @binkList="binkList"
         v-model="accountValue2" 
-      ></hx-input-account>
+      ></hx-account-number>
     </div>
   </cube-page>
 </template>
 
 <script type="text/ecmascript-6">
   // import WithConsole from '@/components/input/hoc.js'
-  import HxInputAccount from '@/components/hx-account-number/hx-account-number.vue'
+  import HxAccountNumber from '@/components/hx-account-number/hx-account-number.vue'
   import CubePage from '../components/cube-page.vue'
   import SwitchOption from '../components/switch-option'
 
@@ -164,7 +164,7 @@
       }
     },
     components: {
-      HxInputAccount,
+      HxAccountNumber,
       CubePage,
       SwitchOption
     }

@@ -1,41 +1,41 @@
 <template>
   <cube-page
     type="input-view"
-    title="HxPhoneverification"
+    title="HxPhoneVerification"
     class="option-demo">
     <div slot="content">
-      <hx-input-verification 
-        ref="hx-input-verification"
+      <hx-phone-verification
+        ref="hx-phone-verification"
         :placeholder="'请输入验证码'"
         :label="'手机验证码'"
         :type="'verification'"
         :maxlength='4'
         :hxstyle="'text-align:left'"
         v-model="verificationValue" 
-      ></hx-input-verification>
-      <hx-input-verification 
-        ref="hx-input-verification"
+      ></hx-phone-verification>
+      <hx-phone-verification 
+        ref="hx-phone-verification"
         :placeholder="'请输入验证码'"
         :label="'手机验证码'"
         :type="'verification'"
         :disabled="true"
         v-model="verificationValue1" 
-      ></hx-input-verification>
-      <hx-input-verification 
-        ref="hx-input-verification"
+      ></hx-phone-verification>
+      <hx-phone-verification 
+        ref="hx-phone-verification"
         :placeholder="'请输入验证码'"
         :label="'手机验证码'"
         :type="'verification'"
         :readonly="true"
         v-model="verificationValue1" 
-      ></hx-input-verification>
+      ></hx-phone-verification>
     </div>
   </cube-page>
 </template>
 
 <script type="text/ecmascript-6">
   // import WithConsole from '@/components/input/hoc.js'
-  import HxInputVerification from '@/components/hx-phoneverification/hx-phoneverification.vue'
+  import HxPhoneVerification from '@/components/hx-phone-verification/hx-phone-verification.vue'
   import CubePage from '../components/cube-page.vue'
   import SwitchOption from '../components/switch-option'
 
@@ -160,7 +160,7 @@
       }
     },
     components: {
-      HxInputVerification,
+      HxPhoneVerification,
       CubePage,
       SwitchOption
     }

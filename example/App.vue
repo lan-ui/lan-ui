@@ -117,16 +117,16 @@
                 text: 'Input'
               },
               {
-                path: '/hx-phone',
-                text: 'HxPhone'
+                path: '/hx-phone-number',
+                text: 'HxPhoneNumber'
               },
               {
                 path: '/hx-email',
                 text: 'HxEmail'
               },
               {
-                path: '/hx-idnumber',
-                text: 'HxIdnumber'
+                path: '/hx-id-number',
+                text: 'HxIdNumber'
               },
               {
                 path: '/hx-address',
@@ -141,8 +141,8 @@
                 text: 'HxAccountNumber'
               },
               {
-                path: '/hx-phoneverification',
-                text: 'HxPhoneverification'
+                path: '/hx-phone-verification',
+                text: 'HxPhoneVerification'
               },
               {
                 path: '/textarea',

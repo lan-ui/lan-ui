@@ -59,13 +59,13 @@ import {
   HxValidity,
   HxBirthdate,
   // xwb
-  HxInputPhone,
-  HxInputEmail,
-  HxInputIdcard,
-  HxInputAddress,
-  HxInputAccount,
-  HxInputAccountName,
-  HxInputVerification
+  HxPhoneNumber,
+  HxPhoneVerification,
+  HxAccountName,
+  HxAccountNumber,
+  HxAddress,
+  HxIdNumber,
+  HxEmail
 } from './module'
 import { processComponentName } from './common/helpers/util'
 import './rem'
@@ -144,13 +144,13 @@ const components = [
   // HxInputAccount,
   // HxInputAccountName,
   // HxInputPhoneverification
-  HxInputPhone,
-  HxInputEmail,
-  HxInputIdcard,
-  HxInputAddress,
-  HxInputAccount,
-  HxInputAccountName,
-  HxInputVerification
+  HxPhoneNumber,
+  HxPhoneVerification,
+  HxAccountName,
+  HxAccountNumber,
+  HxAddress,
+  HxIdNumber,
+  HxEmail
 ]
 
 function install(Vue) {

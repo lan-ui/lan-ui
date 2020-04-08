@@ -112,13 +112,13 @@
             "hx-provinces": "HxProvinces",
             "hx-birthdate": "HxBirthdate",
             "hx-validity": "HxValidity",
-            "hx-phone": "HxPhone",
+            "hx-phone-number": "HxPhoneNumber",
             "hx-email": "HxEmail",
-            "hx-idnumber": "HxIdnumber",
+            "hx-id-number": "HxIdNumber",
             "hx-address": "HxAddress",
             "hx-account-name": "HxAccountName",
             "hx-account-number": "HxAccountNumber",
-            "hx-phoneverification": "HxPhoneverification"
+            "hx-phone-verification": "HxPhoneVerification"
           }
         },
         "basic": {

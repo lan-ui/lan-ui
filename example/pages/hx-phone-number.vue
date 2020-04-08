@@ -1,42 +1,41 @@
 <template>
   <cube-page
     type="input-view"
-    title="HxIdnumber"
+    title="HxPhoneNumber"
     class="option-demo">
     <div slot="content">
-      <hx-input-idcard 
-        ref="hx-input-idcard"
-        :placeholder="'请输入身份证号码'"
-        :label="'身份证号码'"
-        :type="'idcard'"
-        :maxlength='18'
+      <hx-phone-number
+        ref="hx-phone-number"
+        :placeholder="'请输入手机号'"
+        :label="'手机号'"
+        :type="'phone'"
         :hxstyle="'text-align:left'"
-        v-model="idcardValue" 
-      ></hx-input-idcard>
-      <hx-input-idcard 
-        ref="hx-input-idcard"
-        :placeholder="'请输入身份证号码'"
-        :label="'身份证号码'"
-        :type="'idcard'"
+        v-model="phoneValue" 
+      ></hx-phone-number>
+      <hx-phone-number
+        ref="hx-phone-number"
+        :placeholder="'请输入手机号'"
+        :label="'手机号'"
+        :type="'phone'"
         :disabled="true"
-        v-model="idcardValue1" 
-      ></hx-input-idcard>
-      <hx-input-idcard 
-        ref="hx-input-idcard"
-        :placeholder="'请输入身份证号码'"
-        :label="'身份证号码'"
-        :type="'idcard'"
+        v-model="phoneValue1" 
+      ></hx-phone-number>
+      <hx-phone-number
+        ref="hx-phone-number"
+        :placeholder="'请输入手机号'"
+        :label="'手机号'"
+        :type="'phone'"
         :readonly="true"
         :eye="eye"
-        v-model="idcardValue2" 
-      ></hx-input-idcard>
+        v-model="phoneValue2" 
+      ></hx-phone-number>
     </div>
   </cube-page>
 </template>
 
 <script type="text/ecmascript-6">
   // import WithConsole from '@/components/input/hoc.js'
-  import HxInputIdcard from '@/components/hx-idnumber/hx-idnumber.vue'
+  import HxPhoneNumber from '@/components/hx-phone-number/hx-phone-number.vue'
   import CubePage from '../components/cube-page.vue'
   import SwitchOption from '../components/switch-option'
 
@@ -48,9 +47,9 @@
         type: '',
         // type: 'email',
         value: '',
-        idcardValue: '',
-        idcardValue1: '230229199608042020',
-        idcardValue2: '230229199608042020',
+        phoneValue: '',
+        phoneValue1: '13245654433',
+        phoneValue2: '15676273836',
         disabled: false,
         useClear: true,
         maxlength10: false,
@@ -162,7 +161,7 @@
       }
     },
     components: {
-      HxInputIdcard,
+      HxPhoneNumber,
       CubePage,
       SwitchOption
     }
