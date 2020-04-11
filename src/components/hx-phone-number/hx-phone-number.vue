@@ -60,7 +60,7 @@ export default {
     //   return phone.replace(/\s/g, '')
     // },
     inputCheckPhone(phone) {
-      // console.log(this.eye)
+      console.log(this.eye)
       var phoneLength = 11
       var REGEXP_PHONE = /^1[3456789]\d{1}\d{4}\d{4}$/
       // debugger
@@ -69,19 +69,22 @@ export default {
         console.log(this.phoneType)
         phoneLength = 11
         REGEXP_PHONE = /^1[3456789]\d{1}\d{4}\d{4}$/
-      } else if (this.phoneType === '+852') {
+      }
+      if (this.phoneType === '+852') {
         // 香港号码
-        console.log(this.phoneType)
+        // console.log(this.phoneType)
         phoneLength = 8
         REGEXP_PHONE = /^([6|9])\d{7}$/
-      } else if (this.phoneType === '+853') {
+      }
+      if (this.phoneType === '+853') {
         // 澳门号码
-        console.log(this.phoneType)
+        // console.log(this.phoneType)
         phoneLength = 7
         REGEXP_PHONE = /^[6]([8|6])\d{5}$/
-      } else if (this.phoneType === '+886') {
+      }
+      if (this.phoneType === '+886') {
         // 台湾号码
-        console.log(this.phoneType)
+        // console.log(this.phoneType)
         phoneLength = 10
         REGEXP_PHONE = /^[0][9]\d{8}$/
       }
@@ -99,7 +102,7 @@ export default {
       }
     },
     defaultPhone(e) {
-      // console.log(e)
+      console.log(e)
       this.phoneType = e
     },
     handleInput(e) {
@@ -108,8 +111,8 @@ export default {
     },
     clickEye(e) {
       this.eyeVal.push(this.value.replace(/\s/g, ''))
-      console.log(e)
-      console.log(this.eyeVal[0])
+      // console.log(e)
+      // console.log(this.eyeVal[0])
       var val = this.value.replace(/\s/g, '')
       // val = '1111'
       // console.log(val)

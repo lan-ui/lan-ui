@@ -43,12 +43,10 @@
         @focus="handleFocus"
         @blur="handleBlur"
         @change="changeHander"
-        @input="handleInput"
       />
       <div class="hx-input-append" v-if="$slots.append || _showClear || _showPwdEye">
         <div class="hx-input-clear" v-if="_showClear&&!readonly" @touchend="handleClear">
           <i class="cubeic-wrong"></i>
-          <!-- <i class="icon-hualife-certificates"></i> -->
         </div>
         <div class="hx-input-eye" v-if="_showPwdEye" @click="handlePwdEye">
           <i :class="eyeClass"></i>
@@ -74,13 +72,13 @@
 
 <script type="text/ecmascript-6">
   import inputMixin from '../../common/mixins/input'
-  const COMPONENT_NAME = 'hx-input'
+  // const COMPONENT_NAME = 'hx-input'
   const EVENT_INPUT = 'input'
   const EVENT_BLUR = 'blur'
   const EVENT_FOCUS = 'focus'
 
   export default {
-    name: COMPONENT_NAME,
+    name: 'hx-input',
     mixins: [inputMixin],
     props: {
       value: [String, Number],
@@ -159,8 +157,6 @@
         return visible
       },
       _showPwdEye() {
-        // debugger
-        // console.log(this.type, '====', this.eye, '=======', this.disabled)
         return (this.type === 'password' || this.type === 'phone' || this.type === 'idcard' || this.type === 'account') && this.eye && !this.disabled
       },
       pwdVisible() {
@@ -226,28 +222,23 @@
         }
       },
       handleFocus(e) {
-        // console.log(this.eye, 'input页面')
+        // console.log(e)
         this.$emit(EVENT_FOCUS, e)
         this.isFocus = true
       },
       handleBlur(e) {
+        // console.log(e)
         this.$emit(EVENT_BLUR, e)
         this.isFocus = false
       },
       handleClear(e) {
+        // console.log(e)
         this.inputValue = ''
         this.$refs.input.focus()
       },
       handlePwdEye() {
         this.formatedEye.open = !this.formatedEye.open
         this.$emit('clickEye', this.formatedEye.open)
-      },
-      handleInput() {
-        if (this.type === 'address') {
-          var text = document.getElementById('textarea')
-          // this.autoTextarea(text)
-          console.log(text)
-        }
       },
       // textarea高度自适应
       autoTextarea(elem, extra, maxHeight) {

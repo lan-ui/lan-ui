@@ -429,7 +429,7 @@ export default {
     },
     handleInput(e) {
       this.$emit('input', this.formatAccunt(e))
-      console.log(e)
+      // console.log(e)
       e = e.replace(/\s/g, '')
       if (e.length >= 6) {
         // debugger
@@ -455,7 +455,7 @@ export default {
           str1 = val.slice(15, 19)
           str3 = '***************' + str1
         }
-        console.log(str3)
+        // console.log(str3)
         this.$emit('input', str3)
       }
     }

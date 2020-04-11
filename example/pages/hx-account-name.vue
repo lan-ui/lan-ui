@@ -156,6 +156,9 @@
         var bankList = {}
         bankList = e
         console.log(bankList.text)
+      },
+      blue11() {
+        console.log('2313')
       }
     },
     components: {

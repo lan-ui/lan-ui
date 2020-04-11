@@ -64,7 +64,9 @@ import {
   HxAccountNumber,
   HxAddress,
   HxIdNumber,
-  HxEmail
+  HxEmail,
+  HxInput,
+  HxInputFdn
 } from './module'
 import { processComponentName } from './common/helpers/util'
 import './rem'
@@ -129,7 +131,9 @@ const components = [
   HxAccountNumber,
   HxAddress,
   HxIdNumber,
-  HxEmail
+  HxEmail,
+  HxInput,
+  HxInputFdn
 ]
 
 function install(Vue) {

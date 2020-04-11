@@ -67,6 +67,9 @@ import HxAccountNumber from './modules/hx-account-number'
 import HxAddress from './modules/hx-address'
 import HxIdNumber from './modules/hx-id-number'
 import HxEmail from './modules/hx-email'
+import HxInput from './modules/hx-input'
+import HxInputFdn from './modules/hx-input-fdn'
+// xwb-end
 
 const FormGroup = Form.Group
 const FormItem = Form.Item
@@ -157,5 +160,7 @@ export {
   HxAccountNumber,
   HxAddress,
   HxIdNumber,
-  HxEmail
+  HxEmail,
+  HxInput,
+  HxInputFdn
 }
