@@ -33,6 +33,34 @@
             'shortcut': 'Common',
             'items': [
               {
+                path: '/hx-phone-number',
+                text: 'HxPhoneNumber'
+              },
+              {
+                path: '/hx-email',
+                text: 'HxEmail'
+              },
+              {
+                path: '/hx-id-number',
+                text: 'HxIdNumber'
+              },
+              {
+                path: '/hx-address',
+                text: 'HxAddress'
+              },
+              {
+                path: '/hx-account-name',
+                text: 'HxAccountName'
+              },
+              {
+                path: '/hx-account-number',
+                text: 'HxAccountNumber'
+              },
+              {
+                path: '/hx-phone-verification',
+                text: 'HxPhoneVerification'
+              },
+              {
                 path: '/hx-sex',
                 text: 'HxSex'
               },
@@ -115,34 +143,6 @@
               {
                 path: '/input',
                 text: 'Input'
-              },
-              {
-                path: '/hx-phone-number',
-                text: 'HxPhoneNumber'
-              },
-              {
-                path: '/hx-email',
-                text: 'HxEmail'
-              },
-              {
-                path: '/hx-id-number',
-                text: 'HxIdNumber'
-              },
-              {
-                path: '/hx-address',
-                text: 'HxAddress'
-              },
-              {
-                path: '/hx-account-name',
-                text: 'HxAccountName'
-              },
-              {
-                path: '/hx-account-number',
-                text: 'HxAccountNumber'
-              },
-              {
-                path: '/hx-phone-verification',
-                text: 'HxPhoneVerification'
               },
               {
                 path: '/textarea',

@@ -104,6 +104,13 @@
         "common": {
           "name": "通用",
           "subList": {
+            "hx-phone-number": "HxPhoneNumber",
+            "hx-email": "HxEmail",
+            "hx-id-number": "HxIdNumber",
+            "hx-address": "HxAddress",
+            "hx-account-name": "HxAccountName",
+            "hx-account-number": "HxAccountNumber",
+            "hx-phone-verification": "HxPhoneVerification",
             "hx-sex": "HxSex",
             "hx-bank": "HxBank",
             "hx-certificatetype": "HxCertificatetype",
@@ -111,14 +118,7 @@
             "hx-location": "HxLocation",
             "hx-provinces": "HxProvinces",
             "hx-birthdate": "HxBirthdate",
-            "hx-validity": "HxValidity",
-            "hx-phone-number": "HxPhoneNumber",
-            "hx-email": "HxEmail",
-            "hx-id-number": "HxIdNumber",
-            "hx-address": "HxAddress",
-            "hx-account-name": "HxAccountName",
-            "hx-account-number": "HxAccountNumber",
-            "hx-phone-verification": "HxPhoneVerification"
+            "hx-validity": "HxValidity"
           }
         },
         "basic": {

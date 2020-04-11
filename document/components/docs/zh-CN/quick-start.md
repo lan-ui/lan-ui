@@ -227,21 +227,21 @@ import {
   IndexList,
   Swipe,
   // common
+  HxPhoneNumber,
+  HxEmail,
+  HxIdNumber,
+  HxAddress,
+  HxAccountName,
+  HxAccountNumber,
+  HxPhoneVerification,
+  HxSex,
   HxBank,
   HxCertificatetype,
   HxNationality,
-  HxSex,
   HxLocation,
   HxProvinces,
-  HxValidity,
   HxBirthdate,
-  HxInputPhone,
-  HxInputEmail,
-  HxInputIdcard,
-  HxInputAddress,
-  HxInputAccount,
-  HxInputAccountName,
-  HxInputVerification
+  HxValidity
 } from 'hx-ui'
 ```
 

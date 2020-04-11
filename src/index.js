@@ -58,7 +58,6 @@ import {
   HxProvinces,
   HxValidity,
   HxBirthdate,
-  // xwb
   HxPhoneNumber,
   HxPhoneVerification,
   HxAccountName,
@@ -124,15 +123,6 @@ const components = [
   HxProvinces,
   HxValidity,
   HxBirthdate,
-  // // input
-  // HxInputFoundation,
-  // HxInputPhone,
-  // HxInputEmail,
-  // HxInputIdcard,
-  // HxInputAddress,
-  // HxInputAccount,
-  // HxInputAccountName,
-  // HxInputPhoneverification
   HxPhoneNumber,
   HxPhoneVerification,
   HxAccountName,

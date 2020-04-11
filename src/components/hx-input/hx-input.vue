@@ -403,7 +403,6 @@
     bottom: -22px
     font-size: 12px
     font-family: PingFang SC;
-    font-weight: 500;
     color: rgba(216,30,6,1);
     margin-left: 1.25rem;
     margin-top:10px
