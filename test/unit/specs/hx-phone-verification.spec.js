@@ -34,12 +34,6 @@ describe('HxPhoneVerification.vue', () => {
     expect(vm.$el.querySelector('.cubeic-warn'))
       .to.be.null
   })
-  it('should show clear button when select input', () => {
-    vm = createPhoneInput()
-    dispatchTap(vm.$el.querySelector('input'))
-    expect(vm.$el.querySelector('.hx-input-clear').style.display)
-      .to.equal('')
-  })
   it('value should be empty when clear button clicked', (done) => {
     vm = createPhoneInput(1)
     expect(vm.$el.querySelector('input').value)
@@ -50,6 +44,87 @@ describe('HxPhoneVerification.vue', () => {
         .is.not.empty
       done()
     }, 50)
+  })
+  it('回显值只读用法', () => {
+    const vm = createVue({
+      template: `
+      <hx-phone-verification 
+        ref="hx-phone-verification"
+        :placeholder="'请输入手机验证码'"
+        :label="'手机验证码'"
+        :readonly="true"
+        v-model="value" 
+      ></hx-phone-verification>
+      `,
+      data: {
+        value: '6547',
+        readonly: false
+      }
+    })
+    const el = vm.$el
+    expect(vm.$props.readonly)
+      .to.be.true
+    expect(el.querySelector('input').value)
+      .to.equal('6547')
+  })
+  it('禁止操作', () => {
+    const vm = createVue({
+      template: `
+      <hx-phone-verification 
+        ref="hx-phone-verification"
+        :placeholder="'请输入手机验证码'"
+        :label="'手机验证码'"
+        :disabled="true"
+        v-model="value" 
+      ></hx-phone-verification>
+      `,
+      data: {
+        value: '6547',
+        disabled: false
+      }
+    })
+    const el = vm.$el
+    expect(vm.$props.disabled)
+      .to.be.true
+    expect(el.querySelector('input').value)
+      .to.equal('6547')
+  })
+  it('触发input', (done) => {
+    vm = createPhoneInput(111)
+    // const value = '哈哈'
+    vm.handleInput('111')
+    setTimeout(() => {
+      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+        .to.equal('')
+      done()
+    })
+  })
+  it('校验1', (done) => {
+    vm = createPhoneInput()
+    vm.inputCheckVerification()
+    setTimeout(() => {
+      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+        .to.equal('')
+      done()
+    })
+  })
+  it('校验2', (done) => {
+    vm = createPhoneInput(111)
+    vm.inputCheckVerification('111')
+    setTimeout(() => {
+      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+        .to.equal('')
+      done()
+    })
+  })
+  it('校验3', (done) => {
+    vm = createPhoneInput('1234')
+    vm.inputCheckVerification('1234')
+    setTimeout(() => {
+      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+        .to.equal('')
+      done()
+    })
   })
 })
 

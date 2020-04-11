@@ -157,15 +157,8 @@ export default {
         : 'normal'
     },
     handleFocus(e) {
-      // debugger
       this.$emit('focus', e)
-      // this.$emit('focus', e)
-      // this.$emit('focus', e)
-      // if (this.value !== '') {
-      //   this.status = 'normal'
-      // }
       this.status = 'normal'
-      // this.show = false
     },
     handleBlur(e) {
       this.status = this.calcStatus(this.value)
@@ -182,14 +175,11 @@ export default {
         this.$emit('input', e)
       }
       this.$emit('defaultPhone', this.defaultVal)
-      // console.log(e, '子组件传过来的')
       var value2 = this.value
       value2 = e
       if (value2.length > 0) {
         this.emailShow = true
-        // this.status = 'normal'
       }
-      // debugger
       this.domainList = this.domainList1.map(item => {
         item = '' + e + item
         return item
@@ -201,7 +191,6 @@ export default {
           this.domainList[i] = this.domainList[i].substring(0, index1) + this.domainList[i].substring(index2)
         }
       }
-      // this.status = this.calcStatus(value2)
     },
     find (str, cha, num) {
       var x = str.indexOf(cha)
@@ -211,8 +200,7 @@ export default {
       return x
     },
     clickTap(val) {
-      // debugger
-      // this.show = true
+      // console.log(val)
       this.$emit('input', val)
       this.status = this.calcStatus(val)
       setTimeout(() => {
@@ -231,7 +219,7 @@ export default {
           that.send = '发送验证码'
           that.resend = false
         }
-        console.log(that.send)
+        // console.log(that.send)
       }, 1000)
     },
     // 号码归属地picker组件
@@ -247,19 +235,14 @@ export default {
     },
     // 选择号码归属地点击确认
     selectHandle(selectedVal, selectedIndex, selectedText) {
-      // console.log(selectedVal, '选中区号')
+      // console.log(selectedVal, selectedIndex, selectedText)
       this.defaultVal = selectedVal[0]
-      // this.defaultPhone(this.defaultVal)
     },
     // 是否全部可见
     clickEye(e) {
-      // console.log(e)
+      console.log(e)
       this.$emit('clickEye', e)
     }
-    // defaultPhone(e) {
-    //   console.log(val)
-    //   this.$emit('defaultPhone', val)
-    // }
   }
 }
 </script>
