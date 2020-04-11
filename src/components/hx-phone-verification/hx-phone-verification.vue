@@ -49,7 +49,7 @@ export default {
     },
     handleInput(e) {
       this.$emit('input', e)
-      console.log(e)
+      // console.log(e)
     }
   }
 }

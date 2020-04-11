@@ -48,6 +48,7 @@ export default {
       }
     },
     handleInput(e) {
+      console.log(e)
       this.$emit('input', e)
     }
   }

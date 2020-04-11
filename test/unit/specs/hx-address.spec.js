@@ -34,12 +34,12 @@ describe('HxAddress.vue', () => {
     expect(vm.$el.querySelector('.cubeic-warn'))
       .to.be.null
   })
-  it('should show clear button when select input', () => {
-    vm = createPhoneInput()
-    dispatchTap(vm.$el.querySelector('input'))
-    expect(vm.$el.querySelector('.hx-input-clear').style.display)
-      .to.equal('')
-  })
+  // it('should show clear button when select input', () => {
+  //   vm = createPhoneInput()
+  //   dispatchTap(vm.$el.querySelector('input'))
+  //   expect(vm.$el.querySelector('.hx-input-clear').style.display)
+  //     .to.equal('')
+  // })
   it('value should be empty when clear button clicked', (done) => {
     vm = createPhoneInput(1)
     expect(vm.$el.querySelector('input').value)
@@ -50,6 +50,96 @@ describe('HxAddress.vue', () => {
         .is.not.empty
       done()
     }, 50)
+  })
+  it('回显值只读用法', () => {
+    const vm = createVue({
+      template: `
+      <hx-address
+      ref="hx-address"
+      :placeholder="'请输入街道(小区)门牌号'"
+      :label="'详细地址'"
+      :readonly="true"
+      v-model="value" 
+    ></hx-address>
+      `,
+      data: {
+        value: '某某街道某某小区',
+        readonly: false
+      }
+    })
+    const el = vm.$el
+    expect(vm.$props.readonly)
+      .to.be.true
+    expect(el.querySelector('input').value)
+      .to.equal('某某街道某某小区')
+  })
+  it('禁止操作', () => {
+    const vm = createVue({
+      template: `
+      <hx-address
+      ref="hx-address"
+      :placeholder="'请输入街道(小区)门牌号'"
+      :label="'详细地址'"
+      :disabled="true"
+      v-model="value" 
+    ></hx-address>
+      `,
+      data: {
+        value: '某某街道某某小区',
+        disabled: false
+      }
+    })
+    const el = vm.$el
+    expect(vm.$props.disabled)
+      .to.be.true
+    expect(el.querySelector('input').value)
+      .to.equal('某某街道某某小区')
+  })
+  it('触发input', (done) => {
+    vm = createPhoneInput(111)
+    // const value = '哈哈'
+    vm.handleInput('111')
+    setTimeout(() => {
+      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+        .to.equal('')
+      done()
+    })
+  })
+  it('校验1', (done) => {
+    vm = createPhoneInput()
+    vm.inputCheckAddress()
+    setTimeout(() => {
+      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+        .to.equal('')
+      done()
+    })
+  })
+  it('校验2', (done) => {
+    vm = createPhoneInput('哈哈哈哈哈##')
+    vm.inputCheckAddress('哈哈哈哈哈##')
+    setTimeout(() => {
+      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+        .to.equal('')
+      done()
+    })
+  })
+  it('校验3', (done) => {
+    vm = createPhoneInput('哈哈')
+    vm.inputCheckAddress('哈哈')
+    setTimeout(() => {
+      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+        .to.equal('')
+      done()
+    })
+  })
+  it('校验3', (done) => {
+    vm = createPhoneInput('某某小区某某街道')
+    vm.inputCheckAddress('某某小区某某街道')
+    setTimeout(() => {
+      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+        .to.equal('')
+      done()
+    })
   })
 })
 
