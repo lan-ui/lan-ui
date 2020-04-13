@@ -222,7 +222,7 @@
         }
       },
       handleFocus(e) {
-        // console.log(e)
+        console.log(e)
         this.$emit(EVENT_FOCUS, e)
         this.isFocus = true
       },
