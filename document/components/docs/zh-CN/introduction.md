@@ -60,13 +60,13 @@ hx-ui 是基于 Vue.js 实现的精致移动端组件库。
 
 #### 通用业务组件
 
-- [HxPhone 手机号码](#/zh-CN/docs/hx-phone)
+- [HxPhoneNumber 手机号码](#/zh-CN/docs/hx-phone-number)
 - [HxEmail 邮箱地址](#/zh-CN/docs/hx-email)
-- [HxIdnumber 身份证号码](#/zh-CN/docs/hx-idnumber)
+- [HxIdnumber 身份证号码](#/zh-CN/docs/hx-id-number)
 - [HxAddress 详细地址](#/zh-CN/docs/hx-address)
 - [HxAccountName 账号名](#/zh-CN/docs/hx-account-name)
 - [HxAccountNumber 账号](#/zh-CN/docs/hx-account-number)
-- [HxPhoneverification 验证码](#/zh-CN/docs/hx-phoneverification)
+- [HxPhoneverification 验证码](#/zh-CN/docs/hx-phone-verification)
 - [HxSex 性别](#/zh-CN/docs/hx-sex)
 - [HxBank 银行](#/zh-CN/docs/hx-bank)
 - [HxCertificatetype 证件类型](#/zh-CN/docs/hx-certificatetype)
