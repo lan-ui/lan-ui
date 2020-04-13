@@ -165,7 +165,7 @@ export default {
       this.$emit('focus', e)
       setTimeout(() => {
         this.emailShow = false
-      }, 200)
+      }, 600)
     },
     handleInput(e) {
       // debugger

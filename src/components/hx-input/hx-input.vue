@@ -43,7 +43,6 @@
         @focus="handleFocus"
         @blur="handleBlur"
         @change="changeHander"
-        @input="handleInput"
       />
       <div class="hx-input-append" v-if="$slots.append || _showClear || _showPwdEye">
         <div class="hx-input-clear" v-if="_showClear&&!readonly" @touchend="handleClear">
