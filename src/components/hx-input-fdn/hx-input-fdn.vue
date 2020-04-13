@@ -256,14 +256,15 @@ export default {
     .hx-input-prepend
       font-size:16px;
       width: 112px;
+      line-height: 50px
     .hx-input-field
-      padding: 18px 0px;
       &::-webkit-input-placeholder
         color: #ccc;
   .phone-icon
     border-width :0.3rem
     margin-top :0.3rem
-    margin-left :0.3rem
+    margin-left :9px
+    margin-right: 18px
     border-style:solid
     border-color: #000 transparent transparent transparent
   .hx-input_disabled

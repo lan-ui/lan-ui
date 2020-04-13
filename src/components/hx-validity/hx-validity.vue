@@ -117,27 +117,34 @@
     myred=#db1e06
     .warning
       height:74px
+      text-align:left
     .validity
       background-color:white
       font-size:16px
       height:50px
-      border-bottom:2px solid #efefef
+      text-align:left
+      border-bottom:1px solid #efefef
     .title
+      float:left
+      display:inline-block
       color:myblack
-      margin-right:50px
+      width:112px      
       line-height:50px
     .text
       width:14px
+      line-height:50px
     .tips
       color:mygrey
     .icon
       color:myblue
       float:right
+      font-size:22px
       line-height:50px
     .warning::after
       content:'请输入证件有效期'
       color:myred
       font-size:12px
       display:block
-      line-height:24px
+      line-height:32px
+      text-align:left
 </style>

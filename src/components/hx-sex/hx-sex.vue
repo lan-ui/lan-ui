@@ -97,6 +97,8 @@
       height: 28px
       line-height: 28px
       border-radius: 6px
+      span
+        line-height: 30px
     .cube-checker-item_active
       color: $checker-item-active-color
       background: $checker-item-active-bgc

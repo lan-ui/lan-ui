@@ -42,6 +42,6 @@
 </script>
 <style lang="stylus">
 .cube-page.hx >.wrapper .content {
-  margin:10px 20px
+  margin:10px 30px
 }
 </style>

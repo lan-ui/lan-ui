@@ -33,7 +33,7 @@
 - 设置 disabled，禁用状态
 
   ```html
-  <hx-input-account ref="hx-input-account" :placeholder="'请输入账号'" :label="'账号'" :type="'account'" :disabled="true" @binkList="binkList" v-model="accountValue"></hx-input-account>
+  <hx-account-number ref="hx-account-number" :placeholder="'请输入账号'" :label="'账号'" :type="'account'" :disabled="true" @binkList="binkList" v-model="accountValue"></hx-account-number>
   ```
   ```js
   export default {
@@ -51,7 +51,7 @@
 - 设置 readonly，回显数据
 
   ```html
-  <hx-input-account ref="hx-input-account" :placeholder="'请输入账号'" :label="'账号'" :type="'account'" :readonly="true" :eye="eye" @binkList="binkList" v-model="accountValue"></hx-input-account>
+  <hx-account-number ref="hx-account-number" :placeholder="'请输入账号'" :label="'账号'" :type="'account'" :readonly="true" :eye="eye" @binkList="binkList" v-model="accountValue"></hx-account-number>
   ```
   ```js
   export default {
@@ -78,8 +78,8 @@
 - 设置 字体右对齐格式 默认左对齐
 
   ```html
-  <hx-input-account ref="hx-input-account" :placeholder="'请输入账号'" :label="'账号'" :type="'account'" @binkList="binkList" 
-  :hxstyle="'text-align:right'"  v-model="accountValue"></hx-input-account>
+  <hx-account-number ref="hx-account-number" :placeholder="'请输入账号'" :label="'账号'" :type="'account'" @binkList="binkList" 
+  :hxstyle="'text-align:right'"  v-model="accountValue"></hx-account-number>
   ```
   ```js
   export default {

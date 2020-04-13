@@ -43,10 +43,12 @@
         @focus="handleFocus"
         @blur="handleBlur"
         @change="changeHander"
+        @input="handleInput"
       />
       <div class="hx-input-append" v-if="$slots.append || _showClear || _showPwdEye">
         <div class="hx-input-clear" v-if="_showClear&&!readonly" @touchend="handleClear">
           <i class="cubeic-wrong"></i>
+          <!-- <i class="icon-hualife-certificates"></i> -->
         </div>
         <div class="hx-input-eye" v-if="_showPwdEye" @click="handlePwdEye">
           <i :class="eyeClass"></i>
@@ -164,7 +166,7 @@
         return eye.reverse ? !eye.open : eye.open
       },
       eyeClass() {
-        return this.formatedEye.open ? 'hx-icon-yanjing-keyikan' : 'hx-icon-bukejian1'
+        return this.formatedEye.open ? 'icon-hualife-visible' : 'icon-hualife-invisible'
       }
       // inputValueFormat: {
       //   get() {
@@ -227,7 +229,7 @@
         this.isFocus = true
       },
       handleBlur(e) {
-        // console.log(e)
+         // console.log(e)
         this.$emit(EVENT_BLUR, e)
         this.isFocus = false
       },
@@ -300,8 +302,6 @@
   @require "../../common/stylus/mixin.styl"
 
   .hx-input
-    margin-left:20px
-    margin-right :20px
     display: flex
     align-items: center
     font-size: $fontsize-medium
@@ -312,11 +312,11 @@
     &.hx-input_normal
       &::after
         border: unset;
-        border-bottom: 2px solid rgba(239,239,239,1);
+        border-bottom: 1px solid rgba(239,239,239,1);
     &.hx-input_active
       &::after
         border: unset;
-        border-bottom: 2px solid #1890ff;
+        border-bottom: 1px solid #1890ff;
   .hx-input::after
     border-radius:0
   .hx-input-field
@@ -324,7 +324,6 @@
     flex: 1
     width: 100%
     min-width: 0
-    padding: 10px
     font-size:16px
     box-sizing: border-box
     color: $input-color
@@ -339,9 +338,12 @@
       .hx-input-clear, .hx-input-eye
         &:first-child
           margin-left: -5px
+      .hx-input-eye
+        font-size:22px
   .hx-input-textarea
     display: block
     flex: 1
+    padding:0
     width: 100%
     min-width: 0
     font-size:16px
@@ -371,6 +373,8 @@
     display: flex
     align-items: center
     width: 22px
+  .hx-input-append
+    display:inline-block
   .hx-input-clear, .hx-input-eye
     // width: 1em
     // height: 1em
@@ -390,33 +394,29 @@
         transform: scale(1.4)
   // slot 错误信息样式 | start
   .hx-rule-error
-    // position: absolute
-    bottom: -22px
     font-size: 12px
     font-family: PingFang SC;
     color: rgba(216,30,6,1);
-    margin-left: 1.25rem;
-    margin-top:10px
+    text-align: left
+    line-height:32px
   // slot 错误信息样式 | end
   // 邮箱后缀
   .hx-email-suffix
     // position: absolute
     top: 60px
-    font-size: 12px
-    color: #000
+    font-size: 16px
+    color: #333
     overflow:scroll 
     max-height: 250px
+    font-weight:normal 
     // width: 100%
     z-index: 100
-    margin:0 1.25rem;
   .hx-email-div
     // height: 55px
-    border-bottom: 1px solid #ccc
+    border-bottom: 1px solid #eaeaea
     background: #ffffff
-    line-height: 47px
-    font-family:PingFang SC;
-    font-weight:500;
-    color:rgba(51,51,51,1);
+    line-height: 49px
+    color:#333;
   .hx-phone-send
     border-radius: 20px
     background :#f1f6f5

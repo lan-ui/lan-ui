@@ -172,8 +172,10 @@
 </script>
 
 <style lang="stylus">
-.cube-page.option-demo.input-view .wrapper
-  background-color: #fff
+  .cube-page.option-demo.input-view .wrapper
+    background-color: #fff
+  .cube-page.option-demo >.wrapper .content 
+    margin: 10px 30px
   .group
     background-color: white
   .value
