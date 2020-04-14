@@ -37,7 +37,7 @@
       <!-- 请输入投保人姓名 -->
     </template>
     <template v-if="type=='email'&&emailShow" v-slot:emailSuffix>
-      <div class="hx-email-div" v-for="(item, i) in domainList" :key='i' v-on:click='clickTap(item)'>{{item}}</div>
+      <div class="hx-email-div" v-for="(item, i) in domainList" :key='i' v-on:touchend='clickTap(item)'>{{item}}</div>
     </template>
     <!-- 验证码 -->
     <template v-if="type=='verification'&&!readonly&&!disabled" v-slot:verification>
@@ -165,7 +165,7 @@ export default {
       this.$emit('focus', e)
       setTimeout(() => {
         this.emailShow = false
-      }, 600)
+      }, 50)
     },
     handleInput(e) {
       // debugger
@@ -201,11 +201,11 @@ export default {
     },
     clickTap(val) {
       // console.log(val)
-      this.$emit('input', val)
       this.status = this.calcStatus(val)
       setTimeout(() => {
         this.emailShow = false
-      }, 200)
+      }, 10)
+      this.$emit('input', val)
     },
     countdown: function() {
       var nsecond = 60
@@ -250,21 +250,22 @@ export default {
 <style lang="stylus" rel="stylesheet/stylus">
   .hx-input-foundation
     line-height: 1;
+    font-weight: lighter;
     font-size: 16px;
     border-radius: 0;
     color: rgba(51,51,51,1)
     .hx-input-prepend
       font-size:16px;
-      width: 112px;
-      line-height: 50px
+      font-family:PingFang SC;
+      width: 100px;
     .hx-input-field
+      padding: 18px 0px;
       &::-webkit-input-placeholder
         color: #ccc;
   .phone-icon
     border-width :0.3rem
     margin-top :0.3rem
-    margin-left :9px
-    margin-right: 18px
+    margin-left :0.3rem
     border-style:solid
     border-color: #000 transparent transparent transparent
   .hx-input_disabled

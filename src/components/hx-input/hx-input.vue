@@ -416,6 +416,7 @@
     background: #ffffff
     line-height: 49px
     color:#333;
+    text-align:left;
   .hx-phone-send
     border-radius: 20px
     background :#f1f6f5
