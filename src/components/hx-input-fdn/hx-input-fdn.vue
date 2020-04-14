@@ -250,22 +250,21 @@ export default {
 <style lang="stylus" rel="stylesheet/stylus">
   .hx-input-foundation
     line-height: 1;
-    font-weight: lighter;
     font-size: 16px;
     border-radius: 0;
     color: rgba(51,51,51,1)
     .hx-input-prepend
       font-size:16px;
-      font-family:PingFang SC;
-      width: 100px;
+      width: 112px;
+      line-height: 50px
     .hx-input-field
-      padding: 18px 0px;
       &::-webkit-input-placeholder
         color: #ccc;
   .phone-icon
     border-width :0.3rem
     margin-top :0.3rem
-    margin-left :0.3rem
+    margin-left :9px
+    margin-right: 18px
     border-style:solid
     border-color: #000 transparent transparent transparent
   .hx-input_disabled
