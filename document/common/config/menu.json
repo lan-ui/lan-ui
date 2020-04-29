@@ -187,6 +187,18 @@
         "create-api": "create-api",
         "better-scroll": "better-scroll"
       }
+    },
+    "codings": {
+      "name": "组件开发规范",
+      "angle": "04",
+      "subList": {
+        "coding-basic": "基础编码规范",
+        "coding-eslint": "ESlint 编码风格规范",
+        "coding-core": "组件核心编码规范",
+        "coding-doc": "组件文档及示例编写规范",
+        "coding-test": "单元测试规范",
+        "coding-commit": "代码提交规范"
+      }
     }
   }
 }

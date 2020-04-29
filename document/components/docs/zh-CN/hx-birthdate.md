@@ -1,4 +1,4 @@
-## hx-birthdate 出生日期
+## HxBirthdate 出生日期
 
 > 1.0.0 新增通用组件
 
