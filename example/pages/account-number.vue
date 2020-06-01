@@ -1,75 +1,44 @@
 <template>
   <cube-page
     type="input-view"
-    title="Input"
+    title="AccountNumber"
     class="option-demo">
     <div slot="content">
-      <!-- <hx-input
-        type="phone"
-      ></hx-input>
-      <hx-input
-        type="idcard"
-      ></hx-input>
-      <hx-input
-        type="email"
-      ></hx-input> -->
-      <cube-input 
-        :type="'password'" 
-        placeholder="请输入密码" 
-        :clearable="clearable" 
-        :autocomplete="true" 
-        :eye="eye" 
-        v-model="value" 
-      >
-        <template v-slot:prepend>
-          slot-prepend
-        </template>
-      </cube-input>
-      <div class="value">value: {{value}}</div>
-      <div class="options">
-        <div class="option-list">
-          <div class="group">
-            <switch-option class="item" name="disabled" :value="disabled"
-                            @update:value="updateDisabled"></switch-option>
-          </div>
-          <div class="group">
-            <switch-option class="item" name="readonly" :value="readonly"
-                            @update:value="updateReadonly"></switch-option>
-          </div>
-          <div class="group">
-            <switch-option class="item" name="phone" :value="phone"
-                            @update:value="updatephone"></switch-option>
-          </div>
-          <div class="group">
-            <switch-option class="item" name="maxlength:10" :value="maxlength10"
-                            @update:value="updateMaxLength"></switch-option>
-          </div>
-          <div class="group">
-            <switch-option class="item" name="clearable" :value="useClear"
-                            @update:value="updateUseClear"></switch-option>
-            <switch-option class="item" name="blur hiden" :value="clearBlurHidden"
-                            @update:value="updateBlurHidden" v-if="useClear"></switch-option>
-          </div>
-          <div class="group">
-            <switch-option class="item" name="password" :value="isPwd"
-                            @update:value="updatePwd"></switch-option>
-            <switch-option class="item" name="show eye" :value="showEye"
-                            @update:value="updateShowEye" v-if="isPwd"></switch-option>
-            <switch-option class="item" name="reverse" :value="reverse"
-                            @update:value="updateReverse" v-if="isPwd && showEye"></switch-option>
-            <switch-option class="item" name="password visible" :value="pwdVisible"
-                            @update:value="updatePwdVisible" v-if="isPwd && showEye"></switch-option>
-          </div>
-        </div>
-      </div>
+      <lan-account-number
+        ref="lan-account-number"
+        :placeholder="'请输入账号'"
+        :label="'账号'"
+        :type="'account'"
+        :hxstyle="'text-align:left'"
+        @binkList="binkList"
+        v-model="accountValue" 
+      ></lan-account-number>
+      <lan-account-number
+        ref="lan-account-number"
+        :placeholder="'请输入账号'"
+        :label="'账号'"
+        :type="'account'"
+        :disabled="true"
+        @binkList="binkList"
+        v-model="accountValue1" 
+      ></lan-account-number>
+      <lan-account-number
+        ref="lan-account-number"
+        :placeholder="'请输入账号'"
+        :label="'账号'"
+        :type="'account'"
+        :readonly="true"
+        :eye='eye'
+        @binkList="binkList"
+        v-model="accountValue2" 
+      ></lan-account-number>
     </div>
   </cube-page>
 </template>
 
 <script type="text/ecmascript-6">
   // import WithConsole from '@/components/input/hoc.js'
-  import CubeInput from '@/components/input/input.vue'
-  // import { HxInputPhone, HxInputEmail, HxInputIdcard, HxInputAddress, HxInputAccount, HxInputVerification, HxInputAccountName } from '@/components/input/customInput/index.js'
+  import AccountNumber from '@/components/account-number/account-number.vue'
   import CubePage from '../components/cube-page.vue'
   import SwitchOption from '../components/switch-option'
 
@@ -81,13 +50,9 @@
         type: '',
         // type: 'email',
         value: '',
-        phoneValue: '',
-        emailValue: '',
-        idcardValue: '',
-        addressValue: '',
         accountValue: '',
-        accountNameValue: '',
-        verificationValue: '',
+        accountValue1: '6225 5526 8798 1625',
+        accountValue2: '6225 5526 8798 1625',
         disabled: false,
         useClear: true,
         maxlength10: false,
@@ -199,14 +164,7 @@
       }
     },
     components: {
-      CubeInput,
-      // InputPhone,
-      // InputEmail,
-      // InputIdcard,
-      // InputAddress,
-      // InputAccount,
-      // InputAccountName,
-      // InputVerification,
+      AccountNumber,
       CubePage,
       SwitchOption
     }
@@ -215,7 +173,7 @@
 
 <style lang="stylus">
 .cube-page.option-demo.input-view .wrapper
-  background-color: #efeff4
+  background-color: #fff
   .group
     background-color: white
   .value

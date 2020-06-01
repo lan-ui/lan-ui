@@ -81,13 +81,13 @@ import hxProvinces from '../pages/hx-provinces.vue'
 import HxBirthdate from '../pages/hx/hx-birthdate.vue'
 import HxValidity from '../pages/hx/hx-validity.vue'
 // xwb
-import HxPhoneNumber from '../pages/hx-phone-number.vue'
-import HxEmail from '../pages/hx-email.vue'
-import HxIdNumber from '../pages/hx-id-number.vue'
-import HxAddress from '../pages/hx-address.vue'
-import HxAccountName from '../pages/hx-account-name.vue'
-import HxAccountNumber from '../pages/hx-account-number.vue'
-import HxPhoneVerification from '../pages/hx-phone-verification.vue'
+import PhoneNumber from '../pages/phone-number.vue'
+import Email from '../pages/email.vue'
+import IdNumber from '../pages/id-number.vue'
+import Address from '../pages/address.vue'
+import AccountName from '../pages/account-name.vue'
+import AccountNumber from '../pages/account-number.vue'
+import PhoneVerification from '../pages/phone-verification.vue'
 // xwb-end
 
 const routes = [
@@ -148,32 +148,32 @@ const routes = [
     component: Input
   },
   {
-    path: '/hx-phone-number',
-    component: HxPhoneNumber
+    path: '/phone-number',
+    component: PhoneNumber
   },
   {
-    path: '/hx-email',
-    component: HxEmail
+    path: '/email',
+    component: Email
   },
   {
-    path: '/hx-id-number',
-    component: HxIdNumber
+    path: '/id-number',
+    component: IdNumber
   },
   {
-    path: '/hx-address',
-    component: HxAddress
+    path: '/address',
+    component: Address
   },
   {
-    path: '/hx-account-name',
-    component: HxAccountName
+    path: '/account-name',
+    component: AccountName
   },
   {
-    path: '/hx-account-number',
-    component: HxAccountNumber
+    path: '/account-number',
+    component: AccountNumber
   },
   {
-    path: '/hx-phone-verification',
-    component: HxPhoneVerification
+    path: '/phone-verification',
+    component: PhoneVerification
   },
   {
     path: '/textarea',
