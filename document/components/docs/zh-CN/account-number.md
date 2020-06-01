@@ -51,11 +51,7 @@
 - 设置 readonly，回显数据
 
   ```html
-<<<<<<< HEAD:document/components/docs/zh-CN/account-number.md
   <lan-input-account ref="lan-input-account" :placeholder="'请输入账号'" :label="'账号'" :type="'account'" :readonly="true" :eye="eye" @binkList="binkList" v-model="accountValue"></lan-input-account>
-=======
-  <hx-account-number ref="hx-account-number" :placeholder="'请输入账号'" :label="'账号'" :type="'account'" :readonly="true" :eye="eye" @binkList="binkList" v-model="accountValue"></hx-account-number>
->>>>>>> b7ae77495ba5179a2c9b448b0661236a8c6af919:document/components/docs/zh-CN/hx-account-number.md
   ```
   ```js
   export default {
