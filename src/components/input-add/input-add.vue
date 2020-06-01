@@ -164,8 +164,8 @@
         return eye.reverse ? !eye.open : eye.open
       },
       eyeClass() {
-        // return this.formatedEye.open ? 'lan-icon-yanjing-keyikan' : 'lan-icon-bukejian1'
-        return this.formatedEye.open ? 'icon-hualife-visible' : 'icon-hualife-invisible'
+        return this.formatedEye.open ? 'lan-icon-yanjing-keyikan' : 'lan-icon-bukejian1'
+        // return this.formatedEye.open ? 'icon-hualife-visible' : 'icon-hualife-invisible'
       }
       // inputValueFormat: {
       //   get() {
@@ -384,7 +384,7 @@
       display: inline-block
       transform: scale(1.2)
   .lan-input-eye
-    font-size: 17px;
+    font-size: 1rem;
     color:#ccc;
     >
       .lan-icon-kejian, .lan-icon-bukejian
