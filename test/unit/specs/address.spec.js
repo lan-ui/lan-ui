@@ -1,12 +1,8 @@
 import Vue from 'vue2'
-// import {HxInputAddress} from '@/hx/modules'
-// import HxCustomComponents from '@/hx/modules/index'
-// import HxInputAddress from '@/hx/modules/input/HxInputAddress.vue'
+
 import Address from '@/modules/address'
 import createVue from '../utils/create-vue'
 import { dispatchTap } from '../utils/event'
-
-// const { HxInputAddress } = HxCustomComponents
 
 describe('Address.vue', () => {
   let vm
@@ -25,7 +21,7 @@ describe('Address.vue', () => {
     vm = createPhoneInput()
     // const el = vm.$el
     expect(vm.$el.className)
-      .to.equal('hx hx-input-foundation')
+      .to.equal('lan lan-input-foundation')
     expect(vm.$el.querySelector('input'))
       .to.be.ok
   })
@@ -34,17 +30,11 @@ describe('Address.vue', () => {
     expect(vm.$el.querySelector('.cubeic-warn'))
       .to.be.null
   })
-  // it('should show clear button when select input', () => {
-  //   vm = createPhoneInput()
-  //   dispatchTap(vm.$el.querySelector('input'))
-  //   expect(vm.$el.querySelector('.hx-input-clear').style.display)
-  //     .to.equal('')
-  // })
   it('value should be empty when clear button clicked', (done) => {
     vm = createPhoneInput(1)
     expect(vm.$el.querySelector('input').value)
       .is.not.empty
-    dispatchTap(vm.$el.querySelector('.hx-input-clear'))
+    dispatchTap(vm.$el.querySelector('.lan-input-clear'))
     setTimeout(() => {
       expect(vm.$el.querySelector('input').value)
         .is.not.empty
@@ -100,7 +90,7 @@ describe('Address.vue', () => {
     // const value = '哈哈'
     vm.handleInput('111')
     setTimeout(() => {
-      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+      expect(vm.$el.querySelector('.lan-rule-error').innerText)
         .to.equal('')
       done()
     })
@@ -109,7 +99,7 @@ describe('Address.vue', () => {
     vm = createPhoneInput()
     vm.inputCheckAddress()
     setTimeout(() => {
-      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+      expect(vm.$el.querySelector('.lan-rule-error').innerText)
         .to.equal('')
       done()
     })
@@ -118,7 +108,7 @@ describe('Address.vue', () => {
     vm = createPhoneInput('哈哈哈哈哈##')
     vm.inputCheckAddress('哈哈哈哈哈##')
     setTimeout(() => {
-      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+      expect(vm.$el.querySelector('.lan-rule-error').innerText)
         .to.equal('')
       done()
     })
@@ -127,7 +117,7 @@ describe('Address.vue', () => {
     vm = createPhoneInput('哈哈')
     vm.inputCheckAddress('哈哈')
     setTimeout(() => {
-      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+      expect(vm.$el.querySelector('.lan-rule-error').innerText)
         .to.equal('')
       done()
     })
@@ -136,7 +126,7 @@ describe('Address.vue', () => {
     vm = createPhoneInput('某某小区某某街道')
     vm.inputCheckAddress('某某小区某某街道')
     setTimeout(() => {
-      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+      expect(vm.$el.querySelector('.lan-rule-error').innerText)
         .to.equal('')
       done()
     })

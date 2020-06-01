@@ -10,7 +10,7 @@
         :label="'详细地址'"
         :type="'address'"
         :maxlength='30'
-        :hxstyle="'text-align:left'"
+        :lanstyle="'text-align:left'"
         v-model="addressValue" 
       ></lan-address>
       <lan-address
@@ -63,14 +63,6 @@
       }
     },
     computed: {
-      // phoneValueFormated: {
-      //   set(val) {
-      //     this.phoneValue = this.$refs['hx-input-phone'].formatPhone(val)
-      //   },
-      //   get() {
-      //     return this.phoneValue
-      //   }
-      // },
       clearable() {
         if (this.type === 'phone') {
           this.placeholder = '请输入手机号码'

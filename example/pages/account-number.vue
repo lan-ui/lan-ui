@@ -9,7 +9,7 @@
         :placeholder="'请输入账号'"
         :label="'账号'"
         :type="'account'"
-        :hxstyle="'text-align:left'"
+        :lanstyle="'text-align:left'"
         @binkList="binkList"
         v-model="accountValue" 
       ></lan-account-number>
@@ -67,14 +67,6 @@
       }
     },
     computed: {
-      // phoneValueFormated: {
-      //   set(val) {
-      //     this.phoneValue = this.$refs['hx-input-phone'].formatPhone(val)
-      //   },
-      //   get() {
-      //     return this.phoneValue
-      //   }
-      // },
       clearable() {
         if (this.type === 'phone') {
           this.placeholder = '请输入手机号码'

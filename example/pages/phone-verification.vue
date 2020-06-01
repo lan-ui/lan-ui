@@ -10,7 +10,7 @@
         :label="'手机验证码'"
         :type="'verification'"
         :maxlength='4'
-        :hxstyle="'text-align:left'"
+        :lanstyle="'text-align:left'"
         v-model="verificationValue" 
       ></lan-phone-verification>
       <lan-phone-verification
@@ -63,14 +63,6 @@
       }
     },
     computed: {
-      // phoneValueFormated: {
-      //   set(val) {
-      //     this.phoneValue = this.$refs['hx-input-phone'].formatPhone(val)
-      //   },
-      //   get() {
-      //     return this.phoneValue
-      //   }
-      // },
       clearable() {
         if (this.type === 'phone') {
           this.placeholder = '请输入手机号码'

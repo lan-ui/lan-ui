@@ -10,7 +10,7 @@
     :placeholder="placeholder"
     :inputCheck="inputCheckAccunt"
     :errorInfo="accuntErrorInfo"
-    :hxstyle="hxstyle"
+    :lanstyle="lanstyle"
     @input="handleInput"
     @clickEye="clickEye"
   >

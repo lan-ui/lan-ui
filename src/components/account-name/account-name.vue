@@ -1,18 +1,4 @@
 <template>
-  <!-- <lan-input-foundation
-    ref="lan-input-foundation"
-    :value="value"
-    :label="label"
-    :type="type"
-    :readonly="readonly"
-    :disabled="disabled"
-    :placeholder="placeholder"
-    :inputCheck="inputCheckAccuntName"
-    :errorInfo="accuntNameErrorInfo"
-    :hxstyle="hxstyle"
-    @input="handleInput"
-  >
-  </lan-input-foundation> -->
   <lan-input-foundation
     ref="lan-input-foundation"
     :value="value"
@@ -23,7 +9,7 @@
     :placeholder="placeholder"
     :inputCheck="inputCheckAccuntName"
     :errorInfo="accuntNameErrorInfo"
-    :hxstyle="hxstyle"
+    :lanstyle="lanstyle"
     @input="handleInput"
   >
   </lan-input-foundation>

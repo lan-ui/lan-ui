@@ -1,8 +1,8 @@
 <template>
   <lan-input-add
     ref="lan-input-add"
-    class="hx-input-foundation"
-    :class="{'hx-input_disabled': disabled}"
+    class="lan-input-foundation"
+    :class="{'lan-input_disabled': disabled}"
     :value="value"
     :placeholder="placeholder"
     :clearable="false"
@@ -12,7 +12,7 @@
     :eye="eye"
     :type='type'
     :maxlength='maxlength'
-    :hxstyle="hxstyle"
+    :lanstyle="lanstyle"
     @focus="handleFocus"
     @blur="handleBlur"
     @input="handleInput"
@@ -20,7 +20,7 @@
   >
     <template v-slot:append>
       <!-- 功能按钮 | 清空、输入错误、输入正确 -->
-      <div class="hx-input-clear" @touchend="() => (inputStatus.callback() || null)">
+      <div class="lan-input-clear" @touchend="() => (inputStatus.callback() || null)">
         <i :class="inputStatus.btnClass" :style="inputStatus.btnStyle"></i>
       </div>
     </template>
@@ -37,12 +37,12 @@
       <!-- 请输入投保人姓名 -->
     </template>
     <template v-if="type=='email'&&emailShow" v-slot:emailSuffix>
-      <div class="hx-email-div" v-for="(item, i) in domainList" :key='i' v-on:click='clickTap(item)'>{{item}}</div>
+      <div class="lan-email-div" v-for="(item, i) in domainList" :key='i' v-on:click='clickTap(item)'>{{item}}</div>
     </template>
     <!-- 验证码 -->
     <template v-if="type=='verification'&&!readonly&&!disabled" v-slot:verification>
-      <p class="hx-phone-send" v-if="resend==false" v-on:click='countdown(send)'>{{send}}</p>
-      <p class="hx-phone-send hx-phone-resend" v-else>{{send}}</p>
+      <p class="lan-phone-send" v-if="resend==false" v-on:click='countdown(send)'>{{send}}</p>
+      <p class="lan-phone-send lan-phone-resend" v-else>{{send}}</p>
     </template>
   </lan-input-add> 
 </template>
@@ -97,7 +97,7 @@ export default {
       type: [Boolean, Object],
       default: false
     },
-    hxstyle: String,
+    lanstyle: String,
     // 透传 props
     ...LanInputAdd.props
   },
@@ -110,7 +110,7 @@ export default {
         set(status) {
           if (status !== 'normal' && status !== 'corrent' && status !== 'wrong') {
             // 错误处理
-            throw new Error('[hx-input-foundation] - Input status must be the enum: "normal" | "corrent" | "wrong"')
+            throw new Error('[lan-input-foundation] - Input status must be the enum: "normal" | "corrent" | "wrong"')
           }
           this.status = status
         }
@@ -248,17 +248,17 @@ export default {
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  .hx-input-foundation
+  .lan-input-foundation
     line-height: 1;
     font-weight: lighter;
     font-size: 16px;
     border-radius: 0;
     color: rgba(51,51,51,1)
-    .hx-input-prepend
+    .lan-input-prepend
       font-size:16px;
       font-family:PingFang SC;
       width: 100px;
-    .hx-input-field
+    .lan-input-field
       padding: 18px 0px;
       &::-webkit-input-placeholder
         color: #ccc;
@@ -268,6 +268,6 @@ export default {
     margin-left :0.3rem
     border-style:solid
     border-color: #000 transparent transparent transparent
-  .hx-input_disabled
+  .lan-input_disabled
     color: rgba(204,204,204,1) !important 
 </style>

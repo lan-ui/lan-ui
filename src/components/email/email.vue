@@ -9,7 +9,7 @@
     :placeholder="placeholder"
     :inputCheck="inputCheckEmail"
     :errorInfo="emailErrorInfo"
-    :hxstyle="hxstyle"
+    :lanstyle="lanstyle"
     @input="handleInput"
   >
   </lan-input-foundation>

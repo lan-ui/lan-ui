@@ -1,12 +1,7 @@
 import Vue from 'vue2'
-// import {HxInputVerification} from '@/hx/modules'
-// import HxCustomComponents from '@/hx/modules/index'
-// import HxInputVerification from '@/hx/modules/input/HxInputVerification.vue'
 import PhoneVerification from '@/modules/phone-verification'
 import createVue from '../utils/create-vue'
 import { dispatchTap } from '../utils/event'
-
-// const { HxInputPhoneverification } = HxCustomComponents
 
 describe('PhoneVerification.vue', () => {
   let vm
@@ -25,7 +20,7 @@ describe('PhoneVerification.vue', () => {
     vm = createPhoneInput()
     // const el = vm.$el
     expect(vm.$el.className)
-      .to.equal('hx hx-input-foundation')
+      .to.equal('lan lan-input-foundation')
     expect(vm.$el.querySelector('input'))
       .to.be.ok
   })
@@ -38,7 +33,7 @@ describe('PhoneVerification.vue', () => {
     vm = createPhoneInput(1)
     expect(vm.$el.querySelector('input').value)
       .is.not.empty
-    dispatchTap(vm.$el.querySelector('.hx-input-clear'))
+    dispatchTap(vm.$el.querySelector('.lan-input-clear'))
     setTimeout(() => {
       expect(vm.$el.querySelector('input').value)
         .is.not.empty
@@ -94,7 +89,7 @@ describe('PhoneVerification.vue', () => {
     // const value = '哈哈'
     vm.handleInput('111')
     setTimeout(() => {
-      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+      expect(vm.$el.querySelector('.lan-rule-error').innerText)
         .to.equal('')
       done()
     })
@@ -103,7 +98,7 @@ describe('PhoneVerification.vue', () => {
     vm = createPhoneInput()
     vm.inputCheckVerification()
     setTimeout(() => {
-      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+      expect(vm.$el.querySelector('.lan-rule-error').innerText)
         .to.equal('')
       done()
     })
@@ -112,7 +107,7 @@ describe('PhoneVerification.vue', () => {
     vm = createPhoneInput(111)
     vm.inputCheckVerification('111')
     setTimeout(() => {
-      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+      expect(vm.$el.querySelector('.lan-rule-error').innerText)
         .to.equal('')
       done()
     })
@@ -121,7 +116,7 @@ describe('PhoneVerification.vue', () => {
     vm = createPhoneInput('1234')
     vm.inputCheckVerification('1234')
     setTimeout(() => {
-      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+      expect(vm.$el.querySelector('.lan-rule-error').innerText)
         .to.equal('')
       done()
     })

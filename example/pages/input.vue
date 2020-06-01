@@ -4,15 +4,6 @@
     title="Input"
     class="option-demo">
     <div slot="content">
-      <!-- <hx-input
-        type="phone"
-      ></hx-input>
-      <hx-input
-        type="idcard"
-      ></hx-input>
-      <hx-input
-        type="email"
-      ></hx-input> -->
       <cube-input 
         :type="'password'" 
         placeholder="请输入密码" 
@@ -102,14 +93,6 @@
       }
     },
     computed: {
-      // phoneValueFormated: {
-      //   set(val) {
-      //     this.phoneValue = this.$refs['hx-input-phone'].formatPhone(val)
-      //   },
-      //   get() {
-      //     return this.phoneValue
-      //   }
-      // },
       clearable() {
         if (this.type === 'phone') {
           this.placeholder = '请输入手机号码'

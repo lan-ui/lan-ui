@@ -10,7 +10,7 @@
     :maxlength="maxlength"
     :inputCheck="inputCheckAddress"
     :errorInfo="addressErrorInfo"
-    :hxstyle="hxstyle"
+    :lanstyle="lanstyle"
     @input="handleInput"
   >
   </lan-input-foundation>

@@ -10,7 +10,7 @@
         :label="'身份证号码'"
         :type="'idcard'"
         :maxlength='18'
-        :hxstyle="'text-align:left'"
+        :lanstyle="'text-align:left'"
         v-model="idcardValue" 
       ></lan-id-number>
       <lan-id-number
@@ -65,14 +65,6 @@
       }
     },
     computed: {
-      // phoneValueFormated: {
-      //   set(val) {
-      //     this.phoneValue = this.$refs['hx-input-phone'].formatPhone(val)
-      //   },
-      //   get() {
-      //     return this.phoneValue
-      //   }
-      // },
       clearable() {
         if (this.type === 'phone') {
           this.placeholder = '请输入手机号码'

@@ -1,12 +1,8 @@
 import Vue from 'vue2'
-// import HxCustomComponents from '@/hx/modules/index'
-// import HxInputPhone from '@/hx/modules/input/HxInputPhone.vue'
 import PhoneNumber from '@/modules/phone-number'
 import createVue from '../utils/create-vue'
 import Picker from '@/modules/picker'
 import { dispatchTap } from '../utils/event'
-
-// const { HxInputPhone } = HxCustomComponents
 
 describe('PhoneNumber.vue', () => {
   let vm
@@ -25,7 +21,7 @@ describe('PhoneNumber.vue', () => {
     vm = createPhoneInput()
     // const el = vm.$el
     expect(vm.$el.className)
-      .to.equal('hx hx-input-foundation')
+      .to.equal('lan lan-input-foundation')
     expect(vm.$el.querySelector('input'))
       .to.be.ok
   })
@@ -36,14 +32,14 @@ describe('PhoneNumber.vue', () => {
   })
   it('should show clear button when has text 111', () => {
     vm = createPhoneInput(1)
-    expect(vm.$el.querySelector('.hx-input-clear').style.display)
+    expect(vm.$el.querySelector('.lan-input-clear').style.display)
       .to.equal('')
   })
   it('value should be empty when clear button clicked', (done) => {
     vm = createPhoneInput(1)
     expect(vm.$el.querySelector('input').value)
       .is.not.empty
-    dispatchTap(vm.$el.querySelector('.hx-input-clear'))
+    dispatchTap(vm.$el.querySelector('.lan-input-clear'))
     setTimeout(() => {
       expect(vm.$el.querySelector('input').value)
         .is.not.empty
@@ -105,7 +101,7 @@ describe('PhoneNumber.vue', () => {
     // const value = '哈哈'
     vm.handleInput('111')
     setTimeout(() => {
-      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+      expect(vm.$el.querySelector('.lan-rule-error').innerText)
         .to.equal('')
       done()
     })
@@ -128,7 +124,7 @@ describe('PhoneNumber.vue', () => {
     // vm.handleInput('111')
     vm.inputCheckPhone('111')
     setTimeout(() => {
-      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+      expect(vm.$el.querySelector('.lan-rule-error').innerText)
         .to.equal('')
       done()
     })
@@ -150,7 +146,7 @@ describe('PhoneNumber.vue', () => {
     })
     vm.inputCheckPhone()
     setTimeout(() => {
-      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+      expect(vm.$el.querySelector('.lan-rule-error').innerText)
         .to.equal('')
       done()
     })
@@ -172,7 +168,7 @@ describe('PhoneNumber.vue', () => {
     })
     vm.inputCheckPhone()
     setTimeout(() => {
-      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+      expect(vm.$el.querySelector('.lan-rule-error').innerText)
         .to.equal('')
       done()
     })
@@ -181,7 +177,7 @@ describe('PhoneNumber.vue', () => {
     vm = createPhoneInput()
     vm.inputCheckPhone()
     setTimeout(() => {
-      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+      expect(vm.$el.querySelector('.lan-rule-error').innerText)
         .to.equal('')
       done()
     })
@@ -190,7 +186,7 @@ describe('PhoneNumber.vue', () => {
     vm = createPhoneInput(111)
     vm.inputCheckPhone('111')
     setTimeout(() => {
-      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+      expect(vm.$el.querySelector('.lan-rule-error').innerText)
         .to.equal('')
       done()
     })
@@ -199,7 +195,7 @@ describe('PhoneNumber.vue', () => {
     vm = createPhoneInput('13245679048')
     vm.inputCheckPhone('13245679048')
     setTimeout(() => {
-      expect(vm.$el.querySelector('.hx-rule-error').innerText)
+      expect(vm.$el.querySelector('.lan-rule-error').innerText)
         .to.equal('')
       done()
     })

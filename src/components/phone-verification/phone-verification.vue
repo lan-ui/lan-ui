@@ -10,7 +10,7 @@
     :placeholder="placeholder"
     :inputCheck="inputCheckVerification"
     :errorInfo="verificationErrorInfo"
-    :hxstyle="hxstyle"
+    :lanstyle="lanstyle"
     @input="handleInput"
   >
   </lan-input-foundation>

@@ -9,7 +9,7 @@
         :placeholder="'请输入邮箱地址'"
         :label="'邮箱地址'"
         :type="'email'" 
-        :hxstyle="'text-align:left'"
+        :lanstyle="'text-align:left'"
         v-model="emailValue" 
       ></lan-email>
       <lan-email
@@ -63,14 +63,6 @@
       }
     },
     computed: {
-      // phoneValueFormated: {
-      //   set(val) {
-      //     this.phoneValue = this.$refs['hx-input-phone'].formatPhone(val)
-      //   },
-      //   get() {
-      //     return this.phoneValue
-      //   }
-      // },
       clearable() {
         if (this.type === 'phone') {
           this.placeholder = '请输入手机号码'

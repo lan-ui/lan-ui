@@ -1,15 +1,15 @@
 <template>
-  <div class="hx">
-    <div class="hx-input hx-input_normal" :class="{'hx-input_active': isFocus&&!readonly}">
-      <div class="hx-input-prepend" v-if="$slots.prepend">
+  <div class="lan">
+    <div class="lan-input lan-input_normal" :class="{'lan-input_active': isFocus&&!readonly}">
+      <div class="lan-input-prepend" v-if="$slots.prepend">
        <slot name="prepend"></slot>
       </div>
-      <p class="hx-phone-section">
+      <p class="lan-phone-section">
         <slot name="phone"></slot>
       </p>
       <input v-if="type!='address'"
-        class="hx-input-field"
-        :class="{'hx-input_disabled': disabled}"
+        class="lan-input-field"
+        :class="{'lan-input_disabled': disabled}"
         ref="input"
         v-model="inputValue"
         v-bind="$props"
@@ -19,7 +19,7 @@
         :autocomplete="autocomplete"
         :autofocus="autofocus"
         :maxlength="maxlength"
-        :style="hxstyle"
+        :style="lanstyle"
         @focus="handleFocus"
         @blur="handleBlur"
         @change="changeHander"
@@ -28,8 +28,8 @@
         onfocus="window.activeobj=this;this.clock=setInterval(function(){activeobj.style.height=activeobj.scrollHeight+'px';},10);" 
         onblur="clearInterval(this.clock);"
         id="textarea"
-        class="hx-input-textarea"
-        :class="{'hx-input_disabled': disabled}"
+        class="lan-input-textarea"
+        :class="{'lan-input_disabled': disabled}"
         ref="input"
         v-model="inputValue"
         v-bind="$props"
@@ -39,16 +39,16 @@
         :autocomplete="autocomplete"
         :autofocus="autofocus"
         :maxlength="maxlength"
-        :style="hxstyle"
+        :style="lanstyle"
         @focus="handleFocus"
         @blur="handleBlur"
         @change="changeHander"
       />
-      <div class="hx-input-append" v-if="$slots.append || _showClear || _showPwdEye">
-        <div class="hx-input-clear" v-if="_showClear&&!readonly" @touchend="handleClear">
+      <div class="lan-input-append" v-if="$slots.append || _showClear || _showPwdEye">
+        <div class="lan-input-clear" v-if="_showClear&&!readonly" @touchend="handleClear">
           <i class="cubeic-wrong"></i>
         </div>
-        <div class="hx-input-eye" v-if="_showPwdEye" @click="handlePwdEye">
+        <div class="lan-input-eye" v-if="_showPwdEye" @click="handlePwdEye">
           <i :class="eyeClass"></i>
         </div>
         <slot name="append" v-if="!_showPwdEye&&!readonly"></slot>
@@ -59,12 +59,12 @@
       </p>
     </div>
     <!-- 增加 slot 错误信息 | start -->
-    <p class="hx-rule-error">
+    <p class="lan-rule-error">
       <slot name="rule-error"></slot>
     </p>
     <!-- 增加 slot 错误信息 | end -->
     <!-- 邮箱后缀 -->
-    <p class="hx-email-suffix"> 
+    <p class="lan-email-suffix"> 
       <slot name="emailSuffix"></slot>
     </p>
   </div>
@@ -72,7 +72,6 @@
 
 <script type="text/ecmascript-6">
   import inputMixin from '../../common/mixins/input'
-  // const COMPONENT_NAME = 'hx-input'
   const EVENT_INPUT = 'input'
   const EVENT_BLUR = 'blur'
   const EVENT_FOCUS = 'focus'
@@ -122,7 +121,7 @@
         type: [Boolean, Object],
         default: false
       },
-      hxstyle: {
+      lanstyle: {
         type: String,
         default: 'text-align:left'
       }
@@ -164,7 +163,7 @@
         return eye.reverse ? !eye.open : eye.open
       },
       eyeClass() {
-        return this.formatedEye.open ? 'hx-icon-yanjing-keyikan' : 'hx-icon-bukejian1'
+        return this.formatedEye.open ? 'lan-icon-yanjing-keyikan' : 'lan-icon-bukejian1'
       }
       // inputValueFormat: {
       //   get() {
@@ -299,7 +298,7 @@
   @require "../../common/stylus/variable.styl"
   @require "../../common/stylus/mixin.styl"
 
-  .hx-input
+  .lan-input
     margin-left:20px
     margin-right :20px
     display: flex
@@ -309,17 +308,17 @@
     background-color: $input-bgc
     border-1px($input-border-color)
     // padding-left: 0.3rem
-    &.hx-input_normal
+    &.lan-input_normal
       &::after
         border: unset;
         border-bottom: 2px solid rgba(239,239,239,1);
-    &.hx-input_active
+    &.lan-input_active
       &::after
         border: unset;
         border-bottom: 2px solid #1890ff;
-  .hx-input::after
+  .lan-input::after
     border-radius:0
-  .hx-input-field
+  .lan-input-field
     display: block
     flex: 1
     width: 100%
@@ -335,11 +334,11 @@
     &::-webkit-input-placeholder
       color: $input-placeholder-color
       text-overflow: ellipsis
-    + .hx-input-append
-      .hx-input-clear, .hx-input-eye
+    + .lan-input-append
+      .lan-input-clear, .lan-input-eye
         &:first-child
           margin-left: -5px
-  .hx-input-textarea
+  .lan-input-textarea
     display: block
     flex: 1
     width: 100%
@@ -355,8 +354,8 @@
     &::-webkit-input-placeholder
       color: $input-placeholder-color
       text-overflow: ellipsis
-    + .hx-input-append
-      .hx-input-clear, .hx-input-eye
+    + .lan-input-append
+      .lan-input-clear, .lan-input-eye
         &:first-child
           // margin-left: -5px
   textarea:focus {
@@ -364,14 +363,14 @@
   }
   textarea 
     border:none
-  .hx-input_active
+  .lan-input_active
     &::after
       border-color: $input-focus-border-color
-  .hx-input-prepend, .hx-input-append
+  .lan-input-prepend, .lan-input-append
     display: flex
     align-items: center
     width: 22px
-  .hx-input-clear, .hx-input-eye
+  .lan-input-clear, .lan-input-eye
     // width: 1em
     // height: 1em
     line-height: 1
@@ -382,14 +381,14 @@
     > i
       display: inline-block
       transform: scale(1.2)
-  .hx-input-eye
+  .lan-input-eye
     font-size: 17px;
     color:#ccc;
     >
-      .hx-icon-kejian, .hx-icon-bukejian
+      .lan-icon-kejian, .lan-icon-bukejian
         transform: scale(1.4)
   // slot 错误信息样式 | start
-  .hx-rule-error
+  .lan-rule-error
     // position: absolute
     bottom: -22px
     font-size: 12px
@@ -400,7 +399,7 @@
     margin-top:10px
   // slot 错误信息样式 | end
   // 邮箱后缀
-  .hx-email-suffix
+  .lan-email-suffix
     // position: absolute
     top: 60px
     font-size: 12px
@@ -410,7 +409,7 @@
     // width: 100%
     z-index: 100
     margin:0 1.25rem;
-  .hx-email-div
+  .lan-email-div
     // height: 55px
     border-bottom: 1px solid #ccc
     background: #ffffff
@@ -418,7 +417,7 @@
     font-family:PingFang SC;
     font-weight:500;
     color:rgba(51,51,51,1);
-  .hx-phone-send
+  .lan-phone-send
     border-radius: 20px
     background :#f1f6f5
     font-size: 12px
@@ -431,7 +430,7 @@
     color:rgba(24,144,255,1);
     text-align: center
     // padding:7px 10px
-  .hx-phone-resend
+  .lan-phone-resend
     border-radius: 20px
     background :#f1f6f5
     font-size: 12px
@@ -442,7 +441,7 @@
     font-weight:500;
     color:rgba(204,204,204,1);
     // padding:7px 5px
-  .hx-phone-section
+  .lan-phone-section
     max-width:60px
     display :flex
     justify-content :flex-start

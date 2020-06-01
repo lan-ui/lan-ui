@@ -9,7 +9,7 @@
         :placeholder="'请输入手机号'"
         :label="'手机号'"
         :type="'phone'"
-        :hxstyle="'text-align:left'"
+        :lanstyle="'text-align:left'"
         v-model="phoneValue" 
       ></lan-phone-number>
       <lan-phone-number
@@ -64,14 +64,6 @@
       }
     },
     computed: {
-      // phoneValueFormated: {
-      //   set(val) {
-      //     this.phoneValue = this.$refs['hx-input-phone'].formatPhone(val)
-      //   },
-      //   get() {
-      //     return this.phoneValue
-      //   }
-      // },
       clearable() {
         if (this.type === 'phone') {
           this.placeholder = '请输入手机号码'

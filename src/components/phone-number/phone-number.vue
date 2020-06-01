@@ -10,7 +10,7 @@
     :placeholder="placeholder"
     :inputCheck="inputCheckPhone"
     :errorInfo="phoneErrorInfo"
-    :hxstyle="hxstyle"
+    :lanstyle="lanstyle"
     @input="handleInput"
     @defaultPhone="defaultPhone"
     @clickEye="clickEye"
