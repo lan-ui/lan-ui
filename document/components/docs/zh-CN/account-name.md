@@ -1,8 +1,4 @@
-<<<<<<< HEAD:document/components/docs/zh-CN/account-name.md
 ## AccountName 账号名
-=======
-## HxAccountName 账户名
->>>>>>> b7ae77495ba5179a2c9b448b0661236a8c6af919:document/components/docs/zh-CN/hx-account-name.md
 
 > 1.0.0 新增通用组件
 

@@ -33,11 +33,7 @@
 - 设置 disabled，禁用状态
 
   ```html
-<<<<<<< HEAD:document/components/docs/zh-CN/account-number.md
   <lan-input-account ref="lan-input-account" :placeholder="'请输入账号'" :label="'账号'" :type="'account'" :disabled="true" @binkList="binkList" v-model="accountValue"></lan-input-account>
-=======
-  <hx-account-number ref="hx-account-number" :placeholder="'请输入账号'" :label="'账号'" :type="'account'" :disabled="true" @binkList="binkList" v-model="accountValue"></hx-account-number>
->>>>>>> b7ae77495ba5179a2c9b448b0661236a8c6af919:document/components/docs/zh-CN/hx-account-number.md
   ```
   ```js
   export default {
@@ -86,13 +82,8 @@
 - 设置 字体右对齐格式 默认左对齐
 
   ```html
-<<<<<<< HEAD:document/components/docs/zh-CN/account-number.md
   <lan-input-account ref="lan-input-account" :placeholder="'请输入账号'" :label="'账号'" :type="'account'" @binkList="binkList" 
   :lanstyle="'text-align:right'"  v-model="accountValue"></lan-input-account>
-=======
-  <hx-account-number ref="hx-account-number" :placeholder="'请输入账号'" :label="'账号'" :type="'account'" @binkList="binkList" 
-  :hxstyle="'text-align:right'"  v-model="accountValue"></hx-account-number>
->>>>>>> b7ae77495ba5179a2c9b448b0661236a8c6af919:document/components/docs/zh-CN/hx-account-number.md
   ```
   ```js
   export default {
