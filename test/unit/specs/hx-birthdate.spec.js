@@ -16,14 +16,12 @@ describe('HxBirthdate.vue', () => {
       .to.be.a('function')
   })
   it('HTML', () => {
-    vm = createHxbirth(false, '2018-04-20', [], false, false)
-    expect(vm.$el.className)
-      .to.be.equal('birth')
+    vm = createHxbirth('2018-04-20', [], false, false)
     expect(vm.$el.querySelector('.text'))
       .to.be.ok
   })
   it('warning警告信息', () => {
-    vm = createHxbirth(false, '', [], false, false)
+    vm = createHxbirth('', [], false, false)
     vm.handleClick(event)
     vm.cancelHandle()
     /* let btn = vm.$el.querySelector('.birth')
@@ -36,7 +34,7 @@ describe('HxBirthdate.vue', () => {
     })
   })
   it('disabled禁用', () => {
-    vm = createHxbirth(false, '2018-04-20', [], false, true)
+    vm = createHxbirth('2018-04-20', [], false, true)
     vm.handleClick(event)
     vm.$nextTick(() => {
       expect(vm.$el.querySelector('.icon'))
@@ -46,7 +44,7 @@ describe('HxBirthdate.vue', () => {
     })
   })
   it('readonly只读', () => {
-    vm = createHxbirth(false, '2018-04-20', [], true, false)
+    vm = createHxbirth('2018-04-20', [], true, false)
     vm.handleClick(event)
     vm.$nextTick((doen) => {
       expect(vm.$el.querySelector('.icon'))
@@ -56,7 +54,7 @@ describe('HxBirthdate.vue', () => {
     })
   })
   it('birth、关闭日期框', () => {
-    vm = createHxbirth(false, '2018-04-20', [], false, false)
+    vm = createHxbirth('2018-04-20', [], false, false)
     vm.handleClick(event)
     vm.datePicker.show()
     vm.$nextTick(() => {
@@ -65,7 +63,7 @@ describe('HxBirthdate.vue', () => {
     })
   })
   it('@receive="handleSelect"', () => {
-    vm = createHxbirth(false, '2018-04-20', [], false, false)
+    vm = createHxbirth('2018-04-20', [], false, false)
     vm.selectHandle('receive', [2012, 2, 20], ['2012', '2', '20'])
     vm.$nextTick(() => {
       expect(vm.$el.querySelector('.text').innerHTML)
@@ -81,14 +79,13 @@ let event = {
     return false
   }
 }
-function createHxbirth(warning, birth, birthArray, readonly, disabled) {
+function createHxbirth(birth, birthArray, readonly, disabled) {
   const vm = createVue({
     template: `
-    <hx-birthdate :warning="warning" :birth="birth" :readonly="readonly" :disabled="disabled" @receive="handleSelect"></hx-birthdate>
+    <hx-birthdate :birth="birth" :readonly="readonly" :disabled="disabled" @receive="handleSelect"></hx-birthdate>
     `,
     data() {
       return {
-        warning: warning,
         birth: birth,
         birthArray: birthArray,
         readonly: readonly,

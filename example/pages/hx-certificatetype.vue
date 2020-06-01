@@ -1,7 +1,7 @@
 <template>
   <cube-page  title="HxCertificatetype" class="hx">
     <div slot="content">
-      <div>
+      <div class="hx-sex-wrapper">
         <hx-certificatetype :readonly="false"  @selected="selected" ref="hxValidate"></hx-certificatetype>
         <hx-certificatetype :readonly="false" :options="types"  @selected="selected" ref="hxValidate"></hx-certificatetype>
         <hx-certificatetype :readonly="false" :disabled="true" :value="value1"></hx-certificatetype>
@@ -77,8 +77,8 @@
 </script>
 
 <style lang="stylus">
-  .cube-page.hx >.wrapper .content
-    margin: 10px 0
+  .cube-page.hx >.wrapper .content 
+    margin: 10px 30px
   .hx-submit.cube-btn
     margin-top: 20px
 </style>

@@ -1,18 +1,19 @@
-## 证件有效期
+## HxValidity 证件有效期
 
-证件有效期，可设置其状态、可传入年龄、可选择证件有效日期。
+> 1.0.0 新增通用组件
+
+证件有效期组件，可设置其状态、可传入年龄、可选择证件有效日期。
 
 ### 示例
 - 基本用法
   ```html
-  <hx-validity :age="age" :warning="warning" :validity="validity" :validityArray="validityArray" :readonly="readonly" :disabled="disabled" @receive="handleSelect" :isLongTerm="isLongTerm"></hx-validity>
+  <hx-validity :age="age" :validity="validity" :validityArray="validityArray" :readonly="readonly" :disabled="disabled" @receive="handleSelect" :isLongTerm="isLongTerm"></hx-validity>
   ```
   ```js
   export default {
     data() {
       return {
         age: 65,
-        warning: false,
         validity: '',
         validityArray: [],
         readonly: false,
@@ -38,7 +39,6 @@
 ### props配置项
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 | - | - | - | - | - |
-| warning | 提示请输入证件有效期 | Boolean | true/false | false |
 | age | 年龄 | Number | Number | Number |
 | validity | 证件有效日期 | String | String | String |
 | validityArray | 返回选择日期数组ps（[2018,04,20]） | Array | Array | Array |

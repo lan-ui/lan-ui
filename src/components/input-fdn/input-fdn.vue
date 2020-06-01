@@ -201,11 +201,11 @@ export default {
     },
     clickTap(val) {
       // console.log(val)
-      this.$emit('input', val)
       this.status = this.calcStatus(val)
       setTimeout(() => {
         this.emailShow = false
-      }, 200)
+      }, 10)
+      this.$emit('input', val)
     },
     countdown: function() {
       var nsecond = 60
@@ -250,7 +250,6 @@ export default {
 <style lang="stylus" rel="stylesheet/stylus">
   .lan-input-foundation
     line-height: 1;
-    font-weight: lighter;
     font-size: 16px;
     border-radius: 0;
     color: rgba(51,51,51,1)
@@ -265,7 +264,8 @@ export default {
   .phone-icon
     border-width :0.3rem
     margin-top :0.3rem
-    margin-left :0.3rem
+    margin-left :9px
+    margin-right: 18px
     border-style:solid
     border-color: #000 transparent transparent transparent
   .lan-input_disabled

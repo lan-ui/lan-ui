@@ -2,7 +2,7 @@
 
 > 1.0.0 新增通用组件
 
-账号组件。支持使用v-model对数据双向绑定，支持一键清空内容，支持账号格式校验，支持输入前四到五位进行开户行判断，支持4-4-4-4格式，支持根据项目需要配置字体左/右对齐。
+账号组件，支持使用v-model对数据双向绑定，支持一键清空内容，支持账号格式校验，支持输入前四到五位进行开户行判断，支持4-4-4-4格式，支持根据项目需要配置字体左/右对齐。
 
 ### 示例
 
@@ -33,7 +33,11 @@
 - 设置 disabled，禁用状态
 
   ```html
+<<<<<<< HEAD:document/components/docs/zh-CN/account-number.md
   <lan-input-account ref="lan-input-account" :placeholder="'请输入账号'" :label="'账号'" :type="'account'" :disabled="true" @binkList="binkList" v-model="accountValue"></lan-input-account>
+=======
+  <hx-account-number ref="hx-account-number" :placeholder="'请输入账号'" :label="'账号'" :type="'account'" :disabled="true" @binkList="binkList" v-model="accountValue"></hx-account-number>
+>>>>>>> b7ae77495ba5179a2c9b448b0661236a8c6af919:document/components/docs/zh-CN/hx-account-number.md
   ```
   ```js
   export default {
@@ -51,7 +55,11 @@
 - 设置 readonly，回显数据
 
   ```html
+<<<<<<< HEAD:document/components/docs/zh-CN/account-number.md
   <lan-input-account ref="lan-input-account" :placeholder="'请输入账号'" :label="'账号'" :type="'account'" :readonly="true" :eye="eye" @binkList="binkList" v-model="accountValue"></lan-input-account>
+=======
+  <hx-account-number ref="hx-account-number" :placeholder="'请输入账号'" :label="'账号'" :type="'account'" :readonly="true" :eye="eye" @binkList="binkList" v-model="accountValue"></hx-account-number>
+>>>>>>> b7ae77495ba5179a2c9b448b0661236a8c6af919:document/components/docs/zh-CN/hx-account-number.md
   ```
   ```js
   export default {
@@ -78,8 +86,13 @@
 - 设置 字体右对齐格式 默认左对齐
 
   ```html
+<<<<<<< HEAD:document/components/docs/zh-CN/account-number.md
   <lan-input-account ref="lan-input-account" :placeholder="'请输入账号'" :label="'账号'" :type="'account'" @binkList="binkList" 
   :lanstyle="'text-align:right'"  v-model="accountValue"></lan-input-account>
+=======
+  <hx-account-number ref="hx-account-number" :placeholder="'请输入账号'" :label="'账号'" :type="'account'" @binkList="binkList" 
+  :hxstyle="'text-align:right'"  v-model="accountValue"></hx-account-number>
+>>>>>>> b7ae77495ba5179a2c9b448b0661236a8c6af919:document/components/docs/zh-CN/hx-account-number.md
   ```
   ```js
   export default {

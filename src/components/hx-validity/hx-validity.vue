@@ -1,24 +1,28 @@
 <template>
-    <div class="validity" :class="{warning:warning}" @click="handleClick">
+    <div :class="{warning:warning}" @click="handleClick">
+      <div class="validity">
         <span class="title" :class="{tips:disabled}">
           <slot>证件有效期</slot>
         </span>
         <span class="text" :class="{tips:(!validity ||disabled) && !isLongTerm}">{{validity?validity:shownText}}</span>
         <span class="icon" v-if="!readonly && !disabled">
-            <i class="cubeic-calendar"></i>
+            <i class="icon-hualife-date"></i>
         </span>
     </div>
+  </div>
 </template>
 <script>
   const COMPONENT_NAME = 'hx-validity'
   export default {
     name: COMPONENT_NAME,
+    data () {
+      return {
+        warning: false
+      }
+    },
     props: {
       age: {
         type: Number
-      },
-      warning: {
-        type: Boolean
       },
       validity: {
         type: String
@@ -74,7 +78,7 @@
         this.warning = false
         if (!this.datePicker) {
           this.datePicker = this.$createDatePicker({
-            title: 'Date Picker',
+            title: '日期选择',
             min: this.min,
             max: this.max,
             value: new Date(),
@@ -111,28 +115,36 @@
     mygrey=#ccc
     myblack=#333
     myred=#db1e06
+    .warning
+      height:74px
+      text-align:left
     .validity
       background-color:white
       font-size:16px
       height:50px
-      border-bottom:2px solid #efefef
+      text-align:left
+      border-bottom:1px solid #efefef
     .title
+      float:left
+      display:inline-block
       color:myblack
-      margin-right:50px
+      width:112px      
       line-height:50px
     .text
       width:14px
+      line-height:50px
     .tips
       color:mygrey
     .icon
       color:myblue
       float:right
+      font-size:22px
       line-height:50px
     .warning::after
       content:'请输入证件有效期'
       color:myred
       font-size:12px
       display:block
-      line-height:24px
-
+      line-height:32px
+      text-align:left
 </style>

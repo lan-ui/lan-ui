@@ -19,7 +19,8 @@
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "codecov": "codecov",
     "test": "npm run unit && npm run codecov",
-    "cm": "git-cz"
+    "cm": "git-cz",
+    "log": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "husky": {
     "hooks": {
@@ -42,11 +43,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:didi/cube-ui.git"
+    "url": "http://106.38.93.196:8081/hualife/hx-ui.git"
   },
-  "homepage": "https://didi.github.io/cube-ui/",
+  "homepage": "http://sales-int.ihxlife.com/hualifeui/docs/index.html",
   "bugs": {
-    "url": "https://github.com/didi/cube-ui/issues"
+    "url": "http://106.38.93.196:8081/hualife/hx-ui/issues"
   },
   "keywords": [
     "hx-ui",

@@ -1,38 +1,36 @@
-# cube-ui [![Build Status](https://travis-ci.org/didi/cube-ui.svg?branch=master)](https://travis-ci.org/didi/cube-ui?branch=master) [![codecov.io](http://codecov.io/github/didi/cube-ui/coverage.svg?branch=master)](http://codecov.io/github/didi/cube-ui?branch=master)
+# hx-ui
 
-> A fantastic mobile ui lib implement by Vue.
+> 基于Vue.js实现的精致移动端组件库
 
 ### 导航
 
-- [首页](https://didi.github.io/cube-ui/)
-- [文档](https://didi.github.io/cube-ui/#/zh-CN/docs)
-- [示例](https://didi.github.io/cube-ui/example/)
+- [首页](http://sales-int.ihxlife.com/hualifeui/docs/index.html)
+- [文档](http://sales-int.ihxlife.com/hualifeui/docs/index.html#/zh-CN)
+- [示例](http://sales-int.ihxlife.com/hualifeui/docs/index.html#/zh-CN/example)
 
   ![示例二维码](./assets/example-qr.png)
 
-- [应用教程](https://github.com/cube-ui/cube-application-guide)
-
 ### 新项目？
 
-推荐使用基于 [vue-cli](https://github.com/vuejs/vue-cli) 的 [CLI 工具](https://github.com/cube-ui/cube-template) 来初始化配置和代码：
+- vue cli > 3
+  推荐使用vue-cli-plugin-hx-ui插件，创建项目及配置，说明文档详见[vue-cli-plugin-hx-ui](http://106.38.93.196:8081/hx-ui/vue-cli-plugin-hx-ui)
 
-```shell
-$ vue init cube-ui/cube-template projectname
-```
+- vue cli < 3
+  推荐使用hx-ui模版创建项目，创建项目及配置，说明文档详见[hx-ui-template](http://106.38.93.196:8081/hx-ui/hx-ui-template)
 
 ### 安装
 
 ```shell
-npm install cube-ui --save
+npm install hx-ui --save
 ```
 
 ### 使用
 
 ```js
 import Vue from 'vue'
-import Cube from 'cube-ui'
+import Hx from 'hx-ui'
 
-Vue.use(Cube)
+Vue.use(Hx)
 ```
 
 #### 按需使用
@@ -44,13 +42,15 @@ import {
   Style,
   Button,
   ActionSheet
-} from 'cube-ui'
+} from 'hx-ui'
 
 Vue.use(Button)
 Vue.use(ActionSheet)
 ```
 
-注：上述使用依赖插件 [babel-plugin-transform-modules](https://www.npmjs.com/package/babel-plugin-transform-modules)，详细内容请看 [开始文档](https://didi.github.io/cube-ui/#/zh-CN/docs/quick-start)
+注：  
+上述使用依赖插件 [babel-plugin-transform-modules](https://www.npmjs.com/package/babel-plugin-transform-modules)  
+详细内容请看 [快速上手文档](http://sales-int.ihxlife.com/hualifeui/docs/index.html#/zh-CN/docs/quick-start)
 
 ### ToDo
 
@@ -61,8 +61,8 @@ Vue.use(ActionSheet)
 ### Development
 
 ```shell
-git clone git@github.com:didi/cube-ui.git
-cd cube-ui
+git clone http://106.38.93.196:8081/hualife/hx-ui.git
+cd hx-ui
 npm install
 npm run dev
 # or run document development
@@ -71,4 +71,4 @@ npm run doc-dev
 
 ### Changelog
 
-详细日志请看[发布日志](https://github.com/didi/cube-ui/releases)。
+详细日志请看[发布日志]

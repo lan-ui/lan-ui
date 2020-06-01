@@ -64,12 +64,17 @@
   @require "../../common/stylus/variable.styl"
   @require "../../common/stylus/mixin.styl"
   .hx-sex
-    margin: 0 30px
     height: 50px
     line-height: 50px
     font-size: 16px
+    color: #333
     border-bottom: 1px solid #eee
     overflow: hidden
+    .cube-checker
+    .hx-sex-readonly
+      float: left
+      width: 203px
+      text-align: left
     &.hx-sex-disabled 
       color: $color-light-grey-s
     .hx-sex-title
@@ -92,6 +97,8 @@
       height: 28px
       line-height: 28px
       border-radius: 6px
+      span
+        line-height: 30px
     .cube-checker-item_active
       color: $checker-item-active-color
       background: $checker-item-active-bgc

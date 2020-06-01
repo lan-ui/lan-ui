@@ -1,18 +1,19 @@
-## hx-birthdate 出生日期
+## HxBirthdate 出生日期
 
-出生日期，可设置其状态、可选择出生日期
+> 1.0.0 新增通用组件
+
+出生日期组件，可设置其状态、可选择出生日期
 
 ### 示例
 
 - 基本用法
   ```html
-  <hx-birthdate :warning="warning" :birth="birth" :readonly="readonly" :disabled="disabled" @receive="handleSelect"></hx-birthdate>
+  <hx-birthdate :birth="birth" :readonly="readonly" :disabled="disabled" @receive="handleSelect"></hx-birthdate>
   ```
   ```js
   export default {
     data() {
       return {
-        warning: false,
         birth: '2018-04-20',
         birthArray: [],
         readonly: false,
@@ -30,7 +31,6 @@
 ### props配置
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 | - | - | - | - | - |
-| warning | 提示请填写出生日期 | Boolean | true/false | false |
 | birth | 出生日期 | String | '2018-04-20' | '2018-04-20' |
 | birthArray | 返回选择日期数组ps（[2018,04,20]） | Array | Array | Array |
 | readonly | 只读 | Boolean | true/false| false |

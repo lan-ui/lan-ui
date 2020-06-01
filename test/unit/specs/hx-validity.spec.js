@@ -16,14 +16,12 @@ describe('HxValitity', () => {
       .to.be.a('function')
   })
   it('HTML', () => {
-    vm = createHxvalidity(false, 24, '', [2022, 4, 20], false, false)
-    expect(vm.$el.className)
-      .to.be.equal('validity')
+    vm = createHxvalidity(24, '', [2022, 4, 20], false, false)
     expect(vm.$el.querySelector('.text'))
       .to.be.ok
   })
   it('warning警告信息', () => {
-    vm = createHxvalidity(false, 24, '', [2022, 4, 20], false, false)
+    vm = createHxvalidity(24, '', [2022, 4, 20], false, false)
     vm.handleClick(event)
     vm.cancelHandle()
     vm.$nextTick(() => {
@@ -32,7 +30,7 @@ describe('HxValitity', () => {
     })
   })
   it('disabled禁用', () => {
-    vm = createHxvalidity(false, 24, '', [2022, 4, 20], false, true)
+    vm = createHxvalidity(24, '', [2022, 4, 20], false, true)
     vm.handleClick(event)
     vm.$nextTick(() => {
       expect(vm.$el.querySelector('.icon'))
@@ -42,7 +40,7 @@ describe('HxValitity', () => {
     })
   })
   it('readonly只读', () => {
-    vm = createHxvalidity(false, 24, '', [2022, 4, 20], true, false)
+    vm = createHxvalidity(24, '', [2022, 4, 20], true, false)
     vm.handleClick(event)
     vm.$nextTick(() => {
       expect(vm.$el.querySelector('.icon'))
@@ -52,7 +50,7 @@ describe('HxValitity', () => {
     })
   })
   it('validity长期有效', () => {
-    vm = createHxvalidity(false, 65, '', [], false, false)
+    vm = createHxvalidity(65, '', [], false, false)
     vm.handleClick(event)
     vm.datePicker.show()
     vm.$nextTick(() => {
@@ -61,7 +59,7 @@ describe('HxValitity', () => {
     })
   })
   it('@receive="handleSelect"', () => {
-    vm = createHxvalidity(false, 24, '', [], false, false)
+    vm = createHxvalidity(24, '', [], false, false)
     vm.selectHandle('receive', [2022, 2, 20], ['2022', '2', '20'])
     vm.$nextTick(() => {
       expect(vm.$el.querySelector('.text').innerHTML)
@@ -77,15 +75,14 @@ let event = {
     return false
   }
 }
-function createHxvalidity(warning, age, validity, validityArray, readonly, disabled) {
+function createHxvalidity(age, validity, validityArray, readonly, disabled) {
   const vm = createVue({
     template: `
-    <hx-validity :age="age" :warning="warning" :validity="validity" :validityArray="validityArray" :readonly="readonly" :disabled="disabled" @receive="handleSelect"></hx-validity>
+    <hx-validity :age="age" :validity="validity" :validityArray="validityArray" :readonly="readonly" :disabled="disabled" @receive="handleSelect"></hx-validity>
     `,
     data() {
       return {
         age: age,
-        warning: warning,
         validity: validity,
         validityArray: validityArray,
         readonly: readonly,

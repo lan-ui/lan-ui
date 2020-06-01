@@ -1,7 +1,7 @@
 <template>
   <cube-page  title="HxBank" class="hx">
     <div slot="content">
-      <div>
+      <div class="hx-sex-wrapper">
         <hx-bank @selected="selected" ref="hxValidate"></hx-bank>
         <hx-bank :options="banks"  @selected="selected" ref="hxValidate"></hx-bank>
         <hx-bank :options="banks" :disabled="true" :value="value1"></hx-bank>
@@ -82,8 +82,8 @@
 </script>
 
 <style lang="stylus">
-  .cube-page.hx >.wrapper .content
-    margin: 10px 0
+  .cube-page.hx >.wrapper .content 
+    margin: 10px 30px
   .hx-submit.cube-btn
     margin-top: 20px
 </style>

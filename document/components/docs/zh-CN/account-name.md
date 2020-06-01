@@ -1,8 +1,12 @@
+<<<<<<< HEAD:document/components/docs/zh-CN/account-name.md
 ## AccountName 账号名
+=======
+## HxAccountName 账户名
+>>>>>>> b7ae77495ba5179a2c9b448b0661236a8c6af919:document/components/docs/zh-CN/hx-account-name.md
 
 > 1.0.0 新增通用组件
 
-账号名组件。支持使用v-model对数据双向绑定，支持一键清空内容，支持账号名格式校验，支持根据项目需要配置字体左/右对齐。
+账户名组件，支持使用v-model对数据双向绑定，支持一键清空内容，支持账号名格式校验，支持根据项目需要配置字体左/右对齐。
 
 ### 示例
 

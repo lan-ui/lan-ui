@@ -35,6 +35,7 @@
   const EVENT_INPUT = 'input'
   const EVENT_BLUR = 'blur'
   const EVENT_FOCUS = 'focus'
+
   export default {
     name: COMPONENT_NAME,
     mixins: [inputMixin],
@@ -104,7 +105,6 @@
         return type
       },
       _showClear() {
-        // debugger
         let visible = this.formatedClearable.visible && this.inputValue && !this.readonly && !this.disabled
         if (this.formatedClearable.blurHidden && !this.isFocus) {
           visible = false
@@ -180,6 +180,7 @@
 <style lang="stylus" rel="stylesheet/stylus">
   @require "../../common/stylus/variable.styl"
   @require "../../common/stylus/mixin.styl"
+
   .cube-input
     display: flex
     align-items: center

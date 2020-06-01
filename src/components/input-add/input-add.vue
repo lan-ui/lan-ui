@@ -47,6 +47,7 @@
       <div class="lan-input-append" v-if="$slots.append || _showClear || _showPwdEye">
         <div class="lan-input-clear" v-if="_showClear&&!readonly" @touchend="handleClear">
           <i class="cubeic-wrong"></i>
+          <!-- <i class="icon-hualife-certificates"></i> -->
         </div>
         <div class="lan-input-eye" v-if="_showPwdEye" @click="handlePwdEye">
           <i :class="eyeClass"></i>
@@ -163,7 +164,8 @@
         return eye.reverse ? !eye.open : eye.open
       },
       eyeClass() {
-        return this.formatedEye.open ? 'lan-icon-yanjing-keyikan' : 'lan-icon-bukejian1'
+        // return this.formatedEye.open ? 'lan-icon-yanjing-keyikan' : 'lan-icon-bukejian1'
+        return this.formatedEye.open ? 'icon-hualife-visible' : 'icon-hualife-invisible'
       }
       // inputValueFormat: {
       //   get() {
@@ -226,7 +228,7 @@
         this.isFocus = true
       },
       handleBlur(e) {
-        // console.log(e)
+         // console.log(e)
         this.$emit(EVENT_BLUR, e)
         this.isFocus = false
       },
@@ -299,8 +301,8 @@
   @require "../../common/stylus/mixin.styl"
 
   .lan-input
-    margin-left:20px
-    margin-right :20px
+    // margin-left:20px
+    // margin-right :20px
     display: flex
     align-items: center
     font-size: $fontsize-medium
@@ -323,7 +325,6 @@
     flex: 1
     width: 100%
     min-width: 0
-    padding: 10px
     font-size:16px
     box-sizing: border-box
     color: $input-color
@@ -341,6 +342,7 @@
   .lan-input-textarea
     display: block
     flex: 1
+    padding:0
     width: 100%
     min-width: 0
     font-size:16px
@@ -393,25 +395,25 @@
     bottom: -22px
     font-size: 12px
     font-family: PingFang SC;
-    font-weight: 500;
     color: rgba(216,30,6,1);
-    margin-left: 1.25rem;
-    margin-top:10px
+    text-align: left
+    line-height:32px
   // slot 错误信息样式 | end
   // 邮箱后缀
   .lan-email-suffix
     // position: absolute
     top: 60px
-    font-size: 12px
-    color: #000
+    font-size: 16px
+    color: #333
     overflow:scroll 
     max-height: 250px
+    font-weight:normal 
     // width: 100%
     z-index: 100
     margin:0 1.25rem;
   .lan-email-div
     // height: 55px
-    border-bottom: 1px solid #ccc
+    border-bottom: 1px solid #eaeaea
     background: #ffffff
     line-height: 47px
     font-family:PingFang SC;

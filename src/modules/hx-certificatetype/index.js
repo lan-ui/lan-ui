@@ -1,7 +1,7 @@
-import hxCertificatetype from '../../components/hx-certificatetype/hx-certificatetype.vue'
+import HxCertificatetype from '../../components/hx-certificatetype/hx-certificatetype.vue'
 
-hxCertificatetype.install = function (Vue) {
-  Vue.component(hxCertificatetype.name, hxCertificatetype)
+HxCertificatetype.install = function (Vue) {
+  Vue.component(HxCertificatetype.name, HxCertificatetype)
 }
 
-export default hxCertificatetype
+export default HxCertificatetype

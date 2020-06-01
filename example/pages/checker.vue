@@ -149,5 +149,4 @@
       background: #e8864c
   .orange
     font-weight: 700
-    color: #ff8000
 </style>

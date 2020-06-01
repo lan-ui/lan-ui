@@ -1,7 +1,7 @@
-import hxBank from '../../components/hx-bank/hx-bank.vue'
+import HxBank from '../../components/hx-bank/hx-bank.vue'
 
-hxBank.install = function (Vue) {
-  Vue.component(hxBank.name, hxBank)
+HxBank.install = function (Vue) {
+  Vue.component(HxBank.name, HxBank)
 }
 
-export default hxBank
+export default HxBank

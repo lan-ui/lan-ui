@@ -1,12 +1,12 @@
 ## 介绍
 
-cube-ui 是基于 Vue.js 实现的精致移动端组件库。
+hx-ui 是基于 Vue.js 实现的精致移动端组件库。
 
 ### 特性
 
 - **质量可靠**
 
-   由滴滴内部组件库精简提炼而来，经历了业务一年多的考验，并且每个组件都有充分单元测试，为后续集成提供保障。
+   由华夏内部组件库精简提炼而来，经历了业务一年多的考验，并且每个组件都有充分单元测试，为后续集成提供保障。
 
 - **体验极致**
 
@@ -57,6 +57,24 @@ cube-ui 是基于 Vue.js 实现的精致移动端组件库。
 - [ActionSheet 操作菜单](#/zh-CN/docs/action-sheet)
 - [Drawer 抽屉](#/zh-CN/docs/drawer)
 - [ImagePreview 图片预览](#/zh-CN/docs/image-preview)
+
+#### 通用业务组件
+
+- [HxPhoneNumber 手机号码](#/zh-CN/docs/hx-phone-number)
+- [HxEmail 邮箱地址](#/zh-CN/docs/hx-email)
+- [HxIdnumber 身份证号码](#/zh-CN/docs/hx-id-number)
+- [HxAddress 详细地址](#/zh-CN/docs/hx-address)
+- [HxAccountName 账号名](#/zh-CN/docs/hx-account-name)
+- [HxAccountNumber 账号](#/zh-CN/docs/hx-account-number)
+- [HxPhoneverification 验证码](#/zh-CN/docs/hx-phone-verification)
+- [HxSex 性别](#/zh-CN/docs/hx-sex)
+- [HxBank 银行](#/zh-CN/docs/hx-bank)
+- [HxCertificatetype 证件类型](#/zh-CN/docs/hx-certificatetype)
+- [HxNationality 国籍/地区](#/zh-CN/docs/hx-nationality)
+- [HxLocation 所在地区](#/zh-CN/docs/hx-location)
+- [HxProvince 开户行所在省市](#/zh-CN/docs/hx-provinces)
+- [hx-birthdate 出生日期](#/zh-CN/docs/hx-birthdate)
+- [HxValidity 证件有效期](#/zh-CN/docs/hx-validity)
 
 绝大多数的弹层类组件可以通过组件调用和 API 调用，来看示例（`Toast` 为例）：
 
@@ -125,7 +143,7 @@ API 调用：
 
 ### 模块
 
-除了组件之外，cube-ui 还有一些特殊的模块。
+除了组件之外，hx-ui 还有一些特殊的模块。
 
 #### style
 
