@@ -164,8 +164,8 @@
         return eye.reverse ? !eye.open : eye.open
       },
       eyeClass() {
-        return this.formatedEye.open ? 'lan-icon-yanjing-keyikan' : 'lan-icon-bukejian1'
-        // return this.formatedEye.open ? 'icon-hualife-visible' : 'icon-hualife-invisible'
+        // return this.formatedEye.open ? 'lan-icon-yanjing-keyikan' : 'lan-icon-bukejian1'
+        return this.formatedEye.open ? 'icon-lan-visible' : 'icon-lan-invisible'
       }
       // inputValueFormat: {
       //   get() {
