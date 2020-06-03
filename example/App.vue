@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header class="cube-bar">
-      <h1>hx-ui</h1>
+      <h1>lan-ui</h1>
     </header>
     <section class="cube-content" ref="mfct">
       <cube-index-list :data="components" class="cube-list">
@@ -61,36 +61,36 @@
                 text: 'HxPhoneVerification'
               },
               {
-                path: '/hx-sex',
-                text: 'HxSex'
+                path: '/sex',
+                text: 'Sex'
               },
               {
-                path: '/hx-bank',
-                text: 'HxBank'
+                path: '/bank',
+                text: 'Bank'
               },
               {
-                path: '/hx-certificatetype',
-                text: 'HxCertificatetype'
+                path: '/certificatetype',
+                text: 'Certificatetype'
               },
               {
-                path: '/hx-nationality',
-                text: 'HxNationlity'
+                path: '/nationality',
+                text: 'Nationlity'
               },
               {
-                path: '/hx-location',
-                text: 'HxLocation'
+                path: '/location',
+                text: 'Location'
               },
               {
-                path: '/hx-provinces',
-                text: 'HxProvinces'
+                path: '/provinces',
+                text: 'Provinces'
               },
               {
-                path: '/hx-birthdate',
-                text: 'HxBirthdate'
+                path: '/birthdate',
+                text: 'Birthdate'
               },
               {
-                path: '/hx-validity',
-                text: 'HxValidity'
+                path: '/validity',
+                text: 'Validity'
               }
             ]
           },

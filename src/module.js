@@ -52,14 +52,14 @@ import BetterScroll from './modules/better-scroll'
 import createAPI from './modules/create-api'
 
 // hx
-import HxBank from './modules/hx-bank'
-import HxCertificatetype from './modules/hx-certificatetype'
-import HxNationality from './modules/hx-nationality'
-import HxSex from './modules/hx-sex'
-import HxLocation from './modules/hx-location'
-import HxProvinces from './modules/hx-provinces'
-import HxBirthdate from './modules/hx-birthdate'
-import HxValidity from './modules/hx-validity'
+import Bank from './modules/bank'
+import Certificatetype from './modules/certificatetype'
+import Nationality from './modules/nationality'
+import Sex from './modules/sex'
+import Location from './modules/location'
+import Provinces from './modules/provinces'
+import Birthdate from './modules/birthdate'
+import Validity from './modules/validity'
 import HxPhoneNumber from './modules/hx-phone-number'
 import HxPhoneVerification from './modules/hx-phone-verification'
 import HxAccountName from './modules/hx-account-name'
@@ -145,15 +145,14 @@ export {
   // module
   BetterScroll,
   createAPI,
-  // hx
-  HxBank,
-  HxCertificatetype,
-  HxNationality,
-  HxSex,
-  HxLocation,
-  HxProvinces,
-  HxValidity,
-  HxBirthdate,
+  Bank,
+  Certificatetype,
+  Nationality,
+  Sex,
+  Location,
+  Provinces,
+  Validity,
+  Birthdate,
   HxPhoneNumber,
   HxPhoneVerification,
   HxAccountName,

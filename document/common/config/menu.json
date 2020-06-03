@@ -111,14 +111,14 @@
             "hx-account-name": "HxAccountName",
             "hx-account-number": "HxAccountNumber",
             "hx-phone-verification": "HxPhoneVerification",
-            "hx-sex": "HxSex",
-            "hx-bank": "HxBank",
-            "hx-certificatetype": "HxCertificatetype",
-            "hx-nationality": "HxNationality",
-            "hx-location": "HxLocation",
-            "hx-provinces": "HxProvinces",
-            "hx-birthdate": "HxBirthdate",
-            "hx-validity": "HxValidity"
+            "sex": "Sex",
+            "bank": "Bank",
+            "certificatetype": "Certificatetype",
+            "nationality": "Nationality",
+            "location": "Location",
+            "provinces": "Provinces",
+            "birthdate": "Birthdate",
+            "validity": "Validity"
           }
         },
         "basic": {

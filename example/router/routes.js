@@ -72,14 +72,14 @@ import Checker from '../pages/checker.vue'
 import RecycleList from '../pages/recycle-list/index.vue'
 import RecycleListDefault from '../pages/recycle-list/recycle-list-default.vue'
 import RecycleListTombstone from '../pages/recycle-list/recycle-list-tombstone.vue'
-import hxSex from '../pages/hx-sex.vue'
-import hxBank from '../pages/hx-bank.vue'
-import hxCertificatetype from '../pages/hx-certificatetype.vue'
-import hxNationality from '../pages/hx-nationality.vue'
-import hxLocation from '../pages/hx-location.vue'
-import hxProvinces from '../pages/hx-provinces.vue'
-import HxBirthdate from '../pages/hx-birthdate.vue'
-import HxValidity from '../pages/hx-validity.vue'
+import Sex from '../pages/sex.vue'
+import Bank from '../pages/bank.vue'
+import Certificatetype from '../pages/certificatetype.vue'
+import Nationality from '../pages/nationality.vue'
+import Location from '../pages/location.vue'
+import Provinces from '../pages/provinces.vue'
+import Birthdate from '../pages/birthdate.vue'
+import Validity from '../pages/validity.vue'
 // xwb
 import HxPhoneNumber from '../pages/hx-phone-number.vue'
 import HxEmail from '../pages/hx-email.vue'
@@ -92,36 +92,36 @@ import HxPhoneVerification from '../pages/hx-phone-verification.vue'
 
 const routes = [
   {
-    path: '/hx-sex',
-    component: hxSex
+    path: '/sex',
+    component: Sex
   },
   {
-    path: '/hx-bank',
-    component: hxBank
+    path: '/bank',
+    component: Bank
   },
   {
-    path: '/hx-certificatetype',
-    component: hxCertificatetype
+    path: '/certificatetype',
+    component: Certificatetype
   },
   {
-    path: '/hx-nationality',
-    component: hxNationality
+    path: '/nationality',
+    component: Nationality
   },
   {
-    path: '/hx-location',
-    component: hxLocation
+    path: '/location',
+    component: Location
   },
   {
-    path: '/hx-provinces',
-    component: hxProvinces
+    path: '/provinces',
+    component: Provinces
   },
   {
-    path: '/hx-validity',
-    component: HxValidity
+    path: '/validity',
+    component: Validity
   },
   {
-    path: '/hx-birthdate',
-    component: HxBirthdate
+    path: '/birthdate',
+    component: Birthdate
   },
   {
     path: '/button',
