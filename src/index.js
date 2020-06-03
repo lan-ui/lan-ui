@@ -49,7 +49,7 @@ import {
   // module
   BetterScroll,
   createAPI,
-  // hx
+  // common
   Bank,
   Certificatetype,
   Nationality,
@@ -58,15 +58,15 @@ import {
   Provinces,
   Validity,
   Birthdate,
-  HxPhoneNumber,
-  HxPhoneVerification,
-  HxAccountName,
-  HxAccountNumber,
-  HxAddress,
-  HxIdNumber,
-  HxEmail,
-  HxInput,
-  HxInputFdn
+  PhoneNumber,
+  PhoneVerification,
+  AccountName,
+  AccountNumber,
+  Address,
+  IdNumber,
+  Email,
+  InputAdd,
+  InputFoundation
 } from './module'
 import { processComponentName } from './common/helpers/util'
 import './rem'
@@ -116,7 +116,7 @@ const components = [
   ScrollNav,
   ScrollNavBar,
   RecycleList,
-  //  hx
+  // common
   Bank,
   Certificatetype,
   Nationality,
@@ -125,15 +125,15 @@ const components = [
   Provinces,
   Validity,
   Birthdate,
-  HxPhoneNumber,
-  HxPhoneVerification,
-  HxAccountName,
-  HxAccountNumber,
-  HxAddress,
-  HxIdNumber,
-  HxEmail,
-  HxInput,
-  HxInputFdn
+  PhoneNumber,
+  PhoneVerification,
+  AccountName,
+  AccountNumber,
+  Address,
+  IdNumber,
+  Email,
+  InputAdd,
+  InputFoundation
 ]
 
 function install(Vue) {

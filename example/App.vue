@@ -33,32 +33,32 @@
             'shortcut': 'Common',
             'items': [
               {
-                path: '/hx-phone-number',
-                text: 'HxPhoneNumber'
+                path: '/phone-number',
+                text: 'PhoneNumber'
               },
               {
-                path: '/hx-email',
-                text: 'HxEmail'
+                path: '/email',
+                text: 'Email'
               },
               {
-                path: '/hx-id-number',
-                text: 'HxIdNumber'
+                path: '/id-number',
+                text: 'IdNumber'
               },
               {
-                path: '/hx-address',
-                text: 'HxAddress'
+                path: '/address',
+                text: 'Address'
               },
               {
-                path: '/hx-account-name',
-                text: 'HxAccountName'
+                path: '/account-name',
+                text: 'AccountName'
               },
               {
-                path: '/hx-account-number',
-                text: 'HxAccountNumber'
+                path: '/account-number',
+                text: 'AccountNumber'
               },
               {
-                path: '/hx-phone-verification',
-                text: 'HxPhoneVerification'
+                path: '/phone-verification',
+                text: 'PhoneVerification'
               },
               {
                 path: '/sex',

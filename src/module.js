@@ -51,7 +51,7 @@ import RecycleList from './modules/recycle-list'
 import BetterScroll from './modules/better-scroll'
 import createAPI from './modules/create-api'
 
-// hx
+// common
 import Bank from './modules/bank'
 import Certificatetype from './modules/certificatetype'
 import Nationality from './modules/nationality'
@@ -60,16 +60,15 @@ import Location from './modules/location'
 import Provinces from './modules/provinces'
 import Birthdate from './modules/birthdate'
 import Validity from './modules/validity'
-import HxPhoneNumber from './modules/hx-phone-number'
-import HxPhoneVerification from './modules/hx-phone-verification'
-import HxAccountName from './modules/hx-account-name'
-import HxAccountNumber from './modules/hx-account-number'
-import HxAddress from './modules/hx-address'
-import HxIdNumber from './modules/hx-id-number'
-import HxEmail from './modules/hx-email'
-import HxInput from './modules/hx-input'
-import HxInputFdn from './modules/hx-input-fdn'
-// xwb-end
+import PhoneNumber from './modules/phone-number'
+import PhoneVerification from './modules/phone-verification'
+import AccountName from './modules/account-name'
+import AccountNumber from './modules/account-number'
+import Address from './modules/address'
+import IdNumber from './modules/id-number'
+import Email from './modules/email'
+import InputAdd from './modules/input-add'
+import InputFoundation from './modules/input-fdn'
 
 const FormGroup = Form.Group
 const FormItem = Form.Item
@@ -145,6 +144,7 @@ export {
   // module
   BetterScroll,
   createAPI,
+  // common
   Bank,
   Certificatetype,
   Nationality,
@@ -153,13 +153,13 @@ export {
   Provinces,
   Validity,
   Birthdate,
-  HxPhoneNumber,
-  HxPhoneVerification,
-  HxAccountName,
-  HxAccountNumber,
-  HxAddress,
-  HxIdNumber,
-  HxEmail,
-  HxInput,
-  HxInputFdn
+  PhoneNumber,
+  PhoneVerification,
+  AccountName,
+  AccountNumber,
+  Address,
+  IdNumber,
+  Email,
+  InputAdd,
+  InputFoundation
 }

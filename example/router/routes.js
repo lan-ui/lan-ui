@@ -80,17 +80,43 @@ import Location from '../pages/location.vue'
 import Provinces from '../pages/provinces.vue'
 import Birthdate from '../pages/birthdate.vue'
 import Validity from '../pages/validity.vue'
-// xwb
-import HxPhoneNumber from '../pages/hx-phone-number.vue'
-import HxEmail from '../pages/hx-email.vue'
-import HxIdNumber from '../pages/hx-id-number.vue'
-import HxAddress from '../pages/hx-address.vue'
-import HxAccountName from '../pages/hx-account-name.vue'
-import HxAccountNumber from '../pages/hx-account-number.vue'
-import HxPhoneVerification from '../pages/hx-phone-verification.vue'
-// xwb-end
+import PhoneNumber from '../pages/phone-number.vue'
+import Email from '../pages/email.vue'
+import IdNumber from '../pages/id-number.vue'
+import Address from '../pages/address.vue'
+import AccountName from '../pages/account-name.vue'
+import AccountNumber from '../pages/account-number.vue'
+import PhoneVerification from '../pages/phone-verification.vue'
 
 const routes = [
+  {
+    path: '/phone-number',
+    component: PhoneNumber
+  },
+  {
+    path: '/email',
+    component: Email
+  },
+  {
+    path: '/id-number',
+    component: IdNumber
+  },
+  {
+    path: '/address',
+    component: Address
+  },
+  {
+    path: '/account-name',
+    component: AccountName
+  },
+  {
+    path: '/account-number',
+    component: AccountNumber
+  },
+  {
+    path: '/phone-verification',
+    component: PhoneVerification
+  },
   {
     path: '/sex',
     component: Sex
@@ -146,34 +172,6 @@ const routes = [
   {
     path: '/input',
     component: Input
-  },
-  {
-    path: '/hx-phone-number',
-    component: HxPhoneNumber
-  },
-  {
-    path: '/hx-email',
-    component: HxEmail
-  },
-  {
-    path: '/hx-id-number',
-    component: HxIdNumber
-  },
-  {
-    path: '/hx-address',
-    component: HxAddress
-  },
-  {
-    path: '/hx-account-name',
-    component: HxAccountName
-  },
-  {
-    path: '/hx-account-number',
-    component: HxAccountNumber
-  },
-  {
-    path: '/hx-phone-verification',
-    component: HxPhoneVerification
   },
   {
     path: '/textarea',
