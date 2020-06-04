@@ -8,7 +8,7 @@
       <div class="lan-select-main" v-if="!readonly">
         <p class="select-main-info" @click="showPicker">
           <input v-model="nationality" :placeholder="placeholder" :class="nationality==placeholder?'main-info-init':'main-info-selected'" readonly/>
-          <i :class="disabled?'':'icon-hualife-nationality'"></i>
+          <i :class="disabled?'':'icon-lan-nationality'"></i>
         </p>
       </div>
       <p class="select-main-info" v-else>{{readValue.text}}</p>

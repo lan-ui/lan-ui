@@ -2,7 +2,7 @@
   <cube-page  title="Bank" class="lan">
     <div slot="content">
       <div class="lan-sex-wrapper">
-        <lan-bank @selected="selected" ref="hxValidate"></lan-bank>
+        <lan-bank @selected="selected" ref="lanValidate"></lan-bank>
         <lan-bank :options="banks"  @selected="selected" ref="lanValidate"></lan-bank>
         <lan-bank :options="banks" :disabled="true" :value="value1"></lan-bank>
         <lan-bank :readonly="true" :readValue="readBank"></lan-bank>

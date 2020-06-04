@@ -29,7 +29,7 @@ export default {
     LanInputFoundation
   },
   props: {
-    // value: HxInputFoundation.props.value,
+    // value: InputFoundation.props.value,
     ...LanInputFoundation.props
     // defaultVal: String
   },

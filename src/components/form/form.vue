@@ -363,7 +363,7 @@
     .cube-checkbox-group, .cube-radio-group
       &::before, &::after
         display: none
-    .hx-input
+    .cube-input
       input
         padding: 13px 0
         background-color: transparent

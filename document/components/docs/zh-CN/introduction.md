@@ -1,6 +1,6 @@
 ## 介绍
 
-hx-ui 是基于 Vue.js 实现的精致移动端组件库。
+lan-ui 是基于 Vue.js 实现的精致移动端组件库。
 
 ### 特性
 
@@ -59,22 +59,21 @@ hx-ui 是基于 Vue.js 实现的精致移动端组件库。
 - [ImagePreview 图片预览](#/zh-CN/docs/image-preview)
 
 #### 通用业务组件
-
-- [HxPhoneNumber 手机号码](#/zh-CN/docs/hx-phone-number)
-- [HxEmail 邮箱地址](#/zh-CN/docs/hx-email)
-- [HxIdnumber 身份证号码](#/zh-CN/docs/hx-id-number)
-- [HxAddress 详细地址](#/zh-CN/docs/hx-address)
-- [HxAccountName 账号名](#/zh-CN/docs/hx-account-name)
-- [HxAccountNumber 账号](#/zh-CN/docs/hx-account-number)
-- [HxPhoneverification 验证码](#/zh-CN/docs/hx-phone-verification)
-- [HxSex 性别](#/zh-CN/docs/hx-sex)
-- [HxBank 银行](#/zh-CN/docs/hx-bank)
-- [HxCertificatetype 证件类型](#/zh-CN/docs/hx-certificatetype)
-- [HxNationality 国籍/地区](#/zh-CN/docs/hx-nationality)
-- [HxLocation 所在地区](#/zh-CN/docs/hx-location)
-- [HxProvince 开户行所在省市](#/zh-CN/docs/hx-provinces)
-- [hx-birthdate 出生日期](#/zh-CN/docs/hx-birthdate)
-- [HxValidity 证件有效期](#/zh-CN/docs/hx-validity)
+- [AccountName 账号名](#/zh-CN/docs/account-name)
+- [AccountNumber 账号](#/zh-CN/docs/account-number)
+- [Address 详细地址](#/zh-CN/docs/address)
+- [Bank 银行](#/zh-CN/docs/bank)
+- [Birthdate 出生日期](#/zh-CN/docs/birthdate)
+- [Certificatetype 证件类型](#/zh-CN/docs/certificatetype)
+- [Email 邮箱地址](#/zh-CN/docs/email)
+- [Idnumber 身份证号码](#/zh-CN/docs/id-number)
+- [Location 所在地区](#/zh-CN/docs/location)
+- [Nationality 国籍/地区](#/zh-CN/docs/nationality)
+- [PhoneNumber 手机号码](#/zh-CN/docs/phone-number)
+- [Phoneverification 验证码](#/zh-CN/docs/phone-verification)
+- [Province 开户行所在省市](#/zh-CN/docs/provinces)
+- [Sex 性别](#/zh-CN/docs/sex)
+- [Validity 证件有效期](#/zh-CN/docs/validity)
 
 绝大多数的弹层类组件可以通过组件调用和 API 调用，来看示例（`Toast` 为例）：
 
@@ -143,7 +142,7 @@ API 调用：
 
 ### 模块
 
-除了组件之外，hx-ui 还有一些特殊的模块。
+除了组件之外，lan-ui 还有一些特殊的模块。
 
 #### style
 

@@ -47,7 +47,7 @@
       <div class="lan-input-append" v-if="$slots.append || _showClear || _showPwdEye">
         <div class="lan-input-clear" v-if="_showClear&&!readonly" @touchend="handleClear">
           <i class="cubeic-wrong"></i>
-          <!-- <i class="icon-hualife-certificates"></i> -->
+          <!-- <i class="icon-lan-certificates"></i> -->
         </div>
         <div class="lan-input-eye" v-if="_showPwdEye" @click="handlePwdEye">
           <i :class="eyeClass"></i>

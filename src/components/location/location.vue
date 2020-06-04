@@ -11,7 +11,7 @@
       <div class="lan-select-main" v-if="!readonly">
         <p class="select-main-info" @click="showAddressPicker">
           <input v-model="location" :placeholder="placeholder" :class="location==placeholder?'main-info-init':'main-info-selected'" readonly/>
-          <i :class="disabled?'':'icon-hualife-region'"></i>
+          <i :class="disabled?'':'icon-lan-region'"></i>
         </p>
       </div>
       <p class="select-main-info" v-else>{{readValue.text.join(' ')}}</p>

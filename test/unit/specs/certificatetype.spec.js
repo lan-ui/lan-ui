@@ -29,7 +29,7 @@ describe('Certificatetype.vue', () => {
     expect(Vue.prototype.$createPicker).to.be.a('function')
   })
   it('Certificatetype基础内容', () => {
-    vm = createHxCertificatetype()
+    vm = createCertificatetype()
     const el = vm.$el
     expect(el.className)
       .to.equal('lan-select')
@@ -49,7 +49,7 @@ describe('Certificatetype.vue', () => {
     expect(input.getAttribute('readonly'))
       .to.equal('readonly')
     expect(el.querySelector('i').className)
-      .to.equal('icon-hualife-certificates')
+      .to.equal('icon-lan-certificates')
     expect(el.querySelector('.cube-validator'))
       .to.be.ok
     expect(el.querySelector('.cube-validator').innerText)
@@ -72,7 +72,7 @@ describe('Certificatetype.vue', () => {
       .to.equal('right')
   })
   it('Certificatetype基础用法：选择回显内容，取消进行校验', (done) => {
-    const vm = createHxCertificatetype()
+    const vm = createCertificatetype()
     const el = vm.$el
     const input = el.querySelector('input')
     const info = el.querySelector('.select-main-info')
@@ -214,10 +214,10 @@ describe('Certificatetype.vue', () => {
       .to.equal('居民身份证')
   })
 })
-function createHxCertificatetype () {
+function createCertificatetype () {
   const vm = createVue({
     template: `
-      <lan-certificatetype :readonly="false"  @selected="selected" ref="hxValidate"></lan-certificatetype>
+      <lan-certificatetype :readonly="false"  @selected="selected" ref="lanValidate"></lan-certificatetype>
     `,
     data: {
     },

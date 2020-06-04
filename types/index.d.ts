@@ -1,5 +1,5 @@
-export * from './hx-ui'
+export * from './lan-ui'
 
-import * as Hx from './hx-ui'
+import * as LanUI from './lan-ui'
 
-export default Hx
+export default LanUI

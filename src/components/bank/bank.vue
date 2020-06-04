@@ -8,7 +8,7 @@
       <div class="lan-select-main" v-if="!readonly">
         <p class="select-main-info" @click="showPicker">
           <input v-model="bank" :placeholder="placeholder"  :class="bank==placeholder?'main-info-init':'main-info-selected'" readonly/>
-          <i :class="disabled?'':'icon-hualife-bankcard'"></i>
+          <i :class="disabled?'':'icon-lan-bankcard'"></i>
         </p>
       </div>
       <p class="select-main-info" v-else>{{readValue.text}}</p>

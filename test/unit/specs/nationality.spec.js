@@ -29,7 +29,7 @@ describe('Nationality.vue', () => {
     expect(Vue.prototype.$createPicker).to.be.a('function')
   })
   it('Nationality基础内容', () => {
-    vm = createHxNationality()
+    vm = createNationality()
     const el = vm.$el
     expect(el.className)
       .to.equal('lan-select')
@@ -49,7 +49,7 @@ describe('Nationality.vue', () => {
     expect(input.getAttribute('readonly'))
       .to.equal('readonly')
     expect(el.querySelector('i').className)
-      .to.equal('icon-hualife-nationality')
+      .to.equal('icon-lan-nationality')
     expect(el.querySelector('.cube-validator'))
       .to.be.ok
     expect(el.querySelector('.cube-validator').innerText)
@@ -72,7 +72,7 @@ describe('Nationality.vue', () => {
       .to.equal('right')
   })
   it('Nationality基础用法：选择回显内容，取消进行校验', (done) => {
-    const vm = createHxNationality()
+    const vm = createNationality()
     const el = vm.$el
     const input = el.querySelector('input')
     const info = el.querySelector('.select-main-info')
@@ -210,7 +210,7 @@ describe('Nationality.vue', () => {
       .to.equal('中国(香港)')
   })
 })
-function createHxNationality () {
+function createNationality () {
   const vm = createVue({
     template: `
       <lan-nationality :readonly="false" @selected="selected" ref="lanValidate"></lan-nationality>

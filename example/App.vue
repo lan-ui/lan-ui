@@ -33,8 +33,28 @@
             'shortcut': 'Common',
             'items': [
               {
-                path: '/phone-number',
-                text: 'PhoneNumber'
+                path: '/account-name',
+                text: 'AccountName'
+              },
+              {
+                path: '/account-number',
+                text: 'AccountNumber'
+              },
+              {
+                path: '/address',
+                text: 'Address'
+              },
+              {
+                path: '/bank',
+                text: 'Bank'
+              },
+              {
+                path: '/birthdate',
+                text: 'Birthdate'
+              },
+              {
+                path: '/certificatetype',
+                text: 'Certificatetype'
               },
               {
                 path: '/email',
@@ -45,48 +65,28 @@
                 text: 'IdNumber'
               },
               {
-                path: '/address',
-                text: 'Address'
-              },
-              {
-                path: '/account-name',
-                text: 'AccountName'
-              },
-              {
-                path: '/account-number',
-                text: 'AccountNumber'
-              },
-              {
-                path: '/phone-verification',
-                text: 'PhoneVerification'
-              },
-              {
-                path: '/sex',
-                text: 'Sex'
-              },
-              {
-                path: '/bank',
-                text: 'Bank'
-              },
-              {
-                path: '/certificatetype',
-                text: 'Certificatetype'
+                path: '/location',
+                text: 'Location'
               },
               {
                 path: '/nationality',
                 text: 'Nationlity'
               },
               {
-                path: '/location',
-                text: 'Location'
+                path: '/phone-number',
+                text: 'PhoneNumber'
+              },
+              {
+                path: '/phone-verification',
+                text: 'PhoneVerification'
               },
               {
                 path: '/provinces',
                 text: 'Provinces'
               },
               {
-                path: '/birthdate',
-                text: 'Birthdate'
+                path: '/sex',
+                text: 'Sex'
               },
               {
                 path: '/validity',

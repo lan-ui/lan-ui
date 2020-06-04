@@ -28,7 +28,7 @@ describe('Provinces.vue', () => {
       .to.be.a('function')
   })
   it('Provinces基础内容', () => {
-    vm = createHxProvinces()
+    vm = createProvinces()
     const el = vm.$el
     expect(el.className)
       .to.equal('lan-select')
@@ -48,7 +48,7 @@ describe('Provinces.vue', () => {
     expect(input.getAttribute('readonly'))
       .to.equal('readonly')
     expect(el.querySelector('i').className)
-      .to.equal('icon-hualife-region')
+      .to.equal('icon-lan-region')
     expect(el.querySelector('.cube-validator'))
       .to.be.ok
     expect(el.querySelector('.cube-validator').innerText)
@@ -71,7 +71,7 @@ describe('Provinces.vue', () => {
       .to.equal('right')
   })
   it('Provinces基础用法：选择回显内容，取消进行校验', (done) => {
-    const vm = createHxProvinces()
+    const vm = createProvinces()
     const el = vm.$el
     const input = el.querySelector('input')
     const info = el.querySelector('.select-main-info')
@@ -211,7 +211,7 @@ describe('Provinces.vue', () => {
       .to.equal('山西省 阳泉市')
   })
 })
-function createHxProvinces () {
+function createProvinces () {
   const vm = createVue({
     template: `
       <lan-provinces :readonly="false"  @selected="selected" ref="lanValidate"></lan-provinces>

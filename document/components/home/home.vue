@@ -2,7 +2,7 @@
   <div class="home-view" :class="{'home-view-docs': isDocs, 'home-view-demo': isExample, opacity1: opacity1}">
     <div class="navigator" ref="navigator" :class="{ active: showTabs }">
       <div class="logo">
-        <router-link to="/"><img src="./logo.png" alt="Hx-UI"></router-link>
+        <router-link to="/"><img src="./logo.png" alt="Lan-UI"></router-link>
       </div>
       <div class="tabs">
         <i></i>

@@ -1,14 +1,14 @@
 ### 脚手架
-> 新创建的项目快速使用hx-ui组件库，因目前使用私有npm，私有git，请按照说明文档进行安装
+> 新创建的项目快速使用lan-ui组件库，因目前使用私有npm，私有git，请按照说明文档进行安装
 
 #### vue-cli >= 3
 
-推荐使用vue-cli-plugin-hx-ui插件，创建项目及配置，说明文档详见[vue-cli-plugin-hx-ui](http://106.38.93.196:8081/hx-ui/vue-cli-plugin-hx-ui)  
+推荐使用vue-cli-plugin-lan-ui插件，创建项目及配置，说明文档详见[vue-cli-plugin-lan-ui](http://106.38.93.196:8081/hx-ui/vue-cli-plugin-hx-ui)  
 执行完成后，你可以直接进入<a href="#cube-使用-anchor" class="anchor">使用部分</a>。
 
 #### vue-cli < 3
 
-推荐使用hx-ui模版创建项目，创建项目及配置，说明文档详见[hx-ui-template](http://106.38.93.196:8081/hx-ui/hx-ui-template)，这样你就可以忽略<a href="#cube-安装-anchor" class="anchor">安装</a>步骤，直接看<a href="#cube-使用-anchor" class="anchor">使用部分</a>。
+推荐使用lan-ui模版创建项目，创建项目及配置，说明文档详见[lan-ui-template](http://106.38.93.196:8081/hx-ui/hx-ui-template)，这样你就可以忽略<a href="#cube-安装-anchor" class="anchor">安装</a>步骤，直接看<a href="#cube-使用-anchor" class="anchor">使用部分</a>。
 
 ### CDN
 > 主要应用在老的项目，及非脚手架搭建项目，强依赖vue，使用前请先引入vuejs
@@ -19,21 +19,21 @@
 ```
 
 ### 安装
-> 此安装部分只针对于 vue-cli > 3 的情况，并且已经存在的项目中使用hx-ui，参考脚手架配置
+> 此安装部分只针对于 vue-cli > 3 的情况，并且已经存在的项目中使用lan-ui，参考脚手架配置
 
 ```shell
-$ vue add hx-ui
+$ vue add lan-ui
 ```
 
-> 此安装部分只针对于 vue-cli < 3 的情况，并且已经存在的项目中使用hx-ui，需要自己手动配置
+> 此安装部分只针对于 vue-cli < 3 的情况，并且已经存在的项目中使用lan-ui，需要自己手动配置
 
 #### npm
 
 ```shell
-$ npm install hx-ui --save
+$ npm install lan-ui --save
 ```
 
-hx-ui 搭配 webpack 2+ 支持[后编译](#/zh-CN/docs/post-compile)和普通编译 2 种构建方式（默认使用后编译），使用前都需要修改应用的依赖和配置。
+lan-ui 搭配 webpack 2+ 支持[后编译](#/zh-CN/docs/post-compile)和普通编译 2 种构建方式（默认使用后编译），使用前都需要修改应用的依赖和配置。
 
 - 后编译
 
@@ -43,8 +43,8 @@ hx-ui 搭配 webpack 2+ 支持[后编译](#/zh-CN/docs/post-compile)和普通编
     {
       // webpack-transform-modules-plugin 依赖 transformModules
       "transformModules": {
-        "hx-ui": {
-          "transform": "hx-ui/src/modules/${member}",
+        "lan-ui": {
+          "transform": "lan-ui/src/modules/${member}",
           "kebabCase": true
         }
       },
@@ -114,8 +114,8 @@ hx-ui 搭配 webpack 2+ 支持[后编译](#/zh-CN/docs/post-compile)和普通编
     {
       // webpack-transform-modules-plugin 依赖 transformModules
       "transformModules": {
-        "hx-ui": {
-          "transform": "hx-ui/lib/${member}",
+        "lan-ui": {
+          "transform": "lan-ui/lib/${member}",
           "kebabCase": true,
           "style": {
             "ignore": ["create-api", "better-scroll", "locale"]
@@ -139,7 +139,7 @@ hx-ui 搭配 webpack 2+ 支持[后编译](#/zh-CN/docs/post-compile)和普通编
         // ...
         alias: {
           // ...
-          'hx-ui': 'hx-ui/lib'
+          'lan-ui': 'lan-ui/lib'
           // ...
         }
         // ...
@@ -161,9 +161,9 @@ hx-ui 搭配 webpack 2+ 支持[后编译](#/zh-CN/docs/post-compile)和普通编
 
 ```javascript
 import Vue from 'vue'
-import Hx from 'hx-ui'
+import Lan from 'lan-ui'
 
-Vue.use(Hx)
+Vue.use(Lan)
 ```
 
 #### 按需引入
@@ -173,7 +173,7 @@ import {
   /* eslint-disable no-unused-vars */
   Style,
   Button
-} from 'hx-ui'
+} from 'lan-ui'
 ```
 
 **注意：** 按需引入的话，是不会打包[基础样式](#/zh-CN/docs/style)部分的，所以在使用的时候需要引入 style 模块。
@@ -227,28 +227,28 @@ import {
   IndexList,
   Swipe,
   // common
-  HxPhoneNumber,
-  HxEmail,
-  HxIdNumber,
-  HxAddress,
-  HxAccountName,
-  HxAccountNumber,
-  HxPhoneVerification,
-  HxSex,
-  HxBank,
-  HxCertificatetype,
-  HxNationality,
-  HxLocation,
-  HxProvinces,
-  HxBirthdate,
-  HxValidity
-} from 'hx-ui'
+  PhoneNumber,
+  Email,
+  IdNumber,
+  Address,
+  AccountName,
+  AccountNumber,
+  PhoneVerification,
+  Sex,
+  Bank,
+  Certificatetype,
+  Nationality,
+  Location,
+  Provinces,
+  Birthdate,
+  Validity
+} from 'lan-ui'
 ```
 
 也可以引入[create-api](#/zh-CN/docs/create-api)和[better-scroll](#/zh-CN/docs/better-scroll)模块：
 
 ```js
-import { createAPI, BetterScroll, Locale } from 'hx-ui'
+import { createAPI, BetterScroll, Locale } from 'lan-ui'
 ```
 
 #### 示例

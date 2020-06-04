@@ -63,7 +63,7 @@ function fullBuild(cb) {
     )
     buildPack(webpackConfig, function () {
       cb && cb()
-    }, 'building for hx.min.js')
+    }, 'building for lan.min.js')
   }, 'building for index.js')
 }
 

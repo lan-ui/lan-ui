@@ -1,4 +1,4 @@
-# hx-ui
+# lan-ui
 
 > 基于Vue.js实现的精致移动端组件库
 
@@ -13,24 +13,24 @@
 ### 新项目？
 
 - vue cli > 3
-  推荐使用vue-cli-plugin-hx-ui插件，创建项目及配置，说明文档详见[vue-cli-plugin-hx-ui](http://106.38.93.196:8081/hx-ui/vue-cli-plugin-hx-ui)
+  推荐使用vue-cli-plugin-lan-ui插件，创建项目及配置，说明文档详见[vue-cli-plugin-lan-ui](http://106.38.93.196:8081/hx-ui/vue-cli-plugin-hx-ui)
 
 - vue cli < 3
-  推荐使用hx-ui模版创建项目，创建项目及配置，说明文档详见[hx-ui-template](http://106.38.93.196:8081/hx-ui/hx-ui-template)
+  推荐使用lan-ui模版创建项目，创建项目及配置，说明文档详见[lan-ui-template](http://106.38.93.196:8081/hx-ui/hx-ui-template)
 
 ### 安装
 
 ```shell
-npm install hx-ui --save
+npm install lan-ui --save
 ```
 
 ### 使用
 
 ```js
 import Vue from 'vue'
-import Hx from 'hx-ui'
+import Lan from 'lan-ui'
 
-Vue.use(Hx)
+Vue.use(Lan)
 ```
 
 #### 按需使用
@@ -42,7 +42,7 @@ import {
   Style,
   Button,
   ActionSheet
-} from 'hx-ui'
+} from 'lan-ui'
 
 Vue.use(Button)
 Vue.use(ActionSheet)
@@ -62,7 +62,7 @@ Vue.use(ActionSheet)
 
 ```shell
 git clone http://106.38.93.196:8081/hualife/hx-ui.git
-cd hx-ui
+cd lan-ui
 npm install
 npm run dev
 # or run document development

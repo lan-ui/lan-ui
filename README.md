@@ -1,4 +1,4 @@
-# 华夏移动端通用组件库hx-ui
+# 华夏移动端通用组件库lan-ui
 
 ## REM适配 
 
@@ -106,7 +106,6 @@ $ npm run cm                # Commitizen规范化git提交（npm run cz代替git
 │       ├── footer         
 │           └── footer.vue       # *底部通用版权说明（需要修改）
 │       ├── home                 # 首页入口
-│           ├── didi-logo.svg    # didi logo图标（暂未使用）
 │           ├── en-US.vue        # 英文导航菜单
 │           ├── home.vue         # * 首页入口组件（有修改，屏蔽了语言切换，目前文档只做了中文）
 │           ├── logo.png         # * cube ui logo（需要修改）
@@ -217,7 +216,7 @@ $ npm run cm                # Commitizen规范化git提交（npm run cz代替git
 │
 ├── types                   # 
 │   ├── component.d.ts      # 
-│   ├── hx-ui.d.ts          # 
+│   ├── lan-ui.d.ts          # 
 │   └── index.d.ts          # 
 │
 ├── .babelrc                # 
@@ -231,7 +230,7 @@ $ npm run cm                # Commitizen规范化git提交（npm run cz代替git
 ├── package-lock.json       # 锁定当前安装包的版本号
 ├── package.json            # * 包配置文件（需要修改）
 ├── postcss.config.js       # * css预处理(适配)
-├── README_zh-CN.md         # * 中文文档说明（需要修改为hx-ui的说明）
+├── README_zh-CN.md         # * 中文文档说明（需要修改为lan-ui的说明）
 ├── README.md               # * 说明文档
 └── yarn.lock               # 
 ```

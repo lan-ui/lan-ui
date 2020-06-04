@@ -1,5 +1,5 @@
 {
-  "name": "hx-ui",
+  "name": "@lan-ui/lan-ui",
   "version": "1.0.0",
   "description": "A fantastic mobile ui lib implement by Vue",
   "main": "lib/index.js",
@@ -43,15 +43,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://106.38.93.196:8081/hualife/hx-ui.git"
+    "url": "http://106.38.93.196:8081/hualife/lan-ui.git"
   },
   "homepage": "http://sales-int.ihxlife.com/hualifeui/docs/index.html",
   "bugs": {
-    "url": "http://106.38.93.196:8081/hualife/hx-ui/issues"
+    "url": "http://106.38.93.196:8081/hualife/lan-ui/issues"
   },
   "keywords": [
-    "hx-ui",
-    "hx",
+    "lan-ui",
+    "lan",
     "vue",
     "components"
   ],

@@ -2,28 +2,28 @@
 
 > 1.11.0 新增
 
-hx-ui 内部所有非可配置的文案，都是中文的形式，所以如果你的应用是需要做对应的国际化文案翻译，那么 hx-ui  `1.0.0` 这个版本是提供了给 hx-ui 组件的文案翻译的能力，甚至这种能力也能延伸至你的应用。
+lan-ui 内部所有非可配置的文案，都是中文的形式，所以如果你的应用是需要做对应的国际化文案翻译，那么 lan-ui  `1.0.0` 这个版本是提供了给 lan-ui 组件的文案翻译的能力，甚至这种能力也能延伸至你的应用。
 
-## hx-ui 组件的国际化
+## lan-ui 组件的国际化
 
-hx-ui 默认是用的中文语言包，并且已经注册了。hx-ui 内部也内置了对应的英文语言包，但是你需要如下的逻辑来注册语言包，同时切换至对应的语言。
+lan-ui 默认是用的中文语言包，并且已经注册了。lan-ui 内部也内置了对应的英文语言包，但是你需要如下的逻辑来注册语言包，同时切换至对应的语言。
 
 ```js
   import Vue from 'vue'
-  import { Locale } from 'hx-ui'
-  import enUSMessages from 'hx-ui/src/locale/lang/en-US'
+  import { Locale } from 'lan-ui'
+  import enUSMessages from 'lan-ui/src/locale/lang/en-US'
 
   Vue.use(Locale)
   // 切换至英语，并且缓存当前语言包
   Locale.use('en-US', enUSMessages)
 ```
 
-hx-ui 会监听当前的语言类型，因此自动渲染组件对应的文案，同时缓存加载过的文案，在做组件语言切换的时候，如果语言包已经安装，hx-ui 直接取缓存的文案。类似伪代码如下：
+lan-ui 会监听当前的语言类型，因此自动渲染组件对应的文案，同时缓存加载过的文案，在做组件语言切换的时候，如果语言包已经安装，lan-ui 直接取缓存的文案。类似伪代码如下：
 
 ```js
   import Vue from 'vue'
-  import { Locale } from 'hx-ui'
-  import enUSMessages from 'hx-ui/src/locale/lang/en-US'
+  import { Locale } from 'lan-ui'
+  import enUSMessages from 'lan-ui/src/locale/lang/en-US'
 
   // 默认加载中文语言包
   Vue.use(Locale)
@@ -43,7 +43,7 @@ hx-ui 会监听当前的语言类型，因此自动渲染组件对应的文案�
 
 ```js
   import Vue from 'vue'
-  import { Locale } from 'hx-ui'
+  import { Locale } from 'lan-ui'
   import jPMessages from '/somewhere/ja-JP.js' // 自己的语言包
 
   Vue.use(Locale)
@@ -115,11 +115,11 @@ hx-ui 会监听当前的语言类型，因此自动渲染组件对应的文案�
 
 ## 程序应用的国际化<sup>1.12.23+</sup>
 
-如上面所述，hx-ui 给自己的组件提供了国际化的能力，但是这种能力也能延伸至你的应用，分两步进行：
+如上面所述，lan-ui 给自己的组件提供了国际化的能力，但是这种能力也能延伸至你的应用，分两步进行：
 
 1. **导入语言包**
 
-  首先，得导入语言包，这个语言包应该是包含 hx-ui 默认语言包的全集。比如你的语言包配置可能如下：
+  首先，得导入语言包，这个语言包应该是包含 lan-ui 默认语言包的全集。比如你的语言包配置可能如下：
 
   ```js
     // default.js
@@ -130,7 +130,7 @@ hx-ui 会监听当前的语言类型，因此自动渲染组件对应的文案�
         "province": "北京"
       }
 
-      /* hx-ui 的默认配置*/
+      /* lan-ui 的默认配置*/
       "cancel": "Cancel",
       // ...忽略中间部分的配置，
       "validator": {/* */}
@@ -141,7 +141,7 @@ hx-ui 会监听当前的语言类型，因此自动渲染组件对应的文案�
 
   ```js
     import Vue from 'vue'
-    import { Locale } from 'hx-ui'
+    import { Locale } from 'lan-ui'
     import defaultMessages from 'default.js' // 自己的语言包
 
     Vue.use(Locale)
@@ -155,7 +155,7 @@ hx-ui 会监听当前的语言类型，因此自动渲染组件对应的文案�
   ```js
   // dialog.vue
 
-  import { Locale } from 'hx-ui'
+  import { Locale } from 'lan-ui'
   <script>
     export default {
       //...

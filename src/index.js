@@ -149,7 +149,7 @@ function install(Vue) {
     Component.install(Vue)
   })
 }
-const Hx = {
+const Lan = {
   /* eslint-disable no-undef */
   version: (typeof __VERSION__ !== 'undefined') ? __VERSION__ : '',
   install,
@@ -161,11 +161,11 @@ components.forEach((Component) => {
   const name = processComponentName(Component, {
     firstUpperCase: true
   })
-  Hx[name] = Component
+  Lan[name] = Component
 })
 
 if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.use(install)
 }
 
-export default Hx
+export default Lan

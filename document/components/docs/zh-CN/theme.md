@@ -1,6 +1,6 @@
 ## 主题
 
-移动端的组件对主题定制的需求会更多，从 `hx-ui^1.0.0` 开始，通过 webpack 工具可以实现自定义主题样式。
+移动端的组件对主题定制的需求会更多，从 `lan-ui^1.0.0` 开始，通过 webpack 工具可以实现自定义主题样式。
 
 **注意：** 自定义主题依赖[后编译](#/zh-CN/docs/post-compile)。
 
@@ -9,8 +9,8 @@
 在你的项目的 `src/` 目录下创建一个 `theme.styl` 的文件，内容如下（展示的全是默认样式，你可以选择这针对不同组件做定制）：
 
 ```stylus
-// 如果你需要使用 hx-ui 自带的颜色值 需要 require 进来
-@require "~hx-ui/src/common/stylus/var/color.styl"
+// 如果你需要使用 lan-ui 自带的颜色值 需要 require 进来
+@require "~lan-ui/src/common/stylus/var/color.styl"
 
 // action-sheet
 $action-sheet-color := $color-grey

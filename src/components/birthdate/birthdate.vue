@@ -6,7 +6,7 @@
         </span>
         <span class="text" :class="{tips:!birth ||disabled}">{{birth?birth:shownText}}</span>
         <span class="icon" v-if="!readonly && !disabled">
-            <i class="icon-hualife-date"></i>
+            <i class="icon-lan-date"></i>
         </span>
     </div>
   </div>

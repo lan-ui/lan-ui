@@ -33,7 +33,7 @@ var webpackConfig = merge(baseWebpackConfig, {
   output: {
     path: config.build.assetsRoot,
     filename: utils.assetsPath('[name]/index.js'),
-    library: ['hx', '[name]'],
+    library: ['lan', '[name]'],
     libraryTarget: 'umd'
   },
   plugins: [

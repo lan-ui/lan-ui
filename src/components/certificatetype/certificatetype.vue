@@ -8,7 +8,7 @@
       <div class="lan-select-main" v-if="!readonly">
         <p class="select-main-info" @click="showPicker">
           <input v-model="certificatetype" :placeholder="placeholder" :class="certificatetype==placeholder?'main-info-init':'main-info-selected'" readonly/>
-          <i :class="disabled?'':'icon-hualife-certificates'"></i>
+          <i :class="disabled?'':'icon-lan-certificates'"></i>
         </p>
       </div>
       <p class="select-main-info" v-else>{{readValue.text}}</p>

@@ -29,7 +29,7 @@ describe('Bank.vue', () => {
     expect(Vue.prototype.$createPicker).to.be.a('function')
   })
   it('Bank基础内容', () => {
-    vm = createHxBank()
+    vm = createBank()
     const el = vm.$el
     expect(el.className)
       .to.equal('lan-select')
@@ -49,7 +49,7 @@ describe('Bank.vue', () => {
     expect(input.getAttribute('readonly'))
       .to.equal('readonly')
     expect(el.querySelector('i').className)
-      .to.equal('icon-hualife-bankcard')
+      .to.equal('icon-lan-bankcard')
     expect(el.querySelector('.cube-validator'))
       .to.be.ok
     expect(el.querySelector('.cube-validator').innerText)
@@ -228,7 +228,7 @@ describe('Bank.vue', () => {
       .to.equal('工商银行')
   })
 })
-function createHxBank () {
+function createBank () {
   const vm = createVue({
     template: `
       <lan-bank :readonly="false"  @selected="selected" ref="lanValidate"></lan-bank>

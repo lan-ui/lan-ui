@@ -1,7 +1,7 @@
 <template>
   <div class="home-index">
     <div class="banner">
-      <!-- <h2>HX-UI</h2>
+      <!-- <h2>Lan-UI</h2>
       <p>
         <slot name="desc"></slot>
       </p> -->
@@ -72,7 +72,7 @@
       padding: 150px 140px 200px
       text-align: left
       color: #0550f2
-      background: url("./cube.png") no-repeat
+      background: url("./lan.png") no-repeat
       background-size: 100% auto
       @media screen and (max-width: 960px)
         padding: 254px 32px 0
@@ -83,7 +83,7 @@
           font-size: 14px
           border-width: 1px
       @media screen and (max-width: 560px)
-        background: url("./cube_small.png") no-repeat
+        background: url("./lan_small.png") no-repeat
         background-size: 100% auto
       h2
         font-size: 60px

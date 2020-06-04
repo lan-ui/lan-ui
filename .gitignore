@@ -9,12 +9,11 @@ test/e2e/reports
 selenium-debug.log
 
 # Test publish files
-hx-ui-*.tgz
+lan-ui-*.tgz
 package/
 
 # build files
 docs/
-lib/
 
 # Editor directories and files
 .idea

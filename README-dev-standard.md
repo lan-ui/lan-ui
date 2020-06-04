@@ -1,4 +1,4 @@
-# hx-ui业务组件库开发标准规范
+# lan-ui业务组件库开发标准规范
 
 为组件库开发人员提供统一的开发标准，请大家严格按照标准规范进行组件的开发
 
@@ -18,7 +18,7 @@ $ git clone http://106.38.93.196:8081/hualife/hualife.gitlab.io.git
 ### 安装
 
 ```shell
-cd hx-ui
+cd lan-ui
 npm install
 ```
 
@@ -33,11 +33,11 @@ npm install
 │   ├── components               
 │       ├── docs                 
 │           ├── zh-CN            
-│               └── hx-XXXXX.md   # 添加业务组件对应的中文文档说明
+│               └── XXXXX.md      # 添加业务组件对应的中文文档说明
 │
 ├── example                       # 示例源文件
 │   ├── pages               
-│       └── hx-XXXXX.vue          # 添加业务组件对应的示例
+│       └── XXXXX.vue             # 添加业务组件对应的示例
 │   ├── router              
 │       └── router.js             # 添加业务组件导入，配置示例路由
 │   └── App.vue                   # 添加示例菜单配置【统一管理员调整】
@@ -46,17 +46,17 @@ npm install
 │   ├── common                    
 │       └── data                  # 存放组件用到的数据源（js格式）     
 │   ├── components               
-│       ├── hx.XXXXX组件           # 新建组件源码文件（组件资源就近原则，放到该文件夹中）
-│           └── hx.XXXXX.vue      
+│       ├── XXXXX组件           # 新建组件源码文件（组件资源就近原则，放到该文件夹中）
+│           └── XXXXX.vue      
 │   ├── modules                   
-│       ├── hx.XXXXX组件           # 新建模块导出文件夹
+│       ├── XXXXX组件           # 新建模块导出文件夹
 │           └── index.js
-│   ├── index.js                  # 添加组件导入及导出模块（// hx的最后添加）
-│   └── module.js                # 添加组件模块导出模块（// hx的最后添加）
+│   ├── index.js                  # 添加组件导入及导出模块
+│   └── module.js                # 添加组件模块导出模块
 │
 ├── tests/unit                    # 测试目录
 │   ├── specs                
-│       └──  hx-XXXXX.specs.js    #  添加组件单元测试（组件测试通过率90%以上）
+│       └──  xxxx.specs.js    #  添加组件单元测试（组件测试通过率85%以上）
 ```
 
 ### 开发标准规范

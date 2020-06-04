@@ -28,7 +28,7 @@ describe('Location.vue', () => {
       .to.be.a('function')
   })
   it('Location基础内容', () => {
-    vm = createHxLocation()
+    vm = createLocation()
     const el = vm.$el
     expect(el.className)
       .to.equal('lan-select')
@@ -48,7 +48,7 @@ describe('Location.vue', () => {
     expect(input.getAttribute('readonly'))
       .to.equal('readonly')
     expect(el.querySelector('i').className)
-      .to.equal('icon-hualife-region')
+      .to.equal('icon-lan-region')
     expect(el.querySelector('.cube-validator'))
       .to.be.ok
     expect(el.querySelector('.cube-validator').innerText)
@@ -71,7 +71,7 @@ describe('Location.vue', () => {
       .to.equal('right')
   })
   it('Location基础用法：选择回显内容，取消进行校验', (done) => {
-    const vm = createHxLocation()
+    const vm = createLocation()
     const el = vm.$el
     const input = el.querySelector('input')
     const info = el.querySelector('.select-main-info')
@@ -210,7 +210,7 @@ describe('Location.vue', () => {
       .to.equal('山西省 阳泉市 市辖区')
   })
 })
-function createHxLocation () {
+function createLocation () {
   const vm = createVue({
     template: `
       <lan-location :readonly="false"  @selected="selected" ref="lanValidate"></lan-location>

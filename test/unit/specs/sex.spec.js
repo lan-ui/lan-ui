@@ -28,7 +28,7 @@ describe('Sex.vue', () => {
       .to.be.a('function')
   })
   it('Sex基础内容', () => {
-    vm = createHxSex()
+    vm = createSex()
     const el = vm.$el
     expect(el.className)
       .to.equal('lan-sex')
@@ -72,7 +72,7 @@ describe('Sex.vue', () => {
       .to.equal('right')
   })
   it('Sex基础用法：默认被选中值，切换选中值', (done) => {
-    vm = createHxSex()
+    vm = createSex()
     const el = vm.$el
     expect(vm.$parent.selected)
       .to.equal(0)
@@ -179,7 +179,7 @@ describe('Sex.vue', () => {
   })
 })
 
-function createHxSex () {
+function createSex () {
   const vm = createVue({
     template: `
       <lan-sex :options="options" v-model="selected"></lan-sex>
