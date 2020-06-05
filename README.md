@@ -1,4 +1,4 @@
-# 华夏移动端通用组件库lan-ui
+# 懒人移动端通用组件库lan-ui
 
 ## REM适配 
 
@@ -175,9 +175,9 @@ $ npm run cm                # Commitizen规范化git提交（npm run cz代替git
 │           ├── cube-icon.styl    # 自定义cube ui字体icon样式
 │           ├── cubeic.tff        # 自定义cube ui tff格式字体icon
 │           ├── cubeic.woff       # 自定义cube ui woff格式字体icon
-│           ├── hualife-icon.styl # * 自定义华夏字体icon样式 （新增）
-│           ├── hualifeic.tff     # * 自定义华夏tff格式字体icon （新增）
-│           └── hualifeic.woff    # * 自定义华夏woff格式字体icon （新增）
+│           ├── lan-icon.styl # * 自定义字体icon样式 （新增）
+│           ├── lanic.tff     # * 自定义tff格式字体icon （新增）
+│           └── lanic.woff    # * 自定义woff格式字体icon （新增）
 │       ├── lang    
 │           ├── date.js           # 日期格式化方法
 │           └── string.js         # 字符串大小写转化方法            
@@ -190,7 +190,7 @@ $ npm run cm                # Commitizen规范化git提交（npm run cz代替git
 │           ├── var               # 样式变量（含颜色、字体大小、盒子阴影）
 │           ├── base.styl         # 基础样式
 │           ├── common.styl       # 组件公共样式 （新增）
-│           ├── index.styl        # * 样式配置入口（校验，混合，重置，基础，cube ui icon，hualife自定义样式）
+│           ├── index.styl        # * 样式配置入口（校验，混合，重置，基础，cube ui icon，lan自定义样式）
 │           ├── mixin.styl        # 混合样式
 │           ├── reset.styl        # 重置样式
 │           └── variable.styl     # * 校验样式配置入口（颜色、大小、盒子阴影、主题默认样式）          

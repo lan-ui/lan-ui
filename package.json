@@ -39,15 +39,15 @@
     "types"
   ],
   "publishConfig": {
-    "registry": "http://106.38.93.196:8080"
+    "registry": "https://www.npmjs.com"
   },
   "repository": {
     "type": "git",
-    "url": "http://106.38.93.196:8081/hualife/lan-ui.git"
+    "url": "https://github.com/lan-ui/lan-ui.git"
   },
-  "homepage": "http://sales-int.ihxlife.com/hualifeui/docs/index.html",
+  "homepage": "https://github.com/lan-ui/lan-ui.github.io",
   "bugs": {
-    "url": "http://106.38.93.196:8081/hualife/lan-ui/issues"
+    "url": "https://github.com/lan-ui/lan-ui/issues"
   },
   "keywords": [
     "lan-ui",

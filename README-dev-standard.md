@@ -12,7 +12,7 @@
 ```shell
 $ git config --global user.name "gitlab用户名"
 $ git config --global user.email "gitlab邮箱"
-$ git clone http://106.38.93.196:8081/hualife/hualife.gitlab.io.git
+$ git clone https://github.com/lan-ui/lan-ui.git
 ```
 
 ### 安装

@@ -4,9 +4,9 @@
 
 ### 导航
 
-- [首页](http://sales-int.ihxlife.com/hualifeui/docs/index.html)
-- [文档](http://sales-int.ihxlife.com/hualifeui/docs/index.html#/zh-CN)
-- [示例](http://sales-int.ihxlife.com/hualifeui/docs/index.html#/zh-CN/example)
+- [首页](https://github.com/lan-ui/lan-ui.github.io/index.html)
+- [文档](https://github.com/lan-ui/lan-ui.github.io/index.html#/zh-CN)
+- [示例](https://github.com/lan-ui/lan-ui.github.io/index.html#/zh-CN/example)
 
   ![示例二维码](./assets/example-qr.png)
 
@@ -50,7 +50,7 @@ Vue.use(ActionSheet)
 
 注：  
 上述使用依赖插件 [babel-plugin-transform-modules](https://www.npmjs.com/package/babel-plugin-transform-modules)  
-详细内容请看 [快速上手文档](http://sales-int.ihxlife.com/hualifeui/docs/index.html#/zh-CN/docs/quick-start)
+详细内容请看 [快速上手文档](https://github.com/lan-ui/lan-ui.github.io/index.html#/zh-CN/docs/quick-start)
 
 ### ToDo
 
@@ -61,7 +61,7 @@ Vue.use(ActionSheet)
 ### Development
 
 ```shell
-git clone http://106.38.93.196:8081/hualife/hx-ui.git
+git clone https://github.com/lan-ui/lan-ui.git
 cd lan-ui
 npm install
 npm run dev
