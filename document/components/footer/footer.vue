@@ -1,6 +1,6 @@
 <template>
   <footer class="s-footer">
-    <a href="">© 2009-2020 HUALIVE.All Rights Reserved.</a>
+    <!-- <a href=""></a> -->
   </footer>
 </template>
 

@@ -38,9 +38,6 @@
     "lib",
     "types"
   ],
-  "publishConfig": {
-    "registry": "https://www.npmjs.com"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/lan-ui/lan-ui.git"
