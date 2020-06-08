@@ -42,7 +42,7 @@ function fullBuild(cb) {
   // build index.js
   buildPack(webpackConfig, function () {
 
-    // build cube.min.js
+    // build lan.min.js
     webpackConfig.output.filename = utils.assetsPath('[name].min.js')
     webpackConfig.output.chunkFilename = '[name].min.js'
     webpackConfig.plugins.splice(1, 1, 

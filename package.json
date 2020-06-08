@@ -1,6 +1,6 @@
 {
   "name": "@lan-ui/lan-ui",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A fantastic mobile ui lib implement by Vue",
   "main": "lib/index.js",
   "module": "src/index.js",
@@ -42,7 +42,7 @@
     "type": "git",
     "url": "https://github.com/lan-ui/lan-ui.git"
   },
-  "homepage": "https://github.com/lan-ui/lan-ui.github.io",
+  "homepage": "https://lan-ui.github.io/",
   "bugs": {
     "url": "https://github.com/lan-ui/lan-ui/issues"
   },

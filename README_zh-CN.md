@@ -4,16 +4,16 @@
 
 ### 导航
 
-- [首页](https://github.com/lan-ui/lan-ui.github.io/index.html)
-- [文档](https://github.com/lan-ui/lan-ui.github.io/index.html#/zh-CN)
-- [示例](https://github.com/lan-ui/lan-ui.github.io/index.html#/zh-CN/example)
+- [首页](https://lan-ui.github.io/)
+- [文档](https://lan-ui.github.io/#/zh-CN)
+- [示例](https://lan-ui.github.io/#/zh-CN/example)
 
   ![示例二维码](./assets/example-qr.png)
 
 ### 新项目？
 
 - vue cli > 3
-  推荐使用vue-cli-plugin-lan-ui插件，创建项目及配置，说明文档详见[vue-cli-plugin-lan-ui](http://106.38.93.196:8081/hx-ui/vue-cli-plugin-hx-ui)
+  推荐使用vue-cli-plugin-lan-ui插件，创建项目及配置，说明文档详见[vue-cli-plugin-lan-ui](https://www.npmjs.com/package/vue-cli-plugin-lan-ui)
 
 - vue cli < 3
   推荐使用lan-ui模版创建项目，创建项目及配置，说明文档详见[lan-ui-template](http://106.38.93.196:8081/hx-ui/hx-ui-template)
@@ -50,7 +50,7 @@ Vue.use(ActionSheet)
 
 注：  
 上述使用依赖插件 [babel-plugin-transform-modules](https://www.npmjs.com/package/babel-plugin-transform-modules)  
-详细内容请看 [快速上手文档](https://github.com/lan-ui/lan-ui.github.io/index.html#/zh-CN/docs/quick-start)
+详细内容请看 [快速上手文档](https://lan-ui.github.io/#/zh-CN/docs/quick-start)
 
 ### ToDo
 

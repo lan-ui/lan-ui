@@ -1,5 +1,5 @@
 <template>
-  <footer class="s-footer">
+  <footer>
     <!-- <a href=""></a> -->
   </footer>
 </template>
