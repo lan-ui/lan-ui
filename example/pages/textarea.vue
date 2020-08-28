@@ -1,6 +1,40 @@
 <template>
   <cube-page type="textarea-view" title="Textarea" class="option-demo">
     <div slot="content">
+      <p class="textarea_title">基本使用</p>
+      <div class="textarea-custom">
+        <span class="textarea-custom-title">标题</span>
+        <div class="textarea-custom-input">
+          <cube-textarea
+              v-model="text"
+              :disabled="disabled"
+              placeholder="点击输入多行文本"
+              :indicator="false"
+              :width="width || '300px'"></cube-textarea>
+        </div>
+      </div>
+      <p class="textarea_title">标题可自定义(文字/图标/无标题)</p>
+      <div class="textarea-custom">
+        <span class="textarea-custom-title"><i class="icon-lan-account"></i></span>
+        <div class="textarea-custom-input">
+          <cube-textarea
+              v-model="text"
+              :disabled="disabled"
+              placeholder="点击输入多行文本"
+              :indicator="false"
+              :width="width || '300px'"></cube-textarea>
+        </div>
+      </div>
+      <p class="textarea_title">带计数功能</p>
+      <div class="textarea-custom">
+          <cube-textarea
+              v-model="text"
+              :disabled="disabled"
+              placeholder="点击输入多行文本"
+              :indicator="indicator"
+              :width="width || '300px'"></cube-textarea>
+      </div>
+      <p class="textarea_title">其他</p>
       <div class="textarea-wrapper">
         <cube-textarea
           v-model="text"
@@ -50,7 +84,7 @@
         showIndicator: true,
         indicator: {
           negative: true,
-          remain: true
+          remain: false
         }
       }
     },
@@ -85,9 +119,28 @@
 
 
 <style lang="stylus" rel="stylesheet/stylus">
+  .cube-textarea-wrapper
+    border:0
   .textarea-wrapper
     margin: 30px 0
   .component-desc
     margin-top: 15px
     font-size: 14px
+  .textarea_title
+    padding:16px
+    border-bottom:1px solid #e4e4e4
+    color: #666
+    font-size: 12px
+  .textarea-custom
+    overflow: hidden
+    border-bottom:1px solid #e4e4e4
+    .textarea-custom-title
+      float: left
+      width:26%
+      text-align:center
+      line-height: 40px
+      color: #666
+    .textarea-custom-input
+      float: left
+      width:74%
 </style>

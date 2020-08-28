@@ -7,6 +7,7 @@
         :option="option"
         :position="position"
         :hollow-style="hollowStyle"
+        :right-style="rightStyle"
         v-model="radioValue">
       </cube-radio>
     </slot>
@@ -46,6 +47,10 @@
       hollowStyle: {
         type: Boolean,
         default: false
+      },
+      rightStyle: {
+        type: Boolean,
+        default: false
       }
     },
     data() {
@@ -63,9 +68,9 @@
     },
     computed: {
       _groupClass() {
-        if (!this.horizontal) {
-          return 'border-top-1px border-bottom-1px'
-        }
+        // if (!this.horizontal) {
+        //   return 'border-top-1px border-bottom-1px'
+        // }
       }
     },
     components: {

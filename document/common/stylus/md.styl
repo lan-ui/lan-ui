@@ -135,7 +135,14 @@ sup
 table
   i[class^="cubeic-"]
     &::before
-      font-size: 20px
+      font-size: 24px
+    &::after
+      content: attr(class)
+      display: block
+      margin: -6px 0 8px 0
+  i[class^="icon-lan-"]
+    &::before
+      font-size: 24px
     &::after
       content: attr(class)
       display: block

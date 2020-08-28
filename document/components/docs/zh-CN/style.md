@@ -31,6 +31,42 @@ style 模块主要包含就是样式部分，包含内置 icon、基础的 reset
 | <i class="cubeic-square-right"></i> | <i class="cubeic-square-border"></i> | <i class="cubeic-round-border"></i> | <i class="cubeic-ok"></i> ||
 | <i class="cubeic-important"></i> |  |  |  |
 
+内置定制化 icon 有 125 个：
+| - | - | - | - |
+| :-: | :-: | :-: | :-: |
+| <i class="icon-lan-collection-filled"></i> | <i class="icon-lan-camera"></i> | <i class="icon-lan-camera-filled"></i> | <i class="icon-lan-comment"></i> |
+| <i class="icon-lan-collection"></i> | <i class="icon-lan-speech"></i> | <i class="icon-lan-qrcode"></i> | <i class="icon-lan-folder"></i> |
+| <i class="icon-lan-signin"></i> | <i class="icon-lan-reply"></i> | <i class="icon-lan-comment-filled"></i> | <i class="icon-lan-signout"></i> |
+| <i class="icon-lan-history"></i> | <i class="icon-lan-open"></i> | <i class="icon-lan-delete"></i> | <i class="icon-lan-reduce"></i> |
+| <i class="icon-lan-speech-filled"></i> | <i class="icon-lan-fabulous"></i> | <i class="icon-lan-load"></i> | <i class="icon-lan-add"></i> |
+| <i class="icon-lan-occupation"></i> | <i class="icon-lan-benefitratio"></i> | <i class="icon-lan-benefitorder"></i> | <i class="icon-lan-paymentperiod"></i> |
+| <i class="icon-lan-password"></i> | <i class="icon-lan-error"></i> | <i class="icon-lan-account"></i> | <i class="icon-lan-setup"></i> |
+| <i class="icon-lan-edit"></i> | <i class="icon-lan-member"></i> | <i class="icon-lan-nationality"></i> | <i class="icon-lan-prospectus"></i> |
+| <i class="icon-lan-bankcard"></i> | <i class="icon-lan-certificates"></i> | <i class="icon-lan-date"></i> | <i class="icon-lan-search"></i> |
+| <i class="icon-lan-download"></i> | <i class="icon-lan-play"></i> | <i class="icon-lan-region"></i> | <i class="icon-lan-discount"></i> |
+| <i class="icon-lan-notification"></i> | <i class="icon-lan-notificationoff"></i> | <i class="icon-lan-phonecall"></i> | <i class="icon-lan-phonecalloff"></i> |
+| <i class="icon-lan-lock"></i> | <i class="icon-lan-unlock"></i> | <i class="icon-lan-et"></i> | <i class="icon-lan-relationship"></i> |
+| <i class="icon-lan-filter"></i> | <i class="icon-lan-calculator"></i> | <i class="icon-lan-image"></i> | <i class="icon-lan-email"></i> |
+| <i class="icon-lan-copy"></i> | <i class="icon-lan-user"></i> | <i class="icon-lan-customerservice"></i> | <i class="icon-lan-subaccount"></i> |
+| <i class="icon-lan-partner"></i> | <i class="icon-lan-list"></i> | <i class="icon-lan-international"></i> | <i class="icon-lan-refresh"></i> |
+| <i class="icon-lan-eliminate"></i> | <i class="icon-lan-check"></i> | <i class="icon-lan-close"></i> | <i class="icon-lan-confirm"></i> |
+| <i class="icon-lan-forbidden"></i> | <i class="icon-lan-forbiddenfilled"></i> | <i class="icon-lan-tips"></i> | <i class="icon-lan-info"></i> |
+| <i class="icon-lan-helpfilled"></i> | <i class="icon-lan-help"></i> | <i class="icon-lan-caution"></i> | <i class="icon-lan-cautionfilled"></i> |
+| <i class="icon-lan-like"></i> | <i class="icon-lan-likefilled"></i> | <i class="icon-lan-star"></i> | <i class="icon-lan-starfilled"></i> |
+| <i class="icon-lan-arrowup"></i> | <i class="icon-lan-arrowleft"></i> | <i class="icon-lan-arrowdown"></i> | <i class="icon-lan-arrowright"></i> |
+| <i class="icon-lan-pagefirst"></i> | <i class="icon-lan-down"></i> | <i class="icon-lan-top"></i> | <i class="icon-lan-last"></i> |
+| <i class="icon-lan-turningleft"></i> | <i class="icon-lan-turningright"></i> | <i class="icon-lan-showless"></i> | <i class="icon-lan-showmore"></i> |
+| <i class="icon-lan-socialfb"></i> | <i class="icon-lan-sociallinkedin"></i> | <i class="icon-lan-socialsina"></i> | <i class="icon-lan-socialgoogle"></i> |
+| <i class="icon-lan-socialnaver"></i> | <i class="icon-lan-socialstackflow"></i> | <i class="icon-lan-socialyoutube"></i> | <i class="icon-lan-socialgithub"></i> |
+| <i class="icon-lan-socialtwitter"></i> | <i class="icon-lan-applets"></i> | <i class="icon-lan-wechat"></i> | <i class="icon-lan-serverfault"></i> |
+| <i class="icon-lan-balance"></i> | <i class="icon-lan-link"></i> | <i class="icon-lan-benefits"></i> | <i class="icon-lan-dingtalk"></i> |
+| <i class="icon-lan-alipay"></i> | <i class="icon-lan-taobao"></i> | <i class="icon-lan-onesix"></i> | <i class="icon-lan-visible"></i> |
+| <i class="icon-lan-invisible"></i> | <i class="icon-lan-message"></i> | <i class="icon-lan-messageunread"></i> | <i class="icon-lan-record"></i> |
+| <i class="icon-lan-time"></i> | <i class="icon-lan-credits"></i> | <i class="icon-lan-renew"></i> | <i class="icon-lan-order"></i> |
+| <i class="icon-lan-orderunread"></i> | <i class="icon-lan-cartempty"></i> | <i class="icon-lan-cart"></i> | <i class="icon-lan-searchtwo"></i> |
+| <i class="icon-lan-edittwo"></i> | <i class="icon-lan-linktwo"></i> | <i class="icon-lan-share"></i> | <i class="icon-lan-setting"></i> |
+| <i class="icon-lan-upload"></i> |  |  |  |
+
 ### reset.css
 
 源码地址：[reset](https://github.com/didi/cube-ui/blob/master/src/common/stylus/reset.styl)，使用的就是 Eric Meyer's Reset CSS。

@@ -33,12 +33,41 @@
   </cube-switch>
   ```
 
+- 设置switch颜色
+
+  ```html
+  <cube-switch v-model="value" color="red">
+    Switch Style
+  </cube-switch>
+  ```
+
+- 设置switch(带文字)
+
+  ```html
+  <cube-switch v-model="value" color="red"><i slot="yes">开</i><i slot="no">关</i></cube-switch>
+  ```
+
+- 设置switch(带icon)
+
+  ```html
+  <cube-switch v-model="value" color="red"><i slot="yes" class="icon-lan-visible"></i><i slot="no" class="icon-lan-invisible"></i></cube-switch>
+  ```
+
 ### Props 配置
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 | - | - | - | - | - |
 | v-model | 开关状态，双向数据绑定 | Boolean | true/false | false |
 | disabled | 是否禁用 | Boolean | true/false | false |
+| color | 自定义switch颜色（正确的颜色值） | String | - | - |
+| square | android风格（默认采用ios风格） | Boolean | true/false | false |
+
+### 插槽
+
+| 名称 | 说明 |
+| - | - |
+| yes | 开纯内容（最多4个字符，汉字2个字） |
+| no | 关纯内容（最多4个字符，汉字2个字） |
 
 ### 事件
 

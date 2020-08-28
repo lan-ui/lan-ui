@@ -45,7 +45,7 @@
       })
 
       this.addressPicker = this.$createCascadePicker({
-        title: 'City Picker',
+        title: '城市选择',
         data: addressData,
         onSelect: this.selectHandle,
         onCancel: this.cancelHandle

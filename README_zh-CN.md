@@ -16,7 +16,7 @@
   推荐使用vue-cli-plugin-lan-ui插件，创建项目及配置，说明文档详见[vue-cli-plugin-lan-ui](https://www.npmjs.com/package/vue-cli-plugin-lan-ui)
 
 - vue cli < 3
-  推荐使用lan-ui模版创建项目，创建项目及配置，说明文档详见[lan-ui-template](http://106.38.93.196:8081/hx-ui/hx-ui-template)
+  推荐使用lan-ui模版创建项目，创建项目及配置，说明文档详见[lan-ui-template](https://github.com/lan-ui/lan-ui-template)
 
 ### 安装
 

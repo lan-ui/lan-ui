@@ -2,8 +2,8 @@
   <div class="cube-radio" :class="_containerClass" :data-pos="position">
     <label class="cube-radio-wrap" :class="_wrapClass">
       <input class="cube-radio-input" type="radio" :disabled="option.disabled" v-model="radioValue" :value="computedOption.value">
-      <span class="cube-radio-ui cubeic-round-border">
-        <i></i>
+      <span :class="rightStyle?'cube-radio-right-ui':'cube-radio-ui cubeic-round-border'">
+        <i :class="rightStyle?'icon-lan-benefits':''"></i>
       </span>
       <slot>
         <span class="cube-radio-label">{{computedOption.label}}</span>
@@ -34,6 +34,10 @@ export default {
       default: 'left'
     },
     hollowStyle: {
+      type: Boolean,
+      default: false
+    },
+    rightStyle: {
       type: Boolean,
       default: false
     }
@@ -87,6 +91,7 @@ export default {
       const option = this.computedOption
       return {
         'cube-radio-hollow': this.hollowStyle,
+        'cube-radio-right': this.rightStyle,
         'cube-radio_selected': this.radioValue === option.value,
         'cube-radio_disabled': option.disabled,
         'border-right-1px': this.$parent.horizontal
@@ -111,8 +116,12 @@ export default {
     text-align: left
     font-size: 100%
     color: $radio-color
+    em
+      display: block
+      color: $radio-subtitle-color
+      font-style: normal
     &[data-pos="right"]
-      .cube-radio-ui
+      .cube-radio-ui,.cube-radio-right-ui
         margin-right: 0
         position: absolute
         right: 0
@@ -210,5 +219,20 @@ export default {
           i
             &::before
               background-color: $radio-hollow-disabled-icon-color
+  .cube-radio-right
+    .cube-radio-right-ui
+        color: transparent
+    &.cube-radio_selected, &.cube-radio_disabled
+      .cube-radio-right-ui
+        font-size: 28px
+    &.cube-radio_selected
+      .cube-radio-right-ui
+        color: $radio-hollow-selected-icon-color
+    &.cube-radio_disabled
+      .cube-radio-right-ui
+        color: transparent
+      &.cube-radio_selected
+        .cube-radio-right-ui
+          color: $radio-hollow-disabled-icon-color
 </style>
 

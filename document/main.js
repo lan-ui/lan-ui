@@ -6,6 +6,7 @@ import App from './App.vue'
 import router from './router'
 import './common/js/highlight'
 import '../src/common/icon/cube-icon.styl'
+import '../src/common/icon/lan-icon.styl'
 
 // 需要使用 vConsole 的同学请打开注释即可
 /* eslint-disable no-unused-vars */

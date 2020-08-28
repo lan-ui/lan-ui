@@ -234,4 +234,9 @@
         .cube-checkbox-ui
           i
             color: $checkbox-hollow-disabled-icon-color
+  .cube-checkbox-label
+    em
+      display block
+      font-style normal
+      color $checkbox-subtitle-color
 </style>

@@ -1,6 +1,7 @@
 import Vue from 'vue2'
 import Switch from '@/modules/switch'
 import createVue from '../utils/create-vue'
+import { expect } from 'chai'
 
 describe('Switch', () => {
   let vm

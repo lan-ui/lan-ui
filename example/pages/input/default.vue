@@ -1,9 +1,43 @@
 <template>
-  <cube-page
-    type="input-view"
-    title="Input"
-    class="option-demo">
-    <div slot="content">
+  <cube-page type="input-view" title="Input" class="option-demo">
+    <div slot="content" class="input-view-default">
+      <p class="input_title">基本使用：</p>
+      <cube-input
+        :type="type"
+        placeholder="请在这里输入......"
+        :eye="eye"
+        v-model="value"
+      ></cube-input>
+      <cube-input
+        type="input"
+        placeholder="请在这里输入......"
+        :disabled="true"
+        value="禁止状态"
+      ></cube-input>
+      <cube-input
+        type="input"
+        placeholder="请在这里输入......"
+        :readonly="true"
+        value="只读状态"
+      ></cube-input>
+      <cube-input
+        type="input"
+        placeholder="请在这里输入......"
+        :maxlength=6
+        value="最大输入长度"
+      ></cube-input>
+      <cube-input
+        :type="type"
+        placeholder="请在这里输入......"
+        :eye="eye"
+        value="使用密码眼睛"
+      ></cube-input>
+      <cube-input
+        type="input"
+        placeholder="请在这里输入......"
+        :clearable="clearable"
+        value="清空按钮"
+      ></cube-input>
       <cube-input
         :type="type"
         placeholder="please type here..."
@@ -52,8 +86,8 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import CubePage from '../components/cube-page.vue'
-  import SwitchOption from '../components/switch-option'
+  import CubePage from 'example/components/cube-page.vue'
+  import SwitchOption from 'example/components/switch-option'
 
   export default {
     data() {
@@ -138,9 +172,18 @@
 
 <style lang="stylus">
 .cube-page.option-demo.input-view .wrapper
-  background-color: #efeff4
   .group
     background-color: white
   .value
     margin: 15px 5px
+.input-view-default
+  .cube-input
+    margin: 10px 0
+    height:49px
+    border-radius: 6px
+  .input_title
+    padding:16px
+    font-size: 12px
+    background: rgba(245,245,245,1)
+    color: #666
 </style>

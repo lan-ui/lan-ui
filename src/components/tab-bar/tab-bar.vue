@@ -1,11 +1,12 @@
 <template>
-  <div class="cube-tab-bar" :class="{'cube-tab-bar_inline': inline}">
+  <div class="cube-tab-bar" :class="_classContent">
     <slot>
       <cube-tab
         v-for="(item, index) in data"
         :label="item.label"
         :value="item.value"
         :icon="item.icon"
+        :tips="item.tips"
         :key="item.value || item.label">
       </cube-tab>
     </slot>
@@ -53,6 +54,19 @@
       useTransition: {
         type: Boolean,
         default: true
+      },
+      position: {
+        type: String,
+        default: ''
+      }
+    },
+    computed: {
+      _classContent() {
+        return {
+          'cube-tab-bar_inline': this.inline,
+          'cube-tab-bar_bottom': this.position === 'bottom',
+          'cube-tab-bar_vertical': this.position === 'vertical'
+        }
       }
     },
     watch: {
@@ -103,9 +117,17 @@
         if (!this.showSlider) return
         const slider = this.$refs.slider
         this.$nextTick(() => {
-          const { width, index } = this._getSliderWidthAndIndex()
-          slider.style.width = `${width}px`
-          this.setSliderTransform(this._getOffsetLeft(index))
+          if (this.position === 'vertical') {
+            const { height, index } = this._getSliderHeightAndIndex()
+            slider.style.height = `${height}px`
+            slider.style.right = '0'
+            this.setSliderTransformY(this._getOffsetTop(index))
+          } else {
+            const { width, index } = this._getSliderWidthAndIndex()
+            slider.style.width = `${width}px`
+            slider.style.left = '0'
+            this.setSliderTransform(this._getOffsetLeft(index))
+          }
         })
       },
       setSliderTransform (offset) {
@@ -116,6 +138,16 @@
         if (slider) {
           if (this.useTransition) slider.style[TRANSITION] = `${TRANSFORM} 0.2s linear`
           slider.style[TRANSFORM] = `translateX(${offset}) translateZ(0)`
+        }
+      },
+      setSliderTransformY (offset) {
+        const slider = this.$refs.slider
+        if (typeof offset === 'number') {
+          offset = `${offset}px`
+        }
+        if (slider) {
+          if (this.useTransition) slider.style[TRANSITION] = `${TRANSFORM} 0.2s linear`
+          slider.style[TRANSFORM] = `translateY(${offset}) translateZ(0)`
         }
       },
       _getSliderWidthAndIndex () {
@@ -130,8 +162,23 @@
           index
         }
       },
+      _getSliderHeightAndIndex () {
+        let height = 0
+        let index = 0
+        if (this.tabs.length > 0) {
+          index = findIndex(this.tabs, (tab) => tab.value === this.value)
+          height = this.tabs[index].$el.clientHeight
+        }
+        return {
+          height,
+          index
+        }
+      },
       _getOffsetLeft (index) {
         return this.tabs[index].$el.offsetLeft || 0
+      },
+      _getOffsetTop (index) {
+        return this.tabs[index].$el.offsetTop || 0
       },
       _resizeHandler () {
         clearTimeout(this._resizeTimer)
@@ -154,16 +201,39 @@
     display: flex
     align-items: center
     justify-content: center
+    border-top:1px solid #e9e9e9
+    border-bottom:1px solid #e9e9e9
+
+  .cube-tab-bar.cube-tab-bar_bottom
+    position: fixed
+    bottom: 0
+    width: 100%
+    
+  .cube-tab-bar.cube-tab-bar_vertical
+    flex-wrap: wrap
+    border: none
+    border-right:1px solid #e9e9e9
+    .cube-tab
+      width: 100%
+      flex-basis: unset
+      .cube-tab-tips
+        right: 5px
+    .cube-tab-bar-slider
+      top: 0
+      height:50px
+      width:2px
+
 
   .cube-tab-bar_inline
     .cube-tab
       display: flex
       align-content: center
       justify-content: center
+      i 
+        line-height: 36px
 
   .cube-tab-bar-slider
     position: absolute
-    left: 0
     bottom: 0
     height: 2px
     width: 20px

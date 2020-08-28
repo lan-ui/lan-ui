@@ -2,12 +2,26 @@ import Button from '../pages/button.vue'
 import Checkbox from '../pages/checkbox.vue'
 import CheckboxGroup from '../pages/checkbox-group.vue'
 import Radio from '../pages/radio.vue'
-import Switch from '../pages/switch.vue'
-import Loading from '../pages/loading.vue'
-import Tip from '../pages/tip.vue'
+import Switch from '../pages/switch/index.vue'
+import SwitchIOS from '../pages/switch/ios.vue'
+import SwitchAndroid from '../pages/switch/android.vue'
+import Loading from '../pages/loading/index.vue'
+import LoadingDefault from '../pages/loading/default.vue'
+import LoadingProcess from '../pages/loading/process.vue'
+import LoadingButton from '../pages/loading/button.vue'
+import LoadingEmpty from '../pages/loading/empty.vue'
+import LoadingModal from '../pages/loading/modal.vue'
+import Tip from '../pages/tip/index.vue'
+import TipDefault from '../pages/tip/default.vue'
+import TipDemo from '../pages/tip/tip.vue'
+import TipDemo1 from '../pages/tip/tip1.vue'
+import TipDemo2 from '../pages/tip/tip2.vue'
 import Popup from '../pages/popup.vue'
 import Toast from '../pages/toast.vue'
-import Input from '../pages/input.vue'
+import Input from '../pages/input/index.vue'
+import InputDefault from '../pages/input/default.vue'
+import InputCustomList from '../pages/input/custom-list.vue'
+import InputCustom from '../pages/input/custom.vue'
 import Textarea from '../pages/textarea.vue'
 import Rate from '../pages/rate.vue'
 import Form from '../pages/form/index.vue'
@@ -66,6 +80,10 @@ import TabBarIndex from '../pages/tab-bar/index.vue'
 import TabBar from '../pages/tab-bar/tab-bar.vue'
 import Tab from '../pages/tab-bar/tab-entry.vue'
 import TabBasic from '../pages/tab-bar/tab-basic.vue'
+import TabBottom from '../pages/tab-bar/tab-bottom.vue'
+import TabScroll from '../pages/tab-bar/tab-scroll.vue'
+import TabVertical from '../pages/tab-bar/tab-vertical.vue'
+import TabIcon from '../pages/tab-bar/tab-icon.vue'
 import TabComposite from '../pages/tab-bar/tab-composite.vue'
 import ScrollTab from '../pages/tab-bar/scroll-tab.vue'
 import Checker from '../pages/checker.vue'
@@ -171,7 +189,21 @@ const routes = [
   },
   {
     path: '/input',
-    component: Input
+    component: Input,
+    children: [
+      {
+        path: 'default',
+        component: InputDefault
+      },
+      {
+        path: 'custom-list',
+        component: InputCustomList
+      },
+      {
+        path: 'custom',
+        component: InputCustom
+      }
+    ]
   },
   {
     path: '/textarea',
@@ -179,7 +211,17 @@ const routes = [
   },
   {
     path: '/switch',
-    component: Switch
+    component: Switch,
+    children: [
+      {
+        path: 'ios',
+        component: SwitchIOS
+      },
+      {
+        path: 'android',
+        component: SwitchAndroid
+      }
+    ]
   },
   {
     path: '/form',
@@ -205,11 +247,51 @@ const routes = [
   },
   {
     path: '/loading',
-    component: Loading
+    component: Loading,
+    children: [
+      {
+        path: 'default',
+        component: LoadingDefault
+      },
+      {
+        path: 'process',
+        component: LoadingProcess
+      },
+      {
+        path: 'button',
+        component: LoadingButton
+      },
+      {
+        path: 'empty',
+        component: LoadingEmpty
+      },
+      {
+        path: 'modal',
+        component: LoadingModal
+      }
+    ]
   },
   {
     path: '/tip',
-    component: Tip
+    component: Tip,
+    children: [
+      {
+        path: 'default',
+        component: TipDefault
+      },
+      {
+        path: 'tip-demo',
+        component: TipDemo
+      },
+      {
+        path: 'tip-demo1',
+        component: TipDemo1
+      },
+      {
+        path: 'tip-demo2',
+        component: TipDemo2
+      }
+    ]
   },
   {
     path: '/toolbar',
@@ -451,6 +533,18 @@ const routes = [
         children: [
           { path: 'basic',
             component: TabBasic
+          },
+          { path: 'bottom',
+            component: TabBottom
+          },
+          { path: 'scroll',
+            component: TabScroll
+          },
+          { path: 'vertical',
+            component: TabVertical
+          },
+          { path: 'icon',
+            component: TabIcon
           },
           { path: 'composite',
             component: TabComposite

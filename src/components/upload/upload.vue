@@ -2,7 +2,7 @@
   <div class="cube-upload">
     <slot>
       <div class="cube-upload-def clear-fix">
-        <upload-file v-for="(file, i) in files" :file="file" :key="i" @click="fileClick"></upload-file>
+        <upload-file v-for="(file, i) in files" :file="file" :key="i" @click="fileClick" :closed="closed"></upload-file>
         <upload-btn :multiple="multiple" :accept="accept" v-show="isShowBtn"></upload-btn>
       </div>
     </slot>
@@ -63,6 +63,10 @@
         default: function (file, cb) {
           cb(file)
         }
+      },
+      closed: {
+        type: Boolean,
+        default: false
       }
     },
     data() {
@@ -187,7 +191,7 @@
   @require "../../common/stylus/variable.styl"
   .cube-upload
     position: relative
-
+    
   .cube-upload-def
     margin-right: -10px
     .cube-upload-btn, .cube-upload-file

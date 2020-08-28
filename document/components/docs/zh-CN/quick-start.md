@@ -3,19 +3,19 @@
 
 #### vue-cli >= 3
 
-推荐使用vue-cli-plugin-lan-ui插件，创建项目及配置，说明文档详见[vue-cli-plugin-lan-ui](http://106.38.93.196:8081/hx-ui/vue-cli-plugin-hx-ui)  
+推荐使用vue-cli-plugin-lan-ui插件，创建项目及配置，说明文档详见[vue-cli-plugin-lan-ui](https://www.npmjs.com/package/vue-cli-plugin-lan-ui)  
 执行完成后，你可以直接进入<a href="#cube-使用-anchor" class="anchor">使用部分</a>。
 
 #### vue-cli < 3
 
-推荐使用lan-ui模版创建项目，创建项目及配置，说明文档详见[lan-ui-template](http://106.38.93.196:8081/hx-ui/hx-ui-template)，这样你就可以忽略<a href="#cube-安装-anchor" class="anchor">安装</a>步骤，直接看<a href="#cube-使用-anchor" class="anchor">使用部分</a>。
+推荐使用lan-ui模版创建项目，创建项目及配置，说明文档详见[lan-ui-template](https://github.com/lan-ui/lan-ui-template)，这样你就可以忽略<a href="#cube-安装-anchor" class="anchor">安装</a>步骤，直接看<a href="#cube-使用-anchor" class="anchor">使用部分</a>。
 
 ### CDN
 > 主要应用在老的项目，及非脚手架搭建项目，强依赖vue，使用前请先引入vuejs
 
 ```html
-<link rel="stylesheet" href="http://sales-int.ihxlife.com/hualifeui/lib/hx.min.css" />
-<script src="http://sales-int.ihxlife.com/hualifeui/lib/hx.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@lan-ui/lan-ui@1.1.0/lib/lan.min.css" />
+<script src="https://unpkg.com/@lan-ui/lan-ui@1.1.0/lib/lan.min.js"></script>
 ```
 
 ### 安装

@@ -2,6 +2,7 @@ import Vue from 'vue2'
 import CubeTabBar from '@/modules/tab-bar'
 import CubeTabPanels from '@/modules/tab-panels'
 import createVue from '../utils/create-vue'
+import { expect } from 'chai'
 
 describe('TabBar', () => {
   let vm
@@ -16,7 +17,7 @@ describe('TabBar', () => {
   it('props', (done) => {
     vm = createVue({
       template: `
-      <cube-tab-bar v-model="selectedLabel" :data="tabs" show-slider>
+      <cube-tab-bar v-model="selectedLabel" :data="tabs" show-slider position="bottom">
       </cube-tab-bar>
     `,
       data: {
@@ -25,6 +26,8 @@ describe('TabBar', () => {
       }
     })
     vm.$nextTick(() => {
+      expect(vm.$el.className)
+        .to.include('cube-tab-bar_bottom')
       expect(vm.$el.querySelectorAll('.cube-tab-bar-slider').length)
         .to.be.equal(1)
       expect(vm.$el.querySelectorAll('.cube-tab')[0].getElementsByTagName('div')[0].textContent)
@@ -32,12 +35,12 @@ describe('TabBar', () => {
       done()
     })
   })
-  it('should render correct content when pass data prop', (done) => {
+  it('should render correct content when pass data prop (include tips) ', (done) => {
     const vm = createVue({
       template: `
       <div>
-        <cube-tab-bar v-model="selectedLabel">
-          <cube-tab ref="tab" v-for="(item, index) in tabs" :label="item.label" :key="index">
+        <cube-tab-bar v-model="selectedLabel" show-slider position="vertical">
+          <cube-tab ref="tab" v-for="(item, index) in tabs" :label="item.label" :tips="item.tips" :key="index">
           {{item.label}}
           </cube-tab>
         </cube-tab-bar>
@@ -46,15 +49,19 @@ describe('TabBar', () => {
     `,
       data: {
         selectedLabel: '夜魇',
-        tabs: [{ label: '天辉', icon: 'cubeic-like' }, { label: '夜魇', icon: 'cubeic-star' }]
+        tabs: [{ label: '天辉', icon: 'cubeic-like' }, { label: '夜魇', icon: 'cubeic-star', tips: '5' }]
       }
     })
     setTimeout(() => {
       const items = vm.$parent.$el.querySelectorAll('.cube-tab-panel')
-      const firstTab = vm.$parent.$refs.tab[0].$el
+      const firstTab = vm.$parent.$refs.tab[1].$el
+      expect(vm.$el.className)
+        .to.include('cube-tab-bar_vertical')
+      expect(firstTab.querySelectorAll('.cube-tab-tips')[0].textContent)
+        .to.equals('5')
       firstTab.click()
-      expect(items[0].textContent)
-        .to.include('天辉')
+      expect(items[1].textContent)
+        .to.include('夜魇')
       done()
     }, 300)
   })

@@ -142,6 +142,7 @@
           margin: 0
 
   .tab-composite-view
+    background-color: #edf0f4
     .cube-tab-bar
       background-color: white
     .cube-tab, .cube-tab_active
@@ -151,7 +152,7 @@
 
     .tab-slide-container
       position: fixed
-      top: 74px
+      top: 96px
       left: 0
       right: 0
       bottom: 0

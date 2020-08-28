@@ -1,61 +1,33 @@
 const column1 = [
   {
-    text: '剧毒',
-    value: '剧毒'
+    text: '提子',
+    value: '提子'
   }, {
-    text: '蚂蚁',
-    value: '蚂蚁'
+    text: '苹果',
+    value: '苹果'
   },
   {
-    text: '幽鬼',
-    value: '幽鬼'
+    text: '香蕉',
+    value: '香蕉'
   },
   {
-    text: '主宰',
-    value: '主宰'
+    text: '李子',
+    value: '李子'
   },
   {
-    text: '卡尔',
-    value: '卡尔'
+    text: '草莓',
+    value: '草莓'
   },
   {
-    text: '宙斯',
-    value: '宙斯'
+    text: '橙子',
+    value: '橙子'
   },
   {
-    text: '巫医',
-    value: '巫医'
+    text: '西瓜',
+    value: '西瓜'
   }, {
-    text: '巫妖',
-    value: '巫妖'
-  },
-  {
-    text: '神谕者',
-    value: '神谕者'
-  },
-  {
-    text: '撼地神牛',
-    value: '神谕者'
-  },
-  {
-    text: '蓝胖子',
-    value: '蓝胖子'
-  },
-  {
-    text: '水晶室女',
-    value: '水晶室女'
-  },
-  {
-    text: '莉娜',
-    value: '莉娜'
-  },
-  {
-    text: '斯拉克',
-    value: '斯拉克'
-  },
-  {
-    text: '斯拉达',
-    value: '斯拉达'
+    text: '桃子',
+    value: '桃子'
   }
 ]
 

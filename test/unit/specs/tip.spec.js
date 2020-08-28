@@ -45,6 +45,26 @@ describe('Tip.vue', () => {
         .to.equal('auto')
     })
   })
+  it('should render correct contents closed:true', () => {
+    vm = createTip({
+      closed: true
+    })
+    expect(vm.$el.querySelector('button'))
+        .to.equal(null)
+  })
+  it('should render correct contents closedStyle、closedText、lightStyle', () => {
+    vm = createTip({
+      closedStyle: true,
+      closedText: 'ok',
+      lightStyle: true
+    })
+    expect(vm.$el.querySelector('button').className)
+      .to.equal('cube-tip-close-text')
+    expect(vm.$el.querySelector('button').textContent)
+      .to.equal('ok')
+    expect(vm.$el.className)
+      .to.equal('cube-tip cube-tip-light cube-tip-text')
+  })
   it('should be hidden after clicked content', () => {
     vm = createTip()
     vm.$el.querySelector('.cube-tip-content').click()

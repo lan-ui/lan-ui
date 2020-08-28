@@ -51,17 +51,17 @@
         this.$refs.tip2.show()
 
         switch (direction) {
-          case 'top':
-            this.tipStyle = 'left: 100px; top: 30px;'
-            break
           case 'bottom':
-            this.tipStyle = 'left: 100px; top: -50px;'
+            this.tipStyle = 'left: 125px; top: -50px;'
             break
-          case 'left':
-            this.tipStyle = 'left: 200px; top: -10px;'
+          case 'top':
+            this.tipStyle = 'left: 125px; top: 50px;'
             break
           case 'right':
-            this.tipStyle = 'left: 2px; top: -10px;'
+            this.tipStyle = 'left: 30px; top: 0px;'
+            break
+          case 'left':
+            this.tipStyle = 'left: 220px; top: 0;'
             break
         }
       },
@@ -75,6 +75,22 @@
   }
   ```
 
+- 文字按钮使用
+
+  设置文字关闭按钮需要设置 `closedStyle:true` ， `closedText` 为文本内容，默认文字内容为“我知道了”
+
+  ```html
+  <cube-tip ref="tip" direction="bottom" offsetRight="80%" :closedStyle="true" closedText="我知道了" style="left:12%;">引导标题文字<p>相关描述文字相关描述文字</p><p>相关描述文字相关描述文字</p></cube-tip>
+  ```
+
+- 无关闭浅色风格使用
+
+  设置 `closed:true` 关闭 关闭tips功能，`lightStyle:true` tip为浅色风格
+
+  ```html
+  <cube-tip ref="tip" direction="bottom" offsetRight="80%" :closed="true" :lightStyle="true" style="top:0;left:30%;">引导标题文字</cube-tip>
+  ```
+
 ### Props 配置
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
@@ -84,6 +100,10 @@
 | offsetTop | 小三角至 Tip 框顶部距离 | Number/String | - | 0 |
 | offsetRight | 小三角至 Tip 框右边距离 | Number/String | - | 0 |
 | offsetBottom | 小三角至 Tip 框底部距离 | Number/String | - | 0 |
+| closed | 是否添加关闭功能 | Boolean | true/false | false |
+| closedStyle | 是否开启文字关闭 | Boolean | true/false | false |
+| closedText | 关闭按钮文字内容 | String | - | 我知道了 |
+| lightStyle | tip浅色风格 | Boolean | true/false | false |
 
 其中 `offsetLeft`、`offsetTop`、`offsetRight`、`offsetBottom` 的值如果是数字，那么单位就是像素，如果说是字符串，则认为是设置的百分比。
 

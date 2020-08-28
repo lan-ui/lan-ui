@@ -1,7 +1,9 @@
 <template>
-  <div class="cube-switch">
+  <div class="cube-switch" :class="_classContent">
     <input class="cube-switch-input" type="checkbox" v-model="checkboxValue" :disabled="disabled">
-    <i class="cube-switch-ui"></i>
+    <i class="cube-switch-ui" :style="_style"></i>
+    <span class="cube-switch-yes" v-if="checkboxValue"><slot name="yes"></slot></span>
+    <span class="cube-switch-no" v-else><slot name="no"></slot></span>
     <span class="cube-switch-label"><slot></slot></span>
   </div>
 </template>
@@ -21,11 +23,34 @@
       disabled: {
         type: Boolean,
         default: false
+      },
+      color: {
+        type: String,
+        default: ''
+      },
+      square: {
+        type: Boolean,
+        default: false
       }
     },
     data() {
       return {
         checkboxValue: this.value
+      }
+    },
+    computed: {
+      _style () {
+        if (this.color) {
+          return {
+            'border-color': this.color,
+            'background-color': this.color
+          }
+        }
+      },
+      _classContent () {
+        return {
+          'cube-switch-square': this.square
+        }
       }
     },
     watch: {
@@ -42,8 +67,11 @@
 <style lang="stylus" rel="stylesheet/stylus">
   @require "../../common/stylus/variable.styl"
 
-  $switch-width = 48px
-  $switch-height = 28px
+  $switch-width = 70px
+  $switch-height = 30px
+
+  $switch-square-width = 58px
+  $switch-square-height = 30px
 
   .cube-switch
     display: flex
@@ -61,7 +89,7 @@
         &::before
           transform: scale(0)
         &::after
-          transform: translateX($switch-width - $switch-height)
+          transform: translateX($switch-width - $switch-height - 2)
       &:disabled + .cube-switch-ui
         opacity: 0.3
     .cube-switch-ui
@@ -70,7 +98,6 @@
       width: $switch-width
       height: $switch-height
       box-sizing: content-box
-      border: 1px solid $switch-off-border-color
       border-radius: $switch-height
       background-color: $switch-off-border-color
       &::before, &::after
@@ -84,12 +111,56 @@
         background-color: $switch-off-bgc
         transition: transform .4s cubic-bezier(.25, .1, .25, 1.28)
       &::after
-        width: $switch-height
+        margin: 3px 4px
+        width: 24px
+        height: 24px
         background-color: $color-white
         box-shadow: 0 1px 3px rgba(0, 0, 0, .4)
+
+    .cube-switch-yes
+      position: absolute
+      left:0
+      width:$switch-width - 26
+      font-style: normal
+      text-align: center
+      color: #fff
+      [class^="icon-lan-"]
+        font-size: 18px
+      i 
+        font-style: normal
+    .cube-switch-no
+      position: absolute
+      right:0
+      width:$switch-width - 26
+      font-style: normal
+      text-align: center
+      color: #fff
+      [class^="icon-lan-"]
+        font-size: 18px
+      i 
+        
+        font-style: normal
     .cube-switch-label
       display: block
       margin-left: 10px
       &:empty
         margin-left: 0
+  .cube-switch.cube-switch-square
+    .cube-switch-input
+      width: $switch-square-width
+      height: $switch-square-height
+      &:checked + .cube-switch-ui
+        &::after
+          transform: translateX($switch-square-width - $switch-square-height - 2)
+    .cube-switch-ui
+      width: $switch-square-width
+      height: $switch-square-height
+      border-radius: 5px
+      &::before, &::after
+        border-radius: 5px
+    .cube-switch-yes
+      width:$switch-square-width - 26
+    .cube-switch-no
+      width:$switch-square-width - 26
+
 </style>

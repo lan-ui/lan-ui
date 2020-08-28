@@ -6,6 +6,9 @@
     @click="handleClick">
     <i :class="icon" v-if="icon"></i>
     <slot></slot>
+    <p class="sub-title">
+      <slot name="sub-title"></slot>
+    </p>
   </button>
 </template>
 
@@ -45,6 +48,26 @@
       type: {
         type: String,
         default: 'button'
+      },
+      minor: {
+        type: Boolean,
+        default: false
+      },
+      corner: {
+        type: String,
+        default: ''
+      },
+      state: {
+        type: String,
+        default: ''
+      },
+      size: {
+        type: String,
+        default: ''
+      },
+      ico: {
+        type: Boolean,
+        default: false
       }
     },
     computed: {
@@ -56,7 +79,19 @@
           'cube-btn-primary': this.primary,
           'cube-btn-outline': this.outline,
           'cube-btn-outline-primary': this.outline && this.primary,
-          'cube-btn-light': this.light
+          'cube-btn-light': this.light,
+          'cube-btn-minor': this.minor,
+          'cube-btn-corner-medium': this.corner === 'medium',
+          'cube-btn-corner-big': this.corner === 'big',
+          'cube-btn-state-general': this.state === 'general',
+          'cube-btn-state-danger': this.state === 'danger',
+          'cube-btn-state-warn': this.state === 'warn',
+          'cube-btn-state-dotted': this.state === 'dotted',
+          'cube-btn-state-invalid': this.state === 'invalid',
+          'cube-btn-size-big': this.size === 'big',
+          'cube-btn-size-medium': this.size === 'medium',
+          'cube-btn-size-small': this.size === 'small',
+          'cube-btn-ico': this.ico
         }
       }
     },
@@ -85,21 +120,24 @@
   .cube-btn
     display: block
     margin: 0
-    padding: 17px 16px
+    padding: 10px 16px
     width: 100%
     text-align: center
     white-space: nowrap
     cursor: pointer
     font-size: $fontsize-large
-    line-height: 1
+    line-height: 1.6
     color: $btn-color
     background: $btn-bgc
     outline: none
     border: none
-    border-radius: 2px
+    border-radius: 0
     box-sizing: border-box
     -webkit-tap-highlight-color: transparent
     btn-active($btn-active-bgc)
+    .sub-title
+      font-size: $fontsize-small
+      line-height: 1.1
     > i
       display: inline-block
       margin-right: 4px
@@ -145,4 +183,79 @@
     background: $btn-disabled-bgc
     border-1px($btn-disabled-bdc)
     btn-active($btn-disabled-bgc, $btn-disabled-bdc)
+
+  .cube-btn-minor
+    color: $btn-minor-color
+    background: $btn-minor-bgc
+    border:1px solid $btn-minor-bdc
+    &:active
+      color: #fff
+
+  .cube-btn-corner-medium
+    border-radius: $radius-size-medium
+
+  .cube-btn-corner-big
+    border-radius: $radius-size-big
+
+  .cube-btn-state-general
+    color: $btn-general-color
+    background: $btn-general-bgc
+    border:1px solid $btn-general-bdc
+    &:active
+      btn-active($btn-general-active-bgc)
+
+  .cube-btn-state-danger
+    color: $btn-danger-color
+    background: $btn-danger-bgc
+    border:1px solid $btn-danger-bgc
+    &:active
+      btn-active($btn-danger-bgc)
+      opacity: 0.8
+
+  .cube-btn-state-warn
+    color: $btn-warn-color
+    background: $btn-warn-bgc
+    border:1px solid $btn-warn-bgc
+    &:active
+      btn-active($btn-warn-bgc)
+      opacity: 0.8
+
+  .cube-btn-state-dotted
+    color: $btn-dotted-color
+    background: $btn-dotted-bgc
+    border:1px dashed $btn-dotted-bdc
+    &:active
+      btn-active($btn-dotted-active-bgc)
+  
+  .cube-btn-state-invalid
+    color: $btn-invalid-color
+    background: $btn-invalid-bgc
+    border:1px solid $btn-invalid-bdc
+    &:active
+      btn-active($btn-invalid-bgc)
+
+  .cube-btn-size-big
+    padding: 12.5px 0
+    width: 120px
+    text-align: center
+  .cube-btn-size-medium
+    padding: 9px 0
+    width: 120px
+    font-size: $fontsize-medium
+    text-align: center
+
+  .cube-btn-size-small
+    padding: 5.5px 0
+    width: 80px
+    font-size: $fontsize-small
+    text-align: center
+  
+  .cube-btn-ico
+    padding: 8px 16px
+    width: 50px
+    font-size: $fontsize-large-xx
+    text-align: center
+    border:1px solid $btn-bgc
+    > i  
+      margin: 0
 </style>

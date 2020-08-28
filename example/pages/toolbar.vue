@@ -1,17 +1,33 @@
 <template>
   <cube-page type="toolbar" title="Toolbar" class="option-demo">
     <div slot="content">
-      <div class="options">
-        <div class="option-list">
-          <div class="group">
-            <switch-option class="item" name="More Actions" :value="more"
-              @update:value="updateMore"></switch-option>
-          </div>
-        </div>
+      <div class="toolbar_wrap">
+        <cube-toolbar
+          :actions="actions1"
+          @click="clickHandler">
+        </cube-toolbar>
+      </div>
+      <div class="toolbar_wrap">
+        <cube-toolbar
+          :actions="actions1" toolbarStyle="dark"
+          @click="clickHandler">
+        </cube-toolbar>
+      </div>
+      <div class="toolbar_wrap">
+        <cube-toolbar
+          :actions="actions1" toolbarStyle="grey"
+          @click="clickHandler">
+        </cube-toolbar>
+      </div>
+      <div class="toolbar_wrap">
+        <cube-toolbar
+          :actions="actions2"
+          @click="clickHandler">
+        </cube-toolbar>
       </div>
       <cube-toolbar
         :actions="actions"
-        :more-actions="more ? moreActions : undefined"
+        :more-actions="moreActions" toolbarStyle="grey"
         @click="clickHandler">
       </cube-toolbar>
     </div>
@@ -33,55 +49,86 @@
         money: 10,
         actions: [
           {
-            text: '完成订单',
-            action: 'showText'
+            text: '评论',
+            icon: 'icon-lan-comment-filled',
+            action: 'comment'
           },
           {
-            text: '打车来接',
-            checked: false,
-            type: 'checkbox'
+            text: '点赞',
+            icon: 'icon-lan-fabulous',
+            action: 'fabulous'
           },
           {
-            text: '一口价<span class="orange">10元</span>',
-            action: 'moreMoney'
+            text: '喜欢',
+            icon: 'icon-lan-like',
+            action: 'like'
+          }
+        ],
+        actions1: [
+          {
+            text: '评论',
+            icon: 'icon-lan-comment-filled',
+            action: 'comment'
+          },
+          {
+            text: '点赞',
+            icon: 'icon-lan-fabulous',
+            action: 'fabulous'
+          },
+          {
+            text: '喜欢',
+            icon: 'icon-lan-like',
+            action: 'like'
+          },
+          {
+            text: '收藏',
+            icon: 'icon-lan-star',
+            action: 'collection'
+          }
+        ],
+        actions2: [
+          {
+            text: '',
+            icon: 'icon-lan-comment-filled',
+            action: 'comment'
+          },
+          {
+            text: '',
+            icon: 'icon-lan-fabulous',
+            action: 'fabulous'
+          },
+          {
+            text: '',
+            icon: 'icon-lan-like',
+            action: 'like'
+          },
+          {
+            text: '',
+            icon: 'icon-lan-star',
+            action: 'collection'
           }
         ],
         moreActions: [
           {
-            text: '操作a',
+            text: '操作文字',
+            icon: 'icon-lan-share',
             action: 'showText'
           },
           {
-            text: '操作b',
+            text: '操作文字',
+            icon: 'icon-lan-like',
             action: 'showText'
           },
           {
-            text: '操作c',
-            icon: 'cubeic-right',
+            text: '操作文字',
+            icon: 'icon-lan-star',
             action: 'showText'
           }
         ]
       }
     },
     methods: {
-      updateMore(val) {
-        this.more = val
-      },
-      showText(item) {
-        this.$createToast({
-          type: 'correct',
-          txt: 'clicked ' + item.text,
-          time: 1000
-        }).show()
-      },
-      moreMoney(item) {
-        this.money += 10
-        item.text = '一口价<span class="orange">' + this.money + '元</span>'
-      },
       clickHandler(item) {
-        if (item.action) {
-          this[item.action](item)
-        }
       }
     }
   }
@@ -90,4 +137,8 @@
 <style lang="stylus" rel="stylesheet/stylus">
   .orange
     color: #fc9153
+  .toolbar_wrap
+    .cube-toolbar
+      position: static
+      margin-bottom: 20px
 </style>

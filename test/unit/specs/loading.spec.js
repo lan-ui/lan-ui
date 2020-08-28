@@ -15,12 +15,12 @@ describe('Loading.vue', () => {
     expect(Vue.component(Loading.name))
       .to.be.a('function')
   })
-  it('should render correct contents - no size', () => {
+  it('should render correct contents - default size', () => {
     vm = instantiateComponent(Vue, Loading, {})
     expect(vm.$el.className)
       .to.equal('cube-loading')
     expect(vm.$el.querySelector('.cube-loading-spinners').style.width)
-      .to.equal('')
+      .to.equal('24px')
   })
   it('should render correct contents - with size', () => {
     vm = instantiateComponent(Vue, Loading, {

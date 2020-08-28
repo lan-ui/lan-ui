@@ -80,6 +80,7 @@
         display: flex
         align-items: center
         justify-content: center
+        border:1px solid #666
         > div
           text-align: center
         i

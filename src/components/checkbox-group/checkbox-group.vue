@@ -66,9 +66,9 @@
     },
     computed: {
       groupClass() {
-        if (!this.horizontal || this.colNum > 1) {
-          return 'border-top-1px border-bottom-1px'
-        }
+        // if (!this.horizontal || this.colNum > 1) {
+        //   return 'border-top-1px border-bottom-1px'
+        // }
       }
     },
     watch: {

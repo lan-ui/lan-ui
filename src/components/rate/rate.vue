@@ -10,8 +10,9 @@
       @mousemove.stop="handleMove"
       @mouseup.stop="handleEnd">
       <slot>
-        <cube-rate-item v-for="n in max" :key="n" :index="n"></cube-rate-item>
+        <cube-rate-item v-for="n in max" :key="n" :index="n" :activeIcon="activeIcon" :icon="icon" :activeColor="activeColor" :color="color"></cube-rate-item>
       </slot>
+      <span class="cube-rate-label"><slot name="append"></slot></span>
     </ul>
 </template>
 
@@ -40,6 +41,22 @@
       justify: {
         type: Boolean,
         default: false
+      },
+      activeIcon: {
+        type: String,
+        default: 'icon-lan-starfilled'
+      },
+      icon: {
+        type: String,
+        default: 'icon-lan-star'
+      },
+      activeColor: {
+        type: String,
+        default: '#999'
+      },
+      color: {
+        type: String,
+        default: '#999'
       }
     },
     data() {
@@ -120,4 +137,11 @@
   .cube-rate-justify
     width: 100%
     justify-content: space-between
+  .cube-rate-label
+    margin-left:5px
+    font-size:14px
+    color:#999
+    line-height: 28px
+    i 
+      font-style:normal
 </style>

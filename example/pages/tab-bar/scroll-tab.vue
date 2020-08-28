@@ -76,7 +76,9 @@
   }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
-  .cube-scroll-list-wrapper
+  .tab-composite-view
+    background: #efeff4
+  .scroll-tab-view .cube-scroll-list-wrapper
     .cube-tab-bar
       flex-wrap: wrap
       .cube-tab

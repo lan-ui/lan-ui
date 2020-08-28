@@ -16,7 +16,7 @@
     data() {
       return {
         selected: '',
-        options: ['Option1', 'Option2']
+        options: ['选项数组1', '选项数组2']
       }
     }
   }
@@ -36,15 +36,15 @@
         selected2: 3,
         options2: [
           {
-            label: 'Option1',
+            label: '选项数组1',
             value: 1
           },
           {
-            label: 'Option2',
+            label: '选项数组2',
             value: 2
           },
           {
-            label: 'Option3',
+            label: '选项数组3',
             value: 3,
             disabled: true
           }
@@ -186,6 +186,48 @@
   }
   ```
 
+- 单选列表使用
+
+  设置单选列表，通过`:right-style="true"` 设置右侧选中方式，slot插槽中添加em标签内容设置辅助描述文字
+
+  ```html
+  <cube-radio-group v-model="selected7">
+    <cube-radio
+      v-for="(option, index) in options6"
+      :key="index"
+      :option="option" :right-style="true" position="right">
+      <span>{{option.label}}<em>辅助描述文字</em></span>
+    </cube-radio>
+  </cube-radio-group>
+  ```
+  ```js
+  export default {
+    data() {
+      return {
+        selected7: 'A',
+        options6: [
+          {
+            label: '选项A',
+            value: 'A'
+          },
+          {
+            label: '选项B',
+            value: 'B'
+          },
+          {
+            label: '选项C',
+            value: 'C'
+          },
+          {
+            label: '选项D',
+            value: 'D'
+          }
+        ]
+      }
+    }
+  }
+  ```
+
 ### Props 配置
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
@@ -195,6 +237,7 @@
 | horizontal | 是否水平排列 | Boolean | true/false | false |
 | colNum<sup>1.12.28</sup> | 一行有几列 | Number | - | 1 |
 | hollowStyle | 是否是镂空样式的 | Boolean | true/false | false |
+| rightStyle | 是否是对勾选中的样式 | Boolean | true/false | false |
 
 * `options` 子配置项
 
@@ -213,6 +256,7 @@
 | option | 选项配置 | Object/String | - | - |
 | position | 图标位置 | String | left/right | left |
 | hollow-style | 是否是镂空样式的 | Boolean | true/false | false |
+| right-style | 是否是对勾选中的样式 | Boolean | true/false | false |
 
 * `option` 子配置项
 

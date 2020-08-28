@@ -8,6 +8,7 @@
       ref="input"
       v-model="inputValue"
       v-bind="$props"
+      :data-pos="position"
       :type="_type"
       :disabled="disabled"
       :readonly="readonly"
@@ -80,6 +81,10 @@
       eye: {
         type: [Boolean, Object],
         default: false
+      },
+      position: {
+        type: String,
+        default: 'left'
       }
     },
     data() {
@@ -188,6 +193,7 @@
     line-height: 1.429
     background-color: $input-bgc
     border-1px($input-border-color)
+    color: $input-text-color
   .cube-input-field
     display: block
     flex: 1
@@ -200,6 +206,9 @@
     background-color: inherit
     border-radius: 2px
     outline: none
+    text-align: left
+    &[data-pos="right"]
+      text-align: right
     &::-webkit-input-placeholder
       color: $input-placeholder-color
       text-overflow: ellipsis
@@ -213,6 +222,9 @@
   .cube-input-prepend, .cube-input-append
     display: flex
     align-items: center
+  .cube-input-prepend
+    [class^="icon-lan-"], [class*=" icon-lan-"]
+      font-size: $fontsize-large-xx
   .cube-input-clear, .cube-input-eye
     width: 1em
     height: 1em

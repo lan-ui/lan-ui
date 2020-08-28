@@ -37,7 +37,12 @@ describe('Button.vue', () => {
         inline: true,
         outline: true,
         primary: true,
-        light: true
+        light: true,
+        minor: true,
+        corner: 'big',
+        state: 'danger',
+        size: 'small',
+        ico: true
       }
     }, (createElement) => {
       return createElement('span', 'btn content')
@@ -45,7 +50,7 @@ describe('Button.vue', () => {
     expect(vm.$el.type)
       .to.equal('submit')
     expect(vm.$el.className)
-      .to.equal('cube-btn cube-btn_disabled cube-btn-inline cube-btn-primary cube-btn-outline cube-btn-outline-primary cube-btn-light')
+      .to.equal('cube-btn cube-btn_disabled cube-btn-inline cube-btn-primary cube-btn-outline cube-btn-outline-primary cube-btn-light cube-btn-minor cube-btn-corner-big cube-btn-state-danger cube-btn-size-small cube-btn-ico')
   })
   it('events-called', () => {
     const clickHandler = sinon.spy()

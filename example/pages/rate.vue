@@ -4,13 +4,27 @@
     title="Rate"
     class="option-demo">
     <div slot="content">
-      <div class="rate-wrapper">
-        <cube-rate v-model="value" :disabled="disabled" :max="max" :justify="justify">
-          <cube-rate-item v-for="n in max" :key="n" :value="value" :index="n">
-            <div class="rate-item" v-if="customStar"></div>
-          </cube-rate-item>
-        </cube-rate>
+      <p class="rate-title">基础使用：</p>
+      <cube-rate v-model="value" :disabled="disabled" :max="max" :justify="justify" activeColor="#f6bc4d"></cube-rate>
+      <p class="rate-title">静态评分(不带文字)：</p>
+      <div class="rate-wrapper rate-like">
+        <cube-rate v-model="value" :disabled="disabled" :max="max" :justify="justify"></cube-rate>
+        <div class="rate-wrapper rate-wrapper-text">
+          <cube-rate v-model="value" :disabled="disabled" :max="max" :justify="justify" activeIcon="icon-lan-likefilled" icon="icon-lan-like"></cube-rate>
+        </div>
+        <div class="rate-wrapper rate-wrapper-text">
+          <cube-rate v-model="value" :disabled="disabled" :max="max" :justify="justify" activeIcon="cubeic-smile" icon="cubeic-sad" activeColor="red"></cube-rate>
+        </div>
       </div>
+      <p class="rate-title">静态评分(带文字)：</p>
+      <div class="rate-wrapper rate-like">
+        <cube-rate v-model="value" :disabled="disabled" :max="max" :justify="justify" activeColor="#f6bc4d" color="#f6bc4d"><i slot="append">评分</i></cube-rate>
+        <div class="rate-wrapper rate-wrapper-text">
+          <cube-rate v-model="value" :disabled="disabled" :max="max" :justify="justify" activeIcon="icon-lan-likefilled" icon="icon-lan-like" activeColor="red" color="red"><i slot="append">评价</i></cube-rate>
+        </div>
+      </div>
+      <p class="rate-title">其他使用：</p>
+      <cube-rate v-model="value" :disabled="disabled" :max="max" :justify="justify"></cube-rate>
       <div class="options">
         <div class="title">Options</div>
         <div class="option-list">
@@ -20,8 +34,6 @@
                             @update:value="updateStarNumbers" :options="options"></select-option>
           <switch-option class="item" name="Justify" :value="justify"
                             @update:value="updateJustify"></switch-option>
-          <switch-option class="item" name="customStar" :value="customStar"
-                            @update:value="updateRateItem"></switch-option>
         </div>
       </div>
     </div>
@@ -79,8 +91,13 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+  .rate-wrapper-text
+    line-height:32px
+  .rate-title
+    font-size: 12px
+    color: #999
+    line-height: 36px
   .rate-wrapper
-    margin: 30px 0
     .rate-text
       text-align: center
       margin-top: 25px
@@ -93,5 +110,11 @@
   .cube-rate-item.active
     .rate-item
       background-color: orange
-
+  .title 
+    margin-top:10px
+    padding:16px
+    border-top: 1px solid #e4e4e4
+    border-bottom: 1px solid #e4e4e4
+    background: rgba(245,245,245,1)
+    color: #666
 </style>

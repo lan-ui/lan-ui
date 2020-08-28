@@ -122,6 +122,23 @@
   }
   ```
 
+- 设置对齐方式
+
+  使用`position`对输入内容对齐方式进行设置。
+
+  ```html
+  <cube-input v-model="value" position="right"></cube-input>
+  ```
+
+  ```javascript
+  export default {
+    data() {
+      return {
+        value: ''
+      }
+    }
+  }
+  ```
   如同上边展示的，除了上述配置，还支持原生 Input 元素的大部分配置。
 
 ### Props 配置
@@ -130,6 +147,7 @@
 | - | - | - | - | - |
 | type | input类型 | String | text/number/password/date | text |
 | v-model | 绑定的值 | String | - | 空 |
+| position | 输入文字对齐方式 | String | left/right | left |
 | disabled | 禁用状态 | Boolean | true/false | false |
 | readonly | 只读状态 | Boolean | true/false | false |
 | maxlength | 最大输入长度 | Number | - | 60 |

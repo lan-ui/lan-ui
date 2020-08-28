@@ -3,7 +3,7 @@
     <template slot="content">
       <p>Normal upload(File max size 1MB): </p>
       <div>
-        <cube-upload ref="upload" :action="action" :simultaneous-uploads="1" @files-added="filesAdded" />
+        <cube-upload ref="upload" :action="action" :simultaneous-uploads="1" @files-added="filesAdded" :closed="true" />
         <cube-button @click="upload" v-if="!isUploading">Upload</cube-button>
         <cube-button @click="pause" v-else>Pause</cube-button>
         <cube-button @click="retry">Retry</cube-button>

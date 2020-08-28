@@ -22,7 +22,7 @@
       showPicker() {
         if (!this.picker) {
           this.picker = this.$createPicker({
-            title: 'Picker',
+            title: '选择',
             data: [column1],
             onSelect: this.selectHandle,
             onCancel: this.cancelHandle
@@ -33,8 +33,8 @@
       showMutiPicker() {
         if (!this.mutiPicker) {
           this.mutiPicker = this.$createPicker({
-            title: 'Multi-column Picker',
-            data: [column1, column2, column3],
+            title: '多列选择',
+            data: [column1, column1, column1],
             onSelect: this.selectHandle,
             onCancel: this.cancelHandle
           })

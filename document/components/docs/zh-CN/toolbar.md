@@ -8,10 +8,13 @@
 
 - 基础使用
 
-  将每个操作的类型和文本传入 `actions` 属性。
+  通过 `actions`设置toolbar各项内容，其中text为文本内容，icon为iconfont字体图标class
+  `toolbarStyle` 定义toolbar不同风格，`dark`为黑、`grey`为灰、`light`为白 可选，默认`light`
 
   ```html
   <cube-toolbar :actions="actions" @click="clickHandler"></cube-toolbar>
+  <cube-toolbar :actions="actions" toolbarStyle="dark" @click="clickHandler"></cube-toolbar>
+  <cube-toolbar :actions="actions" toolbarStyle="grey" @click="clickHandler"></cube-toolbar>
   ```
   ```js
   export default {
@@ -20,45 +23,29 @@
         money: 10,
         actions: [
           {
-            text: '完成订单',
-            action: 'showText'
+            text: '评论',
+            icon: 'icon-lan-comment-filled',
+            action: 'comment'
           },
           {
-            text: '打车来接',
-            checked: false,
-            type: 'checkbox'
+            text: '点赞',
+            icon: 'icon-lan-fabulous',
+            action: 'fabulous'
           },
           {
-            text: '一口价<span class="orange">10元</span>',
-            action: 'moreMoney'
+            text: '喜欢',
+            icon: 'icon-lan-like',
+            action: 'like'
+          },
+          {
+            text: '收藏',
+            icon: 'icon-lan-star',
+            action: 'collection'
           }
         ]
       }
-    },
-    methods: {
-      showText(item) {
-        this.$createToast({
-          type: 'correct',
-          txt: 'clicked ' + item.text,
-          time: 1000
-        }).show()
-      },
-      moreMoney(item) {
-        this.money += 10
-        item.text = '一口价<span class="orange">' + this.money + '元</span>'
-      },
-      clickHandler(item) {
-        if (item.action) {
-          this[item.action](item)
-        }
-      }
     }
   }
-  ```
-  ```stylus
-  .orange
-    color: #fc9153
-  ```
 
 - 更多操作
 
@@ -67,8 +54,9 @@
   ```html
   <cube-toolbar
     :actions="actions"
-    :more-actions="moreActions"
-    @click="clickHandler"></cube-toolbar>
+    :more-actions="moreActions" toolbarStyle="grey"
+    @click="clickHandler">
+  </cube-toolbar>
   ```
   ```js
   export default {
@@ -77,48 +65,41 @@
         money: 10,
         actions: [
           {
-            text: '完成订单',
-            action: 'showText'
+            text: '评论',
+            icon: 'icon-lan-comment-filled',
+            action: 'comment'
           },
           {
-            text: '打车来接',
-            checked: false,
-            type: 'checkbox'
+            text: '点赞',
+            icon: 'icon-lan-fabulous',
+            action: 'fabulous'
           },
           {
-            text: '一口价<span class="orange">10元</span>',
-            action: 'moreMoney'
+            text: '喜欢',
+            icon: 'icon-lan-like',
+            action: 'like'
           }
         ],
         moreActions: [
           {
-            text: '操作a',
+            text: '操作文字',
+            icon: 'icon-lan-share',
             action: 'showText'
           },
           {
-            text: '操作b',
+            text: '操作文字',
+            icon: 'icon-lan-like',
             action: 'showText'
           },
           {
-            text: '操作c',
-            icon: 'cubeic-right',
+            text: '操作文字',
+            icon: 'icon-lan-star',
             action: 'showText'
           }
         ]
       }
     },
     methods: {
-      showText(item) {
-        this.$createToast({
-          type: 'correct',
-          txt: 'clicked ' + item.text,
-          time: 1000
-        }).show()
-      },
-      moreMoney(item) {
-        this.money += 10
-        item.text = '一口价<span class="orange">' + this.money + '元</span>'
-      },
       clickHandler(item) {
         if (item.action) {
           this[item.action](item)
@@ -127,10 +108,6 @@
     }
   }
   ```
-  ```stylus
-  .orange
-    color: #fc9153
-  ```
 
 ### Props 配置
 
@@ -138,6 +115,7 @@
 | - | - | - | - | - |
 | actions | 定义一组操作 | Array | [] | [ {text: '完成订单' } ] |
 | moreActions | 定义更多的一组操作 | Array | [] | [ {text: '完成订单' } ] |
+| toolbarStyle | 定义toolbar风格 | String | dark/grey/light | light |
 
 * `actions` 子配置项
 
@@ -145,6 +123,7 @@
 | - | - | - | - | - |
 | type | 类型，包括 button 和 checkbox | String | button/checkbox | button |
 | text | 文案，支持写入 html | String | - | '' |
+| icon | iconfont字体图标 | String | - | - |
 | checked | 当为 checkbox 类型时，checkbox的初始状态 | Boolean | true/false | false |
 
 ### 事件

@@ -3,6 +3,10 @@
     <div slot="content">
       <cube-button-group>
         <cube-button @click="goTo('basic')">tab-basic</cube-button>
+        <cube-button @click="goTo('bottom')">tab-bottom</cube-button>
+        <cube-button @click="goTo('scroll')">tab-scroll</cube-button>
+        <cube-button @click="goTo('icon')">tab-icon</cube-button>
+        <cube-button @click="goTo('vertical')">tab-vertical</cube-button>
         <cube-button @click="goTo('composite')">tab-composite</cube-button>
       </cube-button-group>
       <cube-view></cube-view>

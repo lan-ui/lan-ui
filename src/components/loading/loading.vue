@@ -3,6 +3,7 @@
     <span class="cube-loading-spinners" :style="style">
       <i class="cube-loading-spinner" v-for="item in balde"></i>
     </span>
+    <slot class="cube-loading-details"></slot>
   </div>
 </template>
 <script type="text/ecmascript-6">
@@ -17,7 +18,8 @@
     },
     props: {
       size: {
-        type: Number
+        type: Number,
+        default: 24
       }
     },
     computed: {
@@ -25,10 +27,13 @@
         if (!this.size) {
           return
         }
-        const value = `${this.size}px`
+        let size = this.size > 24 ? this.size : 24
+        const value = size + 'px'
+        const fontSize = size / 2 + 'px'
         return {
           width: value,
-          height: value
+          height: value,
+          fontSize: fontSize
         }
       }
     }
@@ -48,22 +53,24 @@
     position: absolute
     left: 44.5%
     top: 37%
-    width: 2PX // for rem
-    height: 25%
-    border-radius: 50%/20%
+    width: 0.22em // for rem
+    height: 0.5em
+    border-radius: 45%
     opacity: .25
     background-color: currentColor
     animation: spinner-fade 1s linear infinite
     for num in (1..12)
       &:nth-child({num})
         animation-delay: ((num - 1) / 12)s
-        transform: rotate(30deg * (num - 6)) translateY(-150%)
+        transform: rotate(30deg * (num - 12)) translateY(-150%)
   @keyframes spinner-fade
     0%
-      opacity: .85
+      opacity: .9
     50%
-      opacity: .25
+      opacity: .5
     100%
-      opacity: .25
-
+      opacity: 0
+  .cube-loading-details 
+    display: block
+    font-size: 20px
 </style>

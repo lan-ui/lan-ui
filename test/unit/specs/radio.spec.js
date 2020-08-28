@@ -1,6 +1,7 @@
 import Vue from 'vue2'
 import RadioGroup from '@/modules/radio'
 import createVue from '../utils/create-vue'
+import { expect } from 'chai'
 
 describe('Radio.vue', () => {
   let vm
@@ -19,7 +20,7 @@ describe('Radio.vue', () => {
     vm = createRadioGroup()
     const el = vm.$el
     expect(el.className)
-      .to.equal('cube-radio-group my-radio border-top-1px border-bottom-1px')
+      .to.equal('cube-radio-group my-radio')
     const options = el.querySelectorAll('.cube-radio')
     expect(options.length)
       .to.equal(3)
@@ -82,7 +83,7 @@ describe('Radio.vue', () => {
   it('v-model should be a number value', (done) => {
     vm = createVue({
       template: `
-        <cube-radio-group v-model="selected" :options="options"></cube-radio-group>
+        <cube-radio-group v-model="selected" :options="options" :right-style="true"></cube-radio-group>
       `,
       data: {
         selected: 3,
@@ -107,6 +108,8 @@ describe('Radio.vue', () => {
         ]
       }
     })
+    expect(vm.$el.querySelector('i').className)
+      .to.equal('icon-lan-benefits')
     vm.$el.querySelector('.cube-radio-input').click()
     setTimeout(() => {
       expect(vm.$parent.selected)

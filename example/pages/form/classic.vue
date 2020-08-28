@@ -44,7 +44,7 @@
                 {
                   type: 'checkbox',
                   modelKey: 'checkboxValue',
-                  label: 'Checkbox',
+                  label: '复选框',
                   props: {
                     option: {
                       label: 'Checkbox',
@@ -61,7 +61,7 @@
                 {
                   type: 'checkbox-group',
                   modelKey: 'checkboxGroupValue',
-                  label: 'CheckboxGroup',
+                  label: '复选框组',
                   props: {
                     options: ['1', '2', '3']
                   },
@@ -72,7 +72,7 @@
                 {
                   type: 'input',
                   modelKey: 'inputValue',
-                  label: 'Input',
+                  label: '文本输入',
                   props: {
                     placeholder: '请输入'
                   },
@@ -85,7 +85,7 @@
                 {
                   type: 'radio-group',
                   modelKey: 'radioValue',
-                  label: 'Radio',
+                  label: '单选框',
                   props: {
                     options: ['1', '2', '3']
                   },
@@ -96,7 +96,7 @@
                 {
                   type: 'select',
                   modelKey: 'selectValue',
-                  label: 'Select',
+                  label: '选择',
                   props: {
                     options: [2015, 2016, 2017, 2018, 2019, 2020]
                   },
@@ -107,7 +107,7 @@
                 {
                   type: 'switch',
                   modelKey: 'switchValue',
-                  label: 'Switch',
+                  label: '滑动开关',
                   rules: {
                     required: true
                   }
@@ -115,7 +115,7 @@
                 {
                   type: 'textarea',
                   modelKey: 'textareaValue',
-                  label: 'Textarea',
+                  label: '多行输入',
                   rules: {
                     required: true
                   },
@@ -131,7 +131,7 @@
                 {
                   type: 'rate',
                   modelKey: 'rateValue',
-                  label: 'Rate',
+                  label: '评分',
                   rules: {
                     required: true
                   }
@@ -139,7 +139,7 @@
                 {
                   type: 'upload',
                   modelKey: 'uploadValue',
-                  label: 'Upload',
+                  label: '上传',
                   rules: {
                     required: true,
                     uploaded: (val, config) => {
@@ -173,11 +173,11 @@
               fields: [
                 {
                   type: 'submit',
-                  label: 'Submit'
+                  label: '提交'
                 },
                 {
                   type: 'reset',
-                  label: 'Reset'
+                  label: '重置'
                 }
               ]
             }

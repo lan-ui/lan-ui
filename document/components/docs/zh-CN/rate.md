@@ -45,38 +45,14 @@
   }
   ```
 
-- 自定义星星样式
+- 自定义星星样式（采用iconfont字体图标形式）
 
-  需要使用`cube-rate-item`组件，并且对自定义的星星元素定义两种样式——普通和活跃（在`.cube-rate-item.active`类之下）。
+  使用activeIcon定义活跃iconfont的class，icon定义普通的iconfont的class，并且可以设置activeColor,color分别定义活跃和普通的图标颜色
+  
 
   ```html
-  <cube-rate v-model="value">
-    <cube-rate-item v-for="n in max" :key="n" :value="value" :index="n">
-      <!-- 定制星星示例 -->
-      <div class="rate-item"></div>
-    </cube-rate-item>
+  <cube-rate v-model="value" activeIcon="icon-lan-likefilled" icon="icon-lan-like" activeColor="red" color="red">
   </cube-rate>
-  ```
-
-  ```javascript
-  export default {
-    data() {
-      return {
-        value: 3
-      }
-    }
-  }
-  ```
-
-  ```css
-  .rate-item
-    width: 100%
-    height: 100%
-    background-size: 100%
-    background-color: grey
-  .cube-rate-item.active
-    .rate-item
-      background-color: orange
   ```
 
 ### Props 配置
@@ -87,6 +63,10 @@
 | max | 星星个数 | Number | - | 5 |
 | disabled | 禁用状态 | Boolean | true/false | false |
 | justify | 是否自适应容器宽度（通过在星星之间增加空隙） | Boolean | true/false | false |
+| activeIcon | 活跃icon的class | String | - | icon-lan-starfilled 活跃星星 |
+| icon | 普通icon的class | String | - | icon-lan-star 普通星星 |
+| activeColor | 活跃icon的颜色 | String | - | #999 |
+| color | 普通icon的颜色 | String | - | #999 |
 
 ### 插槽
 
@@ -98,7 +78,7 @@
 
 | 名字 | 说明 | 作用域参数 |
 | - | - | - |
-| default | 自定义星星元素 | - |
+| append | 组件后文字 | - |
 
 ### 事件
 

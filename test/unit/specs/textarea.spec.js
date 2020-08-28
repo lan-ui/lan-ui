@@ -36,7 +36,7 @@ describe('Textarea.vue', () => {
   it('should not expand when blur', () => {
     vm = createTextarea()
     expect(vm.$el.offsetHeight)
-      .to.equal(40)
+      .to.equal(80)
   })
   it('should expand when focus, fold when blur', (done) => {
     vm = createTextarea(1)
@@ -48,7 +48,7 @@ describe('Textarea.vue', () => {
       vm.blur()
       setTimeout(() => {
         expect(vm.$el.offsetHeight)
-          .to.equal(40)
+          .to.equal(80)
         done()
       }, 500)
     }, 500)
@@ -58,11 +58,11 @@ describe('Textarea.vue', () => {
     vm.focus()
     setTimeout(() => {
       expect(vm.$el.querySelector('.cube-textarea-indicator').innerText)
-        .to.equal('56')
+        .to.include('56')
       vm.$parent.value = new Array(61).join('1')
       setTimeout(() => {
         expect(vm.$el.querySelector('.cube-textarea-indicator').innerText)
-          .to.equal('0')
+          .to.include('0')
         // update maxlength
         vm.$parent.maxlength = 30
         vm.$parent.$set(vm.$parent, 'indicator', {
@@ -71,7 +71,7 @@ describe('Textarea.vue', () => {
         })
         setTimeout(() => {
           expect(vm.$el.querySelector('.cube-textarea-indicator').innerText)
-            .to.equal('0')
+            .to.include('0')
           done()
         })
       })
@@ -86,7 +86,7 @@ describe('Textarea.vue', () => {
       expect(vm.$el.querySelector('textarea').value)
         .to.equal('1234')
       expect(vm.$el.querySelector('.cube-textarea-indicator').innerText)
-        .to.equal('4')
+        .to.include('4')
       done()
     }, 100)
   })

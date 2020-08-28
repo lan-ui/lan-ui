@@ -4,10 +4,6 @@
 
 选项卡。
 
-### 示例
-
-如下示例相关代码在[这里](https://github.com/didi/cube-ui/tree/master/example/pages/tab-bar)。
-
 ### CubeTabBar
 
 支持默认的点击高亮效果，又支持下划线跟随的效果，并且支持自定义的插槽，实现icon与label搭配的类似于app底部选项卡的样式。
@@ -117,19 +113,16 @@
 
 ```html
 <template>
-  <cube-tab-bar v-model="selectedLabel" show-slider>
-    <cube-tab v-for="(item, index) in tabs" :icon="item.icon" :label="item.label" :key="item.label">
-    </cube-tab>
-  </cube-tab-bar>
-  <cube-tab-panels v-model="selectedLabel">
-    <cube-tab-panel v-for="(item, index) in tabs" :label="item.label" :key="item.label">
-      <ul>
-        <li class="tab-panel-li" v-for="(hero, index) in item.heroes">
-          {{hero}}
-        </li>
-      </ul>
-    </cube-tab-panel>
-  </cube-tab-panels>
+  <div class="tabs_main">
+    <cube-tab-bar v-model="selectedLabel" show-slider class="tabs_main_bottom" position="bottom">
+      <cube-tab v-for="(item, index) in tabs" :label="item.label" :key="item.label" :tips="item.tips"></cube-tab>
+    </cube-tab-bar>
+    <cube-tab-panels v-model="selectedLabel" class="tabs_main_content">
+      <cube-tab-panel v-for="(item, index) in tabs" :label="item.label" :key="item.label">
+        <div class="tab_content">{{item.content}}</div>
+      </cube-tab-panel>
+    </cube-tab-panels>
+  </div>
 </template>
 ```
 
@@ -137,22 +130,41 @@
 export default {
   data () {
     return {
-      selectedLabel: '天辉',
-      tabs: [{
-        label: '天辉',
-        icon: 'cubeic-like',
-        heroes: ['敌法师', '卓尔游侠', '主宰', '米拉娜', '变体精灵', '幻影长矛手', '复仇之魂', '力丸', '矮人狙击手', '圣堂刺客', '露娜', '赏金猎人', '熊战士']
-      }, {
-        label: '夜魇',
-        icon: 'cubeic-star',
-        heroes: ['血魔', '影魔', '剃刀', '剧毒术士', '虚空假面', '幻影刺客', '冥界亚龙', '克林克兹', '育母蜘蛛', '编织者', '幽鬼', '司夜刺客', '米波']
-      }]
+      selectedLabel: '标签一',
+      tabs: [
+        {
+          label: '标签一',
+          content: '标签一的内容',
+          tips: '5'
+        },
+        {
+          label: '标签二',
+          content: '标签二的内容'
+        },
+        {
+          label: '标签三',
+          content: '标签三的内容'
+        },
+        {
+          label: '标签四',
+          content: '标签四的内容'
+        },
+        {
+          label: '标签五',
+          content: '标签五的内容'
+        }
+      ]
+    }
+  },
+  watch: {
+    selectedLabel (newV) {
+      console.log(newV)
     }
   }
 }
 ```
 
-事实上，`cube-tab-bar` 还能搭配许多其他cube-ui的组件(cube-slide ，cube-scroll)来做出类似原生 app 布局的效果。可点击右边的 `ScrollTab Demo` 与 `tab-composite` 示例来查看效果
+事实上，`cube-tab-bar` 还能搭配许多其他cube-ui的组件(cube-slide ，cube-scroll)来做出类似原生 app 布局的效果。可点击右边的 `ScrollTab Demo` 、 `tab-composite`、 `tab-scroll`  示例来查看效果
 
 ### Props 配置
 
@@ -165,6 +177,7 @@ export default {
   | showSlider | 是否开启下划线跟随效果 | Boolean | true/false | false |
   | inline | 文字与图标是否显示在一行 | Boolean | true/false | false |
   | useTransition | 是否开启 transition 过渡 | Boolean | true/false | true |
+  | position | tab的位置 | String | bottom/vertical | '' |
 
 - CubeTab
 
@@ -186,6 +199,7 @@ export default {
   | - | - | - | - | - |
   | label | 用于显示 panel | String/Number | 是 | - |
   | value | panel 的 key 值，决定了选中的值<sup>1.12.5+</sup> | String/Number | 是 | `value` 的值 |
+  | tips | 数字气泡提示 | String/Number | 否 | - |
 
 ### 插槽
 

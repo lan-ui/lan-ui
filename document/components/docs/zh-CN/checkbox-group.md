@@ -47,14 +47,14 @@
 
   ```html
   <cube-checkbox-group v-model="checkList">
-    <cube-checkbox option="1"><i>Checkbox 1</i></cube-checkbox>
-    <cube-checkbox option="2"><i>Checkbox 2</i></cube-checkbox>
-    <cube-checkbox :option="{value: '3', disabled: true}"><i>Disabled Checkbox</i></cube-checkbox>
-    <cube-checkbox :option="{value: '4', disabled: true}"><i>Disabled & Checked Checkbox</i></cube-checkbox>
+    <cube-checkbox option="1" shape="square">选项A<em>辅助描述文字</em></cube-checkbox>
+    <cube-checkbox option="2" shape="square">选项B<em>辅助描述文字</em></cube-checkbox>
+    <cube-checkbox :option="{value: '3', disabled: true}" shape="square">选项C<em>辅助描述文字</em></cube-checkbox>
+    <cube-checkbox :option="{value: '4', disabled: true}" shape="square">选项D<em>辅助描述文字</em></cube-checkbox>
   </cube-checkbox-group>
   ```
 
-  可通过默认插槽插入 `cube-checkbox` 实现自定义每项的结构样子，关于 `cube-checkbox`，请参考其[文档](#/zh-CN/docs/checkbox)。
+  可通过默认插槽插入 `cube-checkbox` 实现自定义每项的结构样子，可以通过em标签添加辅助文字，关于 `cube-checkbox`，请参考其[文档](#/zh-CN/docs/checkbox)。
 
 - 自定义列数<sup>1.12.28</sup>
 

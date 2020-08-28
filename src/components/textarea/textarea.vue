@@ -13,7 +13,7 @@
       @change="changeHander"
     >
     </textarea>
-    <span v-if="indicator" v-show="expanded" class="cube-textarea-indicator">{{indicatorConf.remain ? remain : count}}</span>
+    <span v-if="indicator" v-show="expanded" class="cube-textarea-indicator">{{indicatorConf.remain ? remain : count}}/{{maxlength}}</span>
   </div>
 </template>
 
@@ -126,17 +126,17 @@
   .cube-textarea-wrapper
     position: relative
     transition: height 200ms
-    height: 40px
+    height: 80px
     font-size: $fontsize-medium
     line-height: 1.429
     textarea::-webkit-input-placeholder
       color: $textarea-placeholder-color
       text-overflow: ellipsis
-    border-1px($textarea-border-color)
+    // border-1px($textarea-border-color)
   .cube-textarea_expanded
     height: 80px
   .cube-textarea_active
-    border-1px($textarea-focus-border-color)
+    // border-1px($textarea-focus-border-color)
   .cube-textarea-indicator
     position: absolute
     bottom: 7px

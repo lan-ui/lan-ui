@@ -1,5 +1,5 @@
 <template>
-  <div class="cube-toolbar">
+  <div class="cube-toolbar" :class="_toolbarClass">
     <ul
       class="cube-toolbar-group cube-toolbar-group-more"
       v-if="moreActions"
@@ -42,6 +42,10 @@
       },
       moreActions: {
         type: Array
+      },
+      toolbarStyle: {
+        type: String,
+        default: 'light'
       }
     },
     data() {
@@ -57,6 +61,13 @@
           $cubeMore: true
         })
         return basicActions
+      },
+      _toolbarClass() {
+        return {
+          'cube-toolbar-light': this.toolbarStyle === 'light',
+          'cube-toolbar-dark': this.toolbarStyle === 'dark',
+          'cube-toolbar-grey': this.toolbarStyle === 'grey'
+        }
       }
     },
     methods: {
@@ -84,19 +95,57 @@
     bottom: $toolbar-spacing
     z-index: 2
     safe-area-mixin(padding-bottom, bottom)
-
+  .cube-toolbar-dark
+    .cube-toolbar-group
+      border: none
+      background-color: $toolbar-dark-bgc
+      .cube-toolbar-item
+        background-color: $toolbar-dark-bgc
+        .cube-btn
+          color: #fff
+  .cube-toolbar-grey
+    .cube-toolbar-group.cube-toolbar-group-more
+      border:1px solid #ccc
+      .cube-toolbar-item
+        width: 100%
+        border-bottom: 1px solid #ccc
+    .cube-toolbar-group
+      border: none
+      background-color: transparent
+      .cube-toolbar-item
+        background-color: transparent
+        &:last-child
+          border-bottom: none
+        .cube-btn
+          color: #999
   .cube-toolbar-group
     display: flex
-    height: 44px
+    height: 50px
     overflow: hidden
     box-sizing: border-box
     border-radius: 2px
-    box-shadow: 0 1px 6px rgba(0, 0, 0, .24)
+    border: 1px solid #f2f2f2
     background-color: $toolbar-bgc
-  .cube-toolbar-group-more
-    margin-bottom: $toolbar-spacing
     .cube-toolbar-item
+      .cube-btn
+        font-size: $fontsize-medium
+  .cube-toolbar-group.cube-toolbar-group-more
+    height: auto
+  .cube-toolbar-group-more
+    position: absolute
+    right: 0
+    bottom: 50px
+    display: inline-block
+    margin-bottom: $toolbar-spacing
+    padding: 0 15px
+    border: 1px solid #f2f2f2
+    .cube-toolbar-item
+      width: 100%
+      height: 36px
+      padding: 5px 0
+      border-bottom: 1px solid #ccc
       &:last-child
+        border-bottom: none
         .cube-toolbar-down
           position: absolute
           top: 44px
@@ -122,9 +171,4 @@
             width: 40%
             height: 2px
             background-color: $toolbar-bgc
-        &:active
-          .cube-toolbar-down
-            color: $toolbar-active-bgc
-            &::after
-              background-color: $toolbar-active-bgc
 </style>

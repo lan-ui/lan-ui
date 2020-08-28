@@ -148,5 +148,6 @@
     &:active
       background: #e8864c
   .orange
+    color: #1890ff
     font-weight: 700
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <li class="cube-toolbar-item border-right-1px">
+  <li class="cube-toolbar-item">
     <cube-button :icon="action.icon">
       <cube-checkbox
         class="cube-toolbar-chb"
@@ -9,7 +9,7 @@
       </cube-checkbox>
       <span v-else v-html="action.text"></span>
     </cube-button>
-    <i class="cube-toolbar-down"></i>
+    <!-- <i class="cube-toolbar-down"></i> -->
   </li>
 </template>
 
@@ -84,6 +84,7 @@
         display: none
       i
         margin-right: 0
+        font-size: $fontsize-large-x
         &.cubeic-more
           color: $color-light-grey
           font-size: $fontsize-large

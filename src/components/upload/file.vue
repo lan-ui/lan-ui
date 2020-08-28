@@ -4,7 +4,7 @@
       :img-style="fileStyle"
       :progress="fileProgress"
     >
-      <div class="cube-upload-file-def" :style="fileStyle">
+      <div class="cube-upload-file-def" :class="_classContent" :style="fileStyle">
         <i class="cubeic-wrong" @click.stop="removeFile"></i>
         <div class="cube-upload-file-state" :class="fileStatusCls">
           <i class="cube-upload-file-status" :class="statusCls"></i>
@@ -30,6 +30,10 @@
       file: {
         type: Object,
         required: true
+      },
+      closed: {
+        type: Boolean,
+        default: false
       }
     },
     computed: {
@@ -62,6 +66,11 @@
         }
         const p = Math.min(Math.floor(this.file.progress * 100), 99)
         return `${p}%`
+      },
+      _classContent() {
+        return {
+          'file-def-closed': this.closed
+        }
       }
     },
     methods: {
@@ -159,4 +168,5 @@
   .cube-upload-file-progress
     color: $upload-file-progress-color
     font-size: $fontsize-large-xx
+
 </style>

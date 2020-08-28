@@ -42,6 +42,27 @@ describe('Toolbar.vue', () => {
     expect(items[1].querySelector('.cube-checkbox-label').textContent.trim())
       .to.equal('打车来接')
   })
+  it('should render correct contents icon & toolbarStyle', () => {
+    vm = instantiateComponent(Vue, Toolbar, {
+      props: {
+        toolbarStyle: 'dark',
+        actions: [
+          {
+            icon: 'icon-lan-like',
+            text: '完成订单',
+            action: 'showText'
+          },
+          {
+            icon: 'icon-lan-star',
+            text: '打车来接',
+            type: 'checkbox'
+          }
+        ]
+      }
+    })
+    expect(vm.$el.className)
+      .to.equal('cube-toolbar cube-toolbar-dark')
+  })
   it('should render correct contents - more actions', () => {
     vm = instantiateComponent(Vue, Toolbar, {
       props: {

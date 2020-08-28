@@ -1,8 +1,8 @@
 <template>
   <transition name="cube-tip-zoom">
-    <div class="cube-tip" :data-dir="direction" v-show="isVisible" @click="handleClick">
+    <div class="cube-tip" :class="_contentClass" :data-dir="direction" v-show="isVisible" @click="handleClick">
       <i class="cube-tip-angle" ref="angle"></i>
-      <button class="cube-tip-close cubeic-close" @click.stop="close"></button>
+      <button ref="tipBtn" :class="closedStyle?'cube-tip-close-text':'cube-tip-close cubeic-close'" @click.stop="close" v-if="!closed">{{closedText}}</button>
       <div class="cube-tip-content">
         <slot></slot>
       </div>
@@ -39,6 +39,22 @@
       offsetBottom: {
         type: [String, Number],
         default: 0
+      },
+      closed: {
+        type: Boolean,
+        default: false
+      },
+      lightStyle: {
+        type: Boolean,
+        default: false
+      },
+      closedStyle: {
+        type: Boolean,
+        default: false
+      },
+      closedText: {
+        type: String,
+        default: ''
       }
     },
     mounted() {
@@ -95,10 +111,20 @@
         })
       })
     },
+    computed: {
+      _contentClass() {
+        return {
+          'cube-tip-light': this.lightStyle,
+          'cube-tip-text': this.closedStyle
+        }
+      }
+    },
     methods: {
       handleClick() {
-        this.hide()
-        this.$emit(EVENT_CLICK)
+        if (!this.closed) {
+          this.hide()
+          this.$emit(EVENT_CLICK)
+        }
       },
       close() {
         this.hide()
@@ -117,10 +143,10 @@
     position: absolute
     padding: 10px 38px 10px 16px
     max-height: 60px
-    font-size: $fontsize-small
+    font-size: $fontsize-medium
     color: $tip-color
     background: $tip-bgc
-    border-radius: 2px
+    border-radius: 5px
     transition: opacity .2s
     &[data-dir="top"], &[data-dir="bottom"]
       .cube-tip-angle
@@ -154,6 +180,11 @@
         &::before
           margin-right: -9px
           transform: rotate(90deg)
+  .cube-tip-light
+    background: $tip-light-bgc
+    .cube-tip-angle
+      &::before
+        border-color: transparent transparent $tip-light-bgc
   .cube-tip-angle
     position: absolute
     &::before
@@ -174,6 +205,19 @@
     border: none
     background: none
     transform: scale(1.3)
+  .cube-tip-text
+    padding-right:84px
+  .cube-tip-close-text
+    position: absolute
+    top: 50%
+    right: 14px
+    margin-top: -14px
+    color: #fff
+    padding: 5px
+    border:1px solid #fff
+    background: transparent
+    font-size: $fontsize-small
+    outline: none
   .cube-tip-content
     min-height: 18px
     line-height: 18px

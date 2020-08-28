@@ -18,13 +18,13 @@ describe('CheckboxGroup.vue', () => {
   it('should render correct contents (horizontal=false)', () => {
     vm = createCheckboxGroup()
     expect(vm.$el.className)
-      .to.include('cube-checkbox-group border-top-1px border-bottom-1px')
+      .to.include('cube-checkbox-group')
     expect(vm.$el.querySelectorAll('.cube-checkbox').length)
       .to.equal(4)
     expect(vm.$el.querySelector('.cube-checkbox').className)
       .to.include('cube-checkbox_checked')
     expect(vm.$el.querySelector('.cube-checkbox .cube-checkbox-wrap').className)
-      .to.include('cube-checkbox-wrap border-bottom-1px')
+      .to.include('cube-checkbox-wrap')
   })
   it('should render correct contents (horizontal=true)', () => {
     vm = createCheckboxGroup(true)

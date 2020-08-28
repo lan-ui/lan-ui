@@ -8,7 +8,7 @@
       @mask-click="maskClick"
       >
       <i v-if="!isLoading && iconClass.length" class="cube-toast-icon" :class="iconClass"></i>
-      <cube-loading v-if="isLoading"></cube-loading>
+      <cube-loading v-if="isLoading" size="26"></cube-loading>
       <div v-show="txt" class="cube-toast-tip" v-html="txt"></div>
     </cube-popup>
   </transition>
