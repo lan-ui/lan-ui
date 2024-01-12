@@ -317,6 +317,8 @@
         cancalWatcher()
       })
       this._dataWatchers = null
+      clearTimeout(this._timer)
+      clearTimeout(this._resizeTimer)
     },
     components: {
       CubeSlideItem

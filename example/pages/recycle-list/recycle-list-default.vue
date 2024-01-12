@@ -32,7 +32,8 @@
         initTime: new Date().getTime(),
         id: 0,
         size: 50,
-        offset: 100
+        offset: 100,
+        timeOutID: null
       }
     },
     components: {
@@ -52,7 +53,7 @@
       onFetch() {
         let items = []
         return new Promise((resolve) => {
-          setTimeout(() => {
+          this.timeOutID = setTimeout(() => {
             for (let i = 0; i < this.size; i++) {
               items.push(this.getItem(this.id++))
             }
@@ -63,6 +64,10 @@
       handleClick(data) {
         console.log(data)
       }
+    },
+
+    beforeDestroy() {
+      clearTimeout(this.timeOutID)
     }
   }
 </script>

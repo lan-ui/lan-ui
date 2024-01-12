@@ -269,6 +269,11 @@
       CubeSlide,
       CubeSlideItem,
       CubeScroll
+    },
+
+    beforeDestroy() {
+      clearTimeout(this.enableSlideTid)
+      clearTimeout(this.clickTid)
     }
   }
 </script>

@@ -17,6 +17,12 @@
   import CubePage from '../components/cube-page.vue'
 
   export default {
+    data() {
+      return {
+        timeOutID: null
+      }
+    },
+
     methods: {
       showToastTime() {
         this.toast = this.$createToast({
@@ -34,7 +40,7 @@
           txt: 'Toast time 0'
         })
         this.toast.show()
-        setTimeout(() => {
+        this.timeOutID = setTimeout(() => {
           this.toast.hide()
         }, 2000)
       },
@@ -63,6 +69,10 @@
     components: {
       CubeButtonGroup,
       CubePage
+    },
+
+    beforeDestroy() {
+      clearTimeout(this.timeOutID)
     }
   }
 </script>

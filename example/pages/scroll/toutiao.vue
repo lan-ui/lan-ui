@@ -84,7 +84,9 @@ export default {
         pullUpLoad: true
       },
       navTxts: txts,
-      secondStop: 26
+      secondStop: 26,
+      timeOutID: null,
+      timeOutID2: null
     }
   },
   components: {
@@ -92,13 +94,13 @@ export default {
   },
   methods: {
     onPullingDown() {
-      setTimeout(() => {
+      this.timeOutID = setTimeout(() => {
         this.content.unshift(imgs[cnt++ % 3])
         this.$refs.contentScroll.scrollTo(0, this.secondStop, 300)
       }, 1000)
     },
     onPullingUp() {
-      setTimeout(() => {
+      this.timeOutID2 = setTimeout(() => {
         this.content = this.content.concat(imgs)
       }, 1000)
     },
@@ -108,6 +110,11 @@ export default {
     }
   },
   mounted() {
+  },
+
+  beforeDestroy() {
+    clearTimeout(this.timeOutID)
+    clearTimeout(this.timeOutID2)
   }
 }
 </script>
