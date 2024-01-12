@@ -10,6 +10,12 @@
   let rootNav = {}
 
   export default {
+    data() {
+      return {
+        timeOutID: null
+      };
+    },
+
     props: {
       navList: {
         type: Object,
@@ -32,7 +38,7 @@
           if (!root) {
             rootNav.isRootActive = false
             if (window.innerWidth > 960) {
-              setTimeout(() => {
+              this.timeOutID = setTimeout(() => {
                 const el = document.querySelector('.page-sidelist .nav-active')
                 el && el.scrollIntoViewIfNeeded()
               }, 0)
@@ -61,6 +67,10 @@
           }
         }
       }
+    },
+
+    beforeDestroy() {
+      clearTimeout(this.timeOutID)
     }
   }
 </script>

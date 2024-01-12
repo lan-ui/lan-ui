@@ -55,7 +55,8 @@ export default {
       pullDownStyle: '',
       opacityStyle: '',
       triggerSurpriseFlag: false,
-      triggerSurprise: false
+      triggerSurprise: false,
+      timeOutID: null
     }
   },
   components: {
@@ -93,7 +94,7 @@ export default {
         this.$refs.scroll.forceUpdate()
         return
       }
-      setTimeout(() => {
+      this.timeOutID = setTimeout(() => {
         this.$refs.scroll.forceUpdate()
       }, 1000)
     },
@@ -106,6 +107,10 @@ export default {
     onImgLoad() {
       this.$refs.scroll.refresh()
     }
+  },
+
+  beforeDestroy() {
+    clearTimeout(this.timeOutID)
   }
 }
 </script>

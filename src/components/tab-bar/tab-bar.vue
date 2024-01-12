@@ -92,6 +92,7 @@
     beforeDestroy () {
       /* istanbul ignore next */
       this._cleanUp()
+      clearTimeout(this._resizeTimer)
     },
     methods: {
       addTab (tab) {

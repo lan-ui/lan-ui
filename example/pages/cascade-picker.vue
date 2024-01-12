@@ -35,6 +35,13 @@
   asyncData[0].children[0].children = asyncAreaList[asyncData[0].children[0].value]
 
   export default {
+    data() {
+      return {
+        timeOutID: null,
+        timeOutID2: null
+      }
+    },
+
     mounted() {
       this.cascadePicker = this.$createCascadePicker({
         title: 'Cascade Picker',
@@ -79,7 +86,7 @@
         this.setDataPicker.setData(cascadeData)
 
         this.setDataPicker.show()
-        setTimeout(() => {
+        this.timeOutID = setTimeout(() => {
           // setData when the picker is visible.
           this.setDataPicker.setData(addressData, [1, 1, 0])
         }, 1000)
@@ -92,8 +99,7 @@
           asyncSelectedIndex[i] = newIndex
           // If the first two column is changed, request the data for rest columns.
           if (i < 2) {
-            // Mock async load.
-            setTimeout(() => {
+            this.timeOutID2 = setTimeout(() => {
               if (i === 0) {
                 const current = asyncData[newIndex]
                 current.children = current.children || asyncCityList[current.value]
@@ -130,6 +136,11 @@
     components: {
       CubePage,
       CubeButtonGroup
+    },
+
+    beforeDestroy() {
+      clearTimeout(this.timeOutID)
+      clearTimeout(this.timeOutID2)
     }
   }
 </script>

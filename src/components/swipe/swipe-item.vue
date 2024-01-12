@@ -93,6 +93,11 @@
         this.refresh()
       })
       this.$on(EVENT_SCROLL, this._handleBtns)
+
+      this.$once('hook:beforeDestroy', () => {
+        this.$off(EVENT_SCROLL, this._handleBtns)
+        clearTimeout(this.shrinkTimer)
+      })
     },
     methods: {
       _initCachedBtns() {

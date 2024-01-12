@@ -18,6 +18,12 @@
   import { column1, column2, column3 } from 'example/data/picker'
 
   export default {
+    data() {
+      return {
+        timeOutID: null
+      }
+    },
+
     methods: {
       showPicker() {
         if (!this.picker) {
@@ -78,7 +84,7 @@
           })
         }
         this.updatePropsPicker.show()
-        setTimeout(() => {
+        this.timeOutID = setTimeout(() => {
           this.updatePropsPicker.$updateProps({
             title: 'Updated',
             data: [column1, column2, column3],
@@ -116,6 +122,10 @@
     components: {
       CubePage,
       CubeButtonGroup
+    },
+
+    beforeDestroy() {
+      clearTimeout(this.timeOutID)
     }
   }
 </script>

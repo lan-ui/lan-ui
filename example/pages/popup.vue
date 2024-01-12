@@ -41,7 +41,8 @@
         visible2: false,
         visible3: false,
         visible4: false,
-        position: ''
+        position: '',
+        timeOutID: null
       }
     },
     methods: {
@@ -53,7 +54,7 @@
           }
         }
         this['visible' + i] = true
-        setTimeout(() => {
+        this.timeOutID = setTimeout(() => {
           this['visible' + i] = false
         }, 2000)
       }
@@ -62,6 +63,10 @@
       CubeButtonGroup,
       CubePage,
       CubeExtendPopup
+    },
+
+    beforeDestroy() {
+      clearTimeout(this.timeOutID)
     }
   }
 </script>

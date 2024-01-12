@@ -121,6 +121,11 @@
     },
     components: {
       CubeRateItem
+    },
+
+    beforeDestroy() {
+      document.removeEventListener('mouseup', this.handleEnd)
+      document.removeEventListener('mousemove', this.handleMove)
     }
   }
 </script>

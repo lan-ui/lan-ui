@@ -83,7 +83,8 @@
         scrollY: 0,
         panels: [],
         active: this.current,
-        pageStickyOffset: 0
+        pageStickyOffset: 0,
+        timeOutID: null
       }
     },
     computed: {
@@ -140,9 +141,7 @@
       },
       barChange(label) {
         this.active = label
-        // waiting touchend
-        // so the inner scroll won't affect the touchend logic
-        setTimeout(() => {
+        this.timeOutID = setTimeout(() => {
           this.jumpTo(label)
         })
       },
@@ -207,6 +206,10 @@
       CubeStickyEle,
       CubeScroll,
       CubeScrollNavBar
+    },
+
+    beforeDestroy() {
+      clearTimeout(this.timeOutID)
     }
   }
 </script>

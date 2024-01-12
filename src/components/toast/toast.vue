@@ -102,6 +102,10 @@
     components: {
       CubePopup,
       CubeLoading
+    },
+
+    beforeDestroy() {
+      clearTimeout(this.timer)
     }
   }
 </script>

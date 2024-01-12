@@ -18,6 +18,12 @@
   import CubeButtonGroup from 'example/components/cube-button-group.vue'
 
   export default {
+    data() {
+      return {
+        timeOutID: null
+      }
+    },
+
     methods: {
       showDatePicker() {
         if (!this.datePicker) {
@@ -98,7 +104,7 @@
         }
 
         this.updatePropsPicker.show()
-        setTimeout(() => {
+        this.timeOutID = setTimeout(() => {
           this.updatePropsPicker.$updateProps({
             title: 'updated',
             value: new Date(2010, 9, 1)
@@ -138,6 +144,10 @@
     components: {
       CubePage,
       CubeButtonGroup
+    },
+
+    beforeDestroy() {
+      clearTimeout(this.timeOutID)
     }
   }
 </script>
